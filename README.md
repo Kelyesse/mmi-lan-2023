@@ -8,10 +8,7 @@
 
 ## Fonctionnalités
 
-- **Authentification des Utilisateurs** : Inscription et connexion sécurisées.
-- **Gestion des Tournois** : Inscriptions aux tournois, mise à jour des résultats et affichage des classements.
-- **Actualités** : Diffusion et gestion des dernières actualités et annonces liées à l'événement.
-- **Gestion du Réseau** : Outils pour surveiller et gérer le réseau pendant l'événement LAN.
+(A faire)
 
 ---
 
