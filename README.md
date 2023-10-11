@@ -14,11 +14,7 @@
 
 ## Technologies Utilisées
 
-🛠️ **Backend**: Node.js (Express)  
-🛠️ **Frontend**: React.js (Material-UI)  
-🛠️ **Base de données**: MongoDB  
-🛠️ **Gestion du Réseau**: [Insérer la technologie/librairie pour la gestion du réseau]  
-🛠️ **Authentification**: JWT  
+(A faire) 
 
 ---
 
