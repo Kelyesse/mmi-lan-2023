@@ -1,18 +1,20 @@
-*{
-    margin: 0 auto;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+body {
     height: 100%;
+    margin: 0 auto;
 }
 
-.bg-image{
+.header-container {
     width: 100%;
-    height: 100%;
-    background-image: url("../img/homepage_bg.png");
+    height: 100vh;
+    background-image: url(/assets/img/homepage_bg.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
 }
