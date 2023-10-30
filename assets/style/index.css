@@ -60,12 +60,12 @@ header .count-down-timer {
     text-shadow: 10px 10px 14px rgba(0, 0, 0, 0.50);
 }
 
-.numbers {
+.count-down-timer .numbers {
     font-weight: bold;
     font-size: 48px;
 }
 
-.letters {
+.count-down-timer .letters {
     font-size: 24px;
     text-transform: uppercase;
 
