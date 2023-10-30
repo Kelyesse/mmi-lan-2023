@@ -1,13 +1,13 @@
 const countDownDate = new Date("Dec 14, 2023 08:00:00").getTime();
-const countdownElement = document.getElementById("count-down-timer");
+const countdownElements = document.querySelectorAll(".count-down-timer");
 
 function updateCountdown() {
   const now = new Date().getTime();
   let distance = countDownDate - now;
 
+  let displayText;
   if (distance < 0) {
-    clearInterval(countdownInterval);
-    countdownElement.innerHTML = "EXPIRED";
+    displayText = "L'événement est en cours !";
   } else {
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     distance %= 1000 * 60 * 60 * 24;
@@ -20,8 +20,12 @@ function updateCountdown() {
 
     const seconds = Math.floor(distance / 1000);
 
-    countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    displayText = `<span class="numbers">${days}</span><span class="letters">d</span> <span class="numbers">${hours}</span><span class="letters">h</span> <span class="numbers">${minutes}</span><span class="letters">m</span> <span class="numbers">${seconds}</span><span class="letters">s</span>`;
   }
+
+  countdownElements.forEach((elem) => {
+    elem.innerHTML = displayText;
+  });
 }
 
 const countdownInterval = setInterval(updateCountdown, 1000);
