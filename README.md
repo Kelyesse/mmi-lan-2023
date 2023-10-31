@@ -14,13 +14,14 @@
 
 ## Technologies Utilisées
 
-(A faire) 
+(A faire)
 
 ---
 
 ## Comment Contribuer
 
 ### Étape 1: Cloner le dépôt
+
 Commencez par cloner le dépôt sur votre machine locale : git clone [URL_du_dépôt]
 
 ### Étape 2: Créer une nouvelle branche
@@ -48,4 +49,3 @@ Ou, allez à l'interface de votre dépôt sur GitHub pour créer la PR manuellem
 
 ### Note concernant la PR :
 Consultez l'exemple de remplissage de PR sur Discord, dans les messages épinglés.
-
