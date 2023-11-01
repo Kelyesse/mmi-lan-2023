@@ -1,0 +1,141 @@
+@import url(./variables.css);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: white;
+    font-family: Overused Grotesk;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+
+.flex-row {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-section {
+    width: 610px;
+}
+
+#subtitle {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+}
+
+#subtitle a {
+    color: var(--secondary-color);
+    font-family: Overused Grotesk;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    text-decoration-line: underline;
+}
+
+.inputs {
+    margin: 45px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.space1 {
+    margin-bottom: 40px;
+}
+.space2 {
+    margin-bottom: 30px;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-check {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.remember-check label {
+    display: block;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.remember-check input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    appearance: none; /* Masque les styles natifs de la case à cocher */
+    -webkit-appearance: none;
+    border: 1px solid #fff; /* Bordure blanche */
+    background-color: transparent; /* Fond transparent */
+    outline: none; /* Supprime le contour par défaut */
+    cursor: pointer; /* Curseur pointer au survol */
+}
+
+.remember-check input[type="checkbox"]:checked::before {
+    content: "\2713"; /* Code Unicode pour un check mark (vérifiez si le caractère est correct pour votre police) */
+    font-size: 15px; /* Taille de la coche */
+    color: #fff; /* Couleur blanche */
+    position: relative;
+    top: -4px;
+    left: 1px;
+}
+
+#forgot-password {
+    color: var(--secondary-color);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration-line: underline;
+}
+
+#connexion {
+    padding: 10px;
+    border: unset;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: 0.2s linear;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#connexion:hover {
+    background-color: #231649;
+}
+
+#illustration {
+    object-fit: cover;
+    width: 505px;
+    height: 505px;
+}
