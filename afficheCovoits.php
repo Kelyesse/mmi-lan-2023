@@ -68,10 +68,12 @@
 
                 //On affiche ensuite un bouton ou un message indiquant l'état du covoiturage ou l'action que l'utilisateur peut faire dessus
                 if($conducteurId == $_SESSION['playerId']){
-                    echo '<button id="supprTrajet">Supprimer mon trajet</button>';
+                    $onclick='window.location.href="afficheCovoits.php?supprimerCovoitId='.$idCovoit.'"';
+                    echo '<button id="supprTrajet" onclick='.$onclick.'>Supprimer mon trajet</button>';
                 }
                 else if($estPassager){
-                    echo '<button id="retirerTrajet">Me retirer du trajet</button>';
+                    $onclick='window.location.href="afficheCovoits.php?retirerCovoitId='.$idCovoit.'"';
+                    echo '<button id="retirerTrajet" onclick='.$onclick.'>Me retirer du trajet</button>';
                 }
                 else if($estDansVoiture){
                     echo '<div id="autreTrajet">Vous êtes déjà sur un autre trajet</div>';
@@ -83,18 +85,35 @@
                     echo '<button id="joindreTrajet">Me joindre au trajet</button>';
                 }
             }
-            echo '</div>';
+            echo '</div>';  
         ?>
     </div>
     <div id="alertRetirerTrajet" hidden>
         <p>Êtes vous sur de vouloir vous retirer du trajet ?</p>
-        <button id="validerRetirer">Oui, me retirer de ce trajet</button>
-        <button id="annulerRetirer">Non, j’ai changé d’avis</button>
+        <?php 
+            $onclickValiderRetirer = 'window.location.href="retirerPassager.php?retirerCovoitId='.$_GET['retirerCovoitId'].'"';
+            echo '<button id="validerRetirer" onclick='.$onclickValiderRetirer.'>Oui, me retirer de ce trajet</button>';
+            $onclickAnnulerRetirer = 'window.location.href="afficheCovoits.php"';
+            echo '<button id="annulerRetirer" onclick='.$onclickAnnulerRetirer.'>Non, j’ai changé d’avis</button>';
+        ?>
     </div>
     <div id="alertSupprimerTrajet" hidden>
         <p>Êtes vous sur de vouloir supprimer votre trajet ?</p>
-        <button id="validerSupprimer">Oui, supprimer mon trajet</button>
-        <button id="annulerSupprimer">Non, j’ai changé d’avis</button>
+        <?php
+            $onclickValiderSupprimer = 'window.location.href="supprimerTrajet.php?supprimerCovoitId='.$_GET['supprimerCovoitId'].'"';
+            echo '<button id="validerSupprimer" onclick='.$onclickValiderSupprimer.'>Oui, supprimer mon trajet</button>';
+            $onclickAnnulerSupprimer = 'window.location.href="afficheCovoits.php"';
+            echo '<button id="annulerSupprimer" onclick='.$onclickAnnulerSupprimer.'>Non, j’ai changé d’avis</button>';
+        ?>
     </div>
+
+    <?php
+        if(isset($_GET['retirerCovoitId'])){
+            echo '<script>blocAlertRetirer = document.getElementById("alertRetirerTrajet"); blocAlertRetirer.style.display = "block";</script>';
+        }
+        if(isset($_GET['supprimerCovoitId'])){
+            echo '<script>blocAlertSupprimer = document.getElementById("alertSupprimerTrajet"); blocAlertSupprimer.style.display = "block";</script>';
+        }
+    ?>
 </body>
 </html>

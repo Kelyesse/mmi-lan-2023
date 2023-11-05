@@ -9,8 +9,7 @@
 <body>
     <?php 
         session_start();
-        $_SESSION["mail"] = "michel@palaref.fr";
-        $_SESSION["playerId"] = 5;
+        $_SESSION["playerId"] = 1;
     ?>
     <h1>Covoiturage</h1>
     <p>Un système de covoiturage est mis en place pour permettre au plus grand nombre d'étudiants de participer à la MMI LAN !</p>
