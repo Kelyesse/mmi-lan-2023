@@ -129,9 +129,7 @@
 
         <section class="twitch-preview">
             <div class="countdown" id="twitch-section">
-                <div class="countdown-display">
-                    <div class="count-down-timer"></div>
-                </div>
+                <div class="count-down-timer"></div>
                 <div class="countdown-title">Avant le grand jour !</div>
             </div>
             <div class="twitch-livestream">

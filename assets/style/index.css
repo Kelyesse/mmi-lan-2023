@@ -65,7 +65,7 @@ header .count-down-timer {
 }
 
 .count-down-timer .letters {
-    font-size: 24px;
+    font-size: 48px;
     text-transform: uppercase;
 }
 
@@ -112,7 +112,7 @@ header .count-down-timer {
 }
 
 .sponsors h2 {
-    /* font-family: Montserrat; */
+    font-family: var(--body-font);
     font-size: 32px;
     font-style: normal;
     font-weight: 900;
@@ -186,6 +186,7 @@ header .count-down-timer {
 
 .twitch-preview {
     background-color: var(--background-color);
+    font-family: var(--body-font);
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -203,14 +204,17 @@ header .count-down-timer {
 }
 
 .countdown-display {
-    color: var(--primary-color);
-    font-size: 40px;
 }
 
 .countdown-title {
     color: white;
     font-size: 32px;
     font-weight: 900;
+}
+
+.twitch-preview .count-down-timer {
+    font-size: 40px;
+    color: var(--primary-color);
 }
 
 .twitch-livestream {
@@ -221,7 +225,6 @@ header .count-down-timer {
     color: white;
     font-size: 20px;
     text-align: center;
-    font-family: var(--body-font);
 }
 
 .twitch-media {
