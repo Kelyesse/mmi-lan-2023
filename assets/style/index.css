@@ -9,6 +9,8 @@
 body {
     height: 100%;
     margin: 0 auto;
+    background-color: var(--background-color);
+    /* temporary before background img */
 }
 
 /* HEADER */
@@ -187,7 +189,7 @@ header .count-down-timer {
 .twitch-preview {
     background-color: var(--background-color);
     font-family: var(--body-font);
-    width: 90%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -203,17 +205,14 @@ header .count-down-timer {
     justify-content: center;
 }
 
-.countdown-display {
-}
-
 .countdown-title {
     color: white;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 900;
 }
 
 .twitch-preview .count-down-timer {
-    font-size: 40px;
+    font-size: 28px;
     color: var(--primary-color);
 }
 
@@ -225,9 +224,10 @@ header .count-down-timer {
     color: white;
     font-size: 20px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.twitch-media {
+.twitch-embed {
     width: 100%;
     height: 600px;
     /* temporary before twitch preview with API*/
