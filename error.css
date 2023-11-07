@@ -1,0 +1,400 @@
+@font-face {
+    font-family: 'Overused Grotesk';
+    font-weight: 900;
+    src: url(fonts/overused-grotesk-cufonfonts-webfont/OverusedGrotesk-ExtraBold-BF64eeac17d4c2c.woff);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#fond {
+    width: 100%;
+    height: 503px;
+    background: #151515;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#desole{
+    font-family: 'Overused Grotesk';
+    
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    font-size: 420px;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+
+
+    -webkit-text-stroke: 1px #FEBC11;
+    color:  #151515 ;
+}
+
+#qcq{
+    color:  #FFF;
+    font-family: Overused Grotesk;
+    font-size: 170px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+#existepas{
+    color:  #FFF;
+    text-align: center;
+
+    /* Desktop/p-desktop */
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 143.75% */
+}
+
+#divpr{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    z-index: 100;
+}
+
+#divdeux{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#retourAcc {
+    color: #FFF;
+    text-decoration: none ;
+
+    /* Desktop/p-desktop */
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 143.75% */
+
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    border-radius: 5px;
+    background: #2F1D62;
+}
+
+@media (max-width: 1365px) {
+    #desole {
+        font-size: 380px;
+    }
+}
+@media (max-width: 1270px) {
+    #desole {
+        font-size: 350px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #desole {
+        font-size: 340px;
+    }
+    #qcq {
+        font-size: 155px;
+    }
+    #existepas{
+        font-size: 15px;
+    }
+    #retourAcc{
+        font-size: 15px;
+    }
+    #divpr{
+        gap: 55px;
+    }
+}
+
+@media (max-width: 1140px) {
+    #desole {
+        font-size: 320px;
+    }
+    #qcq {
+        font-size: 150px;
+    }
+    #existepas{
+        font-size: 15px;
+    }
+    #retourAcc{
+        font-size: 15px;
+    }
+    #divpr{
+        gap: 50px;
+    }
+}
+
+@media (max-width: 1090px) {
+    #desole {
+        font-size: 310px;
+    }
+    #qcq {
+        font-size: 145px;
+    }
+    #existepas{
+        font-size: 15px;
+    }
+    #retourAcc{
+        font-size: 15px;
+    }
+    #divpr{
+        gap: 50px;
+    }
+}
+
+@media (max-width: 1030px) {
+    #desole {
+        font-size: 290px;
+    }
+    #qcq {
+        font-size: 140px;
+    }
+    #existepas{
+        font-size: 14px;
+    }
+    #retourAcc{
+        font-size: 14px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+}
+@media (max-width: 970px) {
+    #desole {
+        font-size: 275px;
+    }
+    #qcq {
+        font-size: 135px;
+    }
+    #existepas{
+        font-size: 14px;
+    }
+    #retourAcc{
+        font-size: 14px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+}
+@media (max-width: 930px) {
+    #desole {
+        font-size: 260px;
+    }
+    #qcq {
+        font-size: 130px;
+    }
+    #existepas{
+        font-size: 14px;
+    }
+    #retourAcc{
+        font-size: 14px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 860px) {
+    #desole {
+        font-size: 245px;
+    }
+    #qcq {
+        font-size: 125px;
+    }
+    #existepas{
+        font-size: 13px;
+    }
+    #retourAcc{
+        font-size: 13px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 810px) {
+    #desole {
+        font-size: 230px;
+    }
+    #qcq {
+        font-size: 120px;
+    }
+    #existepas{
+        font-size: 13px;
+    }
+    #retourAcc{
+        font-size: 13px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 760px) {
+    #desole {
+        font-size: 215px;
+    }
+    #qcq {
+        font-size: 115px;
+    }
+    #existepas{
+        font-size: 13px;
+    }
+    #retourAcc{
+        font-size: 13px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 710px) {
+    #desole {
+        font-size: 200px;
+        -webkit-text-stroke: 0.8px #FEBC11;
+    }
+    #qcq {
+        font-size: 110px;
+    }
+    #existepas{
+        font-size: 12px;
+    }
+    #retourAcc{
+        font-size: 12px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 660px) {
+    #desole {
+        font-size: 185px;
+    }
+    #qcq {
+        font-size: 105px;
+    }
+    #existepas{
+        font-size: 12px;
+    }
+    #retourAcc{
+        font-size: 12px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 610px) {
+    #desole {
+        font-size: 170px;
+    }
+    #qcq {
+        font-size: 100px;
+    }
+    #existepas{
+        font-size: 12px;
+    }
+    #retourAcc{
+        font-size: 12px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 560px) {
+    #desole {
+        font-size: 155px;
+    }
+    #qcq {
+        font-size: 95px;
+    }
+    #existepas{
+        font-size: 11px;
+    }
+    #retourAcc{
+        font-size: 11px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 510px) {
+    #desole {
+        font-size: 140px;
+    }
+    #qcq {
+        font-size: 90px;
+    }
+    #existepas{
+        font-size: 11px;
+    }
+    #retourAcc{
+        font-size: 11px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 460px) {
+    #desole {
+        font-size: 125px;
+    }
+    #qcq {
+        font-size: 85px;
+    }
+    #existepas{
+        font-size: 11px;
+    }
+    #retourAcc{
+        font-size: 11px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
+@media (max-width: 410px) {
+    #desole {
+        font-size: 110px;
+    }
+    #qcq {
+        font-size: 80px;
+    }
+    #existepas{
+        font-size: 11px;
+    }
+    #retourAcc{
+        font-size: 11px;
+    }
+    #divpr{
+        gap: 45px;
+    }
+    
+}
