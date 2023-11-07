@@ -1,15 +1,31 @@
+@font-face {
+    font-family: 'Overused Grotesk';
+    src:
+        url('../fonts/OverusedGrotesk-VF.woff2') format('woff2 supports variations'),
+        url('../fonts/OverusedGrotesk-VF.woff2') format('woff2-variations');
+    font-weight: 300 900;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 
 /* Couleurs */
 :root {
-    --primary-color: #2f1d62; /* Couleur principale */
-    --secondary-color: #cd0c75; /* Couleur secondaire */
-    --tertiary-color: #f15722; /* Couleur secondaire */
+    --primary-color: #2f1d62;
+    /* Couleur principale */
+    --secondary-color: #cd0c75;
+    /* Couleur secondaire */
+    --tertiary-color: #f15722;
+    /* Couleur secondaire */
     --accent-color-1: #febc11;
-    --background-color: #151515; /* Couleur de fond */
+    --background-color: #151515;
+    /* Couleur de fond */
 }
 
 /* Polices */
 :root {
-    --body-font: "Montserrat", sans-serif; /* Police du texte du corps */
+    --body-font: "Montserrat", sans-serif;
+    /* Police du texte du corps */
+
+
 }

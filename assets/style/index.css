@@ -111,6 +111,7 @@ header .count-down-timer {
     text-align: center;
     background-color: rgb(41, 41, 41);
     padding: 20px 0;
+    margin-bottom: 20px;
 }
 
 .sponsors h2 {
@@ -142,6 +143,94 @@ header .count-down-timer {
 }
 
 /* ABOUT */
+
+.about-content-container {
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    display: inline-flex;
+}
+
+.explanation-text-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+    height: 439px;
+
+}
+
+.lan-explanation-text {
+    color: white;
+    font-size: 32px;
+    font-family: Montserrat;
+    font-weight: 900;
+    word-wrap: break-word;
+}
+
+.description-text {
+    width: 715px;
+    color: white;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 400;
+    line-height: 23px;
+    word-wrap: break-word;
+}
+
+.navigation-buttons-container {
+    width: 315px;
+    align-self: stretch;
+    justify-content: space-around;
+    align-items: flex-end;
+    display: flex;
+}
+
+.navigation-button {
+    display: flex;
+    width: 105px;
+    padding: 20px 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+}
+
+.registration-button {
+    background: #2F1D62;
+}
+
+.carpooling-button {
+    background: #CD0C75;
+}
+
+.faq-button {
+    background: #FEBC11;
+}
+
+.icon-box {
+    transition: transform 0.3s ease;
+}
+
+
+.navigation-button:hover .icon-box {
+    transform: rotate(-90deg);
+}
+
+
+.button-label {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    padding-left: 50px;
+    color: white;
+    font-size: 24px;
+    /* font-family: 'Overused Grotesk'; */
+    font-weight: 900;
+    word-wrap: break-word;
+}
 
 /* SOCIAL */
 
