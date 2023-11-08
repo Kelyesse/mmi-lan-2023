@@ -1,7 +1,8 @@
 <?php
-require 'listing_equipe_model.php';
+
 class EquipeController {
     public function listEquipes() {
+        require 'listing_equipe_model.php';
         $equipeModel = new team();
         $equipes = $equipeModel->getEquipes();
         
@@ -12,8 +13,7 @@ class EquipeController {
             $equipesAvecJoueurs[] = $equipe;
         }
         
-        // Appeler la vue pour afficher les données
-        require 'vue/listeEquipes.php';
+        require 'listing_equipe_vue.php';
     }
 }
 
