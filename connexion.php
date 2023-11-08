@@ -2,7 +2,7 @@
 $serveur = "localhost"; 
 $utilisateur = "root"; 
 $mot_de_passe = "root"; 
-$base_de_donnees = "mydb"; 
+$base_de_donnees = "MMI-LAN"; 
 
 $bdd = new mysqli($serveur, $utilisateur, $mot_de_passe, $base_de_donnees);
 

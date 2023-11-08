@@ -6,13 +6,14 @@ class Team {
         require_once("connexion.php");
         $prep =" SELECT TeamId, TeamName
                 FROM Team";
-        $stmt = $bdd->prepare($prep);        
-        $stmt->execute();
-        while ($ligne = $result->fetch_assoc()) {
+        $stmt2 = $bdd->prepare($prep);        
+        $stmt2->execute();
+        $resultat = $stmt2->get_result();
+        while ($ligne = $resultat->fetch_assoc()) {
             $equipes[] = $ligne;
             }
         
-        $stmt->close();
+        $stmt2->close();
         return $equipes;
         }
     }
