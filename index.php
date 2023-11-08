@@ -42,59 +42,48 @@
             </div>
         </section>
 
-        <section class="about">
+        <section class="about-section">
+            <div class="about-content-container">
+                <div class="explanation-text-container">
+                    <div class="lan-explanation-text">Texte d’explication de la LAN</div>
+                    <div class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa
+                        mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula
+                        consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+                        Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh,
+                        at maximus ante fermentum sit amet. <br> <br>
 
-            <div class="text-content">
-                <h2>Texte d’explication de la LAN</h2> <br>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                    Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae
-                    mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna
-                    interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet.
+                        Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel
+                        euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit
+                        amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.
+                        <br><br>
 
-                    <br><br>
+                        Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.
+                        Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus
+                        at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In
+                        iaculis arcu eros, eget tempus orci facilisis id.
+                    </div>
+                </div>
+                <div class="navigation-buttons-container">
+                    <a href="#" class="navigation-button registration-button">
+                        <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
+                        <div class="button-label">Inscription</div>
+                    </a>
 
-                    Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel
-                    euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
-                    sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.
+                    <a href="#" class="navigation-button carpooling-button">
+                        <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
+                        <div class="button-label">Co-voiturage</div>
+                    </a>
 
-                    <br><br>
-
-                    Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur
-                    pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales
-                    sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros,
-                    eget tempus orci facilisis id.
-                </p>
+                    <a href="#" class="navigation-button faq-button">
+                        <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
+                        <div class="button-label">FAQ</div>
+                    </a>
+                </div>
             </div>
-
-            <div class="box-container">
-
-                <div class="box" id="inscription">
-                    <div class="arrow">
-                        <i class='bx bx-right-arrow-circle'></i>
-                    </div>
-                    <h3>Inscription</h3>
-                </div>
-
-                <div class="box" id="co-voiturage">
-                    <div class="arrow">
-                        <i class='bx bx-right-arrow-circle'></i>
-                    </div>
-                    <h3>Co-voiturage</h3>
-                </div>
-
-                <div class="box" id="faq">
-                    <div class="arrow">
-                        <i class='bx bx-right-arrow-circle'>
-                        </i>
-                    </div>
-                    <h3>FAQ</h3>
-                </div>
-
-            </div>
-
         </section>
+
+
 
 
 
