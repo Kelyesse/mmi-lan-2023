@@ -1,6 +1,6 @@
 <?php 
    
-class team {
+class Team {
     public function getEquipes() {
         $equipes= array();
         require_once("connexion.php");

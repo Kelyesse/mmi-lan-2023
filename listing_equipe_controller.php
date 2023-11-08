@@ -3,13 +3,13 @@
 class EquipeController {
     public function listEquipes() {
         require 'listing_equipe_model.php';
-        $equipeModel = new team();
+        $equipeModel = new Team();
         $equipes = $equipeModel->getEquipes();
         
         foreach ($equipes as $equipe) {
             $joueurModel = new Joueur();
             $joueurs = $joueurModel->getJoueursByEquipe($equipe['TeamId']);
-            $equipe['joueurs'] = $joueurs;
+            $equipe['PlayerPseudo'] = $joueurs;
             $equipesAvecJoueurs[] = $equipe;
         }
         
