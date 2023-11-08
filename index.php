@@ -7,8 +7,6 @@
     <title>Accueil | MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/index.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
 </head>
 
 <body>
@@ -66,26 +64,28 @@
                 </div>
                 <div class="navigation-buttons-container">
                     <a href="#" class="navigation-button registration-button">
+                        <div class="button-label">
+                            <h3>Inscription</h3>
+                        </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
-                        <div class="button-label">Inscription</div>
                     </a>
 
                     <a href="#" class="navigation-button carpooling-button">
+                        <div class="button-label">
+                            <h3>Co-voiturage</h3>
+                        </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
-                        <div class="button-label">Co-voiturage</div>
                     </a>
 
                     <a href="#" class="navigation-button faq-button">
+                        <div class="button-label">
+                            <h3>FAQ</h3>
+                        </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
-                        <div class="button-label">FAQ</div>
                     </a>
                 </div>
             </div>
         </section>
-
-
-
-
 
 
         <section class="social-media">
@@ -125,6 +125,8 @@
             </ul>
         </section>
 
+
+
         <section class="twitch-preview">
             <div class="countdown" id="twitch-section">
                 <div class="count-down-timer"></div>
@@ -140,13 +142,49 @@
     </main>
 
     <footer>
+        <div class="footer-container">
 
+            <!-- <div id="pacman-animation-container"></div> -->
+
+
+            <div class="logo-area">
+                <img src="assets/img/logo.svg" alt="">
+            </div>
+
+            <div class="social-links">
+
+                <p>Nous suivre :</p>
+                <div class="social-icons">
+                    <img src="assets/img/tiktok-logo.svg" alt="">
+                    <img src="assets/img/insta-logo.svg" alt="">
+                    <img src="assets/img/yt-logo.svg" alt="">
+                    <img src="assets/img/twitter-logo.svg" alt="">
+                    <img src="assets/img/discord-logo.svg" alt="">
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Règlement</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact</a>
+                <a href="#">RGPD</a>
+                <a href="#">Mention légales</a>
+            </div>
+
+        </div>
+        <div class="footer-banner">
+            <div class="copyright-text">Copyrights © 2023</div>
+        </div>
     </footer>
 
     <!-- JS files -->
     <script src="assets/js/countDown.js"></script>
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <script src=" assets/js/twitchPlayer.js"></script>
+    <!-- pacman footer -->
+    <!-- Inclure p5.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>-->
+
 </body>
 
 </html>
