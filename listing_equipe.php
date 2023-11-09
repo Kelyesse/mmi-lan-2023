@@ -15,7 +15,12 @@
     </style>
     <div class="liste_equipe"> 
 
-    <?php include 'listing_equipe_vignette.php' ; ?>
+
+
+    </div>
+    <div class="LOGO"> 
+
+    <?php include 'listing_equipe_logo.php' ; ?>
 
     </div>
 </body>
