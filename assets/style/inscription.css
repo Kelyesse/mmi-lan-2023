@@ -1,0 +1,273 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat_bold';
+    src: url('../font/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Overused';
+    src: url('../font/overused_grotesk/fonts/ttf/OverusedGrotesk-Black.ttf') format('truetype');
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-family: Montserrat;
+    align-items: center;
+}
+
+html, body {
+    margin: auto;
+    box-sizing: border-box;
+    background-color: #151515;
+}
+
+header {
+    min-height: 100px;
+    background-color: #212121;
+}
+
+h1, h2, h3 {
+    font-family: Overused, sans-serif;
+    font-weight: 900;
+    color: #fff;
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 32px;
+    font-family: Montserrat_bold;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+
+a{
+    color: #CD0C75;
+}
+
+.count-down-timer{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    background-color: #CD0C75;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+main>div{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+#titre{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+    min-width: 86vw;
+}
+
+#formulaire{
+    width: 86vw;
+}
+
+form>div{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.double_inp{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.simple_inp input{
+    width: 100%;
+}
+
+#config_psw{
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+.radio{
+    display: flex;
+    justify-content: center;
+    gap: 14vw;
+}
+
+.radio div{
+    width: 110px;
+}
+
+#select_jeu{
+    width: 100%;
+    padding: 10px 0;
+    background-color: #151515;
+    border: solid 1px #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.25);
+
+}
+
+input{
+    background-color:#151515;
+    padding: 10px 0px ;
+    margin: 15px 0;
+    border: solid 1px #fff;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    width: 20vw;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width:10px;
+}
+
+#fin_form{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#submit{
+    padding: 10px;
+    background-color: #2F1D62;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    width: auto;
+}
+
+#choix_ava{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: baseline;
+}
+
+#avatar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 420px;
+    max-height: 239px;
+}
+
+#avatar img{
+    height: 105px;
+    width: 105px;
+}
+
+#liste_ava{
+    display: flex;
+}
+
+.active {
+    border: solid 2px #CD0C75;
+}
+
+@media only screen and (max-width: 1240px) {
+    form>div {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .double_inp {
+        flex-direction: column;
+    }
+
+    .double_inp{
+        gap: 0;
+    }
+
+    .double_inp input{
+        width: 88vw;
+    }
+
+    .simple_inp input{
+        width: 88vw;
+    }
+
+    #infos{
+        display: contents;
+    }
+
+    #fin_form{
+        width: 88vw;
+    }
+
+    #avatar img{
+        height: 70px;
+        width: 70px;
+    }
+
+    #avatar{
+        width: 270px;
+    }
+    
+    #select_jeu{
+        width: 88vw;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    h1{
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+    h2{
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    #titre{
+        gap: 0;
+    }
+
+    main>div{
+        gap: 0;
+    }
+}
