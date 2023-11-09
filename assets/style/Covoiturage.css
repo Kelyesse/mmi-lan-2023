@@ -54,13 +54,15 @@ body #main div #choix h2 {
 }
 body #main div #choix a {
   text-decoration: none;
+  transition: all 500ms;
 }
 body #main div #choix a :hover {
-  transition: all 500ms;
-  opacity: 0.8;
+  opacity: 0.25;
 }
-body #main div #choix a :hover img {
+body #main div #choix a img {
   transition: all 500ms;
+}
+body #main div #choix a img :hover {
   transform: rotate(90deg);
 }
 body #main div #choix a p {

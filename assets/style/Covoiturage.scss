@@ -59,12 +59,13 @@ body {
 
         a {
           text-decoration: none;
+          transition: all 500ms;
           :hover {
+            opacity: 0.25;
+          }
+          img {
             transition: all 500ms;
-            opacity: 0.8;
-
-            img {
-              transition: all 500ms;
+            :hover {
               transform: rotate(90deg);
             }
           }
