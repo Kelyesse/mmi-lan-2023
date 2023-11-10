@@ -223,7 +223,7 @@ header .count-down-timer {
 
 .icon-box {
     transform: rotate(90deg);
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
     padding: 20px;
 }
 

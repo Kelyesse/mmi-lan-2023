@@ -44,22 +44,23 @@
             <div class="about-content-container">
                 <div class="explanation-text-container">
                     <div class="lan-explanation-text">Texte d’explication de la LAN</div>
-                    <div class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa
-                        mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula
-                        consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-                        Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh,
-                        at maximus ante fermentum sit amet. <br> <br>
+                    <div class="description-text">La MMI LAN est un événement centré sur le jeu vidéo, organisé par des
+                        MMI pour des MMI !
+                        <br>
+                        Elle se présente sous la forme d’un tournoi dans lequel des équipes de trois joueurs se
+                        réunissent et s'affrontent au travers de plusieurs jeux vidéo tout au long d’une journée. Que
+                        vous soyez un pro ou un débutant, cet événement est l’occasion de passer un moment de
+                        convivialité placé sous le signe de la compétition. <br>
+                        Des récompenses seront à gagner à l’issue du tournoi pour récompenser les efforts des équipes
+                        gagnantes.
 
-                        Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel
-                        euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.Lorem ipsum dolor sit
-                        amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit
-                        amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.
                         <br><br>
+                        Si la compétition n’est pas votre domaine, et que vous voulez simplement profiter d’une ambiance
+                        conviviale, vous êtes également au bon endroit ! Des activités et points de restauration seront
+                        à votre disposition sur le lieu de l’événement, afin que chacun puisse profiter de cette journée
+                        à leur façon. La compétition sera retransmise en direct sur la chaîne Twitch de l’événement,
+                        vous pourrez donc suivre le déroulé de la LAN sans vous déplacer.
 
-                        Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.
-                        Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus
-                        at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In
-                        iaculis arcu eros, eget tempus orci facilisis id.
                     </div>
                 </div>
                 <div class="navigation-buttons-container">
