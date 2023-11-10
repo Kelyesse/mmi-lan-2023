@@ -60,7 +60,7 @@ function getJoueursByEquipe($equipeId) {
                     $nbr++; 
                     echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
                 }
-        
+                echo '<button class="button_full">Equipe complète</button></li>';
                 echo '</li>';
             }
             else{
@@ -73,7 +73,7 @@ function getJoueursByEquipe($equipeId) {
                         $nbr++; 
                         echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
                     }
-            
-                    echo '</li>';
+                    
+                    echo '<button class="button_join">Rejoindre l\'équipe</button></li>';
             }}
         }

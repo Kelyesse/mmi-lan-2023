@@ -1,7 +1,7 @@
 <?php 
 include ("connexion.php");
 
-$requete = "SELECT TeamId, TeamLogo FROM Team WHERE TeamId <= 10";
+$requete = "SELECT TeamId, TeamLogo FROM Team WHERE TeamId <= 11";
 $stmt3 = $bdd->prepare($requete);  
 $stmt3->execute();
 $result = $stmt3->get_result();
