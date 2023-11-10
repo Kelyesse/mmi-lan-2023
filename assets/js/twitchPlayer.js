@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const options = {
         width: "100%",
         height: "100%",
-        channel: "exathor_gaming",
+        channel: "lanmmi",
     }
     new Twitch.Player(twitchPlayerDiv, options)
 })
