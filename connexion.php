@@ -1,3 +1,10 @@
+<?php
+
+include("include/db.php");
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +30,7 @@
                                 <input id="remember" type="checkbox">
                                 <label for="remember">Se souvenir de moi</label>
                             </div>
-                            <a id="forgot-password" href="">Mot de passe oublié ?</a>
+                            <a id="forgot-password" href="recover.php">Mot de passe oublié ?</a>
                         </div>
                     </div>
                     <button id="connexion" type="submit">Se connecter</button>
@@ -32,6 +39,9 @@
             <img id="illustration" src="assets/img/homepage_bg.png" />
         </div>
     </div>
+
+
+
 </body>
 
 </html>
