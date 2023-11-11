@@ -94,32 +94,31 @@
                 Pour rester informé, suivez-nous sur nos réseaux sociaux !
             </div>
             <ul class="social-medias-listing">
-
-
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="Logo TikTok" class="social-img" />
+                    <a href="https://www.tiktok.com/@mmi.lan" class="social-link" target="_blank">
+                        <img src="./assets/img/tiktok-logo.svg" alt="Logo TikTok" class="social-img" />
                     </a>
                 </li>
 
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="instagram-logo" class="social-img" />
+                    <a href="https://www.instagram.com/mmi_lan2023/" class="social-link" target="_blank">
+                        <img src="./assets/img/insta-logo.svg" alt="instagram-logo" class="social-img" />
                     </a>
                 </li>
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="youtube-logo" class="social-img" />
+                    <a href="https://www.youtube.com/@MMILAN_2023" class="social-link" target="_blank">
+                        <img src=" ./assets/img/yt-logo.svg" alt="youtube-logo" class="social-img" />
                     </a>
                 </li>
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="twitter-logo" class="social-img" />
+                    <a href="https://twitter.com/MMI_LAN_2023" class="social-link" target="_blank">
+                        <img src="./assets/img/twitter-logo.svg" alt="twitter-logo" class="social-img" />
                     </a>
                 </li>
+                <!-- waiting for discord link -->
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="discord-logo" class="social-img" />
+                    <a href="#" class="social-link" target="_blank">
+                        <img src="./assets/img/discord-logo.svg" alt="discord-logo" class="social-img" />
                     </a>
                 </li>
 

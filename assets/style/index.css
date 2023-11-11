@@ -119,7 +119,6 @@ header .count-down-timer {
 
 .sponsors {
     text-align: center;
-    background-color: rgb(41, 41, 41);
     padding: 20px 0;
     margin-bottom: 20px;
 }
@@ -276,15 +275,24 @@ header .count-down-timer {
 }
 
 .social-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
-    border: 2px solid white;
     border-radius: 10px;
 }
 
 .social-link {
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: white;
+}
+
+.social-img {
+    width: 100%;
+    height: 100%;
 }
 
 /* TWITCH */
