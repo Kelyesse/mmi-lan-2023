@@ -11,21 +11,20 @@
     <header>
     </header>
     <div class="count-down-timer">
-        
     </div>
     <main>
         <div>
-            <div id="titre">
+            <div id="title">
                 <h1>Inscription</h1>
                 <h2>Rejoignez-nous ici !</h2>
             </div>
-            <div id="formulaire">
+            <div id="form">
 
                 <!--je me questionne sur quoi mettre en action du form-->
 
                 <form action="#" method="post">
                     <div>
-                        <div id="infos">
+                        <div>
                             <div class="double_inp">
                                 <input type="text" placeholder="Entrer votre nom" name="nom" required>
                                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
@@ -84,14 +83,14 @@
                                 <a href="#">Se connecter ?</a>
                             </div>
                         </div>
-                        <div>
-                            <div id="choix_ava">
+                        <div id="choix_ava">
+                            <div>
                                 <h3>Choisissez votre avatar</h3>
                                 <div id="liste_ava">
                                     <svg id="pre" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
                                         <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2"/>
                                     </svg>
-                                    <div id="avatar">
+                                    <div class="avatar">
 
                                         <!--toutes les img sont à changé par celles de la base de donnée-->
 
@@ -149,6 +148,7 @@
         </div>
     </main>
 <script src="./assets/js/countDown.js"></script>
-<script src="./assets/js/script.js"></script>
+<script src="./assets/js/jeu_fav.js"></script>
+<script src="./assets/js/gallerie_avatar.js"></script>
 </body>
 </html>
