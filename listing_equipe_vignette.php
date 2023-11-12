@@ -1,6 +1,5 @@
 <?php 
 
-
 function getEquipes() {
     $equipes = array();
     include("connexion.php");
@@ -15,65 +14,63 @@ function getEquipes() {
     return $equipes;
 }
 
-
 function getJoueursByEquipe($equipeId) {
-        $joueurs = array();
-        include("connexion.php");
-        $sqlp = "SELECT p.PlayerPseudo
+    $joueurs = array();
+    include("connexion.php");
+    $sqlp = "SELECT p.PlayerPseudo
         FROM Player p
-        INNER JOIN Belong b ON p.PlayerId = b.PlayerId
+        INNER JOIN BelongTeam b ON p.PlayerId = b.PlayerId
         WHERE b.TeamId = ?";
 
-        $stmt = $bdd->prepare($sqlp);
-        $stmt->bind_param("i", $equipeId); 
-        $stmt->execute();
-        $result = $stmt->get_result();
+    $stmt = $bdd->prepare($sqlp);
+    $stmt->bind_param("i", $equipeId); 
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        while ($row = $result->fetch_assoc()) {
-            $joueurs[] = $row;
+    while ($row = $result->fetch_assoc()) {
+        $joueurs[] = $row;
+    }
+
+    $stmt->close();
+    return $joueurs;
+}
+
+if (!isset($equipes)) {
+    $equipes = getEquipes();
+}
+
+if (count($equipes) > 0) {
+    foreach ($equipes as $equipe) {
+        $nbr = 0;
+        $joueurs = getJoueursByEquipe($equipe['TeamId']);
+
+        foreach ($joueurs as $pseudo) {
+            $nbr++;
+        }
+
+        if ($nbr == 3) {
+            $image = $equipe['TeamLogo'];
+            echo '<li class="vignette_pleine" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="#/' . $equipe['TeamId'] . '">';
+            echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
+            echo $equipe['TeamName'] . '</a>';
+
+            foreach ($joueurs as $pseudo) {
+                echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
             }
 
-        $stmt->close();
-        return $joueurs;
+            echo '<button class="button_full">Equipe complète</button></li>';
+        } else {
+            $image = $equipe['TeamLogo'];
+            echo '<li class="vignette" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="#/' . $equipe['TeamId'] . '">';
+            echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
+            echo $equipe['TeamName'] . '</a>';
 
-        }
-        if (!isset($equipes)) {
-            $equipes = getEquipes();
-        }
-        if (count($equipes) > 0) {
-            $equipesAvecJoueurs = array();
-            $joueurs = 'ee';
-            foreach ($equipes as $equipe) {
-                $nbr=0;
-                $joueurs = getJoueursByEquipe($equipe['TeamId']);
-                foreach ($joueurs as $pseudo) {
-                    $nbr++;
-                    } 
-                
-                if ($nbr==3){
-                $image = $equipe['TeamLogo'];
-                $base64Image = base64_encode($image);
-                echo '<li class="vignette_pleine" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="#/' . $equipe['TeamId'] . '">';
-                echo '<img src="data:image;base64,' . $base64Image . '" alt="Logo de l\'équipe" />';
-                echo $equipe['TeamName'] . '</a>';
-                foreach ($joueurs as $pseudo) {
-                    $nbr++; 
-                    echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
-                }
-                echo '<button class="button_full">Equipe complète</button></li>';
-                echo '</li>';
+            foreach ($joueurs as $pseudo) {
+                echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
             }
-            else{
-                    $image = $equipe['TeamLogo'];
-                    $base64Image = base64_encode($image);
-                    echo '<li class="vignette" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="#/' . $equipe['TeamId'] . '">';
-                    echo '<img src="data:image;base64,' . $base64Image . '" alt="Logo de l\'équipe" />';
-                    echo $equipe['TeamName'] . '</a>';
-                    foreach ($joueurs as $pseudo) {
-                        $nbr++; 
-                        echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
-                    }
-                    
-                    echo '<button class="button_join">Rejoindre l\'équipe</button></li>';
-            }}
+
+            echo '<button class="button_join">Rejoindre l\'équipe</button></li>';
         }
+    }
+}
+?>
