@@ -44,7 +44,7 @@ h1 {
 
 .tri-btn:hover .dropdown-menu {
     display: block;
-    background-color: transparent;
+    background-color: black;
 }
 
 .dropdown-menu a {
