@@ -15,7 +15,6 @@
     gap: 30px;
     padding: 100px;
 }
-
 #titre {
     color: var(--text-contenu, #FFF);
 
@@ -27,26 +26,12 @@
     line-height: normal;
     text-transform: uppercase;
 }
-
 .ligne{
     width: 100%;
     color: #CD0C75;
     border: 0px;
     border-top: 2px solid #CD0C75;
 }
-
-.h2 {
-    color: var(--text-contenu, #FFF);
-
-    /* Desktop/h2-desktop */
-    font-family: Montserrat;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    margin-bottom: 30px;
-}
-
 .h3{
     color: var(--text-contenu, #FFF);
 

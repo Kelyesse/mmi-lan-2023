@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +13,17 @@
 <body>
     <section id="fond">
         <h1 id="titre">Règlement de la mmi lan</h1>
-        <div>
+        <hr class="ligne">
+        <div class="grande_partie" id="partie1">
             <div>
                 <h2 class="h2">1. Généralités</h2>
             </div>
             <div>
-                <p class="texte">Au sein de son département MMI, l'Université de Toulon située au 70 Avenue Roger Devoucoux, 83000 Toulon, et portée par la promotion MMI 2, 2023, organise le tournoi baptisé 'MMI LAN 2023', qui aura lieu à Toulon le 14 décembre 2023.En prenant part à ce tournoi, équipes, joueurs et joueuses, coachs, ainsi que spectateur s'engagent formellement à respecter sans réserve l'ensemble des dispositions du règlement.</p>
+                <p class="texte">Au sein de son département MMI, l'Université de Toulon située au 70 Avenue Roger Devoucoux, 83000 Toulon, et portée par la promotion MMI 2, 2023, organise le tournoi baptisé 'MMI LAN 2023', qui aura lieu à Toulon le 14 décembre 2023. <br> En prenant part à ce tournoi, équipes, joueurs et joueuses, coachs, ainsi que spectateur s'engagent formellement à respecter sans réserve l'ensemble des dispositions du règlement.</p>
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">2. Conditions et phases d'inscriptions</h2>
             </div>
@@ -54,7 +55,7 @@
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">3. Conditions d'accès à la buvette</h2>
             </div>
@@ -70,7 +71,7 @@
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">4. Conduites et comportements</h2>
             </div>
@@ -143,7 +144,7 @@
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">5. Matériels</h2>
             </div>
@@ -183,7 +184,7 @@
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">6. Avertissement et charte informatique</h2>
             </div>
@@ -219,7 +220,7 @@
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">7. Sécurités et responsabilités</h2>
             </div>
@@ -251,7 +252,7 @@
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">8. Réseau</h2>
             </div>
@@ -268,7 +269,7 @@
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">9. Droit à l'image</h2>
             </div>
@@ -296,7 +297,7 @@
             </div>
         </div>
         <hr class="ligne">
-        <div>
+        <div class="grande_partie">
             <div>
                 <h2 class="h2">10. Dispositions finales</h2>
             </div>
