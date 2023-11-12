@@ -10,12 +10,13 @@
 }
 #fond{
     width: 100%;
-    height: 4538px;
+    height: 100%;
     background: var(--fond-pages, #151515);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
+    padding: 273px 100px;
 }
 
 #titre{
@@ -73,4 +74,11 @@
     font-style: normal;
     font-weight: 900;
     line-height: normal;
+}
+
+.ligne{
+    width: 100%;
+    color: #CD0C75;
+    border: 0px;
+    border-top: 2px solid #CD0C75;
 }
