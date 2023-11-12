@@ -95,8 +95,18 @@ h1 {
     margin-top: 20px;
 }
 
-.vignette a{
+.vignette a.NomTeam{
     text-decoration: none;
+    color: #fff; 
+    font-size: 24px; 
+    font-weight: bold; 
+}
+
+.vignette_pleine a.NomTeam{
+    text-decoration: none;
+    color: #fff; 
+    font-size: 24px; 
+    font-weight: bold; 
 }
 
 .vignette img {

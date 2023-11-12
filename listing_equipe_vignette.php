@@ -53,6 +53,7 @@ if (count($equipes) > 0) {
             echo '<li class="vignette_pleine" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="#/' . $equipe['TeamId'] . '">';
             echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
             echo $equipe['TeamName'] . '</a>';
+            echo '<p>-</p>';
 
             foreach ($joueurs as $pseudo) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
@@ -64,6 +65,8 @@ if (count($equipes) > 0) {
             echo '<li class="vignette" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="#/' . $equipe['TeamId'] . '">';
             echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
             echo $equipe['TeamName'] . '</a>';
+            echo '<p>-</p>';
+
 
             foreach ($joueurs as $pseudo) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
