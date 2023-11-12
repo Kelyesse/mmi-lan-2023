@@ -88,7 +88,23 @@
             </div>
         </section>
 
-
+        <div class="animated-banner">
+            <div class="space-invaders" id="group1">
+                <img src="" alt="" class="space-invader">
+                <img src="" alt="" class="space-invader">
+                <img src="" alt="" class="space-invader">
+            </div>
+            <div class="space-invaders" id="group2">
+                <img src="./assets/img/space-invader.svg" alt="" class="space-invader">
+                <img src="" alt="" class="space-invader">
+                <img src="" alt="" class="space-invader">
+            </div>
+            <div class="space-invaders" id="group3">
+                <img src="" alt="" class="space-invader">
+                <img src="" alt="" class="space-invader">
+                <img src="" alt="" class="space-invader">
+            </div>
+        </div>
         <section class="social-media">
             <div class="follow-us">
                 Pour rester informé, suivez-nous sur nos réseaux sociaux !
