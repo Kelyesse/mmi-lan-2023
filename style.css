@@ -175,26 +175,62 @@ h1 {
     font-weight: 400;
     font-size: 16px;
 }
-.cta-section {
+
+
+
+/* Styles généraux pour les images */
+.LOGO img {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    width: 295px;
+    height: 226px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.cta {
-    text-align: center;
+/* Styles spécifiques pour chaque équipe */
+#img-logo-1 {
+    transform: rotate(0deg);
 }
 
-.cta h2 {
-    font-size: 24px;
+#img-logo-2 {
+    transform: rotate(8deg);
 }
 
-.cta-btn {
-    width: 165px;
-    height: 43px;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #2F1D62;
-    color: #fff;
-    border: none;
+#img-logo-3 {
+    transform: rotate(2deg);
 }
+
+#img-logo-4 {
+    transform: rotate(3deg);
+}
+
+#img-logo-5 {
+    transform: rotate(-3deg);
+}
+
+#img-logo-6 {
+    transform: rotate(-8deg);
+}
+
+#img-logo-7 {
+    transform: rotate(8deg);
+}
+
+#img-logo-8 {
+    transform: rotate(-10.5deg);
+}
+
+#img-logo-9 {
+    transform: rotate(10.5deg);
+}
+
+#img-logo-10 {
+    transform: rotate(-5.5deg);
+}
+
+#img-logo-11 {
+    transform: rotate(-5.5deg);
+}
+
+
