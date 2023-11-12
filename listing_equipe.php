@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-        <h1>Les Équipes de la LAN</h1>
+        <h1>LES EQUIPES DE LA MMI LAN</h1>
         <div class="tri-btn">
             Trier
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
