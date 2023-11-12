@@ -12,12 +12,16 @@
 </head>
 <body>
     <section id="fond">
+        <!--texte en fond-->
         <p id="desole">désolé</p>
+        <!--premier div avec le texte et bouton-->
         <div id="divpr">
+            <!-- div avec le texte sans le bouton -->
             <div id="divdeux">
                 <p id="qcq">404</p>
                 <p id="existepas">La page que vous cherchez n'existe pas</p>
             </div>
+            <!--bouton-->
             <a href="index.php" id="retourAcc">Retour à l'accueil</a>
         </div>
     </section>
