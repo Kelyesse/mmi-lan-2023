@@ -81,7 +81,7 @@ h1 {
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 20px;
-    background: #FFFFFF1A;
+    background: rgba(255, 255, 255, 0.10);
     text-align: center;
     color: #fff;
     list-style: none;
@@ -102,7 +102,19 @@ h1 {
     margin-top: 20px;
 }
 
+.vignette_pleine img {
+    width: 190px;
+    height: 190px;
+    border-radius: 100px;
+    margin-top: 20px;
+}
+
 .vignette h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.vignette_pleine h3 {
     margin-top: 10px;
     font-size: 18px;
 }
@@ -111,8 +123,16 @@ h1 {
     padding-left: 0;
     list-style: none;
 }
+.vignette_pleine ul {
+    padding-left: 0;
+    list-style: none;
+}
 
 .vignette ul li {
+    margin: 5px;
+}
+
+.vignette_pleine ul li {
     margin: 5px;
 }
 
@@ -126,7 +146,16 @@ h1 {
     margin-top: 10px;
     border: none;
 }
-
+.vignette_pleine button {
+    width: 165px;
+    height: 43px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    margin-top: 10px;
+    border: 1px solid white;
+}
 .cta-section {
     display: flex;
     justify-content: space-between;
