@@ -1,0 +1,148 @@
+/* Styles de base */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: left;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.tri-btn {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tri-btn svg {
+    margin-left: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 0;
+    z-index: 1;
+}
+
+.tri-btn:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 5px 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+.liste_equipe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+/* Styles des vignettes d'équipes */
+.vignette {
+    max-width: 253px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #fff;
+}
+
+.vignette_pleine {
+    max-width: 253px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 20px;
+    background: #FFFFFF1A;
+    text-align: center;
+    color: #fff;
+}
+
+#img-logo-{
+    width: 190px;
+    height: 190px;
+    border-radius: 100px;
+    margin-top: 20px;
+}
+
+.vignette img {
+    width: 190px;
+    height: 190px;
+    border-radius: 100px;
+    margin-top: 20px;
+}
+
+.vignette h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.vignette ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.vignette ul li {
+    margin: 5px;
+}
+
+.vignette button {
+    width: 165px;
+    height: 43px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #2F1D62;
+    color: #fff;
+    margin-top: 10px;
+    border: none;
+}
+
+.photos-section {
+    /* Styles pour la section de photos (à personnaliser) */
+}
+
+.cta-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.cta {
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 24px;
+}
+
+.cta-btn {
+    width: 165px;
+    height: 43px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #2F1D62;
+    color: #fff;
+    border: none;
+}
