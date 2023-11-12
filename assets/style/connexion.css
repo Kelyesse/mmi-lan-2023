@@ -1,5 +1,4 @@
 @import url(./variables.css);
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 * {
     margin: 0;
@@ -58,8 +57,7 @@ h1 {
     flex-direction: column;
 }
 
-input[type="email"],
-input[type="password"] {
+.style-input {
     background-color: #151515;
     padding: 10px;
     border: solid 1px #fff;
@@ -70,8 +68,7 @@ input[type="password"] {
     font-size: 16px;
     color: white;
 }
-input[type="email"]:focus,
-input[type="password"]:focus {
+.style-input:focus {
     background-color: #151515;
     padding: 10px;
     border: solid 1px #fff;
@@ -79,7 +76,6 @@ input[type="password"]:focus {
     border-right-style: none;
     border-left-style: none;
     outline: none; /* Ajout de cette ligne pour supprimer l'outline par défaut */
-
     font-size: 16px;
 }
 
@@ -133,7 +129,7 @@ input[type="password"]:focus {
 
 #forgot-password {
     color: var(--secondary-color);
-    font-family: "Inter", sans-serif;
+    font-family: var(--body-font);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -227,10 +223,27 @@ input[type="password"]:focus {
     position: relative;
 }
 
-
+#toggle-password{
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 5px;
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+}
 
 #eye-open{
     display: none;
+    width: 14px;
+    height: 14px;
+    filter: invert();
+}
+#eye-closed{
+    display: block;
+    width: 14px;
+    height: 14px;
+    color: white;
+    filter: invert();
 }
 
 

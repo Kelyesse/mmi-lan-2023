@@ -7,15 +7,19 @@ if (isset($_SESSION['id_participant'])) {
     // Si la session existe, redirige vers une autre page
     header('Location: index.php');
     exit();
+} else {
+    echo 'nop';
 }
+
 
 // Vérifier si le formulaire de connexion a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_POST['password'])) {
-
+    echo 'test';
     // Partie à modifier : récupérer les valeurs du formulaire et les protéger contre les injections SQL
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    // Partie à modifier : Utiliser une requête préparée avec PDO pour éviter les injections SQL
     $stmt = $db2->prepare("SELECT * FROM participant WHERE mail = :email AND mdp = :password");
 
     // Liaison des valeurs aux paramètres
@@ -31,9 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
     // Vérifier si la requête a réussi
     if ($result) {
         // Vérifier si l'utilisateur existe dans la base de données
-        if (mysqli_num_rows($result) == 1) {
+        if (count($result) == 1) {
             // L'utilisateur est authentifié avec succès
-            $_SESSION['id_participant'] = $result['id_participant'];
+            $_SESSION['id_participant'] = $result[0]['id_participant'];
             // Partie à modifier : Rediriger vers la page d'accueil ou une autre page après la connexion réussie
             header("Location: index.php");
             exit();
@@ -42,13 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
             $error_message = "Adresse e-mail ou mot de passe incorrect.";
         }
     } else {
-        // Erreur lors de l'exécution de la requête SQL
+        // Erreur lors de l'exécution de la requête SQL avec PDO
         $error_message = "Erreur lors de la connexion. Veuillez réessayer.";
     }
-
-    // Fermer la connexion à la base de données
-    $db2 = null;
 }
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
     ///php mailer
@@ -88,7 +91,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
             var eyeClosed = document.getElementById('eye-closed');
 
             // Basculer entre le type 'password' et 'text'
-            passwordInput.type = (passwordInput.type === 'password') ? 'text' : 'password';
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text'
+                eyeOpen.style.display = 'block'
+                eyeClosed.style.display = 'none'
+            } else {
+                passwordInput.type = 'password'
+                eyeOpen.style.display = 'none'
+                eyeClosed.style.display = 'block'
+            }
 
             // Basculer entre les icônes de l'œil ouvert et fermé
             eyeOpen.classList.toggle('visible', passwordInput.type === 'text');
@@ -103,11 +114,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
         <div class="flex-row">
             <div class="text-section">
                 <p id="subtitle">Vous n’avez pas de compte ?<br><a href="inscription.php">Inscrivez vous ici !</a></p>
-                <form method="post">
+                <form method="POST">
                     <div class="inputs">
-                        <input class="space1" type="email" name="email" placeholder="Entrer votre adresse mail" required />
+                        <input class="space1 style-input" type="email" name="email" placeholder="Entrer votre adresse mail" required />
                         <div class="space2">
-                            <input type="password" name="password" placeholder="Entrer votre mot de passe" required />
+                            <input type="password" class="style-input" id="password" placeholder="Entrer votre mot de passe" required />
                             <button type="button" id="toggle-password" onclick="togglePasswordVisibility()">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" id="eye-open"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                     <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
@@ -138,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
                 <span id="close-popup" class="close-popup">&times;</span>
                 <form method="post" class="flex-popup">
                     <p id="title-change-password">Changer de mot de passe</p>
-                    <input type="email" name="recover" placeholder="Entrer votre adresse mail">
+                    <input type="email" class="style-input" name="recover" placeholder="Entrer votre adresse mail">
                     <button type="submit">Recevoir le code</button>
                 </form>
             </div>
