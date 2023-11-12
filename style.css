@@ -33,21 +33,24 @@ h1 {
 .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: #fff;
-    border: 1px solid #000;
+    background-color: transparent;
+    border: 1px solid #ffffff;
     border-radius: 5px;
     padding: 5px 0;
     z-index: 1;
+    left: 20px;
+    margin-top: 10px;
 }
 
 .tri-btn:hover .dropdown-menu {
     display: block;
+    background-color: transparent;
 }
 
 .dropdown-menu a {
     display: block;
     padding: 5px 10px;
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
 }
 
