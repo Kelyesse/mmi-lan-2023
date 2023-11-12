@@ -9,7 +9,7 @@ body {
 
 header {
     text-align: left;
-    padding: 20px 0;
+    padding: 20px ;
 }
 
 h1 {
@@ -60,6 +60,8 @@ h1 {
 }
 
 /* Styles des vignettes d'équipes */
+
+
 .vignette {
     max-width: 253px;
     border: 1px solid #fff;
@@ -68,6 +70,7 @@ h1 {
     background: rgba(0, 0, 0, 0.6);
     text-align: center;
     color: #fff;
+    list-style: none;
 }
 
 .vignette_pleine {
@@ -78,6 +81,8 @@ h1 {
     background: #FFFFFF1A;
     text-align: center;
     color: #fff;
+    list-style: none;
+
 }
 
 #img-logo-{
@@ -117,10 +122,6 @@ h1 {
     color: #fff;
     margin-top: 10px;
     border: none;
-}
-
-.photos-section {
-    /* Styles pour la section de photos (à personnaliser) */
 }
 
 .cta-section {
