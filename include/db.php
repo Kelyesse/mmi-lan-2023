@@ -2,7 +2,7 @@
 
 $serveur = "localhost";
 $usernamedb = "root";
-$passworddb = "root";
+$passworddb = "";
 $dbname = "mmi-lan";
 
 
