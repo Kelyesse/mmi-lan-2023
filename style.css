@@ -95,6 +95,10 @@ h1 {
     margin-top: 20px;
 }
 
+.vignette a{
+    text-decoration: none;
+}
+
 .vignette img {
     width: 190px;
     height: 190px;
@@ -108,17 +112,6 @@ h1 {
     border-radius: 100px;
     margin-top: 20px;
 }
-
-.vignette h3 {
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-.vignette_pleine h3 {
-    margin-top: 10px;
-    font-size: 18px;
-}
-
 .vignette ul {
     padding-left: 0;
     list-style: none;
