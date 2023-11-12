@@ -13,7 +13,6 @@
     <div class="count-down-timer">
     </div>
     <main>
-        
         <div>
             <div id="title">
                 <h1>Inscription</h1>
