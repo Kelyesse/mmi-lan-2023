@@ -134,6 +134,7 @@ h1 {
     height: 190px;
     border-radius: 100px;
     margin-top: 20px;
+    padding: 40px;
 }
 .vignette ul {
     padding-left: 0;
@@ -178,9 +179,10 @@ h1 {
 }
 
 .vignette button:hover{
-    background-color: #211644;
-    transition: .5s;
+   background-color: #211644;
+   transition: .5s;
 }
+
 
 
 /* Styles généraux pour les images */
