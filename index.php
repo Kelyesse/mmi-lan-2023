@@ -90,19 +90,19 @@
 
         <div class="animated-banner">
             <div class="space-invaders" id="group1">
-                <img src="" alt="" class="space-invader">
-                <img src="" alt="" class="space-invader">
-                <img src="" alt="" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
             </div>
             <div class="space-invaders" id="group2">
-                <img src="./assets/img/space-invader.svg" alt="" class="space-invader">
-                <img src="" alt="" class="space-invader">
-                <img src="" alt="" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
             </div>
             <div class="space-invaders" id="group3">
-                <img src="" alt="" class="space-invader">
-                <img src="" alt="" class="space-invader">
-                <img src="" alt="" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
             </div>
         </div>
         <section class="social-media">
@@ -152,7 +152,7 @@
                 <div class="twitch-title">
                     Retrouvez ici la retranscription live Twitch de la MMI LAN
                 </div>
-                <div class="twitch-embed"></div>
+                <div class="twitch-embed" loading="lazy"></div>
             </div>
         </section>
     </main>
