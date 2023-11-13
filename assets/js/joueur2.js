@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    var joueur_deux = $('#joueur_deux');
-    var joueur_un = $('#joueur_un');
+    var player_two = $('#player-two');
+    var player_one = $('#player-one');
 
-    joueur_deux.hide();
+    player_two.hide();
 
-    joueur_un.change(function(){
-        joueur_deux.show();
+    player_one.change(function(){
+        player_two.show();
     });
 });

@@ -15,11 +15,6 @@ html, body {
     background-color: #151515;
 }
 
-header {
-    min-height: 100px;
-    background-color: #212121;
-}
-
 h1, h2, h3 {
     font-family: Overused Grotesk, sans-serif;
     font-weight: 900;
@@ -75,7 +70,7 @@ main>div{
     gap: 45px;
 }
 
-#titre{
+#title{
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -91,15 +86,19 @@ form{
 
 input, select, textarea{
     background-color:#151515;
-    margin: 15px 0;
     border: solid 1px #fff;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.25);
-    width: 97%;
-    padding: 3%;
+    width: 100%;
+    padding: 20px 0;
+}
+
+input:focus, select:focus, textarea:focus {
+    color: #fff;
+    outline: none; /* Ajout de cette ligne pour supprimer l'outline par défaut */
 }
 
 textarea{
@@ -116,7 +115,7 @@ textarea{
     width: auto;
 }
 
-#formulaire{
+#form{
     width: 50vw;
 }
 
