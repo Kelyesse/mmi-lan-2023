@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id = generateId($db->query('SELECT PlayerId FROM player')->fetchAll(PDO::FETCH_COLUMN));
 
                 // Insertion des données dans la base de données en fonction du rôle
-                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerPicture, PlayerStatus, PlayerCreationDate, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :avatar, :statut, :datecrea, :setup, :favgame)";
+                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerPicture, PlayerStatus, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :avatar, :statut, :setup, :favgame)";
                 $stmt = $db->prepare($sql);
 
                 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -90,7 +90,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                 $stmt->bindParam(':mdp',  $mdp1, PDO::PARAM_STR);
                 $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
-                $stmt->bindParam(':datecrea',  date('Y-m-d H:i:s'), PDO::PARAM_STR);
 
                 if ($role === "Participant") {
                     $stmt->bindParam(':setup',  $selectedSetup, PDO::PARAM_STR);
