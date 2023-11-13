@@ -39,7 +39,7 @@
         $teamId=$_GET['teamId'];
     }
     ?>
-    <div id="alertRejoindreEquipe" hidden>
+    <div id="alertRejoindreEquipe">
       <h2>Vous allez rejoindre l'équipe <?php echo $teamName  ?></h2>
       <form action="rejoindreEquipe.php?teamId=<?php echo $teamId?>" method="post">
           <textarea name="playerDesc" id="" cols="30" rows="10" placeholder="Ecrire une description de vous"></textarea>
