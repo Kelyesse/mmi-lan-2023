@@ -178,9 +178,10 @@ h1 {
 }
 
 .vignette button:hover{
-    background-color: #211644;
-    transition: .5s;
+   background-color: #211644;
+   transition: .5s;
 }
+
 
 
 /* Styles généraux pour les images */
