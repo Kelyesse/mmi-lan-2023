@@ -18,10 +18,9 @@
   <script src="./assets/js/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
-      $("#alertRejoindreEquipe").hide();
       $(".rejoindre").click(function() {
         $("main").css("opacity", "0.50");
-        $("#alertRejoindreEquipe").show();
+        $("#alertRejoindreEquipe").css("display", "inline-flex");
       });
     });
   </script>

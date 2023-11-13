@@ -579,9 +579,10 @@ main {
 
   #alertRejoindreEquipe {
     position: absolute;
-    top: 250px;
-    left: 350px;
-    display: inline-flex;
+    z-index: 99999;
+    top: 50%;
+    left: 25%;
+    display: none;
     padding: 20px;
     flex-direction: column;
     align-items: flex-start;
