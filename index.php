@@ -137,7 +137,6 @@
                         <img src="./assets/img/discord-logo.svg" alt="discord-logo" class="social-img" />
                     </a>
                 </li>
-
             </ul>
         </section>
 
@@ -157,37 +156,7 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="logo-area">
-                <img src="assets/img/logo.svg" alt="">
-            </div>
-
-            <div class="social-links">
-
-                <p>Nous suivre :</p>
-                <div class="social-icons">
-                    <img src="assets/img/tiktok-logo.svg" alt="">
-                    <img src="assets/img/insta-logo.svg" alt="">
-                    <img src="assets/img/yt-logo.svg" alt="">
-                    <img src="assets/img/twitter-logo.svg" alt="">
-                    <img src="assets/img/discord-logo.svg" alt="">
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <a href="#">Règlement</a>
-                <a href="#">FAQ</a>
-                <a href="#">Contact</a>
-                <a href="#">RGPD</a>
-                <a href="#">Mention légales</a>
-            </div>
-
-        </div>
-        <div class="footer-banner">
-            <div class="copyright-text">Copyrights © 2023</div>
-        </div>
-    </footer>
+    <?php include 'footer.php' ?>
 
     <!-- JS files -->
     <script src="assets/js/countDown.js"></script>
