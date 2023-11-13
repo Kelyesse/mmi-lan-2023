@@ -28,7 +28,7 @@
             </div>
         </section>
 
-        <section class="sponsors">
+        <section class="sponsors hidden-content">
             <h2>Avec le soutien de</h2>
             <div class="logo-container">
                 <img src="assets/img/logo-univ-toulon.png" alt="Université de Toulon" class="sponsor-logo">
@@ -43,7 +43,7 @@
         <section class="about-section">
             <div class="about-content-container">
                 <div class="explanation-text-container">
-                    <div class="lan-explanation-text">Texte d’explication de la LAN</div>
+                    <div class="lan-explanation-text">C'est quoi la MMI LAN ?</div>
                     <div class="description-text">La MMI LAN est un événement centré sur le jeu vidéo, organisé par des
                         MMI pour des MMI !
                         <br>
@@ -90,19 +90,19 @@
 
         <div class="animated-banner">
             <div class="space-invaders" id="group1">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
             </div>
             <div class="space-invaders" id="group2">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
             </div>
             <div class="space-invaders" id="group3">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
-                <img src="./assets/img/space-invaders.svg" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
             </div>
         </div>
         <section class="social-media">
@@ -159,10 +159,6 @@
 
     <footer>
         <div class="footer-container">
-
-            <!-- <div id="pacman-animation-container"></div> -->
-
-
             <div class="logo-area">
                 <img src="assets/img/logo.svg" alt="">
             </div>
@@ -197,7 +193,6 @@
     <script src="assets/js/countDown.js"></script>
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <script src=" assets/js/twitchPlayer.js"></script>
-    <!-- pacman footer -->
     <!-- Inclure p5.js -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>-->
 
