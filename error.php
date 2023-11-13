@@ -11,18 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id="fond">
+    <section id="background">
         <!--texte en fond-->
         <p id="desole">désolé</p>
         <!--premier div avec le texte et bouton-->
-        <div id="divpr">
+        <div id="divfirst">
             <!-- div avec le texte sans le bouton -->
-            <div id="divdeux">
+            <div id="divsec">
                 <p id="qcq">404</p>
-                <p id="existepas">La page que vous cherchez n'existe pas</p>
+                <p id="existe">La page que vous cherchez n'existe pas</p>
             </div>
             <!--bouton-->
-            <a href="index.php" id="retourAcc">Retour à l'accueil</a>
+            <a href="index.php" id="backAcc">Retour à l'accueil</a>
         </div>
     </section>
 </body>

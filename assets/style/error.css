@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-#fond {
+#background {
     width: 100%;
     height: 503px;
     background: var(--background-color);
@@ -49,7 +49,7 @@
     text-transform: uppercase;
 }
 
-#existepas{
+#exist{
     color:  #FFF;
     text-align: center;
 
@@ -61,7 +61,7 @@
     line-height: 23px; /* 143.75% */
 }
 
-#divpr{
+#divfirst{
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -69,13 +69,13 @@
     z-index: 100;
 }
 
-#divdeux{
+#divsec{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#retourAcc {
+#backAcc {
     color: #FFF;
     text-decoration: none ;
 
@@ -114,13 +114,13 @@
     #qcq {
         font-size: 155px;
     }
-    #existepas{
+    #exist{
         font-size: 15px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 15px;
     }
-    #divpr{
+    #divfirst{
         gap: 55px;
     }
 }
@@ -132,13 +132,13 @@
     #qcq {
         font-size: 150px;
     }
-    #existepas{
+    #exist{
         font-size: 15px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 15px;
     }
-    #divpr{
+    #divfirst{
         gap: 50px;
     }
 }
@@ -150,13 +150,13 @@
     #qcq {
         font-size: 145px;
     }
-    #existepas{
+    #exist{
         font-size: 15px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 15px;
     }
-    #divpr{
+    #divfirst{
         gap: 50px;
     }
 }
@@ -168,13 +168,13 @@
     #qcq {
         font-size: 140px;
     }
-    #existepas{
+    #exist{
         font-size: 14px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 14px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
 }
@@ -185,13 +185,13 @@
     #qcq {
         font-size: 135px;
     }
-    #existepas{
+    #exist{
         font-size: 14px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 14px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
 }
@@ -202,13 +202,13 @@
     #qcq {
         font-size: 130px;
     }
-    #existepas{
+    #exist{
         font-size: 14px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 14px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -220,13 +220,13 @@
     #qcq {
         font-size: 125px;
     }
-    #existepas{
+    #exist{
         font-size: 13px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 13px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -238,13 +238,13 @@
     #qcq {
         font-size: 120px;
     }
-    #existepas{
+    #exist{
         font-size: 13px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 13px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -256,13 +256,13 @@
     #qcq {
         font-size: 115px;
     }
-    #existepas{
+    #exist{
         font-size: 13px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 13px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -275,13 +275,13 @@
     #qcq {
         font-size: 110px;
     }
-    #existepas{
+    #exist{
         font-size: 12px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 12px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -293,13 +293,13 @@
     #qcq {
         font-size: 105px;
     }
-    #existepas{
+    #exist{
         font-size: 12px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 12px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -311,13 +311,13 @@
     #qcq {
         font-size: 100px;
     }
-    #existepas{
+    #exist{
         font-size: 12px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 12px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -329,13 +329,13 @@
     #qcq {
         font-size: 95px;
     }
-    #existepas{
+    #exist{
         font-size: 11px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 11px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -347,13 +347,13 @@
     #qcq {
         font-size: 90px;
     }
-    #existepas{
+    #exist{
         font-size: 11px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 11px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -365,13 +365,13 @@
     #qcq {
         font-size: 85px;
     }
-    #existepas{
+    #exist{
         font-size: 11px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 11px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
@@ -383,13 +383,13 @@
     #qcq {
         font-size: 80px;
     }
-    #existepas{
+    #exist{
         font-size: 11px;
     }
-    #retourAcc{
+    #backAcc{
         font-size: 11px;
     }
-    #divpr{
+    #divfirst{
         gap: 45px;
     }
     
