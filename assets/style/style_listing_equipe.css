@@ -94,7 +94,7 @@ h1 {
     width: 190px;
     height: 190px;
     border-radius: 100px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .vignette a.NomTeam{
@@ -126,6 +126,7 @@ h1 {
     height: 190px;
     border-radius: 100px;
     margin-top: 20px;
+    padding: 40px;
 }
 
 .vignette_pleine img {
