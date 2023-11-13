@@ -75,7 +75,7 @@
         else{
             echo '<a href="details_equipes.php?teamId='.$nbEquipe.'"><img src="images/fleche_gauche.svg" alt="flèche gauche"></a>';
         }
-        echo ' <a class="retour" href="[fichier_test]equipes.php">Retour au listing des équipes</a> ';
+        echo ' <a class="retour" href="[fichier_test]equipes.php">Retour au listing des équipes</a> '; //A MODIFIER
         if($teamId < $nbEquipe){
             echo '<a href="details_equipes.php?teamId='.($teamId+1).'"><img src="images/fleche_droite.svg" alt="flèche gauche"></a>';
         }
