@@ -22,7 +22,7 @@
                 <a class="dropdown-item" href="listing_equipe.php?order=desc">Inverse Alphabétique</a>
             </div>
         </div>
-    </div>
+  </div>
     <div class="liste_equipe"> 
 
     <?php include 'listing_equipe_vignette.php' ; ?>
