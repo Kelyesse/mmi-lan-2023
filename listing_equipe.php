@@ -32,5 +32,27 @@
     <?php include 'listing_equipe_logo.php' ; ?>
 
     </div>
+    <?php 
+    if(isset($_GET['rejoindreEquipe'])){
+        $teamName=$_GET['teamName'];
+        $teamId=$_GET['teamId'];
+    }
+    ?>
+    <div id="alertRejoindreEquipe" hidden>
+      <h2>Vous allez rejoindre l'équipe <?php echo $teamName  ?></h2>
+      <form action="rejoindreEquipe.php?teamId=<?php echo $teamId?>" method="post">
+          <textarea name="playerDesc" id="" cols="30" rows="10" placeholder="Ecrire une description de vous"></textarea>
+          <input type="submit" value="Rejoindre">
+          <input type="button" onclick='window.location.href="listing_equipe.php"' value="J'ai changé d'avis">
+      </form>
+  </div>
+  <?php
+  function showAlertForm(){
+        if(isset($_GET['rejoindreEquipe'])){
+            echo '<script>blocAlert = document.getElementById("alertRejoindreEquipe"); blocAlert.style.display = "block";</script>';
+        }
+    }
+    showAlertForm();
+    ?>
 </body>
 </html>
