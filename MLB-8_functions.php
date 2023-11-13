@@ -62,7 +62,7 @@ function getTeamMembers($teamId, $db)
         }
         if (!$dansequipe) {
             $message = "Rejoindre l'équipe";
-            echo '<a class="rejondre" href="details_equipes.php?teamId=' . $teamId . '&rejoindreEquipe=' . true . '">' . $message . '</a>';
+            echo '<a class="rejoindre" href="details_equipes.php?teamId=' . $teamId . '&rejoindreEquipe=' . true . '">' . $message . '</a>';
         }
         echo '</div>';
         $nbMembres++;
