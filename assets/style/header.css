@@ -1,0 +1,136 @@
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width:768px) {
+
+    .main{
+        display: flex;
+        align-items: center;
+        width: 100vw;
+        height: 75px;
+        background-color: #212121;
+    }
+    
+    @font-face {
+        font-family: 'Montseerrat';
+        src: url(‘/fonts/Montserrat-Medium’) format(‘Montserrat-Medium’),
+    }
+    
+    #div_logo{
+        margin:0 36% 0 100px;
+    }
+    
+    #logo{
+        width: 60px;
+    }
+    
+    .rubriques{
+        display: flex;
+        justify-content: space-around;
+        margin: 0 25px 0 0;
+    }
+    
+    .bouton_rubrique{
+        margin: 0 60px 0 0;
+        font-family: 'Montserrat';
+        font-size: 10pt;
+    }
+    
+    a{
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    
+    #bouton_contact{
+        border-radius: 5px;
+        background-color: #FEBC11;
+        padding: 10px 10px 10px 10px;
+        margin: 0 25px 0 0;
+        font-family: 'Montserrat';
+        font-size: 10pt;
+    }
+    
+    #bouton_participer{
+        border-radius: 5px;
+        background-color: #2F1D62;
+        padding: 10px 10px 10px 10px;
+        margin: 0 25px 0 0;
+        font-family: 'Montserrat';
+        font-size: 10pt;
+    }
+    
+    #icon_compte{
+        width: 25px;
+        filter: invert();
+    }
+
+    .rubriques_burger{
+        display: none;
+    }
+
+    #fermer{
+        display: none;
+    }
+    
+    
+}
+
+@media screen and (max-width:768px) {
+
+    .main{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 106.54px;
+        background-color: #212121;
+    }   
+
+    #div_logo{
+        padding:0 50vw 0 30px;
+    }
+    
+    #logo{
+        width: 60px;
+    }
+
+    .rubriques{
+        display: flex;
+        justify-content: space-around;
+        margin: 0 25px 0 0;
+    }
+    
+    .bouton_rubrique{
+        margin: 0 60px 0 0;
+        font-family: 'Montserrat';
+        font-size: 10pt;
+    }
+    #bouton_contact, #bouton_participer, #icon_compte, .bouton_rubrique{
+        display: none;
+    }
+
+    #bouton_burger{
+        display: grid;
+    }
+
+    .steak{
+        position: relative;
+        width: 30px;
+        border-radius: 5px;
+        border: solid #FFFFFF 2px;
+        margin-bottom: 10px;
+    }
+
+    .rubriques_burger{
+        display: none;
+    }
+
+    #croix_fermer{
+        width: 30px;
+        filter: invert();
+        display: none;
+    }
+    
+}
