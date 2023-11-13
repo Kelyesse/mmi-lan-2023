@@ -19,7 +19,7 @@
             <!-- div avec le texte sans le bouton -->
             <div id="divsec">
                 <p id="qcq">404</p>
-                <p id="existe">La page que vous cherchez n'existe pas</p>
+                <p id="exist">La page que vous cherchez n'existe pas</p>
             </div>
             <!--bouton-->
             <a href="index.php" id="backAcc">Retour à l'accueil</a>
