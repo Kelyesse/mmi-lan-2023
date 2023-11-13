@@ -177,6 +177,10 @@ h1 {
     font-size: 16px;
 }
 
+.vignette button:hover{
+    background-color: #211644;
+    transition: .5s;
+}
 
 
 /* Styles généraux pour les images */
