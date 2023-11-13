@@ -1,25 +1,35 @@
 <?php
-include("connexion.php"); //A MODIFIER
+require_once("connexion.php"); 
 
-$requete1 = "SET @row_number = 0;";
-$stmt1 = $bdd->prepare($requete1);
+function getTeamsData($bdd) {
+    try {
+        $bdd->beginTransaction();
 
-$stmt1->execute();
-$stmt1->close();
+        $stmt1 = $bdd->prepare("SET @row_number = 0;");
+        $stmt1->execute();
+        $stmt1->closeCursor();
 
-$requete2 = "SELECT (@row_number:=@row_number + 1) AS num, TeamName, TeamLogo FROM Team LIMIT 11";
-$stmt2 = $bdd->prepare($requete2);
+        $stmt2 = $bdd->prepare("SELECT (@row_number:=@row_number + 1) AS num, TeamName, TeamLogo FROM Team LIMIT 11");
+        $stmt2->execute();
 
-$stmt2->execute();
-$result = $stmt2->get_result();
-$no = 0;
+        $no = 0;
 
-while ($donnees = $result->fetch_assoc()) {
-    $no++;
-    $image = $donnees['TeamLogo'];
-    
-    echo '<img id="img-logo-'.$no.'" src="'.$image.'" alt="' . $donnees['TeamName'] . '" />';
+        while ($donnees = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+            $no++;
+            $image = $donnees['TeamLogo'];
+            
+            echo '<img id="img-logo-'.$no.'" src="'.$image.'" alt="' . $donnees['TeamName'] . '" />';
+        }
+
+        $stmt2->closeCursor();
+        
+        $bdd->commit();
+    } catch (PDOException $e) {
+        $bdd->rollBack();
+        echo "Error: " . $e->getMessage();
+    }
 }
 
-$stmt2->close();
+$bdd = Connexion();
+getTeamsData($bdd);
 ?>

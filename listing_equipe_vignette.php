@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-function getEquipes() {
+function getEquipes($bdd) {
     $equipes = array();
-    include("connexion.php"); //A MODIFIER
+    
     if (isset($_GET['order']) && $_GET['order'] == 'desc') {
         $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamName DESC";
     } 
@@ -18,43 +18,39 @@ function getEquipes() {
     
     $stmt2 = $bdd->prepare($prep);
     $stmt2->execute();
-    $resultat = $stmt2->get_result();
-    while ($ligne = $resultat->fetch_assoc()) {
-        $equipes[] = $ligne;
-    }
-    $stmt2->close();
+    $equipes = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+    $stmt2->closeCursor();
+    
     return $equipes;
 }
 
-function getJoueursByEquipe($equipeId) {
+function getJoueursByEquipe($bdd, $equipeId) {
     $joueurs = array();
-    include("connexion.php"); //A MODIFIER
+    
     $sqlp = "SELECT p.PlayerPseudo
         FROM Player p
         INNER JOIN BelongTeam b ON p.PlayerId = b.PlayerId
         WHERE b.TeamId = ?";
 
     $stmt = $bdd->prepare($sqlp);
-    $stmt->bind_param("i", $equipeId); 
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    while ($row = $result->fetch_assoc()) {
-        $joueurs[] = $row;
-    }
-
-    $stmt->close();
+    $stmt->execute([$equipeId]);
+    $joueurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    
     return $joueurs;
 }
 
+
+
 if (!isset($equipes)) {
-    $equipes = getEquipes();
+    require_once ("connexion.php");
+    $equipes = getEquipes($bdd);
 }
 
 if (count($equipes) > 0) {
     foreach ($equipes as $equipe) {
         $nbr = 0;
-        $joueurs = getJoueursByEquipe($equipe['TeamId']);
+        $joueurs = getJoueursByEquipe($bdd, $equipe['TeamId']);
 
         foreach ($joueurs as $pseudo) {
             $nbr++;

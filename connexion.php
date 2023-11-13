@@ -1,13 +1,20 @@
-<?php
-$serveur = "localhost"; 
-$utilisateur = "root"; 
-$mot_de_passe = "root"; 
-$base_de_donnees = "MMI-LAN"; 
-
-$bdd = new mysqli($serveur, $utilisateur, $mot_de_passe, $base_de_donnees);
-
-if ($bdd->connect_error) {
-    die("La connexion à la base de données a échoué : " . $bdd->connect_error);
-}
-
+<?php 
+    function Connexion(){
+        $hostname = 'localhost';  
+        $username = 'root'; 
+        $password = 'root';
+        $db = 'mmi-lan';
+        // Data Source Name
+        $dsn = "mysql:host=$hostname;dbname=$db";
+        try {
+            $bdd = new PDO($dsn, $username, $password);
+            $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            return $bdd;
+        }
+        catch(PDOException $e){
+            echo "Erreur de connection ! </br>";
+            echo $e->getMessage();
+        }
+    }
+    $bdd = connexion();
 ?>
