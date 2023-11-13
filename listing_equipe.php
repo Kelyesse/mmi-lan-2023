@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Equipes</title>
     <link rel="stylesheet" href="./assets/style/style_listing_equipe.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -43,8 +44,8 @@
       <form action="rejoindreEquipe.php?teamId=<?php echo $teamId?>" method="post">
           <textarea name="playerDesc" id="" cols="30" rows="10" placeholder="Ecrire une description de vous"></textarea>
             <div>
-                <input type="button" onclick='window.location.href="listing_equipe.php"' value="J'ai changé d'avis">
                 <input type="submit" value="Rejoindre">
+                <input type="button" onclick='window.location.href="listing_equipe.php"' value="J'ai changé d'avis">
             </div>
       </form>
   </div>
@@ -56,5 +57,6 @@
     }
     showAlertForm();
     ?>
+    
 </body>
 </html>
