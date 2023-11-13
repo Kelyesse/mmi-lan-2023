@@ -25,46 +25,46 @@
                 <form action="#" method="post">
                     <div>
                         <div>
-                            <div class="double_inp">
+                            <div class="double-inp">
                                 <input type="text" placeholder="Entrer votre nom" name="nom" required>
                                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
                             </div>
-                            <div class="simple_inp">
+                            <div class="simple-inp">
                                 <input type="text" placeholder="Entrer votre pseudo" name="pseudo" required>
                             </div>
-                            <div class="simple_inp">
+                            <div class="simple-inp">
                                 <input type="email" placeholder="Entrer votre email" name="email" required>
                             </div>
-                            <div class="double_inp">
+                            <div class="double-inp">
                                 <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" required>
                                 <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" required>
                             </div>
-                            <p id="config_psw">
+                            <p id="config-psw">
                                 Le mot de passe doit contenir : <br>
                                 8 caractères, 1 caractère en minuscule, 1 caractère en majuscule, 1 chiffre
                             </p>
                             <div class="radio">
                                 <div>
-                                    <input type="radio" name="setup" value="PC portable" id="portable" required>
-                                    <label for="portable">PC portable</label><br>
-                                </div>
-                                <div>
-                                    <input type="radio" name="setup" value="PC fixe" id="fixe" required>
-                                    <label for="fixe">PC fixe</label><br>
-                                </div>
-                            </div>
-                            <div class="radio">
-                                <div>
-                                    <input type="radio" name="role" class="role" value="Participant" id="participant">
+                                    <input type="radio" name="role" class="role" value="Participant" id="participant" required>
                                     <label for="participant">Participant</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" name="role" class="role" value="Spectateur" id="spectateur">
-                                    <label for="spectateur">Spectateur</label>
+                                    <input type="radio" name="role" class="role" value="Spectateur" id="spectateur" required>
+                                    <label for="spectateur">Conducteur</label>
                                 </div>
                             </div>
-                            <div class="simple_inp">
-                                <select name="favjeu" id="select_jeu">
+                            <div class="radio setup">
+                                <div>
+                                    <input type="radio" name="setup" value="PC portable" id="portable" >
+                                    <label for="portable">PC portable</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" name="setup" value="PC fixe" id="fixe" >
+                                    <label for="fixe">PC fixe</label><br>
+                                </div>
+                            </div>
+                            <div class="simple-inp">
+                                <select name="favjeu" id="select_jeu" >
                                     <option value="">Choississez votre jeu favoris</option>
                                     <option value="Track Mania: Nation Forever">Track Mania: Nation Forever</option>
                                     <option value="Geo Guesseur">Geo Guesseur</option>
@@ -75,7 +75,7 @@
                                     <option value="Mario Kart">Mario Kart</option>
                                 </select>
                             </div>
-                            <div id="fin_form">
+                            <div id="end-form">
                                 <div>
                                     <input type="checkbox" name="souvenir" id="souvenir">
                                     <label for="souvenir">Se souvenir de moi</label>
@@ -138,9 +138,13 @@
 
                                 <!--Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer-->
 
-                                <input type="hidden" name="avatar" id="avatar" value="">
+                                <input type="hidden" name="avatar" id="avatar" value="" required>
                             </div>
                         </div>
+                    </div>
+                    <div id="accept-rules">
+                        <input type="checkbox" name="rules" id="rules" required>
+                        <label for="rules">En vous inscrivant vous acceptez le règlement de la MMI LAN ainsi que le traitement de vos données.</label>
                     </div>
                     <input type="submit" id="submit" value="Inscription">
                 </form>
@@ -148,7 +152,8 @@
         </div>
     </main>
 <script src="./assets/js/countDown.js"></script>
-<script src="./assets/js/jeu_fav.js"></script>
+<script src="./assets/js/role_participant.js"></script>
 <script src="./assets/js/gallerie_avatar.js"></script>
+<script src="./assets/js/gestion_mdp.js"></script>
 </body>
 </html>

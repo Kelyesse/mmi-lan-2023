@@ -4,8 +4,8 @@
     padding: 0;
     margin: 0;
     color: #fff;
-    font-family: Montserrat;
     align-items: center;
+    font-family: var(--body-font);
 }
 
 html, body {
@@ -14,13 +14,8 @@ html, body {
     background-color: #151515;
 }
 
-header {
-    min-height: 100px;
-    background-color: #212121;
-}
-
 h1, h2, h3 {
-    font-family: Overused, sans-serif;
+    font-family: var(--accent-font);
     font-weight: 900;
     color: #fff;
 }
@@ -32,7 +27,7 @@ h1 {
 
 h2 {
     font-size: 32px;
-    font-family: Montserrat;
+    font-family: var(--body-font);
 }
 
 h3 {
@@ -43,6 +38,7 @@ p {
     font-size: 16px;
     font-weight: 400;
     line-height: 23px;
+    font-family: var (--body-font);
 }
 
 
@@ -87,22 +83,26 @@ form>div{
     justify-content: space-between;
 }
 
-.double_inp{
+.double-inp{
     display: flex;
     gap: 20px;
     justify-content: space-between;
 }
 
-.simple_inp input{
+.simple-inp{
     width: 100%;
 }
 
-#config_psw{
+.simple-inp input{
+    width: 100%;
+}
+
+#config-psw{
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 50%;
+    width: 100%;
     margin-bottom: 15px;
 }
 
@@ -129,10 +129,15 @@ form>div{
 
 }
 
+form>div>div{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 input{
     background-color:#151515;
     padding: 10px 0px ;
-    margin: 15px 0;
     border: solid 1px #fff;
     border-top-style: none;
     border-right-style: none;
@@ -142,15 +147,21 @@ input{
     color: rgba(255, 255, 255, 0.25);
 }
 
+input:focus {
+    outline: none;
+    color: #fff;
+}
+
 input[type="radio"], input[type="checkbox"] {
     width:10px;
 }
 
-#fin_form{
+#end-form{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
 }
-
 
 #submit{
     padding: 10px;
@@ -188,6 +199,17 @@ input[type="radio"], input[type="checkbox"] {
 
 .active {
     border: solid 2px #CD0C75;
+    width: 105px;
+    height: 105px;
+}
+
+#accept-rules{
+    display: block;
+    margin-bottom: 30px;
+}
+
+#config-psw.valid {
+    color: green;
 }
 
 @media only screen and (max-width: 1240px) {
@@ -199,23 +221,23 @@ input[type="radio"], input[type="checkbox"] {
 
 @media only screen and (max-width: 700px) {
 
-    .double_inp {
+    .double-inp {
         flex-direction: column;
     }
 
-    .double_inp{
+    .double-inp{
         gap: 0;
     }
 
-    .double_inp input{
+    .double-inp input{
         width: 88vw;
     }
 
-    .simple_inp input{
+    .simple-inp input{
         width: 88vw;
     }
 
-    #fin_form{
+    #end-form{
         width: 88vw;
     }
 
