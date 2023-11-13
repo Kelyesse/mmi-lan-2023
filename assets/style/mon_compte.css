@@ -1,26 +1,9 @@
 @import url(./variables.css);
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../font/Montserrat/Montserrat-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Montserrat_bold';
-    src: url('../font/Montserrat/Montserrat-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Overused';
-    src: url('../font/overused_grotesk/fonts/ttf/OverusedGrotesk-Black.ttf') format('truetype');
-}
-
-
 * {
     padding: 0;
     margin: 0;
     color: #fff;
-    font-family: Montserrat;
     align-items: center;
 }
 
@@ -32,7 +15,7 @@ html, body {
 
 
 h1, h2, h3, h4 {
-    font-family: Overused, sans-serif;
+    font-family: var(--accent-font);
     font-weight: 900;
     color: #fff;
 }
@@ -44,7 +27,7 @@ h1 {
 
 h2 {
     font-size: 32px;
-    font-family: Montserrat;
+    font-family: var(--body-font);
 }
 
 h3 {
@@ -56,7 +39,7 @@ h3 {
 }
 
 p {
-    font-family: Montserrat;
+    font-family: var(--body-font);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -131,7 +114,7 @@ section{
     width: 100%;
 }
 
-#player-info img{
+#player-info>img{
     width: 400px;
     height: 400px;
 }
