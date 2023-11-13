@@ -52,19 +52,19 @@ if (count($equipes) > 0) {
             $image = $equipe['TeamLogo'];
             echo '<li class="vignette_pleine" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
             echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
-            echo $equipe['TeamName'] . '</a>';
+            echo $equipe['TeamName'];
             echo '<p>-</p>';
 
             foreach ($joueurs as $pseudo) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
             }
 
-            echo '<button class="button_full">Equipe complète</button></li>';
+            echo '<button class="button_full">Equipe complète</button></a></li>';
         } else {
             $image = $equipe['TeamLogo'];
             echo '<li class="vignette" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
             echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
-            echo $equipe['TeamName'] . '</a>';
+            echo $equipe['TeamName'] ;
             echo '<p>-</p>';
 
 
@@ -72,7 +72,7 @@ if (count($equipes) > 0) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
             }
 
-            echo '<button class="button_join">Rejoindre l\'équipe</button></li>';
+            echo '<button class="button_join">Rejoindre l\'équipe</button> </a> </li>';
         }
     }
 }
