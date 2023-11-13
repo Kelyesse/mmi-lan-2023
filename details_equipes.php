@@ -17,9 +17,11 @@
 
   <!-- <script src="./assets/js/jquery.min.js"></script>
   <script>
-    $(document).ready(function() {
-      $(".rejoindre").click(function() {
-        $("body").css("opacity", "0.50");
+    $(document).ready(function () {
+      $("#alertRejoindreEquipe").css("display", "none");
+      $(".rejoindre").click(function () {
+        $("main").css("opacity", "0.50");
+        $("#alertRejoindreEquipe").css("display", "inline-flex");
       });
     });
   </script> -->

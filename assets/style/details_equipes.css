@@ -256,6 +256,7 @@ main #retour .retour {
   align-items: center;
   gap: 5px;
   border-radius: 5px;
+  cursor: pointer;
   color: var(--text-CAT, #fff);
   /* Desktop/p-desktop */
   font-family: Montserrat;
