@@ -328,3 +328,40 @@ h1 {
   
 
   
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 140px;
+}
+
+.bottom {
+    text-align: center;
+}
+
+.bottom h2 {
+    font-size: 24px;
+}
+
+.bottom-bouton {
+    width: 165px;
+    height: 43px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #2F1D62;
+    color: #fff;
+    border: none;
+}
+
+.bottom-bouton:hover{
+  background-color: #211644;
+  transition: .5s;
+}
+
+/* Media Query pour les écrans de taille réduite */
+@media (max-width: 600px) {
+  .bottom-section {
+      flex-direction: column; /* Passe en colonne au lieu de la ligne */
+      align-items: center; /* Centre les éléments verticalement */
+  }
+}

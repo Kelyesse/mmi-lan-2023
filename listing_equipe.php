@@ -58,5 +58,15 @@
     showAlertForm();
     ?>
     
+    <section class="bottom-section">
+        <div class="bottom">
+            <h2>Vous n'avez pas d'équipe ?</h2>
+            <button class="bottom-bouton">Inscrivez-vous</button>
+        </div>
+        <div class="bottom">
+            <h2>Vous voulez créer votre équipe ?</h2>
+            <button class="bottom-bouton">Créer une équipe</button>
+        </div>
+    </section>
 </body>
 </html>
