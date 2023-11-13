@@ -15,10 +15,10 @@
                 <path d="M8 10.828 1.354 4.182a1 1 0 0 1 1.414-1.414L8 8.586l5.232-5.232a1 1 0 1 1 1.414 1.414L8 10.828z"/>
             </svg>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Plus Récent</a>
-                <a class="dropdown-item" href="#">Plus Ancien</a>
-                <a class="dropdown-item" href="#">Ordre Alphabétique</a>
-                <a class="dropdown-item" href="#">Inverse Alphabétique</a>
+                <a class="dropdown-item" href="listing_equipe.php?order=recent">Plus Récent</a>
+                <a class="dropdown-item" href="listing_equipe.php?order=ancien">Plus Ancien</a>
+                <a class="dropdown-item" href="listing_equipe.php?order=asc">Ordre Alphabétique</a>
+                <a class="dropdown-item" href="listing_equipe.php?order=desc">Inverse Alphabétique</a>
             </div>
         </div>
     </header>

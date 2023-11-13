@@ -3,7 +3,19 @@
 function getEquipes() {
     $equipes = array();
     include("connexion.php");
-    $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team";
+    if (isset($_GET['order']) && $_GET['order'] == 'desc') {
+        $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamName DESC";
+    } 
+    elseif(isset($_GET['order']) && $_GET['order'] == 'ancien'){
+        $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamId ASC";
+    }
+    elseif(isset($_GET['order']) && $_GET['order'] == 'recent'){
+        $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamId DESC";
+    }
+    else {
+        $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamName ASC";
+    }
+    
     $stmt2 = $bdd->prepare($prep);
     $stmt2->execute();
     $resultat = $stmt2->get_result();
