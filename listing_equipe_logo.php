@@ -1,5 +1,5 @@
 <?php
-include("connexion.php");
+include("connexion.php"); //A MODIFIER
 
 $requete1 = "SET @row_number = 0;";
 $stmt1 = $bdd->prepare($requete1);

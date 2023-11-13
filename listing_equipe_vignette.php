@@ -2,7 +2,7 @@
 
 function getEquipes() {
     $equipes = array();
-    include("connexion.php");
+    include("connexion.php"); //A MODIFIER
     if (isset($_GET['order']) && $_GET['order'] == 'desc') {
         $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamName DESC";
     } 
@@ -28,7 +28,7 @@ function getEquipes() {
 
 function getJoueursByEquipe($equipeId) {
     $joueurs = array();
-    include("connexion.php");
+    include("connexion.php"); //A MODIFIER
     $sqlp = "SELECT p.PlayerPseudo
         FROM Player p
         INNER JOIN BelongTeam b ON p.PlayerId = b.PlayerId
@@ -81,10 +81,10 @@ if (count($equipes) > 0) {
 
 
             foreach ($joueurs as $pseudo) {
-                echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
+                echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div></a>';
             }
 
-            echo '<button class="button_join">Rejoindre l\'équipe</button> </a> </li>';
+            echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
         }
     }
 }
