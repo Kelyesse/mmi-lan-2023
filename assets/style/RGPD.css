@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-#fond{
+#background{
     width: 100%;
     height: 100%;
     background: var(--background-color);
@@ -17,11 +17,11 @@
     padding: 100px;
 }
 
-#titre {
+#title {
     color:#FFF;
 
     /* Desktop/h1-desktop */
-    font-family: "Overused Grotesk";
+    font-family: var(--accent-font);
     font-size: 40px;
     font-style: normal;
     font-weight: 900;
@@ -29,18 +29,18 @@
     text-transform: uppercase;
 }
 
-.ligne{
+.line{
     width: 100%;
     color: var(--secondary-color);
     border: 0px;
     border-top: 2px solid var(--secondary-color);
 }
 
-.h2 {
+#background h2 {
     color: #FFF;
 
     /* Desktop/h2-desktop */
-    font-family: 'Montserrat';
+    font-family: var(--body-font);
     font-size: 32px;
     font-style: normal;
     font-weight: 900;
@@ -48,11 +48,11 @@
     margin-bottom: 30px;
 }
 
-.h3{
+#background h3{
     color:  #FFF;
 
     /* Desktop/h3-desktop */
-    font-family: "Overused Grotesk";
+    font-family: var(--accent-font);
     font-size: 24px;
     font-style: normal;
     font-weight: 900;
@@ -60,22 +60,31 @@
     margin-bottom: 20px;
 }
 
-.texte {
+#background p {
     color: #FFF;
 
     /* Desktop/p-desktop */
-    font-family: 'Montserrat';
+    font-family: var(--body-font);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 23px; /* 143.75% */
-}
-
-#fond p {
     margin-bottom: 20px;
 }
 
-.grande_partie {
+.part {
     margin:20px 0px 60px 0px;
 
+}
+
+@media (max-width: 752px) {
+    #background h2{
+        font-size: 28px;
+    }
+    #background h3{
+        font-size: 20px;
+    }
+    #background p {
+        font-size: 14px;
+    }
 }
