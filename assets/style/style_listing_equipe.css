@@ -185,12 +185,9 @@ h1 {
 
   /* Styles généraux pour les images */
   .LOGO img {
-    display: flex;
     width: 295px;
     height: 226px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+    display: inline-block;
   }
 
 .LOGO {
