@@ -1,17 +1,25 @@
-<?php 
-include ("connexion.php");
+<?php
+include("connexion.php");
 
-$requete = "SELECT TeamId, TeamLogo FROM Team WHERE TeamId <= 11";
-$stmt3 = $bdd->prepare($requete);  
-$stmt3->execute();
-$result = $stmt3->get_result();
+$requete1 = "SET @row_number = 0;";
+$stmt1 = $bdd->prepare($requete1);
 
-while ($donnees = $result->fetch_assoc())
-{
+$stmt1->execute();
+$stmt1->close();
+
+$requete2 = "SELECT (@row_number:=@row_number + 1) AS num, TeamName, TeamLogo FROM Team LIMIT 11";
+$stmt2 = $bdd->prepare($requete2);
+
+$stmt2->execute();
+$result = $stmt2->get_result();
+$no = 0;
+
+while ($donnees = $result->fetch_assoc()) {
+    $no++;
     $image = $donnees['TeamLogo'];
-
-    echo '<img id="img-logo-' . $donnees['TeamId'] . '" src="'.$image.'" alt="Logo de l\'équipe" />';
+    
+    echo '<img id="img-logo-'.$no.'" src="'.$image.'" alt="' . $donnees['TeamName'] . '" />';
 }
 
-$stmt3->close();
+$stmt2->close();
 ?>
