@@ -252,6 +252,7 @@ h1 {
     width: 295px;
     height: 226px;
     display: inline-block;
+    position: absolute;
   }
 
 .LOGO {
