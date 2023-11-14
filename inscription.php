@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id = generateId($db->query('SELECT PlayerId FROM player')->fetchAll(PDO::FETCH_COLUMN));
 
                 // Insertion des données dans la base de données en fonction du rôle
-                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerPicture, PlayerStatus, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :avatar, :statut, :setup, :favgame)";
+                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerStatus, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp :statut, :setup, :favgame)"; //Ajouter player picture et :avatar
                 $stmt = $db->prepare($sql);
 
                 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bindParam(':pseudo', $nom, PDO::PARAM_STR);
                 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                 $stmt->bindParam(':mdp',  $mdp1, PDO::PARAM_STR);
-                $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
+                // $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
 
                 if ($role === "Participant") {
                     $stmt->bindParam(':setup',  $selectedSetup, PDO::PARAM_STR);
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['PlayerId'] = $id;
                     // Rediriger vers les leçons
                     header('Status: 301 Moved Permanently', false, 301);
-                    header('Location:./############'); // Rediriger vers la bonne page
+                    header('Location:./connexion.php'); // Rediriger vers la bonne page ?
                     exit(0);
                 }
             } catch (PDOException $e) {
