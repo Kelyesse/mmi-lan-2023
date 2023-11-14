@@ -134,6 +134,7 @@ h1 {
     font-style: normal;
     font-weight: 400;
     text-decoration-line: underline;
+    cursor: pointer;
 }
 
 #connexion {

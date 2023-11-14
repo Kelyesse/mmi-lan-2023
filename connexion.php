@@ -1,43 +1,45 @@
 <?php
 session_start();
 include("include/db.php");
+include("include/remember_user.php");
 
-// Vérifie si $_SESSION['id_participant'] existe
-if (isset($_SESSION['id_participant'])) {
+// Vérifie si $_SESSION['PlayerId'] existe
+if (isset($_SESSION['PlayerId'])) {
     // Si la session existe, redirige vers une autre page
     header('Location: index.php');
     exit();
-} else {
-    echo 'nop';
 }
-
 
 // Vérifier si le formulaire de connexion a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_POST['password'])) {
-    echo 'test';
     // Partie à modifier : récupérer les valeurs du formulaire et les protéger contre les injections SQL
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
+    $PlayerEmail = $_POST['email'];
+    $PlayerPassword = $_POST['password'];
+    
     // Partie à modifier : Utiliser une requête préparée avec PDO pour éviter les injections SQL
-    $stmt = $db2->prepare("SELECT * FROM participant WHERE mail = :email AND mdp = :password");
-
+    $stmt = $db2->prepare("SELECT * FROM player WHERE PlayerEmail = :PlayerEmail AND PlayerPassword = :PlayerPassword");
+    
     // Liaison des valeurs aux paramètres
-    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-    $stmt->bindParam(':password', $password, PDO::PARAM_STR);
-
+    $stmt->bindParam(':PlayerEmail', $PlayerEmail, PDO::PARAM_STR);
+    $stmt->bindParam(':PlayerPassword', $PlayerPassword, PDO::PARAM_STR);
+    
     // Exécution de la requête préparée
     $stmt->execute();
-
+    
     // Récupération des résultats
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    
     // Vérifier si la requête a réussi
     if ($result) {
         // Vérifier si l'utilisateur existe dans la base de données
         if (count($result) == 1) {
             // L'utilisateur est authentifié avec succès
-            $_SESSION['id_participant'] = $result[0]['id_participant'];
+            $PlayerId = $result[0]['PlayerId'];
+            $_SESSION['PlayerId'] = $PlayerId;
+            if (isset($_POST['remember_me']) && $_POST['remember_me'] == "on") {
+                // Créez un cookie pour stocker les informations de connexion
+                setcookie('remember_user', $PlayerId, time() + 60 * 60 * 24 * 30); // Valide pendant 30 jours
+            }
             // Partie à modifier : Rediriger vers la page d'accueil ou une autre page après la connexion réussie
             header("Location: index.php");
             exit();
@@ -100,10 +102,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
                 eyeOpen.style.display = 'none'
                 eyeClosed.style.display = 'block'
             }
-
-            // Basculer entre les icônes de l'œil ouvert et fermé
-            eyeOpen.classList.toggle('visible', passwordInput.type === 'text');
-            eyeClosed.classList.toggle('visible', passwordInput.type === 'password');
         }
     </script>
 </head>
@@ -118,9 +116,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
                     <div class="inputs">
                         <input class="space1 style-input" type="email" name="email" placeholder="Entrer votre adresse mail" required />
                         <div class="space2">
-                            <input type="password" class="style-input" id="password" placeholder="Entrer votre mot de passe" required />
+                            <input type="password" name="password" class="style-input" id="password" placeholder="Entrer votre mot de passe" required />
                             <button type="button" id="toggle-password" onclick="togglePasswordVisibility()">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" id="eye-open"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" id="eye-open">
                                     <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
                                 </svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" id="eye-closed" viewBox="0 0 640 512">
@@ -133,10 +131,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
                         </div>
                         <div class="flex-space-between">
                             <div class="remember-check">
-                                <input id="remember" type="checkbox">
+                                <input id="remember" type="checkbox" name="remember_me">
                                 <label for="remember">Se souvenir de moi</label>
                             </div>
-                            <a id="forgot-password" href="recover.php">Mot de passe oublié ?</a>
+                            <a id="forgot-password">Mot de passe oublié ?</a>
                         </div>
                     </div>
                     <button id="connexion" type="submit">Se connecter</button>
