@@ -44,7 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = 'L\'adresse email n\'est pas valide.';
         }
 
-        if ($mdp1 != $mdp2 || !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$/', $mdp1)) {
+        if ($mdp1 != $mdp2) {
+            $errorMessage = 'Les mots de passes inscrit sont différents.';
+        }
+        if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', $mdp1)) {
             $errorMessage = 'Les mots de passe ne correspondent pas ou ne respectent pas les critères.';
         }
 
