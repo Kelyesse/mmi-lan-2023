@@ -61,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "Brawlhalla" => 4,
             "CS GO" => 5,
             "Rocket League" => 6,
-            "Mario Kart" => 7
         );
 
         if (!array_key_exists($favjeu, $jeuxCorrespondance)) {
@@ -203,7 +202,6 @@ function generateId(array $excludeArray)
                                     <option value="Brawlhalla">Brawlhalla</option>
                                     <option value="CS GO">CS GO</option>
                                     <option value="Rocket League">Rocket League</option>
-                                    <option value="Mario Kart">Mario Kart</option>
                                 </select>
                             </div>
                             <div id="fin_form">
