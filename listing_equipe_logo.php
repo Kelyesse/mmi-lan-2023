@@ -9,7 +9,7 @@ function getTeamsData($bdd) {
         $stmt1->execute();
         $stmt1->closeCursor();
 
-        $stmt2 = $bdd->prepare("SELECT (@row_number:=@row_number + 1) AS num, TeamName, TeamLogo FROM Team LIMIT 11");
+        $stmt2 = $bdd->prepare("SELECT (@row_number:=@row_number + 1) AS num, TeamName, TeamLogo FROM team LIMIT 11");
         $stmt2->execute();
 
         $no = 0;

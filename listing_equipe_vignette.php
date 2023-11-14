@@ -4,16 +4,16 @@ function getEquipes($bdd) {
     $equipes = array();
     
     if (isset($_GET['order']) && $_GET['order'] == 'desc') {
-        $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamName DESC";
+        $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamName DESC";
     } 
     elseif(isset($_GET['order']) && $_GET['order'] == 'ancien'){
-        $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamId ASC";
+        $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamId ASC";
     }
     elseif(isset($_GET['order']) && $_GET['order'] == 'recent'){
-        $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamId DESC";
+        $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamId DESC";
     }
     else {
-        $prep = "SELECT TeamId, TeamName, TeamLogo FROM Team ORDER BY TeamName ASC";
+        $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamName ASC";
     }
     
     $stmt2 = $bdd->prepare($prep);
@@ -28,8 +28,8 @@ function getJoueursByEquipe($bdd, $equipeId) {
     $joueurs = array();
     
     $sqlp = "SELECT p.PlayerPseudo
-        FROM Player p
-        INNER JOIN BelongTeam b ON p.PlayerId = b.PlayerId
+        FROM player p
+        INNER JOIN belongteam b ON p.PlayerId = b.PlayerId
         WHERE b.TeamId = ?";
 
     $stmt = $bdd->prepare($sqlp);

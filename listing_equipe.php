@@ -61,11 +61,11 @@
     <section class="bottom-section">
         <div class="bottom">
             <h2>Vous n'avez pas d'équipe ?</h2>
-            <button class="bottom-bouton">Inscrivez-vous</button>
+            <button class="bottom-bouton" onclick='window.location.href="inscription.php"'>Inscrivez-vous</button>
         </div>
         <div class="bottom">
             <h2>Vous voulez créer votre équipe ?</h2>
-            <button class="bottom-bouton">Créer une équipe</button>
+            <button class="bottom-bouton" onclick='window.location.href="creation_equipe.php"'>Créer une équipe</button>
         </div>
     </section>
 </body>
