@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-#background{
+main{
     width: 100%;
     height: 100%;
     background: var(--background-color);
@@ -31,7 +31,7 @@
     margin-bottom: 50px;
 }
 
-#background h2 {
+main h2 {
     color: #FFF;
 
     /* Desktop/h2-desktop */
@@ -43,7 +43,7 @@
     margin-bottom: 30px;
 }
 
-#background h3{
+main h3{
     color: #FFF;
 
     /* Desktop/h3-desktop */
@@ -55,7 +55,7 @@
     margin-bottom: 20px;
 }
 
-#background p {
+main p {
     color: #FFF;
 
     /* Desktop/p-desktop */
@@ -67,7 +67,7 @@
     margin-bottom: 20px;
 }
 
-#background h4 {
+main h4 {
     color: #FFF;
 
     /* Desktop/h4-desktop */
@@ -90,13 +90,13 @@
 }
 
 @media (max-width: 752px) {
-    #background h2{
+    main h2{
         font-size: 28px;
     }
-    #background h3{
+    main h3{
         font-size: 20px;
     }
-    #background p {
+    main p {
         font-size: 14px;
     }
     .part {

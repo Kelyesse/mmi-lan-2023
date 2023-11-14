@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-#background{
+main{
     width: 100%;
     height: 100%;
     background: var(--background-color);
@@ -34,7 +34,7 @@
     border: 0px;
     border-top: 2px solid var(--secondary-color);
 }
-#background h3{
+main h3{
     color: #FFF;
 
     /* Desktop/h3-desktop */
@@ -46,7 +46,7 @@
     margin-bottom: 20px;
 }
 
-#background p {
+main p {
     color:#FFF;
 
     /* Desktop/p-desktop */
@@ -67,16 +67,16 @@
     #title{
         font-size: 36px;
     }
-    #background{
+    main{
         padding: 75px;
     }
-    #background h2{
+    main h2{
         font-size: 28px;
     }
-    #background h3{
+    main h3{
         font-size: 20px;
     }
-    #background p {
+    main p {
         font-size: 14px;
     }
     
