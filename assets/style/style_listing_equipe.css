@@ -248,65 +248,87 @@ h1 {
 }
 
   /* Styles généraux pour les images */
-  .LOGO img {
-    width: 295px;
-    height: 226px;
-    display: inline-block;
-    position: absolute;
-  }
-
-.LOGO {
+  .LOGO {
     width: 1549.27px;
     height: 586.62px;
     position: relative;
   }
   
+  .LOGO img {
+    width: 295px;
+    height: 226px;
+    display: inline-block;
+    position: absolute;
+    transition: transform 0.3s ease; /* Ajout d'une transition pour une animation fluide */
+  }
+  
+  /* Styles pour afficher le texte alternatif */
+  .LOGO img::after {
+    content: attr(alt); /* Utilisez le contenu de l'attribut "alt" comme texte */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0;
+    z-index: 1; /* Assurez-vous que le texte est au-dessus de l'image */
+    transition: opacity 0.3s ease;
+  }
+  
+  .LOGO img:hover::after {
+    opacity: 1; /* Afficher le texte alternatif au survol */
+  }
+  
+
+  
   #img-logo-1 {
     transform: rotate(0deg);
-    left: 1259.21px;
+    left: 846.2px;
     top: 53.01px;
   }
   
   #img-logo-2 {
     transform: rotate(8deg);
-    left: 977.44px;
-    top: 39.87px;
+    left: 639.4px;
+    top: 270.9px;
   }
   
   #img-logo-3 {
     transform: rotate(2deg);
-    left: 1227.15px;
-    top: 347px;
+    left: 918.2px;
+    top: 293px;
   }
   
   #img-logo-4 {
     transform: rotate(3deg);
-    left: 1097.31px;
-    top: 239.57px;
+    left: 526.3px;
+    top: 72.6px;
   }
   
   #img-logo-5 {
     transform: rotate(-3deg);
-    left: 792.89px;
-    top: 231.92px;
+    left: 1132.9px;
+    top: 75.9px;
   }
   
   #img-logo-6 {
     transform: rotate(-8deg);
-    left: 517.45px;
-    top: 196.57px;
+    left: 349.5px;
+    top: 302.6px;
   }
   
   #img-logo-7 {
     transform: rotate(8deg);
-    left: 667.15px;
-    top: 0px;
+    left: 1189.1px;
+    top: 316px;
   }
   
   #img-logo-8 {
     transform: rotate(-10.5deg);
-    left: 344.27px;
-    top: 24.44px;
+    left: 232.3px;
+    top: 99.4px;
   }
   
   #img-logo-9 {
