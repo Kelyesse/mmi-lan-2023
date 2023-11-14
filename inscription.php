@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($mdp1 != $mdp2) {
             $errorMessage = 'Les mots de passes inscrit sont différents.';
         }
-        if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', $mdp1)) {
+        if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s])[\w\d\S]{8,}$/', $mdp1)) {
             $errorMessage = 'Les mots de passe ne correspondent pas ou ne respectent pas les critères.';
         }
 
