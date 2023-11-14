@@ -15,20 +15,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
     // Partie à modifier : récupérer les valeurs du formulaire et les protéger contre les injections SQL
     $PlayerEmail = $_POST['email'];
     $PlayerPassword = $_POST['password'];
-    
+
     // Partie à modifier : Utiliser une requête préparée avec PDO pour éviter les injections SQL
     $stmt = $db2->prepare("SELECT * FROM player WHERE PlayerEmail = :PlayerEmail AND PlayerPassword = :PlayerPassword");
-    
+
     // Liaison des valeurs aux paramètres
     $stmt->bindParam(':PlayerEmail', $PlayerEmail, PDO::PARAM_STR);
     $stmt->bindParam(':PlayerPassword', $PlayerPassword, PDO::PARAM_STR);
-    
+
     // Exécution de la requête préparée
     $stmt->execute();
-    
+
     // Récupération des résultats
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
+
     // Vérifier si la requête a réussi
     if ($result) {
         // Vérifier si l'utilisateur existe dans la base de données
