@@ -9,9 +9,10 @@
 </head>
 <body>
     <header>
+    <?php
+        include('navbar.php');
+    ?>
     </header>
-    <div class="count-down-timer">
-    </div>
     <main>
             <section>
                 <div id="div-title">
@@ -113,7 +114,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="" alt="" style="width: 400px; height: 400px;">
+                        <img src="" alt="">
                     </div>
                 </div>
                 <div id="buttons">

@@ -48,6 +48,7 @@ p {
 
 a{
     text-decoration: none;
+    font-family: var(--body-font);
 }
 
 button{
@@ -58,12 +59,6 @@ button{
     font-size: 16px;
 }
 
-.count-down-timer{
-    display: flex;
-    padding: 10px;
-    justify-content: center;
-    background-color: #CD0C75;
-}
 
 main{
     display: flex;
@@ -101,7 +96,7 @@ section{
 
 #player-info div div{
     display: flex;
-    width: 610px;
+    width: 42vw;
     padding: 10px;
     border-bottom:solid 1px #fff;
     gap: 10px;
@@ -187,6 +182,10 @@ section{
     color: #CD0C75;
 }
 
+#team div img{
+    width: 400px;
+    height: 400px;
+}
 
 #no-team div{
     display: flex;
@@ -236,4 +235,37 @@ section{
     box-shadow: 4px 4px 30px 0px rgba(255, 255, 255, 0.15), -4px -4px 30px 0px rgba(255, 255, 255, 0.15);
     width: 507px;
 }
-/* Ajoutez d'autres styles au besoin */
+
+@media only screen and (max-width: 1200px) {
+    #player-info>img {
+        width: 200px;
+        height: 200px;
+    }
+
+    #team div img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #player-info>img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #team div img{
+        width: 120px;
+        height: 120px;
+    }
+
+    h1{
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+    h2{
+        font-size: 17px;
+        font-weight: 600;
+    }
+}
