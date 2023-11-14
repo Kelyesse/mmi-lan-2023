@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./assets/style/RGPD.css">
 </head>
 <body>
+    <?php
+        include("navbar.php");
+    ?>
     <main>
         <h1 id="title">RGPD</h1>
         <hr class="line">

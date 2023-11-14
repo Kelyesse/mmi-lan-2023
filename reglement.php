@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./assets/style/reglement.css">
 </head>
 <body>
+    <?php
+        include("navbar.php");
+    ?>
     <main>
         <h1 id="title">Règlement de la mmi lan</h1>
         <hr class="line">

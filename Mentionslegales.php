@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./assets/style/Mentionslegales.css">
 </head>
 <body>
+    <?php
+        include("navbar.php");
+    ?>
     <main>
         <h1 id="title">Mentions légales</h1> 
         <hr class="line">
