@@ -8,7 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="en-tete">
+<main>
+    <div class="en-tete">
         <h1>LES EQUIPES DE LA MMI LAN</h1>
         <div class="tri-btn">
             Trier
@@ -22,7 +23,8 @@
                 <a class="dropdown-item" href="listing_equipe.php?order=desc">Inverse Alphabétique</a>
             </div>
         </div>
-  </div>
+    </div>
+
     <div class="liste_equipe"> 
 
     <?php include 'listing_equipe_vignette.php' ; ?>
@@ -90,6 +92,6 @@
 
 
 
-
+</main>
 </body>
 </html>

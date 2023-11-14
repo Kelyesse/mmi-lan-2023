@@ -8,6 +8,10 @@ body {
   padding: 0;
 }
 
+main {
+  max-width: 1440px;
+  margin: 0 auto; 
+}
 .en-tete {
   text-align: left;
   padding: 20px;
