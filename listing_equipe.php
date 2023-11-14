@@ -31,7 +31,7 @@
     <div class="LOGO"> 
 
     <?php include 'listing_equipe_logo.php' ; ?>
-
+    
     </div>
     <?php 
     if(isset($_GET['rejoindreEquipe'])){
@@ -68,5 +68,28 @@
             <button class="bottom-bouton" onclick='window.location.href="creation_equipe.php"'>Créer une équipe</button>
         </div>
     </section>
+
+    <!--JQUERY pour survol de la galerie-->
+    <script>
+    $(document).ready(function() {
+        $('.LOGO img').hover(
+            function() {
+                // Survol de l'image
+                var altText = $(this).attr('alt');
+                // Ajoutez le texte alternatif à l'intérieur de l'image
+                $(this).after('<div class="hover-text">' + altText + '</div>');
+            },
+            function() {
+                // Fin du survol de l'image
+                // Supprimez le texte alternatif lorsqu'il n'y a plus de survol
+                $(this).next('.hover-text').remove();
+            }
+        );
+    });
+</script>
+
+
+
+
 </body>
 </html>
