@@ -51,15 +51,17 @@
                         Elle se présente sous la forme d’un tournoi dans lequel des équipes de trois joueurs se
                         réunissent et s'affrontent au travers de plusieurs jeux vidéo tout au long d’une journée. Que
                         vous soyez un pro ou un débutant, cet événement est l’occasion de passer un moment de
-                        convivialité placé sous le signe de la compétition. <br>
+                        convivialité placé sous le signe de la compétition.
+                        <br><br>
                         Des récompenses seront à gagner à l’issue du tournoi pour récompenser les efforts des équipes
                         gagnantes.
-
                         <br><br>
                         Si la compétition n’est pas votre domaine, et que vous voulez simplement profiter d’une ambiance
                         conviviale, vous êtes également au bon endroit ! Des activités et points de restauration seront
                         à votre disposition sur le lieu de l’événement, afin que chacun puisse profiter de cette journée
-                        à leur façon. La compétition sera retransmise en direct sur la chaîne Twitch de l’événement,
+                        à leur façon.
+                        <br>
+                        La compétition sera retransmise en direct sur la chaîne Twitch de l’événement,
                         vous pourrez donc suivre le déroulé de la LAN sans vous déplacer.
 
                     </div>
