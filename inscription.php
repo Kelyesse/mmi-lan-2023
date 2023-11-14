@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = 'Les mots de passe ne correspondent pas ou ne respectent pas les critères.';
         }
 
-        if ($selectedSetup !== 'PC portable' && $selectedSetup !== 'PV fixe') {
+        if ($selectedSetup !== 'PC portable' && $selectedSetup !== 'PC fixe') {
             $errorMessage = 'Le type de setup sélectionné n\'est pas valide.';
         }
 
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id = generateId($db->query('SELECT PlayerId FROM player')->fetchAll(PDO::FETCH_COLUMN));
 
                 // Insertion des données dans la base de données en fonction du rôle
-                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerStatus, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp :statut, :setup, :favgame)"; //Ajouter player picture et :avatar
+                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerStatus, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :statut, :setup, :favgame)"; //Ajouter player picture et :avatar
                 $stmt = $db->prepare($sql);
 
                 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -154,7 +154,7 @@ function generateId(array $excludeArray)
 
                 <!--je me questionne sur quoi mettre en action du form-->
 
-                <form action="#" method="post">
+                <form action="" method="post">
                     <div>
                         <div>
                             <div class="double-inp">
