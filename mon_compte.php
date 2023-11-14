@@ -1,3 +1,41 @@
+<?php
+// Initialiser la session
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+if (isset($_SESSION['PlayerId'])) {
+    //Se connecter à la base de données et récupérer l'ensemble des comptes
+    require_once('connexionbdd.php');
+    try {
+        $stmt = $db->query('SELECT * FROM Player WHERE PlayerId = ' . $_SESSION['PlayerId'] . ';')->fetch(PDO::FETCH_ASSOC);
+        if (!is_null($stmt)) {
+            //Si le compte est dedans, quel type de compte est-il
+            if (empty($stmt['PlayerFavGame']) && empty($stmt['PlayerSetup'])) {
+                //Si le compte est un conducteur
+                $acc = false;
+            } else {
+                //Si le compte est un participant
+                $acc = true;
+                //Vérifier si le compte a une équipe
+                //Récupérer les équipes dans la base de données
+            }
+        } else {
+            //Si le compte ne fait pas partie de la base : grosse erreur
+            header('Status: 301 Moved Permanently', false, 301);
+            header('Location:./connexion.php');
+            exit(0);
+        }
+    } catch (Exception $e) {
+        $erroMessage = '';
+    }
+} else {
+    //rediriger vers la page de connexion
+    header('Status: 301 Moved Permanently', false, 301);
+    header('Location:./connexion.php');
+    exit(0);
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
