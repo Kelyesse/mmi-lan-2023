@@ -22,6 +22,7 @@
     </header>
 
     <main>
+        <img src="./assets/img/homepage_pattern.svg" alt="" class="background-pattern">
         <section class="teaser-container">
             <div class="teaser">
                 <iframe src="https://www.youtube.com/embed/AuoUHzb4kRs" allowfullscreen></iframe>

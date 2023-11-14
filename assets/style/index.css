@@ -89,10 +89,19 @@ header .count-down-timer {
 /* MAIN */
 
 main {
-    background: no-repeat url(../img/homepage_pattern.svg);
-    background-size: 65%;
-    background-position-x: 600px;
-    background-position-y: 650px;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-pattern {
+    position: absolute;
+    z-index: -1;
+    width: 1250px;
+    left: 700px;
+    top: 75vh;
+    /* native color of img wasn't the exact same as on figma */
+    filter: brightness(4);
+    opacity: 0.25;
 }
 
 /* TEASER */
