@@ -1,6 +1,6 @@
 <?php
 
-function getEquipes($bdd) {
+function getEquipes($db) {
     $equipes = array();
     
     if (isset($_GET['order']) && $_GET['order'] == 'desc') {
@@ -16,7 +16,7 @@ function getEquipes($bdd) {
         $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamName ASC";
     }
     
-    $stmt2 = $bdd->prepare($prep);
+    $stmt2 = $db->prepare($prep);
     $stmt2->execute();
     $equipes = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     $stmt2->closeCursor();
@@ -24,7 +24,7 @@ function getEquipes($bdd) {
     return $equipes;
 }
 
-function getJoueursByEquipe($bdd, $equipeId) {
+function getJoueursByEquipe($db, $equipeId) {
     $joueurs = array();
     
     $sqlp = "SELECT p.PlayerPseudo
@@ -32,7 +32,7 @@ function getJoueursByEquipe($bdd, $equipeId) {
         INNER JOIN belongteam b ON p.PlayerId = b.PlayerId
         WHERE b.TeamId = ? AND b.BelongStatus <> 'en attente'";
 
-    $stmt = $bdd->prepare($sqlp);
+    $stmt = $db->prepare($sqlp);
     $stmt->execute([$equipeId]);
     $joueurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
@@ -43,14 +43,14 @@ function getJoueursByEquipe($bdd, $equipeId) {
 
 
 if (!isset($equipes)) {
-    require_once ("connexion.php");
-    $equipes = getEquipes($bdd);
+    require_once('connexionbdd.php');
+    $equipes = getEquipes($db);
 }
 
 if (count($equipes) > 0) {
     foreach ($equipes as $equipe) {
         $nbr = 0;
-        $joueurs = getJoueursByEquipe($bdd, $equipe['TeamId']);
+        $joueurs = getJoueursByEquipe($db, $equipe['TeamId']);
 
         foreach ($joueurs as $pseudo) {
             $nbr++;

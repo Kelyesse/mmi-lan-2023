@@ -1,15 +1,15 @@
 <?php
-require_once("connexion.php"); 
+require_once("connexionbdd.php"); 
 
-function getTeamsData($bdd) {
+function getTeamsData($db) {
     try {
-        $bdd->beginTransaction();
+        $db->beginTransaction();
 
-        $stmt1 = $bdd->prepare("SET @row_number = 0;");
+        $stmt1 = $db->prepare("SET @row_number = 0;");
         $stmt1->execute();
         $stmt1->closeCursor();
 
-        $stmt2 = $bdd->prepare("SELECT (@row_number:=@row_number + 1) AS num, TeamName, TeamLogo FROM team LIMIT 11");
+        $stmt2 = $db->prepare("SELECT (@row_number:=@row_number + 1) AS num, TeamName, TeamLogo FROM team LIMIT 11");
         $stmt2->execute();
 
         $no = 0;
@@ -23,13 +23,13 @@ function getTeamsData($bdd) {
 
         $stmt2->closeCursor();
         
-        $bdd->commit();
+        $db->commit();
     } catch (PDOException $e) {
-        $bdd->rollBack();
+        $db->rollBack();
         echo "Error: " . $e->getMessage();
     }
 }
 
-$bdd = Connexion();
-getTeamsData($bdd);
+$db = Connexion();
+getTeamsData($db);
 ?>
