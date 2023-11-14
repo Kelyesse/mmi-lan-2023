@@ -7,14 +7,14 @@
         // Data Source Name
         $dsn = "mysql:host=$hostname;dbname=$db";
         try {
-            $bdd = new PDO($dsn, $username, $password);
-            $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-            return $bdd;
+            $db = new PDO($dsn, $username, $password);
+            $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            return $db;
         }
         catch(PDOException $e){
             echo "Erreur de connection ! </br>";
             echo $e->getMessage();
         }
     }
-    $bdd = connexion();
+    $db = connexion();
 ?>
