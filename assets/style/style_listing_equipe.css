@@ -30,10 +30,7 @@ h1 {
   padding: 10px 20px;
   display: inline-block;
   cursor: pointer;
-}
-
-.tri-btn svg {
-  margin-left: 5px;
+  position: relative; 
 }
 
 .dropdown-menu {
@@ -44,8 +41,12 @@ h1 {
   border-radius: 5px;
   padding: 5px 0;
   z-index: 1;
-  left: 20px;
   margin-top: 10px;
+  margin-left: -20px;
+}
+
+.tri-btn svg {
+  margin-left: 5px;
 }
 
 .tri-btn:hover .dropdown-menu {
