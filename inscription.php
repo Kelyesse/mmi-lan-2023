@@ -10,7 +10,7 @@ $errorMessage = '';
 // Traitement du formulaire lorsque le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification si tous les champs requis sont présents
-    $requiredFields = ['nom', 'prenom', 'pseudo', 'email', 'mdp1', 'mdp2', 'role', 'avatar'];
+    $requiredFields = ['nom', 'prenom', 'pseudo', 'email', 'mdp1', 'mdp2', 'role']; // ajouter 'avatar' quand on aura recu les images
     $missingFields = array_diff($requiredFields, array_keys($_POST));
 
     if (!empty($missingFields)) {
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mdp1 = hash('sha256', $_POST["mdp1"]);
         $mdp2 = hash('sha256', $_POST["mdp2"]);
         $role = $_POST["role"];
-        $avatar = $_POST["avatar"];
+        //$avatar = $_POST["avatar"];
         $favjeu = $_POST["favjeu"];
         $selectedSetup = $_POST["setup"];
 
@@ -214,7 +214,7 @@ function generateId(array $excludeArray)
                                 <a href="#">Se connecter ?</a>
                             </div>
                         </div>
-                        <div id="choix_ava">
+                        <!-- <div id="choix_ava">
                             <div>
                                 <h3>Choisissez votre avatar</h3>
                                 <div id="liste_ava">
@@ -223,7 +223,7 @@ function generateId(array $excludeArray)
                                     </svg>
                                     <div class="avatar">
 
-                                        <!--toutes les img sont à changé par celles de la base de donnée-->
+                                        toutes les img sont à changé par celles de la base de donnée
 
                                         <div class="avatar-option prem">
                                             <img src="./assets/img/ava1.gif" alt="">
@@ -267,11 +267,11 @@ function generateId(array $excludeArray)
                                     </svg>
                                 </div>
 
-                                <!--Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer-->
+                                Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer
 
                                 <input type="hidden" name="avatar" id="avatar" value="" required>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div id="accept-rules">
                         <input type="checkbox" name="rules" id="rules" required>
