@@ -278,6 +278,13 @@ function generateId(array $excludeArray)
                         <label for="rules">En vous inscrivant vous acceptez le règlement de la MMI LAN ainsi que le traitement de vos données.</label>
                     </div>
                     <input type="submit" id="submit" value="Inscription">
+                    <div>
+                        <?php
+                        if ($errorMessage) {
+                            echo $errorMessage;
+                        }
+                        ?>
+                    </div>
                 </form>
             </div>
         </div>
