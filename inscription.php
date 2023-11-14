@@ -4,7 +4,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-//Initialisation des messages d'erreur 
+//Initialisation des messages d'erreur
 $errorMessage = '';
 
 // Traitement du formulaire lorsque le formulaire est soumis
@@ -71,9 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($errorMessage)) {
             //Intégrer le code pour se connecter à la bdd
             try {
-                $db = new PDO($dsn, $username, $password); // changer les informations de connection
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $db->query('SET NAMES utf8');
+                //connection à la bdd
+                require_once('connexionbdd.php');
 
                 // Génération d'un ID unique
                 $id = generateId($db->query('SELECT PlayerId FROM player')->fetchAll(PDO::FETCH_COLUMN));
@@ -131,6 +130,7 @@ function generateId(array $excludeArray)
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -138,6 +138,7 @@ function generateId(array $excludeArray)
     <link rel="stylesheet" href="./assets/style/inscription.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
+
 <body>
     <header>
     </header>
@@ -186,16 +187,16 @@ function generateId(array $excludeArray)
                             </div>
                             <div class="radio setup">
                                 <div>
-                                    <input type="radio" name="setup" value="PC portable" id="portable" >
+                                    <input type="radio" name="setup" value="PC portable" id="portable">
                                     <label for="portable">PC portable</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" name="setup" value="PC fixe" id="fixe" >
+                                    <input type="radio" name="setup" value="PC fixe" id="fixe">
                                     <label for="fixe">PC fixe</label><br>
                                 </div>
                             </div>
                             <div class="simple-inp">
-                                <select name="favjeu" id="select_jeu" >
+                                <select name="favjeu" id="select_jeu">
                                     <option value="">Choississez votre jeu favoris</option>
                                     <option value="Track Mania: Nation Forever">Track Mania: Nation Forever</option>
                                     <option value="Geo Guesseur">Geo Guesseur</option>
@@ -218,26 +219,26 @@ function generateId(array $excludeArray)
                                 <h3>Choisissez votre avatar</h3>
                                 <div id="liste_ava">
                                     <svg id="pre" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
-                                        <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2"/>
+                                        <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2" />
                                     </svg>
                                     <div class="avatar">
 
                                         <!--toutes les img sont à changé par celles de la base de donnée-->
 
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava2.gif" alt="" >
+                                            <img src="./assets/img/ava2.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
                                             <img src="./assets/img/ava1.gif" alt="">
@@ -246,12 +247,12 @@ function generateId(array $excludeArray)
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option sec">
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
-                                        <div class= "avatar-option sec">
+                                        <div class="avatar-option sec">
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option sec">
@@ -262,7 +263,7 @@ function generateId(array $excludeArray)
                                         </div>
                                     </div>
                                     <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
-                                        <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2"/>
+                                        <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2" />
                                     </svg>
                                 </div>
 
@@ -281,9 +282,10 @@ function generateId(array $excludeArray)
             </div>
         </div>
     </main>
-<script src="./assets/js/countDown.js"></script>
-<script src="./assets/js/role_participant.js"></script>
-<script src="./assets/js/gallerie_avatar.js"></script>
-<script src="./assets/js/gestion_mdp.js"></script>
+    <script src="./assets/js/countDown.js"></script>
+    <script src="./assets/js/role_participant.js"></script>
+    <script src="./assets/js/gallerie_avatar.js"></script>
+    <script src="./assets/js/gestion_mdp.js"></script>
 </body>
+
 </html>
