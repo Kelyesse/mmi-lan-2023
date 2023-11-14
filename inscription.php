@@ -4,7 +4,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-//Initialisation des messages d'erreur
+//Initialisation des messages d'erreur 
 $errorMessage = '';
 
 // Traitement du formulaire lorsque le formulaire est soumis
@@ -131,7 +131,6 @@ function generateId(array $excludeArray)
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,7 +138,6 @@ function generateId(array $excludeArray)
     <link rel="stylesheet" href="./assets/style/inscription.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
-
 <body>
     <header>
     </header>
@@ -152,49 +150,52 @@ function generateId(array $excludeArray)
                 <h2>Rejoignez-nous ici !</h2>
             </div>
             <div id="form">
-                <form action="" method="post">
+
+                <!--je me questionne sur quoi mettre en action du form-->
+
+                <form action="#" method="post">
                     <div>
                         <div>
-                            <div class="double_inp">
+                            <div class="double-inp">
                                 <input type="text" placeholder="Entrer votre nom" name="nom" required>
                                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
                             </div>
-                            <div class="simple_inp">
-                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" required>
+                            <div class="simple-inp">
+                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo" required>
                             </div>
-                            <div class="simple_inp">
-                                <input type="email" placeholder="Entrer votre email" name="email" required>
+                            <div class="simple-inp">
+                                <input type="email" placeholder="Entrer votre email" name="email" id="email" required>
                             </div>
-                            <div class="double_inp">
-                                <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" required>
-                                <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" required>
+                            <div class="double-inp">
+                                <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" class="mdp" required>
+                                <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" class="mdp" required>
                             </div>
-                            <p id="config_psw">
+                            <p id="config-psw">
                                 Le mot de passe doit contenir : <br>
                                 8 caractères, 1 caractère en minuscule, 1 caractère en majuscule, 1 chiffre
                             </p>
                             <div class="radio">
                                 <div>
-                                    <input type="radio" name="setup" value="PC portable" id="portable">
-                                    <label for="portable">PC portable</label><br>
-                                </div>
-                                <div>
-                                    <input type="radio" name="setup" value="PC fixe" id="fixe">
-                                    <label for="fixe">PC fixe</label><br>
-                                </div>
-                            </div>
-                            <div class="radio">
-                                <div>
-                                    <input type="radio" name="role" class="role" value="Participant" id="participant">
+                                    <input type="radio" name="role" class="role" value="Participant" id="participant" required>
                                     <label for="participant">Participant</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" name="role" class="role" value="Spectateur" id="spectateur">
-                                    <label for="spectateur">Spectateur</label>
+                                    <input type="radio" name="role" class="role" value="Spectateur" id="spectateur" required>
+                                    <label for="spectateur">Conducteur</label>
                                 </div>
                             </div>
-                            <div class="simple_inp">
-                                <select name="favjeu" id="select_jeu">
+                            <div class="radio setup">
+                                <div>
+                                    <input type="radio" name="setup" value="PC portable" id="portable" >
+                                    <label for="portable">PC portable</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" name="setup" value="PC fixe" id="fixe" >
+                                    <label for="fixe">PC fixe</label><br>
+                                </div>
+                            </div>
+                            <div class="simple-inp">
+                                <select name="favjeu" id="select_jeu" >
                                     <option value="">Choississez votre jeu favoris</option>
                                     <option value="Track Mania: Nation Forever">Track Mania: Nation Forever</option>
                                     <option value="Geo Guesseur">Geo Guesseur</option>
@@ -204,7 +205,7 @@ function generateId(array $excludeArray)
                                     <option value="Rocket League">Rocket League</option>
                                 </select>
                             </div>
-                            <div id="fin_form">
+                            <div id="end-form">
                                 <div>
                                     <input type="checkbox" name="souvenir" id="souvenir">
                                     <label for="souvenir">Se souvenir de moi</label>
@@ -217,26 +218,26 @@ function generateId(array $excludeArray)
                                 <h3>Choisissez votre avatar</h3>
                                 <div id="liste_ava">
                                     <svg id="pre" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
-                                        <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2" />
+                                        <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2"/>
                                     </svg>
                                     <div class="avatar">
 
                                         <!--toutes les img sont à changé par celles de la base de donnée-->
 
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/ava1.gif" alt="" >
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava2.gif" alt="">
+                                            <img src="./assets/img/ava2.gif" alt="" >
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/ava1.gif" alt="" >
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/ava1.gif" alt="" >
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/ava1.gif" alt="" >
                                         </div>
                                         <div class="avatar-option prem">
                                             <img src="./assets/img/ava1.gif" alt="">
@@ -245,12 +246,12 @@ function generateId(array $excludeArray)
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/ava1.gif" alt="" >
                                         </div>
                                         <div class="avatar-option sec">
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
-                                        <div class="avatar-option sec">
+                                        <div class= "avatar-option sec">
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option sec">
@@ -261,24 +262,28 @@ function generateId(array $excludeArray)
                                         </div>
                                     </div>
                                     <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
-                                        <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2" />
+                                        <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2"/>
                                     </svg>
                                 </div>
 
                                 <!--Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer-->
 
-                                <input type="hidden" name="avatar" id="avatar" value="">
+                                <input type="hidden" name="avatar" id="avatar" value="" required>
                             </div>
                         </div>
+                    </div>
+                    <div id="accept-rules">
+                        <input type="checkbox" name="rules" id="rules" required>
+                        <label for="rules">En vous inscrivant vous acceptez le règlement de la MMI LAN ainsi que le traitement de vos données.</label>
                     </div>
                     <input type="submit" id="submit" value="Inscription">
                 </form>
             </div>
         </div>
     </main>
-    <script src="./assets/js/countDown.js"></script>
-    <script src="./assets/js/jeu_fav.js"></script>
-    <script src="./assets/js/gallerie_avatar.js"></script>
+<script src="./assets/js/countDown.js"></script>
+<script src="./assets/js/role_participant.js"></script>
+<script src="./assets/js/gallerie_avatar.js"></script>
+<script src="./assets/js/gestion_mdp.js"></script>
 </body>
-
 </html>
