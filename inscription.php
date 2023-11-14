@@ -162,14 +162,14 @@ function generateId(array $excludeArray)
                                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
                             </div>
                             <div class="simple-inp">
-                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" required>
+                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo" required>
                             </div>
                             <div class="simple-inp">
-                                <input type="email" placeholder="Entrer votre email" name="email" required>
+                                <input type="email" placeholder="Entrer votre email" name="email" id="email" required>
                             </div>
                             <div class="double-inp">
-                                <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" required>
-                                <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" required>
+                                <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" class="mdp" required>
+                                <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" class="mdp" required>
                             </div>
                             <p id="config-psw">
                                 Le mot de passe doit contenir : <br>

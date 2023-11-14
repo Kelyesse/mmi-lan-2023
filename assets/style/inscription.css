@@ -93,8 +93,31 @@ form>div{
     width: 100%;
 }
 
+#pseudo{
+    background: url(../img/profil.svg) no-repeat;
+    background-position: left center;
+}
+
+#email{
+    background: url(../img/mail.svg) no-repeat;
+    background-position: left center;
+}
+
+.mdp{
+    background: url(../img/cadena.svg) no-repeat;
+    background-position: left center;
+}
+
+.mdp::placeholder{
+    padding: 30px;
+}
+
 .simple-inp input{
     width: 100%;
+}
+
+.simple-inp input::placeholder{
+    padding:30px ;
 }
 
 #config-psw{
