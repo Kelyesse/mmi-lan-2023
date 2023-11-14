@@ -30,7 +30,7 @@ function getJoueursByEquipe($bdd, $equipeId) {
     $sqlp = "SELECT p.PlayerPseudo
         FROM player p
         INNER JOIN belongteam b ON p.PlayerId = b.PlayerId
-        WHERE b.TeamId = ?";
+        WHERE b.TeamId = ? AND b.BelongStatus <> 'en attente'";
 
     $stmt = $bdd->prepare($sqlp);
     $stmt->execute([$equipeId]);
