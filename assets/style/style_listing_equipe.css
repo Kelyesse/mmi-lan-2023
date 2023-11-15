@@ -69,6 +69,13 @@ h1 {
   justify-content: flex-start;
 }
 
+.liste_vide{
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+ font-size: 30px;
+}
+
 /* Styles des vignettes d'équipes */
 
 .vignette {
