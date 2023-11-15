@@ -6,11 +6,11 @@ if (isset($_SESSION['PlayerId'])) {
     //Se connecter à la base de données et récupérer l'ensemble des comptes
     require_once('connexionbdd.php');
     try {
-        $playersDb = $db->query('SELECT * FROM player;')->fetchall(PDO::FETCH_ASSOC);
+        $allAccounts = $db->query('SELECT * FROM player;')->fetchall(PDO::FETCH_ASSOC);
         $is_in = false;
         //Vérifier si le compte fait partie de la bdd
-        foreach ($playersDb as $playerDb) {
-            if ($playerDb['PlayerId'] == $_SESSION['PlayerId']) {
+        foreach ($allAccounts as $account) {
+            if ($account['PlayerId'] == $_SESSION['PlayerId']) {
                 $is_in = true;
                 break;
             }
@@ -18,7 +18,7 @@ if (isset($_SESSION['PlayerId'])) {
         //Si le compte fait partie de la bdd
         if ($is_in) {
             // vérifier le type de compte (conducteur/participant)
-            if (empty($playerDb['PlayerFavGame']) && empty($playerDb['PlayerSetup'])) {
+            if (empty($account['PlayerFavGame']) && empty($account['PlayerSetup'])) {
                 //Si le compte est un conducteur
                 $player = false;
             } else {
@@ -26,14 +26,14 @@ if (isset($_SESSION['PlayerId'])) {
                 $player = true;
 
                 //Récupérer l'équipe du compte s'il fait partie d'une équipe
-                $teamDb = $db->query('SELECT * FROM belongteam WHERE PlayerId = ' . $_SESSION['PlayerId'] . ';')->fetch(PDO::FETCH_ASSOC);
+                $teamAccount = $db->query('SELECT * FROM belongteam WHERE PlayerId = ' . $_SESSION['PlayerId'] . ';')->fetch(PDO::FETCH_ASSOC);
                 // Vérifier que la personne est acceptée dans l'équipe
-                if (!is_null($teamDb) && $teamDb["BelongStatus"] == "validé") {
+                if (!is_null($teamAccount) && $teamAccount["BelongStatus"] == "validé") {
                     // si la personne est dans une équipe
                     $team = true;
                     //récupérer les informations de l'équipe
-                    $infoTeamDb = $db->query('SELECT * FROM team WHERE TeamId = ' . $teamDb['TeamId'] . ';')->fetch(PDO::FETCH_ASSOC);
-                    $teamMembers = $db->query('SELECT PlayerId FROM belongteam WHERE TeamId = ' . $teamDb['TeamId'] . ';')->fetchall(PDO::FETCH_ASSOC);
+                    $infoTeamAccount = $db->query('SELECT * FROM team WHERE TeamId = ' . $teamAccount['TeamId'] . ';')->fetch(PDO::FETCH_ASSOC);
+                    $teamMembers = $db->query('SELECT PlayerId FROM belongteam WHERE TeamId = ' . $teamAccount['TeamId'] . ';')->fetchall(PDO::FETCH_ASSOC);
                 } else {
                     // si la personne n'est pas dans une équipe
                     $team = false;
@@ -114,7 +114,7 @@ if (isset($_SESSION['PlayerId'])) {
             if ($player) {
                 echo '<div id="player-desc">';
                 echo '    <div id="jeu">';
-                echo '        <p>' . $playerDb[$_SESSION['PlayerId']]['PlayerFavGame'] . '</p>';
+                echo '        <p>' . $account[$_SESSION['PlayerId']]['PlayerFavGame'] . '</p>';
                 echo '    </div>';
                 echo '</div>';
             }
@@ -128,8 +128,8 @@ if (isset($_SESSION['PlayerId'])) {
             echo '    <div>';
             echo '        <div id="team-desc">';
             echo '            <div>';
-            echo '                <h2>' . $infoTeamDb['TeamName'] . '</h2>';
-            echo '                <p>' . $infoTeamDb['TeamDesc'] . '</p>';
+            echo '                <h2>' . $infoTeamAccount['TeamName'] . '</h2>';
+            echo '                <p>' . $infoTeamAccount['TeamDesc'] . '</p>';
             echo '                <button>Modifier</button>';
             echo '            </div>';
             echo '            <div id="li-mate">';
@@ -138,7 +138,7 @@ if (isset($_SESSION['PlayerId'])) {
 
             foreach ($teamMembers as $teamMember) {
                 echo '                    <div>';
-                echo '                        <p class="mate">' . $playersDb[$teamMember['PlayerId']] . '</p>';
+                echo '                        <p class="mate">' . $allAccounts[$teamMember['PlayerId']] . '</p>';
                 echo '                        <button class="remove-mate">supprimer';
                 echo '                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">';
                 echo '                                <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />';
