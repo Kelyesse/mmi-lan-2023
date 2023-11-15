@@ -3,8 +3,8 @@ session_start();
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer l'ID du joueur depuis le champ caché
-    $playerId = isset($_POST['playerId']) ? $_POST['playerId'] : null;
+    // Récupérer l'ID du joueur depuis la session
+    $playerId = isset($_SESSION['PlayerId']) ? $_SESSION['PlayerId'] : null;
 
     // Vérifier si l'ID du joueur est valide
     if (!empty($playerId)) {
@@ -22,9 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Rediriger vers la page de connexion
         header('Location: connexion.php');
         exit();
+    } else {
+        header('Location: connexion.php');
+        exit();
     }
+} else {
+    $_SESSION['error_message'] = 'Accès non autorisé.';
+    header('Location: mon_compte.php');
+    exit();
 }
-
-// Si le formulaire n'a pas été soumis correctement, rediriger vers la page de connexion
-header('Location: connexion.php');
-exit();

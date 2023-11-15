@@ -217,8 +217,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <input type="hidden" name="playerId" value="<?php echo $_SESSION['PlayerId']; ?>">
                     <input type="submit" value="Me déconnecter">
                 </form>
-
-                <button id="remove-account">Supprimer mon compte</button>
+                <form action="./deconnection.php" method="post">
+                    <input type="submit" value="Supprimer mon compte">
+                </form>
             </div>
         </section>
 
