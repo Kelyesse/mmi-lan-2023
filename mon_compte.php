@@ -9,18 +9,16 @@ if (isset($_SESSION['PlayerId'])) {
         $playersDb = $db->query('SELECT * FROM player;')->fetchall(PDO::FETCH_ASSOC);
         $is_in = false;
         //Vérifier si le compte fait partie de la bdd
-        //Parcourir l'ensemble des comptes et vérifier que l'id est dedans
         foreach ($playersDb as $playerDb) {
-            if ($playerDb['PlayerId']) {
+            if ($playerDb['PlayerId'] == $_SESSION['PlayerId']) {
+                $is_in = true;
+                break;
             }
         }
-
-        //Vérifier que l'id correspond à l'un des comptes
-
         //Si le compte fait partie de la bdd
-        if (!is_null($playersDb[$_SESSION['PlayerId']])) {
+        if ($is_in) {
             // vérifier le type de compte (conducteur/participant)
-            if (empty($playersDb[$_SESSION['PlayerId']]['PlayerFavGame']) && empty($playerDb[$_SESSION['PlayerId']]['PlayerSetup'])) {
+            if (empty($playerDb['PlayerFavGame']) && empty($playerDb['PlayerSetup'])) {
                 //Si le compte est un conducteur
                 $player = false;
             } else {
