@@ -5,7 +5,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
 require_once('connexionbdd.php');
 
-function getPlayersOptions($db, $excludePlayerId = null) {
+function getPlayersOptions($db, $excludePlayerId = null)
+{
     $options = '';
     $query = "SELECT PlayerId, PlayerPseudo FROM player";
     if ($excludePlayerId !== null) {
@@ -22,7 +23,6 @@ function getPlayersOptions($db, $excludePlayerId = null) {
     }
     return $options;
 }
-
 
 $creatorId = isset($_SESSION['PlayerId']) ? $_SESSION['PlayerId'] : null;
 
@@ -54,8 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die('Type de fichier non autorisé pour le logo.');
         }
 
-        $uploadDirectory = "assets/img/";
-        $filenameToSave = uniqid() . "-" . basename($_FILES['img_equipe']['name']);
+        $uploadDirectory = "./assets/img/";
+        $filenameToSave = $teamName . '_logo.' . $file_ext;
         $fullPath = $uploadDirectory . $filenameToSave;
 
         if (!move_uploaded_file($_FILES['img_equipe']['tmp_name'], $fullPath)) {
@@ -72,6 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $insertQuery->bindParam(4, $teamDesc);
     if ($insertQuery->execute()) {
         $teamId = $db->lastInsertId();
+
+        // Mise à jour du champ TeamLogo dans la base de données
+        $teamLogoPath = $uploadDirectory . $filenameToSave;
+        $updateLogoQuery = $db->prepare("UPDATE team SET TeamLogo = ? WHERE TeamId = ?");
+        $updateLogoQuery->bindParam(1, $teamLogoPath);
+        $updateLogoQuery->bindParam(2, $teamId, PDO::PARAM_INT);
+        $updateLogoQuery->execute();
 
         if ($creatorId) {
             $belongQuery = $db->prepare("INSERT INTO belongteam (PlayerId, TeamId, BelongRole, BelongStatus) VALUES (?, ?, 'Créateur', 'validé')");
@@ -101,10 +108,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,6 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="./assets/style/crea_equipe.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
+
 <body>
     <header>
         <?php
@@ -148,4 +155,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 <script src="./assets/js/joueur2.js"></script>
 <script src="./assets/js/countDown.js"></script>
+
 </html>
