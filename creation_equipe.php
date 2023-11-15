@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                     <input type="text" placeholder="Nom de l'équipe" name="nom" id="nom" required><br>
                     <input type="file" name="img_equipe" id="img_equipe" required><br>
-                    <select name="player-one" id="player-one" required>
+                    <select name="player-one" id="player-one">
                         <option value="">Sélectionnez un joueur</option>
                         <?php echo getPlayersOptions($db, $creatorId); ?>
                     </select><br>
@@ -152,6 +152,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </main>
+    <?php
+        include('footer.php');
+    ?>
 </body>
 <script src="./assets/js/joueur2.js"></script>
 <script src="./assets/js/countDown.js"></script>
