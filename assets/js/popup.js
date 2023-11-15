@@ -40,7 +40,24 @@ $(document).ready(function () {
   $(".confirmNo").on("click", function () {
     $(".popup").css("display", "none");
   });
+
   $("#change-logo").on("click", function () {
     $("#changeLogoPopup").css("display", "flex");
+  });
+
+  $("#editPseudo").on("click", function () {
+    $("#editPseudoPopup").css("display", "flex");
+  });
+
+  $("#editEmail").on("click", function () {
+    $("#editEmailPopup").css("display", "flex");
+  });
+
+  $("#editPassword").on("click", function () {
+    $("#editPasswordPopup").css("display", "flex");
+  });
+
+  $("#editTeamName").on("click", function () {
+    $("#editTeamNamePopup").css("display", "flex");
   });
 });

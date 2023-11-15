@@ -105,30 +105,44 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             </div>
         </section>
         <section>
-            <!-- Donner un moyen de modifier ses informations personnelles -->
             <div id="player-info">
-                <!-- Avatar du joueur à ajouter au back -->
                 <img src="<?php echo $account['PlayerPicture'] ?>" alt="avatar du compte">
                 <div>
                     <div>
                         <img src="./assets/img/profil.svg" alt="">
-                        <!-- Pseudo du joueur à ajouter au back -->
-                        <p>Pseudo</p>
+                        <p>Pseudo: <?php echo $account['PlayerPseudo'] ?></p>
+                        <button onclick="openModal('editPseudo')">
+                            <!-- Remplace le texte par un SVG -->
+                            <img src="./assets/img/modif_icon.svg" alt="Modifier">
+                        </button>
                     </div>
                     <div>
                         <img src="./assets/img/mail.svg" alt="">
-                        <!-- @mail du joueur à ajouter au back -->
-                        <p>Adresse mail</p>
+                        <p>Adresse mail: <?php echo $account['PlayerEmail'] ?></p>
+                        <button onclick="openModal('editEmail')">
+                            <!-- Remplace le texte par un SVG -->
+                            <img src="./assets/img/modif_icon.svg" alt="Modifier">
+                        </button>
                     </div>
-                    <div>
-                        <img src="./assets/img/nom.svg" alt="">
-                        <!-- Nom équipe du joueur à ajouter au back -->
-                        <p>Nom de l'équipe</p>
-                    </div>
+                    <?php
+                    if ($creator) {
+                        echo '<div>';
+                        echo '  <img src="./assets/img/nom.svg" alt="">';
+                        echo "  <p>Nom de l'équipe: " . $infoTeamAccount['TeamName'] . "</p>";
+                        echo '  <button onclick="openModal(\'editTeamName\')">';
+                        echo '      <!-- Remplace le texte par un SVG -->';
+                        echo '      <img src="./assets/img/modif_icon.svg" alt="Modifier">';
+                        echo '  </button>';
+                        echo '</div>';
+                    }
+                    ?>
                     <div>
                         <img src="./assets/img/cadena.svg" alt="">
-                        <!-- Mdp du joueur à ajouter au back -->
                         <p>Mot de passe</p>
+                        <button onclick="openModal('editPassword')">
+                            <!-- Remplace le texte par un SVG -->
+                            <img src="./assets/img/modif_icon.svg" alt="Modifier">
+                        </button>
                     </div>
                 </div>
             </div>
@@ -329,6 +343,26 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             </form>
             <button class="confirmNo">Annuler</button>
         </div>
+    </div>
+
+    <!-- Modale pour éditer le pseudo -->
+    <div id="editPseudoPopup" class="popup">
+        <!-- Contenu de la modale pour éditer le pseudo -->
+    </div>
+
+    <!-- Modale pour éditer l'email -->
+    <div id="editEmailPopup" class="popup">
+        <!-- Contenu de la modale pour éditer l'email -->
+    </div>
+
+    <!-- Modale pour éditer le mot de passe -->
+    <div id="editPasswordPopup" class="popup">
+        <!-- Contenu de la modale pour éditer le mot de passe -->
+    </div>
+
+    <!-- Modale pour éditer le nom de l'équipe -->
+    <div id="editTeamNamePopup" class="popup">
+        <!-- Contenu de la modale pour éditer le nom de l'équipe -->
     </div>
 
 
