@@ -347,22 +347,56 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
 
     <!-- Modale pour éditer le pseudo -->
     <div id="editPseudoPopup" class="popup">
-        <!-- Contenu de la modale pour éditer le pseudo -->
+        <div class="popup-content">
+            <p>Modifier le pseudo</p>
+            <form action="traitement_pseudo.php" method="post">
+                <label for="newPseudo">Nouveau pseudo :</label>
+                <input type="text" id="newPseudo" name="newPseudo" required>
+                <input type="submit" value="Enregistrer les modifications" class="confirmYes">
+            </form>
+            <button class="confirmNo">Annuler</button>
+        </div>
     </div>
 
     <!-- Modale pour éditer l'email -->
     <div id="editEmailPopup" class="popup">
-        <!-- Contenu de la modale pour éditer l'email -->
+        <div class="popup-content">
+            <p>Modifier l'email</p>
+            <form action="traitement_email.php" method="post">
+                <label for="newEmail">Nouvel email :</label>
+                <input type="email" id="newEmail" name="newEmail" required>
+                <input type="submit" value="Enregistrer les modifications" class="confirmYes">
+            </form>
+            <button class="confirmNo">Annuler</button>
+        </div>
     </div>
 
     <!-- Modale pour éditer le mot de passe -->
     <div id="editPasswordPopup" class="popup">
-        <!-- Contenu de la modale pour éditer le mot de passe -->
+        <div class="popup-content">
+            <p>Modifier le mot de passe</p>
+            <form action="traitement_password.php" method="post">
+                <label for="newPassword">Nouveau mot de passe :</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                <label for="confirmPassword">Confirmer le mot de passe :</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <input type="submit" value="Enregistrer les modifications" class="confirmYes">
+            </form>
+            <button class="confirmNo">Annuler</button>
+        </div>
     </div>
 
     <!-- Modale pour éditer le nom de l'équipe -->
     <div id="editTeamNamePopup" class="popup">
-        <!-- Contenu de la modale pour éditer le nom de l'équipe -->
+        <div class="popup-content">
+            <p>Modifier le nom de l'équipe</p>
+            <form action="traitement_teamname.php" method="post">
+                <label for="newTeamName">Nouveau nom d'équipe :</label>
+                <input type="text" id="newTeamName" name="newTeamName" required>
+                <input type="submit" value="Enregistrer les modifications" class="confirmYes">
+            </form>
+            <button class="confirmNo">Annuler</button>
+        </div>
     </div>
 
 
