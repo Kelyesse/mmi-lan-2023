@@ -259,6 +259,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <div class="popup-content">
                 <p>Etes-vous sûr de vouloir supprimer votre équipe ?</p>
                 <form action="./delete_team.php" method="post">
+                    <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
                     <input type="submit" value="Oui, supprimer mon équipe" class="confirmYes">
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
