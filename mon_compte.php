@@ -399,7 +399,6 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         </div>
     </div>
 
-
     <script src="./assets/js/countDown.js"></script>
     <script src="./assets/js/popup.js"></script>
 </body>
