@@ -124,7 +124,7 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
                             <textarea name="" id="" cols="1000" rows="10" placeholder="Votre messages" name="mess" id="message"></textarea>
                         </div>
                         <div id="sub">
-                            <a href="">En nous contactant vous acceptez le RGPD</a>
+                            <a href="./reglement.php">En nous contactant vous acceptez le RGPD</a>
                             <input type="submit" id="submit" value="envoyer">
                         </div>
                     </div>
