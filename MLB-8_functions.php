@@ -46,24 +46,26 @@
         while($nbMembres<3){
             echo '<div class="equipe_incomplete">';
             echo '<h2>Cette équipe est incomplète</h2>';
-            $req = $db->prepare("SELECT PlayerId FROM belongteam");
-            $req->execute();
-            $equipierId = $req->fetchAll();
-            $dansequipe = false;
-            foreach ($equipierId as $equipier) {
-                if (in_array($_SESSION['playerId'], $equipier)) {
-                    $dansequipe = true;
-                    break;
+            if(isset($_SESSION['playerId'])){
+                $req = $db->prepare("SELECT PlayerId FROM belongteam");
+                $req->execute();
+                $equipierId = $req->fetchAll();
+                $dansequipe = false;
+                foreach ($equipierId as $equipier) {
+                    if (in_array($_SESSION['playerId'], $equipier)) {
+                        $dansequipe = true;
+                        break;
+                    }
                 }
+                $req = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
+                $req->execute([$_SESSION['playerId']]);
+                $userrole = $req->fetch()['PlayerStatus'];
+                if(!$dansequipe || $userrole == "Participant"){
+                    $message = "Rejoindre l'équipe";
+                    echo '<a href="details_equipes.php?teamId='.$teamId.'&rejoindreEquipe='.true.'">'.$message.'</a>';
+                }
+                echo '</div>';
             }
-            $req = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
-            $req->execute([$_SESSION['playerId']]);
-            $userrole = $req->fetch()['PlayerStatus'];
-            if(!$dansequipe || $userrole == "Participant"){
-                $message = "Rejoindre l'équipe";
-                echo '<a href="details_equipes.php?teamId='.$teamId.'&rejoindreEquipe='.true.'">'.$message.'</a>';
-            }
-            echo '</div>';
             $nbMembres++;
         }
     }

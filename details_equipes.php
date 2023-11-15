@@ -47,7 +47,7 @@
   <div id="alertRejoindreEquipe" hidden>
       <h2>Vous allez rejoindre l'équipe <?php  echo getTeamName($teamId, $db); ?></h2>
       <form action="rejoindreEquipe.php?teamId=<?php echo $teamId?>" method="post">
-          <textarea name="playerDesc" id="" cols="30" rows="10" placeholder="Ecrire une description de vous"></textarea>
+          <textarea name="playerDesc" id="" cols="30" rows="10" placeholder="Ecrire une description de vous" required></textarea>
           <div>
             <input type="button" onclick='window.location.href="details_equipes.php?teamId=<?php echo $teamId?>"' value="J'ai changé d'avis">
             <input type="submit" value="Rejoindre">
