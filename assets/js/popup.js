@@ -1,43 +1,41 @@
 $(document).ready(function () {
   $(".remove-mate").on("click", function () {
     $("#confirmationPopup").css("display", "flex");
-    $("#confirmationPopup .confirmYes").on("click", function () {
-      $("#confirmationPopup").css("display", "none");
-    });
-    $("#confirmationPopup .confirmNo").on("click", function () {
-      $("#confirmationPopup").css("display", "none");
-    });
+    var userIdToDelete = $(this).data("userid");
+    $("#userIdToDelete").val(userIdToDelete);
+  });
+
+  $(".accept-mate").on("click", function () {
+    var userIdToAccept = $(this).data("userid");
+    $("#userIdToAccept").val(userIdToAccept);
+    $("#acceptMemberPopup").css("display", "flex");
+  });
+  
+  $(".reject-mate").on("click", function () {
+    var userIdToReject = $(this).data("userid");
+    $("#userIdToReject").val(userIdToReject);
+    $("#rejectMemberPopup").css("display", "flex");
   });
 
   $("#remove-team").on("click", function () {
     $("#popUpTeam").css("display", "flex");
-    $("#popUpTeam .confirmYes").on("click", function () {
-      $("#popUpTeam").css("display", "none");
-    });
-    $("#popUpTeam .confirmNo").on("click", function () {
-      $("#popUpTeam").css("display", "none");
-    });
   });
 
   $("#remove-account").on("click", function () {
     $("#popUpAccount").css("display", "flex");
-    $("#popUpAccount .confirmYes").on("click", function () {
-      $("#popUpAccount").css("display", "none");
-    });
-    $("#popUpAccount .confirmNo").on("click", function () {
-      $("#popUpAccount").css("display", "none");
-    });
   });
 
   $("#leave-team").on("click", function () {
-    // Utiliser la variable JavaScript teamIdValue ici
-    $('#popUpLeave input[name="teamId"]').val(teamIdValue);
     $("#popUpLeave").css("display", "flex");
-    $("#popUpLeave .confirmYes").on("click", function () {
-      $("#popUpLeave").css("display", "none");
-    });
-    $("#popUpLeave .confirmNo").on("click", function () {
-      $("#popUpLeave").css("display", "none");
-    });
+    var teamId = $(this).data("teamid");
+    $('#popUpLeave input[name="teamId"]').val(teamId);
+  });
+
+  $(".confirmYes").on("click", function () {
+    $(".popup").css("display", "none");
+  });
+
+  $(".confirmNo").on("click", function () {
+    $(".popup").css("display", "none");
   });
 });

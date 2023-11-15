@@ -90,9 +90,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
     echo '</script>';
     ?>
     <header>
-    <?php
+        <?php
         include('navbar.php');
-    ?>
+        ?>
     </header>
     <main>
         <section>
@@ -179,16 +179,8 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                         } elseif ($teamMember['BelongStatus'] == 'en attente') {
                             echo '                    <div>';
                             echo '                        <p class="mate">' . $teamMember['PlayerPseudo'] . '</p>';
-                            echo '                        <button class="remove-mate" data-userid="' . $teamMember['PlayerId'] . '">Accepter';
-                            echo '                              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">';
-                            echo '                                <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />';
-                            echo '                              </svg>';
-                            echo '                        </button>';
-                            echo '                        <button class="remove-mate" data-userid="' . $teamMember['PlayerId'] . '">Refuser';
-                            echo '                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">';
-                            echo '                                <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />';
-                            echo '                            </svg>';
-                            echo '                        </button>';
+                            echo '                          <button class="accept-mate" data-userid="' . $teamMember['PlayerId'] . '">Accepter</button>';
+                            echo '                          <button class="reject-mate" data-userid="' . $teamMember['PlayerId'] . '">Refuser</button>';
                             echo '                    </div>';
                         }
                     }
@@ -282,6 +274,31 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             </div>
         </div>
     </main>
+
+    <!-- Accepter membre de l'équipe -->
+    <div id="acceptMemberPopup" class="popup">
+        <div class="popup-content">
+            <p>Voulez-vous accepter cette personne dans l'équipe ?</p>
+            <form action="./accept_member.php" method="post">
+                <input type="hidden" id="userIdToAccept" name="userId" value="">
+                <input type="submit" value="Oui, accepter" class="confirmYes" name='accept_member'>
+            </form>
+            <button class="confirmNo">Non, j’ai changé d’avis</button>
+        </div>
+    </div>
+
+    <!-- Refuser membre de l'équipe -->
+    <div id="rejectMemberPopup" class="popup">
+        <div class="popup-content">
+            <p>Voulez-vous refuser cette personne dans l'équipe ?</p>
+            <form action="./reject_member.php" method="post">
+                <input type="hidden" id="userIdToReject" name="userId" value="">
+                <input type="submit" value="Oui, refuser" class="confirmYes" name='reject_member'>
+            </form>
+            <button class="confirmNo">Non, j’ai changé d’avis</button>
+        </div>
+    </div>
+
 
     <script src="./assets/js/countDown.js"></script>
     <script src="./assets/js/popup.js"></script>
