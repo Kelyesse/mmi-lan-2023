@@ -43,9 +43,8 @@
                             <img src="./assets/img/twitter-logo.svg" alt="twitter-logo" class="footer-social-img" />
                         </a>
                     </li>
-                    <!-- waiting for discord link -->
                     <li class="footer-social-wrapper">
-                        <a href="#" class="footer-social-link" target="_blank">
+                        <a href="https://discord.gg/uPFq4y96vy" class="footer-social-link" target="_blank">
                             <img src="./assets/img/discord-logo.svg" alt="discord-logo" class="footer-social-img" />
                         </a>
                     </li>

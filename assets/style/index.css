@@ -183,7 +183,7 @@ main {
     width: 100%;
     height: 100%;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     display: inline-flex;
 }
 
@@ -258,6 +258,16 @@ main {
     background: #cd0c75;
 }
 
+.faq-button::before,
+.carpooling-button::before {
+    content: "";
+    position: absolute;
+    width: 439px;
+    height: 105px;
+    background-color: gray;
+    z-index: 0;
+}
+
 .faq-button {
     background: #febc11;
 }
@@ -273,6 +283,7 @@ main {
 }
 
 .button-label h3 {
+    position: relative;
     transform-origin: center;
     padding: 20px;
     word-wrap: break-word;
@@ -431,4 +442,126 @@ main {
 /* This class is used to hide content before we use it (ex: we don't have sponsors yet) */
 .hidden-content {
     display: none;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1300px) {
+    .navigation-buttons-container {
+        transform: none;
+    }
+    .navigation-button {
+        max-width: 600px;
+        max-height: 150px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .header-container .count-down {
+        width: 100%;
+    }
+    .header-container .title-mmilan {
+        font-size: 60px;
+    }
+    .header-container .count-down-timer .numbers {
+        font-size: 28px;
+    }
+    .header-container .count-down-timer .letters {
+        font-size: 28px;
+    }
+    .teaser-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60vw;
+        height: 30vw;
+        min-width: 280px;
+        min-height: 140px;
+    }
+    .teaser {
+        width: 100%;
+        height: 100%;
+    }
+    .about-section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60vw;
+        height: 1000px;
+        position: relative;
+    }
+
+    .about-content-container {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 50px;
+        position: relative;
+    }
+    .explanation-text-container {
+        height: auto;
+        width: 60vw;
+        min-width: 280px;
+        position: relative;
+    }
+    .description-text {
+        width: 100%;
+    }
+    .navigation-button,
+    .navigation-button::before {
+        max-width: 439px;
+        max-height: 105px;
+        width: 55vw;
+        height: 15vw;
+    }
+    .button-label h3 {
+        font-size: clamp(10px, 4vw, 24px);
+    }
+    .icon-box {
+        padding-bottom: 2%;
+    }
+    .icon-box img {
+        width: 10%;
+        height: 10%;
+        min-width: 20px;
+        max-width: 80px;
+        min-height: 20px;
+        max-height: 80px;
+    }
+    .animated-banner {
+        position: relative;
+        margin-top: 70%;
+    }
+    .follow-us {
+        font-size: 18px;
+    }
+    .social-media {
+        height: auto;
+        word-wrap: break-word;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .countdown-title {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .twitch-preview .count-down-timer {
+        font-size: 30px;
+        color: var(--secondary-color);
+    }
+    .twitch-livestream {
+        width: 60vw;
+        height: 30vw;
+        min-width: 280px;
+        min-height: 140px;
+        align-items: baseline;
+    }
+    .twitch-title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .twitch-embed {
+        width: 80%;
+        height: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }

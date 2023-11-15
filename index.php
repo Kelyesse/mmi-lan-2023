@@ -7,14 +7,18 @@
     <title>Accueil | MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/index.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
-    <?php include 'navbar.php' ?>
+    <?php
+    include 'navbar.php';
+
+    ?>
     <header>
         <div class="header-container">
             <div class="count-down">
-                <h1>MMI LAN</h1>
+                <h1 class="title-mmilan">MMI LAN</h1>
                 <div class="count-down-timer"></div>
 
                 <button class="cta-button">Inscrivez-vous</button>
@@ -26,7 +30,7 @@
         <img src="./assets/img/homepage_pattern.svg" alt="" class="background-pattern">
         <section class="teaser-container">
             <div class="teaser">
-                <iframe src="https://www.youtube.com/embed/AuoUHzb4kRs" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/AuoUHzb4kRs"></iframe>
             </div>
         </section>
 
@@ -56,7 +60,7 @@
                         <span class="colored-words">compétition</span>.
                         <br><br>
                         Des <span class="colored-words">récompenses</span> seront à gagner à l’issue du tournoi pour
-                        récompenser les efforts des équipes gagnantes.
+                        gratifier les efforts des équipes gagnantes.
                         <br><br>
                         Si la compétition n’est pas votre domaine, et que vous voulez simplement
                         <span class="colored-words">profiter d’une ambiance conviviale</span>, vous êtes également au
@@ -66,13 +70,13 @@
                         journée à leur façon.
                         <br>
                         La compétition sera retransmise <span class="colored-words">en direct sur
-                            <a href="https://www.twitch.tv/lanmmi" class="twitch-link">
+                            <a href="https://www.twitch.tv/lanmmi" class="twitch-link" target="_blank">
                                 la chaîne Twitch</a>
                         </span> de l’événement, vous pourrez donc suivre le déroulé de la LAN sans vous déplacer.
                     </div>
                 </div>
                 <div class="navigation-buttons-container">
-                    <a href="#" class="navigation-button registration-button">
+                    <a href="./inscription.php" class="navigation-button registration-button">
                         <div class="button-label">
                             <h3>Inscription</h3>
                         </div>
@@ -81,14 +85,16 @@
 
                     <a href="#" class="navigation-button carpooling-button">
                         <div class="button-label">
-                            <h3>Co-voiturage</h3>
+                            <!-- <h3>Co-voiturage</h3> -->
+                            <h3>Bientôt disponible...</h3>
                         </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
 
                     <a href="#" class="navigation-button faq-button">
                         <div class="button-label">
-                            <h3>FAQ</h3>
+                            <h3>Bientôt disponible...</h3>
+                            <!-- <h3>FAQ</h3> -->
                         </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
@@ -139,9 +145,8 @@
                         <img src="./assets/img/twitter-logo.svg" alt="twitter-logo" class="social-img" />
                     </a>
                 </li>
-                <!-- waiting for discord link -->
                 <li class="social-wrapper">
-                    <a href="#" class="social-link" target="_blank">
+                    <a href="https://discord.gg/uPFq4y96vy" class="social-link" target="_blank">
                         <img src="./assets/img/discord-logo.svg" alt="discord-logo" class="social-img" />
                     </a>
                 </li>
