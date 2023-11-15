@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error404</title>
     <link rel="stylesheet" href="./assets/style/error.css">
-    
+
 </head>
+
 <body>
     <main>
         <!--texte en fond-->
@@ -19,8 +21,9 @@
                 <p id="exist">La page que vous cherchez n'existe pas</p>
             </div>
             <!--bouton-->
-            <a href="index.php" id="backAcc">Retour à l'accueil</a>
+            <a href="./" id="backAcc">Retour à l'accueil</a>
         </div>
     </main>
 </body>
+
 </html>
