@@ -6,11 +6,21 @@ if (isset($_SESSION['PlayerId'])) {
     //Se connecter à la base de données et récupérer l'ensemble des comptes
     require_once('connexionbdd.php');
     try {
-        $playerDb = $db->query('SELECT * FROM player WHERE PlayerId = ' . $_SESSION['PlayerId'] . ';')->fetch(PDO::FETCH_ASSOC);
+        $playersDb = $db->query('SELECT * FROM player;')->fetchall(PDO::FETCH_ASSOC);
+        $is_in = false;
+        //Vérifier si le compte fait partie de la bdd
+        //Parcourir l'ensemble des comptes et vérifier que l'id est dedans
+        foreach ($playersDb as $playerDb) {
+            if ($playerDb['PlayerId']) {
+            }
+        }
+
+        //Vérifier que l'id correspond à l'un des comptes
+
         //Si le compte fait partie de la bdd
-        if (!is_null($playerDb)) {
+        if (!is_null($playersDb[$_SESSION['PlayerId']])) {
             // vérifier le type de compte (conducteur/participant)
-            if (empty($playerDb['PlayerFavGame']) && empty($playerDb['PlayerSetup'])) {
+            if (empty($playersDb[$_SESSION['PlayerId']]['PlayerFavGame']) && empty($playerDb[$_SESSION['PlayerId']]['PlayerSetup'])) {
                 //Si le compte est un conducteur
                 $player = false;
             } else {
@@ -106,10 +116,7 @@ if (isset($_SESSION['PlayerId'])) {
             if ($player) {
                 echo '<div id="player-desc">';
                 echo '    <div id="jeu">';
-                echo '        <p>Jeu favoris</p>';
-                echo '    </div>';
-                echo '    <div id="desc">';
-                echo '        <p>Texte de présentation Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>';
+                echo '        <p>' . $playerDb[$_SESSION['PlayerId']]['PlayerFavGame'] . '</p>';
                 echo '    </div>';
                 echo '</div>';
             }
@@ -133,7 +140,7 @@ if (isset($_SESSION['PlayerId'])) {
 
             foreach ($teamMembers as $teamMember) {
                 echo '                    <div>';
-                echo '                        <p class="mate">' . $teamMember['PlayerName'] . '</p>';
+                echo '                        <p class="mate">' . $playersDb[$teamMember['PlayerId']] . '</p>';
                 echo '                        <button class="remove-mate">supprimer';
                 echo '                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">';
                 echo '                                <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />';
