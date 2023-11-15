@@ -8,17 +8,26 @@ if (isset($_SESSION['PlayerId'])) {
     //Se connecter à la base de données et récupérer l'ensemble des comptes
     require_once('connexionbdd.php');
     try {
-        $stmt = $db->query('SELECT * FROM Player WHERE PlayerId = ' . $_SESSION['PlayerId'] . ';')->fetch(PDO::FETCH_ASSOC);
-        if (!is_null($stmt)) {
-            //Si le compte est dedans, quel type de compte est-il
-            if (empty($stmt['PlayerFavGame']) && empty($stmt['PlayerSetup'])) {
+        $playerDb = $db->query('SELECT * FROM player WHERE PlayerId = ' . $_SESSION['PlayerId'] . ';')->fetch(PDO::FETCH_ASSOC);
+        //Si le compte fait partie de la bdd
+        if (!is_null($playerDb)) {
+            // vérifier le type de compte (conducteur/participant)
+            if (empty($playerDb['PlayerFavGame']) && empty($playerDb['PlayerSetup'])) {
                 //Si le compte est un conducteur
-                $acc = false;
+                $player = false;
             } else {
                 //Si le compte est un participant
-                $acc = true;
-                //Vérifier si le compte a une équipe
-                //Récupérer les équipes dans la base de données
+                $player = true;
+                //Récupérer l'équipe du compte s'il fait partie d'une équipe
+                $teamDb = $db->query('SELECT * FROM belongteam WHERE PlayerId = ' . $_SESSION['PlayerId'] . ';')->fetch(PDO::FETCH_ASSOC);
+                // Vérifier que la personne est acceptée dans l'équipe
+                if (!is_null($teamDb) && $teamDb["BelongStatus"] == "IL est dedans ??") {
+                    // si la personne est dans une équipe
+                    $team = true;
+                } else {
+                    // si la personne n'est pas dans une équipe
+                    $team = false;
+                }
             }
         } else {
             //Si le compte ne fait pas partie de la base : grosse erreur
