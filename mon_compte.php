@@ -1,11 +1,11 @@
 <?php
 // Initialiser la session
 session_start();
+try {
+    if (isset($_SESSION['PlayerId'])) {
+        // Se connecter à la base de données et récupérer l'ensemble des comptes
+        require_once('connexionbdd.php');
 
-if (isset($_SESSION['PlayerId'])) {
-    // Se connecter à la base de données et récupérer l'ensemble des comptes
-    require_once('connexionbdd.php');
-    try {
         $allAccounts = $db->query('SELECT * FROM player;')->fetchall(PDO::FETCH_ASSOC);
         $is_in = false;
 
@@ -59,14 +59,18 @@ if (isset($_SESSION['PlayerId'])) {
             header('Location:./connexion.php');
             exit(0);
         }
-    } catch (Exception $e) {
-        $erroMessage = '';
+    } else {
+        // Rediriger vers la page de connexion
+        header('Status: 301 Moved Permanently', false, 301);
+        header('Location:./connexion.php');
+        exit(0);
     }
-} else {
-    // Rediriger vers la page de connexion
-    header('Status: 301 Moved Permanently', false, 301);
-    header('Location:./connexion.php');
-    exit(0);
+} catch (PDOException $e) {
+    // Gestion des erreurs liées à la base de données
+    echo 'Erreur de base de données : ' . $e->getMessage();
+} catch (Exception $e) {
+    // Gestion des autres erreurs
+    echo 'Une erreur inattendue s\'est produite : ' . $e->getMessage();
 }
 $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
 ?>
