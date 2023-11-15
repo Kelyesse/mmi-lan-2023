@@ -1,5 +1,4 @@
 <?php
-// Initialiser la session
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -74,7 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($insertQuery->execute()) {
         $teamId = $db->lastInsertId();
 
-        // Ajouter le créateur de l'équipe
         if ($creatorId) {
             $belongQuery = $db->prepare("INSERT INTO belongteam (PlayerId, TeamId, BelongRole, BelongStatus) VALUES (?, ?, 'Créateur', 'validé')");
             $belongQuery->bindParam(1, $creatorId, PDO::PARAM_INT);
@@ -82,7 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $belongQuery->execute();
         }
 
-        // Ajouter les autres membres sélectionnés de l'équipe, si nécessaire
         if (!empty($playerOneId) && $playerOneId != $creatorId) {
             $belongQuery = $db->prepare("INSERT INTO belongteam (PlayerId, TeamId, BelongRole, BelongStatus) VALUES (?, ?, 'participant', 'validé')");
             $belongQuery->bindParam(1, $playerOneId, PDO::PARAM_INT);
