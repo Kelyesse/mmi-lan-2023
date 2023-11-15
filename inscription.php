@@ -141,9 +141,10 @@ function generateId(array $excludeArray)
 </head>
 <body>
     <header>
+        <?php
+            include('navbar.php');
+        ?>
     </header>
-    <div class="count-down-timer">
-    </div>
     <main>
         <div>
             <div id="title">
@@ -162,14 +163,22 @@ function generateId(array $excludeArray)
                                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
                             </div>
                             <div class="simple-inp">
+                                <img src="./assets/img/profil.svg" alt="">
                                 <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo" required>
                             </div>
                             <div class="simple-inp">
+                                <img src="./assets/img/mail.svg" alt="">
                                 <input type="email" placeholder="Entrer votre email" name="email" id="email" required>
                             </div>
                             <div class="double-inp">
-                                <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" class="mdp" required>
-                                <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" class="mdp" required>
+                                <div>
+                                    <img src="./assets/img/cadena.svg" alt="">
+                                    <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" class="mdp" required>
+                                </div>
+                                <div>
+                                    <img src="./assets/img/cadena.svg" alt="">
+                                    <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" class="mdp" required>
+                                </div>
                             </div>
                             <p id="config-psw">
                                 Le mot de passe doit contenir : <br>
