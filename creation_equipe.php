@@ -24,6 +24,7 @@ function getPlayersOptions($db, $excludePlayerId = null) {
     return $options;
 }
 
+
 $creatorId = isset($_SESSION['PlayerId']) ? $_SESSION['PlayerId'] : null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -131,13 +132,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                     <input type="text" placeholder="Nom de l'équipe" name="nom" id="nom" required><br>
                     <input type="file" name="img_equipe" id="img_equipe" required><br>
-                    <select name="player-one" id="player-one" required><br><br>
+                    <select name="player-one" id="player-one" required>
                         <option value="">Sélectionnez un joueur</option>
-                        <?php echo getPlayersOptions($bdd); ?>
+                        <?php echo getPlayersOptions($db, $creatorId); ?>
                     </select><br>
+
                     <select name="player-two" id="player-two">
                         <option value="">Sélectionnez un deuxième joueur (optionnel)</option>
-                        <?php echo getPlayersOptions($bdd); ?>
+                        <?php echo getPlayersOptions($db, $creatorId); ?>
                     </select><br><br>
                     <textarea placeholder="Écrire une description de l’équipe" name="desc_team" id="desc_team" cols="30" rows="10" required></textarea><br>
                     <textarea placeholder="Écrire une description de vous" name="desc_creator" id="desc_creator" cols="30" rows="10" required></textarea><br>
