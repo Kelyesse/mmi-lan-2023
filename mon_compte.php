@@ -317,6 +317,20 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         </div>
     </div>
 
+    <!-- Modal pour changer le logo -->
+    <div id="changeLogoPopup" class="popup">
+        <div class="popup-content">
+            <p>Changer le logo de l'équipe</p>
+            <form action="./change_logo.php" method="post" enctype="multipart/form-data">
+                <label for="logoFile">Sélectionner un fichier logo (png, jpg, jpeg)</label>
+                <input type="file" name="logoFile" id="logoFile" accept=".png, .jpg, .jpeg" required>
+                <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
+                <input type="submit" value="Changer le logo" class="confirmYes">
+            </form>
+            <button class="confirmNo">Annuler</button>
+        </div>
+    </div>
+
 
     <script src="./assets/js/countDown.js"></script>
     <script src="./assets/js/popup.js"></script>

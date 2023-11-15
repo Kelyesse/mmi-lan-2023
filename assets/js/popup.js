@@ -40,4 +40,7 @@ $(document).ready(function () {
   $(".confirmNo").on("click", function () {
     $(".popup").css("display", "none");
   });
+  $("#change-logo").on("click", function () {
+    $("#changeLogoPopup").css("display", "flex");
+  });
 });
