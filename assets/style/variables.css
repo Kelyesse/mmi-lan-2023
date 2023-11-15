@@ -14,7 +14,27 @@
     /* Tertiary color */
     --tertiary-color: #f15722;
     /* Accentuation color */
+    /* Primary color */
+    --primary-color: #2f1d62;
+    /* Secondary color */
+    --secondary-color: #cd0c75;
+    /* Tertiary color */
+    --tertiary-color: #f15722;
+    /* Accentuation color */
     --accent-color-1: #febc11;
+    /* Background color */
+    --background-color: #151515;
+    /* Primary color hovered */
+    --primary-color-hover: #24154d;
+    /* Accent color hovered */
+    --accent-color-1-hover: #dca10c;
+}
+
+/* Polices */
+:root {
+    --body-font: "Montserrat", sans-serif;
+    --accent-font: "Overused Grotesk", sans-serif;
+    /* Police du texte du corps */
     /* Background color */
     --background-color: #151515;
     /* Primary color hovered */
