@@ -7,7 +7,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 // Traitement du formulaire lorsque le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification si tous les champs requis sont présents
-    $requiredFields = ['nom', 'prenom', 'pseudo', 'email', 'mdp1', 'mdp2', 'role']; // ajouter 'avatar' quand on aura recu les images
+    $requiredFields = ['nom', 'prenom', 'pseudo', 'email', 'mdp1', 'mdp2', 'role', 'avatar'];
     $missingFields = array_diff($requiredFields, array_keys($_POST));
 
     if (!empty($missingFields)) {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mdp1 = hash('sha256', $_POST["mdp1"]);
         $mdp2 = hash('sha256', $_POST["mdp2"]);
         $role = $_POST["role"];
-        //$avatar = $_POST["avatar"];
+        $avatar = $_POST["avatar"];
         $favjeu = $_POST["favjeu"];
         $selectedSetup = $_POST["setup"];
 
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id = generateId($db->query('SELECT PlayerId FROM player')->fetchAll(PDO::FETCH_COLUMN));
 
                 // Insertion des données dans la base de données en fonction du rôle
-                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerStatus, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :statut, :setup, :favgame)"; //Ajouter player picture et :avatar
+                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerStatus, PlayerSetup, PlayerFavGame, PlayerPicture) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :statut, :setup, :favgame, :avatar)";
                 $stmt = $db->prepare($sql);
 
                 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bindParam(':pseudo', $nom, PDO::PARAM_STR);
                 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                 $stmt->bindParam(':mdp',  $mdp1, PDO::PARAM_STR);
-                // $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
+                $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
 
                 if ($role === "Participant") {
                     $stmt->bindParam(':setup',  $selectedSetup, PDO::PARAM_STR);
@@ -223,7 +223,7 @@ function generateId(array $excludeArray)
                                 <a href="#">Se connecter ?</a>
                             </div>
                         </div>
-                        <!-- <div id="choix_ava">
+                        <div id="choix_ava">
                             <div>
                                 <h3>Choisissez votre avatar</h3>
                                 <div id="liste_ava">
@@ -231,56 +231,51 @@ function generateId(array $excludeArray)
                                         <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2" />
                                     </svg>
                                     <div class="avatar">
-
-                                        toutes les img sont à changé par celles de la base de donnée
-
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar1.png" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava2.gif" alt="">
+                                            <img src="./assets/img/avatar2.png" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar3.png" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar4.png" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar5.png" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar6.png" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar7.png" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar8.png" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar9.png" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar10.png" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar11.png" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="">
+                                            <img src="./assets/img/avatar12.png" alt="">
                                         </div>
                                     </div>
                                     <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
                                         <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2" />
                                     </svg>
                                 </div>
-
-                                Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer
-
+                                <!-- Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer -->
                                 <input type="hidden" name="avatar" id="avatar" value="" required>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                     <div id="accept-rules">
                         <input type="checkbox" name="rules" id="rules" required>
