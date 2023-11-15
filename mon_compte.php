@@ -54,6 +54,7 @@ if (isset($_SESSION['PlayerId'])) {
     <title>mon_compte</title>
     <link rel="stylesheet" href="./assets/style/mon_compte.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -74,7 +75,7 @@ if (isset($_SESSION['PlayerId'])) {
         <section>
             <div id="player-info">
                 <!--avatar du joueur à ajouter au back-->
-                <img src="" alt="">
+                <img src="<?php echo $player['PlayerPicture'] ?>" alt="avatar du compte">
                 <div>
                     <div>
                         <img src="./assets/img/profil.svg" alt="">
