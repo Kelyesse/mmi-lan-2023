@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   background: var(--fond-pages, #151515);
 }
@@ -104,239 +109,41 @@ body #main form .formulaire div input[type=submit] {
   border-radius: 5px;
   color: var(--text-contenu, #fff);
   background: var(--primaire, #2f1d62);
-=======
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
 }
 
 @media screen and (min-width: 1024px) {
-  body {
-    background: var(--fond-pages, #151515);
-  }
   body #main {
-    display: inline-flex;
-    flex-direction: column;
     align-items: flex-start;
     gap: 60px;
-<<<<<<< HEAD
-    padding: 50px 0 50px 50px;
   }
   body #main .titre {
-=======
-    padding: 67px 0 0 100px;
-  }
-  body #main #titre {
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-<<<<<<< HEAD
     text-align: left;
   }
   body #main .titre h1 {
-    color: var(--text-contenu, #fff);
-    background: none;
-=======
-  }
-  body #main #titre h1 {
-    color: var(--text-contenu, #fff);
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
-    /* Desktop/h1-desktop */
-    font-family: Overused Grotesk;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    text-transform: uppercase;
-<<<<<<< HEAD
     padding: 0;
+    font-size: 40px;
+    background: none;
   }
   body #main .titre p {
-    color: var(--texte-infos, #fff);
-=======
-  }
-  body #main #titre p {
-    color: var(--texte-infos, #fff);
     width: 505px;
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
-    /* Desktop/p-desktop */
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 23px; /* 143.75% */
-<<<<<<< HEAD
-    width: 505px;
-=======
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
   }
   body #main form {
-    display: flex;
+    border: none;
     width: 820px;
-    padding: 20px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 40px;
     border-radius: 5px;
     border: 1px solid var(--text-contenu, #fff);
   }
-<<<<<<< HEAD
-  body #main form h1 {
-=======
-  body #main form h2 {
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
-    color: var(--text-contenu, #fff);
-    /* Desktop/h2-desktop */
-    font-family: Montserrat;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-  }
-<<<<<<< HEAD
   body #main form .formulaire {
-=======
-  body #main form div {
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
-    align-self: stretch;
   }
-<<<<<<< HEAD
   body #main form .formulaire input {
-=======
-  body #main form div p {
-    color: var(--text-contenu, #fff);
-    /* Desktop/p-desktop */
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 23px; /* 143.75% */
-    align-self: stretch;
-  }
-  body #main form div input {
-    border: none;
-    border-bottom: 1px solid var(--text-contenu, #fff);
-    background: var(--fond-pages, #151515);
-  }
-  body #main form div div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  body #main form div div img {
-    padding: 10px;
-  }
-  body #main form div div input[type=number] {
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
-    display: flex;
     height: 41px;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-<<<<<<< HEAD
-    border: none;
-    border-bottom: 1px solid var(--text-contenu, #fff);
-    background: var(--fond-pages, #151515);
   }
   body #main form .formulaire textarea {
-=======
-    width: 715px;
-  }
-  body #main form div div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  body #main form div div img {
-    padding: 10px;
-  }
-  body #main form div div input[type=text] {
-    display: flex;
-    height: 41px;
-    padding: 10px;
-    align-items: center;
-    gap: 10px;
-    align-self: stretch;
-    width: 715px;
-  }
-  body #main form div textarea {
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
-    display: flex;
-    height: 187px;
     padding: 20px;
-    align-items: flex-start;
     gap: 10px;
-    align-self: stretch;
-    border-radius: 3px;
-    border: 1px solid var(--text-contenu, #fff);
-    background: var(--fond-pages, #151515);
   }
-<<<<<<< HEAD
-  body #main form .formulaire p {
-    color: var(--text-contenu, #fff);
-=======
-  body #main form div button {
-    display: flex;
-    border: none;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    background: var(--primaire, #2f1d62);
-  }
-  body #main form div button input[type=submit] {
-    color: var(--text-CAT, #fff);
-    /* Desktop/p-desktop */
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 23px; /* 143.75% */
-    display: flex;
-    padding: 10px;
-    border: none;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    background: var(--primaire, #2f1d62);
-  }
-  body .message {
-    padding: 50px;
-    color: var(--text-contenu, #fff);
-    text-align: center;
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
-    /* Desktop/p-desktop */
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 23px; /* 143.75% */
-  }
-<<<<<<< HEAD
-  body #main form .formulaire div input[type=submit] {
-    display: flex;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border: none;
-    border-radius: 5px;
-    color: var(--text-contenu, #fff);
-    background: var(--primaire, #2f1d62);
-  }
-=======
->>>>>>> 70d5dbbce82161cd15157ba16f8f46f310b630c3
 }/*# sourceMappingURL=Covoiturage_conducteur.css.map */

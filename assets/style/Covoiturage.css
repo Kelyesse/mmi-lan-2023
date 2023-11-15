@@ -63,12 +63,10 @@ body #main div #choix a {
   transition: all 500ms;
 }
 body #main div #choix a :hover {
-  opacity: 0.25;
+  opacity: 0.75;
 }
-body #main div #choix a img {
+body #main div #choix a :hover img {
   transition: all 500ms;
-}
-body #main div #choix a img :hover {
   transform: rotate(90deg);
 }
 body #main div #choix a p {
@@ -119,116 +117,38 @@ body #main .message {
 }
 
 @media screen and (min-width: 1024px) {
-  body {
-    background: var(--fond-pages, #151515);
-  }
-  body #main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   body #main div {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 40px;
   }
   body #main div .titre {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
   }
   body #main div .titre h1 {
-    color: var(--text-contenu, #fff);
-    text-align: center;
-    /* Desktop/h1-desktop */
-    font-family: Overused Grotesk;
     font-size: 40px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    text-transform: uppercase;
   }
   body #main div .titre p {
-    color: var(--texte-infos, #fff);
-    /* Desktop/p-desktop */
-    font-family: Montserrat;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 23px; /* 143.75% */
-    align-self: stretch;
   }
   body #main div #choix {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
   }
   body #main div #choix h2 {
-    color: var(--text-contenu, #fff);
-    /* Desktop/h2-desktop */
-    font-family: Montserrat;
     font-size: 32px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-  }
-  body #main div #choix a {
-    text-decoration: none;
-  }
-  body #main div #choix a :hover {
-    transition: all 500ms;
-    opacity: 0.8;
-  }
-  body #main div #choix a :hover img {
-    transition: all 500ms;
-    transform: rotate(90deg);
   }
   body #main div #choix a p {
-    color: var(--text-CAT, #fff);
-    /* Desktop/p-desktop */
-    font-family: Montserrat;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 23px; /* 143.75% */
-  }
-  body #main div #choix a img {
-    width: 29px;
-    height: 29px;
-    flex-shrink: 0;
   }
   body #main div #choix #propTrajet {
-    display: flex;
-    flex-direction: row;
     min-width: 880px;
     height: 100px;
-    padding: 0px 20px;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--primaire, #2f1d62);
   }
   body #main div #choix #voirTrajet {
-    display: flex;
-    flex-direction: row;
     min-width: 880px;
     height: 100px;
-    padding: 0px 20px;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--secondaire, #cd0c75);
   }
   body #main .message {
     padding: 50px;
-    color: var(--text-contenu, #fff);
     text-align: center;
-    /* Desktop/p-desktop */
-    font-family: Montserrat;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 23px; /* 143.75% */
   }
 }/*# sourceMappingURL=Covoiturage.css.map */
