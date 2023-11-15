@@ -7,12 +7,9 @@
 body {
   background: var(--fond-pages, #151515);
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-body main {
+
+main {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +17,7 @@ body main {
   gap: 20px;
   margin: 20px;
 }
-body main #equipe {
+main #equipe {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -28,7 +25,7 @@ body main #equipe {
   align-items: center;
   gap: 16px;
 }
-body main #equipe h1 {
+main #equipe h1 {
   color: var(--text-contenu, #fff);
   text-align: center;
   /* Desktop/p-desktop */
@@ -38,30 +35,29 @@ body main #equipe h1 {
   font-weight: 400;
   line-height: 23px; /* 143.75% */
 }
-body main #equipe .photo_equipe {
+main #equipe .photo_equipe {
   position: relative;
   margin: 20px;
 }
-body main #equipe .photo_equipe .illu_1 {
+main #equipe .photo_equipe .illu_1 {
   position: absolute;
   left: -70px;
   top: -30px;
   width: 50px;
   flex-shrink: 0;
 }
-body main #equipe .photo_equipe img {
+main #equipe .photo_equipe img {
   width: 100px;
-  height: 100px;
   flex-shrink: 0;
 }
-body main #equipe .photo_equipe .illu_2 {
+main #equipe .photo_equipe .illu_2 {
   position: absolute;
   right: -70px;
   top: 60px;
   width: 50px;
   flex-shrink: 0;
 }
-body main #equipe p {
+main #equipe p {
   margin: 20px 0;
   color: var(--text-contenu, #fff);
   /* Desktop/p-desktop */
@@ -72,25 +68,25 @@ body main #equipe p {
   line-height: 23px; /* 143.75% */
   text-align: center;
 }
-body main #membres {
+main #membres {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 75px;
 }
-body main #membres .membre {
+main #membres .membre {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
-body main #membres .membre img {
+main #membres .membre img {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
-body main #membres .membre h2 {
+main #membres .membre h2 {
   color: var(--text-contenu, #fff);
   text-align: center;
   /* Desktop/h2-desktop */
@@ -100,7 +96,7 @@ body main #membres .membre h2 {
   font-weight: 900;
   line-height: normal;
 }
-body main #membres .membre .jeu {
+main #membres .membre .jeu {
   margin-top: 10px;
   display: flex;
   padding: 10px;
@@ -117,7 +113,7 @@ body main #membres .membre .jeu {
   font-weight: 400;
   line-height: 23px; /* 143.75% */
 }
-body main #membres .membre p {
+main #membres .membre p {
   width: 295px;
   color: var(--text-contenu, #fff);
   text-align: center;
@@ -128,7 +124,7 @@ body main #membres .membre p {
   font-weight: 400;
   line-height: 23px; /* 143.75% */
 }
-body main #membres .equipe_incomplete {
+main #membres .equipe_incomplete {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -140,7 +136,7 @@ body main #membres .equipe_incomplete {
   padding: 20px 10px;
   margin: 20px 10px;
 }
-body main #membres .equipe_incomplete h2 {
+main #membres .equipe_incomplete h2 {
   width: 225px;
   color: var(--text-contenu, #fff);
   text-align: center;
@@ -151,7 +147,7 @@ body main #membres .equipe_incomplete h2 {
   font-weight: 900;
   line-height: normal;
 }
-body main #membres .equipe_incomplete a {
+main #membres .equipe_incomplete a {
   display: flex;
   padding: 10px;
   justify-content: center;
@@ -168,15 +164,15 @@ body main #membres .equipe_incomplete a {
   line-height: 23px; /* 143.75% */
   text-decoration: none;
 }
-body main #photo img {
+main #photo img {
   width: 0;
 }
-body main .nbr_coeur {
+main .nbr_coeur {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-body main .nbr_coeur #nbr_coeur {
+main .nbr_coeur #nbr_coeur {
   color: var(--text-contenu, #fff);
   text-align: center;
   /* Desktop/p-desktop */
@@ -186,22 +182,22 @@ body main .nbr_coeur #nbr_coeur {
   font-weight: 400;
   line-height: 23px; /* 143.75% */
 }
-body main .nbr_coeur #nbr_coeur svg {
+main .nbr_coeur #nbr_coeur svg {
   width: 24px;
   height: 22.501px;
 }
-body main #retour {
+main #retour {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-body main #retour a svg {
+main #retour a svg {
   width: 29px;
   height: 29px;
   transform: rotate(90deg);
 }
-body main #retour .retour {
+main #retour .retour {
   color: var(--text-contenu, #fff);
   text-align: center;
   font-family: Montserrat;
@@ -211,13 +207,12 @@ body main #retour .retour {
   line-height: 21px; /* 131.25% */
   text-decoration-line: underline;
 }
-body #alertRejoindreEquipe {
+
+#alertRejoindreEquipe {
   position: absolute;
-  z-index: 99999;
-  top: 50%;
-  left: 5%;
-  right: 5%;
-  display: none;
+  top: 250px;
+  left: 20px;
+  display: inline-flex;
   padding: 10px;
   flex-direction: column;
   align-items: flex-start;
@@ -225,7 +220,7 @@ body #alertRejoindreEquipe {
   background: var(--fond-pages, #151515);
   box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 0.25), -4px -4px 40px 0px rgba(0, 0, 0, 0.25);
 }
-body #alertRejoindreEquipe h2 {
+#alertRejoindreEquipe h2 {
   color: var(--text-contenu, #fff);
   /* Desktop/h2-desktop */
   font-family: Montserrat;
@@ -234,13 +229,10 @@ body #alertRejoindreEquipe h2 {
   font-weight: 900;
   line-height: normal;
 }
-body #alertRejoindreEquipe form {
+#alertRejoindreEquipe form {
   padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-body #alertRejoindreEquipe form textarea {
+#alertRejoindreEquipe form textarea {
   display: flex;
   width: 250px;
   height: 100px;
@@ -249,14 +241,14 @@ body #alertRejoindreEquipe form textarea {
   gap: 5px;
   background-color: var(--fond-pages, #151515);
 }
-body #alertRejoindreEquipe form div {
+#alertRejoindreEquipe form div {
   padding-top: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   align-self: stretch;
 }
-body #alertRejoindreEquipe form div input {
+#alertRejoindreEquipe form div input {
   display: flex;
   border: none;
   padding: 5px;
@@ -272,10 +264,10 @@ body #alertRejoindreEquipe form div input {
   font-weight: 400;
   line-height: 23px; /* 143.75% */
 }
-body #alertRejoindreEquipe form div input[type=button] {
+#alertRejoindreEquipe form div input[type=button] {
   background: var(--fond-nav, #212121);
 }
-body #alertRejoindreEquipe form div input[type=submit] {
+#alertRejoindreEquipe form div input[type=submit] {
   background: var(--primaire, #2f1d62);
 }
 
@@ -288,14 +280,14 @@ body #alertRejoindreEquipe form div input[type=submit] {
   body {
     background: var(--fond-pages, #151515);
   }
-  body main {
+  main {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 60px;
   }
-  body main #equipe {
+  main #equipe {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
@@ -303,7 +295,7 @@ body #alertRejoindreEquipe form div input[type=submit] {
     align-items: center;
     gap: 16px;
   }
-  body main #equipe h1 {
+  main #equipe h1 {
     color: var(--text-contenu, #fff);
     text-align: center;
     /* Desktop/h1-desktop */
@@ -314,10 +306,10 @@ body #alertRejoindreEquipe form div input[type=submit] {
     line-height: normal;
     text-transform: uppercase;
   }
-  body main #equipe .photo_equipe {
+  main #equipe .photo_equipe {
     position: relative;
   }
-  body main #equipe .photo_equipe .illu_1 {
+  main #equipe .photo_equipe .illu_1 {
     position: absolute;
     left: -103px;
     top: -46px;
@@ -325,12 +317,12 @@ body #alertRejoindreEquipe form div input[type=submit] {
     height: 134px;
     flex-shrink: 0;
   }
-  body main #equipe .photo_equipe img {
+  main #equipe .photo_equipe img {
     width: 400px;
     height: 400px;
     flex-shrink: 0;
   }
-  body main #equipe .photo_equipe .illu_2 {
+  main #equipe .photo_equipe .illu_2 {
     position: absolute;
     right: -107px;
     top: 320px;
@@ -338,7 +330,7 @@ body #alertRejoindreEquipe form div input[type=submit] {
     height: 97px;
     flex-shrink: 0;
   }
-  body main #equipe p {
+  main #equipe p {
     margin: 60px 0;
     color: var(--text-contenu, #fff);
     /* Desktop/p-desktop */
@@ -348,26 +340,26 @@ body #alertRejoindreEquipe form div input[type=submit] {
     font-weight: 400;
     line-height: 23px; /* 143.75% */
   }
-  body main #membres {
+  main #membres {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 10px;
-    margin: 20px 10px;
+    gap: 30px;
+    margin: 20px 20px;
   }
-  body main #membres .membre {
+  main #membres .membre {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-  body main #membres .membre img {
+  main #membres .membre img {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-  body main #membres .membre h2 {
+  main #membres .membre h2 {
     color: var(--text-contenu, #fff);
     text-align: center;
     /* Desktop/h2-desktop */
@@ -377,7 +369,7 @@ body #alertRejoindreEquipe form div input[type=submit] {
     font-weight: 900;
     line-height: normal;
   }
-  body main #membres .membre .jeu {
+  main #membres .membre .jeu {
     margin-top: 19px;
     display: flex;
     padding: 10px;
@@ -386,7 +378,7 @@ body #alertRejoindreEquipe form div input[type=submit] {
     gap: 10px;
     align-self: stretch;
   }
-  body main #membres .membre .jeu p {
+  main #membres .membre .jeu p {
     color: #fff;
     text-align: center;
     /* Desktop/p-desktop */
@@ -396,7 +388,7 @@ body #alertRejoindreEquipe form div input[type=submit] {
     font-weight: 400;
     line-height: 23px; /* 143.75% */
   }
-  body main #membres .membre p {
+  main #membres .membre p {
     width: 295px;
     color: var(--text-contenu, #fff);
     /* Desktop/p-desktop */
@@ -406,7 +398,7 @@ body #alertRejoindreEquipe form div input[type=submit] {
     font-weight: 400;
     line-height: 23px; /* 143.75% */
   }
-  body main #membres .equipe_incomplete {
+  main #membres .equipe_incomplete {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -416,8 +408,8 @@ body #alertRejoindreEquipe form div input[type=submit] {
     border-radius: 5px;
     border: 1px solid var(--text-contenu, #fff);
   }
-  body main #membres .equipe_incomplete h2 {
-    width: 240px;
+  main #membres .equipe_incomplete h2 {
+    width: 399px;
     color: var(--text-contenu, #fff);
     text-align: center;
     /* Desktop/h2-desktop */
@@ -427,7 +419,7 @@ body #alertRejoindreEquipe form div input[type=submit] {
     font-weight: 900;
     line-height: normal;
   }
-  body main #membres .equipe_incomplete a {
+  main #membres .equipe_incomplete a {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -444,33 +436,33 @@ body #alertRejoindreEquipe form div input[type=submit] {
     line-height: 23px; /* 143.75% */
     text-decoration: none;
   }
-  body main #photo {
+  main #photo {
     margin: 120px 0;
   }
-  body main #photo img {
+  main #photo img {
     width: 250px;
     height: 206px;
     flex-shrink: 0;
     border-radius: 10px;
   }
-  body main #photo .img1 {
+  main #photo .img1 {
     transform: rotate(-2deg);
   }
-  body main #photo .img2 {
+  main #photo .img2 {
     transform: rotate(7deg);
   }
-  body main #photo .img3 {
+  main #photo .img3 {
     transform: rotate(-5deg);
   }
-  body main #photo .img4 {
+  main #photo .img4 {
     transform: rotate(2deg);
   }
-  body main .nbr_coeur {
+  main .nbr_coeur {
     display: flex;
     flex-direction: row;
     gap: 10px;
   }
-  body main .nbr_coeur #nbr_coeur {
+  main .nbr_coeur #nbr_coeur {
     color: var(--text-contenu, #fff);
     text-align: center;
     /* Desktop/p-desktop */
@@ -480,22 +472,22 @@ body #alertRejoindreEquipe form div input[type=submit] {
     font-weight: 400;
     line-height: 23px; /* 143.75% */
   }
-  body main .nbr_coeur #nbr_coeur svg {
+  main .nbr_coeur #nbr_coeur svg {
     width: 24px;
     height: 22.501px;
   }
-  body main #retour {
+  main #retour {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
   }
-  body main #retour a svg {
+  main #retour a svg {
     width: 29px;
     height: 29px;
     transform: rotate(90deg);
   }
-  body main #retour .retour {
+  main #retour .retour {
     color: var(--text-contenu, #fff);
     text-align: center;
     font-family: Montserrat;
@@ -505,12 +497,11 @@ body #alertRejoindreEquipe form div input[type=submit] {
     line-height: 21px; /* 131.25% */
     text-decoration-line: underline;
   }
-  body #alertRejoindreEquipe {
+  #alertRejoindreEquipe {
     position: absolute;
     z-index: 99999;
     top: 50%;
-    left: 20%;
-    right: 20%;
+    left: 25%;
     display: none;
     padding: 20px;
     flex-direction: column;
@@ -519,7 +510,7 @@ body #alertRejoindreEquipe form div input[type=submit] {
     background: var(--fond-pages, #151515);
     box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 0.25), -4px -4px 40px 0px rgba(0, 0, 0, 0.25);
   }
-  body #alertRejoindreEquipe h2 {
+  #alertRejoindreEquipe h2 {
     color: var(--text-contenu, #fff);
     /* Desktop/h2-desktop */
     font-family: Montserrat;
@@ -528,27 +519,26 @@ body #alertRejoindreEquipe form div input[type=submit] {
     font-weight: 900;
     line-height: normal;
   }
-  body #alertRejoindreEquipe form {
+  #alertRejoindreEquipe form {
     padding-top: 20px;
   }
-  body #alertRejoindreEquipe form textarea {
+  #alertRejoindreEquipe form textarea {
     display: flex;
-    width: 500px;
+    width: 715px;
     height: 187px;
     padding: 20px;
     align-items: flex-start;
     gap: 10px;
     background-color: var(--fond-pages, #151515);
-    color: var(--text-contenu, #fff);
   }
-  body #alertRejoindreEquipe form div {
+  #alertRejoindreEquipe form div {
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
   }
-  body #alertRejoindreEquipe form div input {
+  #alertRejoindreEquipe form div input {
     display: flex;
     border: none;
     padding: 10px;
@@ -564,10 +554,10 @@ body #alertRejoindreEquipe form div input[type=submit] {
     font-weight: 400;
     line-height: 23px; /* 143.75% */
   }
-  body #alertRejoindreEquipe form div input[type=button] {
+  #alertRejoindreEquipe form div input[type=button] {
     background: var(--fond-nav, #212121);
   }
-  body #alertRejoindreEquipe form div input[type=submit] {
+  #alertRejoindreEquipe form div input[type=submit] {
     background: var(--primaire, #2f1d62);
   }
 }/*# sourceMappingURL=details_equipes.css.map */
