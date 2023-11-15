@@ -33,11 +33,11 @@
     <?php include 'listing_equipe_vignette.php' ; ?>
 
     </div>
-    <div class="LOGO"> 
+<!--     <div class="LOGO"> 
 
-    <?php /*include 'listing_equipe_logo.php' ; */?>
+    <?php //include 'listing_equipe_logo.php' ; ?>
     
-    </div>
+    </div> -->
     <?php 
     if(isset($_GET['rejoindreEquipe'])){
         $teamName=$_GET['teamName'];
