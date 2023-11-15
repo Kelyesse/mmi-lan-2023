@@ -21,7 +21,7 @@
                 <h1 class="title-mmilan">MMI LAN</h1>
                 <div class="count-down-timer"></div>
 
-                <button class="cta-button">Inscrivez-vous</button>
+                <a href="./inscription.php" class="cta-button">Inscrivez-vous</a>
             </div>
         </div>
     </header>
