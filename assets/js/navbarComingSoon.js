@@ -14,7 +14,7 @@ planningButtons.forEach((planningButton) => {
     planningButton.addEventListener("click", () => {
         planningButton.innerHTML = "Bientôt..."
         setTimeout(() => {
-            planningButton.innerHTML = "Covoiturage"
+            planningButton.innerHTML = "Planning"
         }, 2000)
     })
 })
