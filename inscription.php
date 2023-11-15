@@ -243,7 +243,7 @@ function generateId(array $excludeArray)
                                     <input type="checkbox" name="souvenir" id="souvenir">
                                     <label for="souvenir">Se souvenir de moi</label>
                                 </div>
-                                <a href="#">Se connecter ?</a>
+                                <a href="./connection.php">Se connecter ?</a>
                             </div>
                         </div>
                         <div id="choix_ava">
