@@ -137,6 +137,7 @@ function generateId(array $excludeArray)
     <title>Inscription</title>
     <link rel="stylesheet" href="./assets/style/inscription.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
