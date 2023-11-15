@@ -7,7 +7,7 @@
   <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./assets/style/details_equipes.css">
   <link rel="stylesheet" href="./assets/style/footer.css">
-  <link rel="stylesheet" href="./assets/style/navbar.css">
+  <link rel="stylesheet" href="./assets/style/header.css">
   <title>Details équipe 
     <?php
       session_start();
