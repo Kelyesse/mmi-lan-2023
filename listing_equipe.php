@@ -6,6 +6,7 @@
     <title>Liste des Equipes</title>
     <link rel="stylesheet" href="./assets/style/style_listing_equipe.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 <body>
 <main>
