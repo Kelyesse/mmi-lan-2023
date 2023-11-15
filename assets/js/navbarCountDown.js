@@ -3,7 +3,11 @@ const navbarCountdownElements = document.querySelectorAll(".count-down-timer")
 const HOMEPAGE = "mmi-lan-2023/"
 let currentUrl = window.location.href
 // If we're on homepage, no countdown
-if (currentUrl.endsWith(HOMEPAGE) || currentUrl.endsWith(`${HOMEPAGE}#`)) {
+if (
+    currentUrl.endsWith(HOMEPAGE) ||
+    currentUrl.endsWith(`${HOMEPAGE}#`) ||
+    currentUrl.endsWith(`${HOMEPAGE}/index.php`)
+) {
     navbarCountdownElements.forEach((countDown) => countDown.remove())
 }
 function updateCountdown() {
