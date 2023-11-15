@@ -213,8 +213,11 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
 
         <section id="account">
             <div>
-                <!-- setcookie('remember_user', '', time() - 3600); -->
-                <a id="deco" href="">Me déconnecter</a>
+                <form action="./deconnection.php" method="post">
+                    <input type="hidden" name="playerId" value="<?php echo $_SESSION['PlayerId']; ?>">
+                    <input type="submit" value="Me déconnecter">
+                </form>
+
                 <button id="remove-account">Supprimer mon compte</button>
             </div>
         </section>
