@@ -61,7 +61,7 @@
 .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .footer-links a {
@@ -71,6 +71,20 @@
     font-weight: 400;
     text-decoration: none;
     margin-bottom: 10px;
+}
+
+.coming-soon {
+    opacity: 0;
+    color: white;
+    background-color: var(--accent-color-1);
+    padding: 4px;
+    margin-top: -50px;
+}
+.coming-soon:hover {
+    opacity: 1;
+}
+.footer-links a:hover + .coming-soon {
+    opacity: 1;
 }
 
 .footer-banner {

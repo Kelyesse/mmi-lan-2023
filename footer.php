@@ -54,10 +54,15 @@
 
             <div class="footer-links">
                 <a href="#">Règlement</a>
+                <span class="coming-soon">Bientôt disponible !</span>
                 <a href="#">FAQ</a>
+                <span class="coming-soon">Bientôt disponible !</span>
                 <a href="#">Contact</a>
+                <span class="coming-soon">Bientôt disponible !</span>
                 <a href="#">RGPD</a>
+                <span class="coming-soon">Bientôt disponible !</span>
                 <a href="#">Mention légales</a>
+                <span class="coming-soon">Bientôt disponible !</span>
             </div>
 
         </div>
