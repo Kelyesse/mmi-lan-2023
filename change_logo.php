@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['logoFile']) && isset
 
     if ($teamData) {
         // Définir le dossier de téléchargement
-        $uploadDirectory = 'chemin/vers/dossier/logos/';  // Remplacez par le chemin correct
+        $uploadDirectory = './assets/img/';
 
         // Vérifier si le dossier existe, sinon le créer
         if (!is_dir($uploadDirectory)) {
@@ -25,8 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['logoFile']) && isset
         // Récupérer l'extension du fichier
         $fileExtension = pathinfo($_FILES['logoFile']['name'], PATHINFO_EXTENSION);
 
-        // Générer un nom de fichier unique
-        $newFileName = 'logo_team_' . $teamId . '.' . $fileExtension;
+        // Générer un nom de fichier unique avec le nom de l'équipe
+        $teamName = $teamData['TeamName'];
+        $newFileName = strtolower(str_replace(' ', '_', $teamName)) . '_logo.' . $fileExtension;
 
         // Déplacer le fichier téléchargé vers le dossier
         $targetPath = $uploadDirectory . $newFileName;
