@@ -224,6 +224,22 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             </div>
         </section>
 
+        <!-- Messages de confirmation de modification -->
+        <div>
+            <?php
+            // Afficher les messages d'erreur ou de succès s'ils existent
+            if (isset($_SESSION['error_message'])) {
+                echo '<div class="error-message">' . $_SESSION['error_message'] . '</div>';
+                unset($_SESSION['error_message']); // Effacer le message après l'avoir affiché
+            }
+
+            if (isset($_SESSION['success_message'])) {
+                echo '<div class="success-message">' . $_SESSION['success_message'] . '</div>';
+                unset($_SESSION['success_message']); // Effacer le message après l'avoir affiché
+            }
+            ?>
+        </div>
+
         <!-- Pop-ups de confirmation -->
 
         <!-- Suppression membre de l'équipe -->
