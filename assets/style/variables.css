@@ -19,6 +19,19 @@
     --background-color: #151515;
     /* Primary color hovered */
     --primary-color-hover: #24154d;
+    /* Accent color hovered */
+    --accent-color-1-hover: #dca10c;
+}
+
+/* Polices */
+:root {
+    --body-font: "Montserrat", sans-serif;
+    --accent-font: "Overused Grotesk", sans-serif;
+    /* Police du texte du corps */
+    /* Background color */
+    --background-color: #151515;
+    /* Primary color hovered */
+    --primary-color-hover: #24154d;
 }
 
 /* Polices */
