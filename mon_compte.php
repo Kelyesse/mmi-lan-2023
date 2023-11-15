@@ -161,29 +161,24 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             // Si tu es le créateur de l'équipe, il faut afficher ça
             if ($creator) {
                 foreach ($teamMembers as $teamMember) {
-                    // Vérifier si le membre est l'owner, un membre accepté ou un membre en attente
-                    if ($teamMember['BelongRole'] == 'créateur') {
-                        echo '                    <div>';
-                        echo '                        <p class="mate">' . $teamMember['PlayerPseudo'] . '</p>';
-                        echo '                    </div>';
-                    } else {
-                        if ($teamMember['BelongStatus'] == 'validé') {
-                            echo '                    <div>';
-                            echo '                        <p class="mate">' . $teamMember['PlayerPseudo'] . '</p>';
-                            echo '                          <button class="remove-mate" data-userid="' . $teamMember['PlayerId'] . '">Supprimer';
-                            echo '                              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">';
-                            echo '                                  <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />';
-                            echo '                              </svg>';
-                            echo '                          </button>';
-                            echo '                    </div>';
-                        } elseif ($teamMember['BelongStatus'] == 'en attente') {
-                            echo '                    <div>';
-                            echo '                        <p class="mate">' . $teamMember['PlayerPseudo'] . '</p>';
-                            echo '                          <button class="accept-mate" data-userid="' . $teamMember['PlayerId'] . '">Accepter</button>';
-                            echo '                          <button class="reject-mate" data-userid="' . $teamMember['PlayerId'] . '">Refuser</button>';
-                            echo '                    </div>';
-                        }
+                    echo '<div>';
+                    echo '    <p class="mate">' . $teamMember['PlayerPseudo'] . '</p>';
+
+                    // Si le membre est déjà accepté dans l'équipe
+                    if ($teamMember['BelongStatus'] == 'validé') {
+                        echo '    <button class="remove-mate" data-userid="' . $teamMember['PlayerId'] . '">Supprimer';
+                        echo '        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">';
+                        echo '            <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />';
+                        echo '        </svg>';
+                        echo '    </button>';
                     }
+                    // Si le membre est en attente d'acceptation
+                    elseif ($teamMember['BelongStatus'] == 'en attente') {
+                        echo '    <button class="accept-mate" data-userid="' . $teamMember['PlayerId'] . '" data-teamid="' . $teamAccount['TeamId'] . '">Accepter</button>';
+                        echo '    <button class="reject-mate" data-userid="' . $teamMember['PlayerId'] . '" data-teamid="' . $teamAccount['TeamId'] . '">Refuser</button>';
+                    }
+
+                    echo '</div>';
                 }
             } else {
                 foreach ($teamMembers as $teamMember) {

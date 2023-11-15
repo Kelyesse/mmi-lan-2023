@@ -7,10 +7,12 @@ $(document).ready(function () {
 
   $(".accept-mate").on("click", function () {
     var userIdToAccept = $(this).data("userid");
+    var teamIdToAccept = $(this).data("teamid");
     $("#userIdToAccept").val(userIdToAccept);
+    $('#popUpLeave input[name="teamId"]').val(teamIdToAccept);
     $("#acceptMemberPopup").css("display", "flex");
   });
-  
+
   $(".reject-mate").on("click", function () {
     var userIdToReject = $(this).data("userid");
     $("#userIdToReject").val(userIdToReject);

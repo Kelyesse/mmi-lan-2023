@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_member'])) {
         header('Location: mon_compte.php');
         exit();
     }
+} else {
+    $_SESSION['error_message'] = 'Accès non autorisé.';
+    header('Location: mon_compte.php');
+    exit();
 }
-
-// Si le formulaire n'a pas été soumis correctement, redirigez vers une page d'erreur ou d'accueil
-header('Location: ###');
-exit();
