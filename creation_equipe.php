@@ -56,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $uploadDirectory = "./assets/img/";
         $filenameToSave = $teamName . '_logo.' . $file_ext;
-        $fullPath = $uploadDirectory . $filenameToSave;
 
         if (!move_uploaded_file($_FILES['img_equipe']['tmp_name'], $fullPath)) {
             die('Erreur lors de la sauvegarde du fichier.');
