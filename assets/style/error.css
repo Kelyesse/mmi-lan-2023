@@ -1,5 +1,5 @@
 @import url(./variables.css);
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,33 +14,32 @@ main {
     position: relative;
 }
 
-#desole{
+#desole {
     font-family: var(--accent-font);
-    
+
     font-style: normal;
     font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
     font-size: 420px;
-    
+
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 0;
     overflow: hidden;
 
-
     -webkit-text-stroke: 1px var(--accent-color-1);
-    color: var(--background-color) ;
+    color: var(--background-color);
 }
 
-#qcq{
-    color:#FFF;
+#qcq {
+    color: #fff;
     font-family: var(--accent-font);
     font-size: 170px;
     font-style: normal;
@@ -49,8 +48,8 @@ main {
     text-transform: uppercase;
 }
 
-#exist{
-    color:  #FFF;
+#exist {
+    color: #fff;
     text-align: center;
 
     /* Desktop/p-desktop */
@@ -61,7 +60,7 @@ main {
     line-height: 23px; /* 143.75% */
 }
 
-#divfirst{
+#divfirst {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -69,15 +68,15 @@ main {
     z-index: 100;
 }
 
-#divsec{
+#divsec {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #backAcc {
-    color: #FFF;
-    text-decoration: none ;
+    color: #fff;
+    text-decoration: none;
 
     /* Desktop/p-desktop */
     font-family: var(--body-font);
@@ -91,307 +90,295 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    
+
     border-radius: 5px;
     background: var(--primary-color);
 }
 
 @media (max-width: 1365px) {
     #desole {
-        font-size: 380px;
+        font-size: 330px;
     }
 }
 @media (max-width: 1270px) {
     #desole {
-        font-size: 350px;
+        font-size: 300px;
     }
 }
 
 @media (max-width: 1200px) {
     #desole {
-        font-size: 340px;
+        font-size: 280px;
     }
     #qcq {
         font-size: 155px;
     }
-    #exist{
+    #exist {
         font-size: 15px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 15px;
     }
-    #divfirst{
+    #divfirst {
         gap: 55px;
     }
 }
 
 @media (max-width: 1140px) {
     #desole {
-        font-size: 320px;
+        font-size: 260px;
     }
     #qcq {
         font-size: 150px;
     }
-    #exist{
+    #exist {
         font-size: 15px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 15px;
     }
-    #divfirst{
+    #divfirst {
         gap: 50px;
     }
 }
 
 @media (max-width: 1090px) {
     #desole {
-        font-size: 310px;
+        font-size: 250px;
     }
     #qcq {
         font-size: 145px;
     }
-    #exist{
+    #exist {
         font-size: 15px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 15px;
     }
-    #divfirst{
+    #divfirst {
         gap: 50px;
     }
 }
 
 @media (max-width: 1030px) {
     #desole {
-        font-size: 290px;
+        font-size: 230px;
     }
     #qcq {
         font-size: 140px;
     }
-    #exist{
+    #exist {
         font-size: 14px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 14px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
 }
 @media (max-width: 970px) {
     #desole {
-        font-size: 275px;
+        font-size: 220px;
     }
     #qcq {
         font-size: 135px;
     }
-    #exist{
+    #exist {
         font-size: 14px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 14px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
 }
 @media (max-width: 930px) {
     #desole {
-        font-size: 260px;
+        font-size: 200px;
     }
     #qcq {
         font-size: 130px;
     }
-    #exist{
+    #exist {
         font-size: 14px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 14px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
-    
 }
 @media (max-width: 860px) {
-    #desole {
-        font-size: 245px;
-    }
-    #qcq {
-        font-size: 125px;
-    }
-    #exist{
-        font-size: 13px;
-    }
-    #backAcc{
-        font-size: 13px;
-    }
-    #divfirst{
-        gap: 45px;
-    }
-    
-}
-@media (max-width: 810px) {
-    #desole {
-        font-size: 230px;
-    }
-    #qcq {
-        font-size: 120px;
-    }
-    #exist{
-        font-size: 13px;
-    }
-    #backAcc{
-        font-size: 13px;
-    }
-    #divfirst{
-        gap: 45px;
-    }
-    
-}
-@media (max-width: 760px) {
     #desole {
         font-size: 215px;
     }
     #qcq {
-        font-size: 115px;
+        font-size: 125px;
     }
-    #exist{
+    #exist {
         font-size: 13px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 13px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
-    
+}
+@media (max-width: 810px) {
+    #desole {
+        font-size: 200px;
+    }
+    #qcq {
+        font-size: 120px;
+    }
+    #exist {
+        font-size: 13px;
+    }
+    #backAcc {
+        font-size: 13px;
+    }
+    #divfirst {
+        gap: 45px;
+    }
+}
+@media (max-width: 760px) {
+    #desole {
+        font-size: 185px;
+    }
+    #qcq {
+        font-size: 115px;
+    }
+    #exist {
+        font-size: 13px;
+    }
+    #backAcc {
+        font-size: 13px;
+    }
+    #divfirst {
+        gap: 45px;
+    }
 }
 @media (max-width: 710px) {
     #desole {
-        font-size: 200px;
+        font-size: 170px;
         -webkit-text-stroke: 0.8px var(--accent-color-1);
     }
     #qcq {
         font-size: 110px;
     }
-    #exist{
+    #exist {
         font-size: 12px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 12px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
-    
 }
 @media (max-width: 660px) {
     #desole {
-        font-size: 185px;
+        font-size: 150px;
     }
     #qcq {
         font-size: 105px;
     }
-    #exist{
+    #exist {
         font-size: 12px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 12px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
-    
 }
 @media (max-width: 610px) {
-    #desole {
-        font-size: 170px;
-    }
-    #qcq {
-        font-size: 100px;
-    }
-    #exist{
-        font-size: 12px;
-    }
-    #backAcc{
-        font-size: 12px;
-    }
-    #divfirst{
-        gap: 45px;
-    }
-    
-}
-@media (max-width: 560px) {
-    #desole {
-        font-size: 155px;
-    }
-    #qcq {
-        font-size: 95px;
-    }
-    #exist{
-        font-size: 11px;
-    }
-    #backAcc{
-        font-size: 11px;
-    }
-    #divfirst{
-        gap: 45px;
-    }
-    
-}
-@media (max-width: 510px) {
     #desole {
         font-size: 140px;
     }
     #qcq {
-        font-size: 90px;
+        font-size: 100px;
     }
-    #exist{
-        font-size: 11px;
+    #exist {
+        font-size: 12px;
     }
-    #backAcc{
-        font-size: 11px;
+    #backAcc {
+        font-size: 12px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
-    
 }
-@media (max-width: 460px) {
+@media (max-width: 560px) {
     #desole {
         font-size: 125px;
     }
     #qcq {
-        font-size: 85px;
+        font-size: 95px;
     }
-    #exist{
+    #exist {
         font-size: 11px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 11px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
-    
 }
-@media (max-width: 410px) {
+@media (max-width: 510px) {
     #desole {
         font-size: 110px;
     }
     #qcq {
-        font-size: 80px;
+        font-size: 90px;
     }
-    #exist{
+    #exist {
         font-size: 11px;
     }
-    #backAcc{
+    #backAcc {
         font-size: 11px;
     }
-    #divfirst{
+    #divfirst {
         gap: 45px;
     }
-    
 }
-
+@media (max-width: 460px) {
+    #desole {
+        font-size: 105px;
+    }
+    #qcq {
+        font-size: 85px;
+    }
+    #exist {
+        font-size: 11px;
+    }
+    #backAcc {
+        font-size: 11px;
+    }
+    #divfirst {
+        gap: 45px;
+    }
+}
+@media (max-width: 410px) {
+    #desole {
+        font-size: 70px;
+    }
+    #qcq {
+        font-size: 80px;
+    }
+    #exist {
+        font-size: 11px;
+    }
+    #backAcc {
+        font-size: 11px;
+    }
+    #divfirst {
+        gap: 45px;
+    }
+}
