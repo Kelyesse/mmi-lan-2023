@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errorMessage = 'Veuillez remplir tous les champs obligatoires.';
     } else {
         // Validation des champs et attribution des valeurs aux variables
-        $pseudo = $_POST["nom"];
+        $pseudo = $_POST["pseudo"];
         $prenom = $_POST["prenom"];
-        $nom = $_POST["pseudo"];
+        $nom = $_POST["nom"];
         $email = $_POST["email"];
         $mdp1 = hash('sha256', $_POST["mdp1"]);
         $mdp2 = hash('sha256', $_POST["mdp2"]);
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Validation des autres champs
         if (!preg_match("/^[a-zA-Z]+$/", $pseudo) || !preg_match("/^[a-zA-Z]+$/", $prenom) || !preg_match("/^[a-zA-Z]+$/", $nom)) {
-            $errorMessage = 'Le nom, prénom et pseudo doivent contenir uniquement des lettres.';
+            $errorMessage = 'Le nom, prénom et pseudo doivent contenir uniquement des lettres minuscules et majuscules.';
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = 'Les mots de passes inscrit sont différents.';
         }
         if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s])[\w\d\S]{8,}$/', $mdp1)) {
-            $errorMessage = 'Les mots de passe ne correspondent pas ou ne respectent pas les critères.';
+            $errorMessage = 'Les mots de passe ne respectent pas les critères.';
         }
 
         if ($selectedSetup !== 'PC portable' && $selectedSetup !== 'PC fixe') {
