@@ -9,6 +9,7 @@
     <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 <body>
+<header><?php include 'navbar.php' ; ?></header>
 <main>
     <div class="en-tete">
         <h1>LES EQUIPES DE LA MMI LAN</h1>
@@ -33,7 +34,7 @@
     </div>
     <div class="LOGO"> 
 
-    <?php include 'listing_equipe_logo.php' ; ?>
+    <?php /*include 'listing_equipe_logo.php' ; */?>
     
     </div>
     <?php 
@@ -47,9 +48,9 @@
       <form action="rejoindreEquipe.php?teamId=<?php echo $teamId?>" method="post">
           <textarea name="playerDesc" id="" cols="30" rows="10" placeholder="Ecrire une description de vous"></textarea>
             <div>
-                <input type="submit" value="Rejoindre">
                 <input type="button" onclick='window.location.href="listing_equipe.php"' value="J'ai changé d'avis">
-            </div>
+                <input type="submit" value="Rejoindre">
+             </div>
       </form>
   </div>
   <?php
@@ -94,5 +95,7 @@
 
 
 </main>
+
+<?php include 'footer.php' ; ?>
 </body>
 </html>
