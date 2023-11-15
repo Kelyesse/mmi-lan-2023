@@ -90,9 +90,10 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
     echo '</script>';
     ?>
     <header>
+    <?php
+        include('navbar.php');
+    ?>
     </header>
-    <div class="count-down-timer">
-    </div>
     <main>
         <section>
             <div id="div-title">
