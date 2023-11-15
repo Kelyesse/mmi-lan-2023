@@ -35,7 +35,7 @@
     <?php
     $accountLink = './connexion.php';
     $playLink = './inscription.php';
-    if (isset($_SESSION['playerId'])) {
+    if (isset($_SESSION['PlayerId'])) {
         $accountLink = './mon_compte.php';
         $playLink = './listing_equipe.php';
     }
