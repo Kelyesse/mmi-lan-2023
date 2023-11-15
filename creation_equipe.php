@@ -56,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $uploadDirectory = "./assets/img/";
         $filenameToSave = $teamName . '_logo.' . $file_ext;
+        $fullPath = $uploadDirectory . $filenameToSave;
 
         if (!move_uploaded_file($_FILES['img_equipe']['tmp_name'], $fullPath)) {
             die('Erreur lors de la sauvegarde du fichier.');
@@ -71,13 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $insertQuery->bindParam(4, $teamDesc);
     if ($insertQuery->execute()) {
         $teamId = $db->lastInsertId();
-
-        // Mise à jour du champ TeamLogo dans la base de données
-        $teamLogoPath = $uploadDirectory . $filenameToSave;
-        $updateLogoQuery = $db->prepare("UPDATE team SET TeamLogo = ? WHERE TeamId = ?");
-        $updateLogoQuery->bindParam(1, $teamLogoPath);
-        $updateLogoQuery->bindParam(2, $teamId, PDO::PARAM_INT);
-        $updateLogoQuery->execute();
 
         if ($creatorId) {
             $belongQuery = $db->prepare("INSERT INTO belongteam (PlayerId, TeamId, BelongRole, BelongStatus) VALUES (?, ?, 'Créateur', 'validé')");
