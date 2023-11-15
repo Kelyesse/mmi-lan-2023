@@ -4,6 +4,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
+//Initialisation de la variable d'erreurs
+$errorMessage = '';
+
 // Traitement du formulaire lorsque le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification si tous les champs requis sont présents
