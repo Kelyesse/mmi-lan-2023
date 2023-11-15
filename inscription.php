@@ -67,42 +67,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = 'Le jeu favori sélectionné n\'est pas valide.';
         }
 
-        // Si aucune erreur, procéder à l'insertion en base de données
+        // Si aucune erreur dans l'inscription des champs
         if (empty($errorMessage)) {
             //Intégrer le code pour se connecter à la bdd
             try {
                 //connection à la bdd
                 require_once('connexionbdd.php');
 
-                // Génération d'un ID unique
-                $id = generateId($db->query('SELECT PlayerId FROM player')->fetchAll(PDO::FETCH_COLUMN));
+                //Vérifier que le compte ne se trouve pas déjà dans la base
+                $testmail = $db->prepare('SELECT * FROM player WHERE PlayerEmail = :email')->fetch(PDO::FETCH_ASSOC);
+                $testpseudo = $db->prepare('SELECT * FROM player WHERE PlayerPseudo = :pseudo')->fetch(PDO::FETCH_ASSOC);
 
-                // Insertion des données dans la base de données en fonction du rôle
-                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerStatus, PlayerSetup, PlayerFavGame, PlayerPicture) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :statut, :setup, :favgame, :avatar)";
-                $stmt = $db->prepare($sql);
+                $testmail->bindParam(':email', $email, PDO::PARAM_STR);
+                $testpseudo->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
 
-                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-                $stmt->bindParam(':nom', $pseudo, PDO::PARAM_STR);
-                $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
-                $stmt->bindParam(':pseudo', $nom, PDO::PARAM_STR);
-                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-                $stmt->bindParam(':mdp',  $mdp1, PDO::PARAM_STR);
-                $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
+                $testmail->execute();
+                $testpseudo->execute();
 
-                if ($role === "Participant") {
-                    $stmt->bindParam(':setup',  $selectedSetup, PDO::PARAM_STR);
-                    $stmt->bindParam(':favgame',  $jeuxCorrespondance[$favjeu], PDO::PARAM_INT);
+                //Si l'email n'est pas déjà dans la base
+                if (!empty($testmail)) {
+                    //Si le pseudo n'est pas déjà dans la base
+                    if (!empty($testpseudo)) {
+                        // Génération d'un ID unique
+                        $id = generateId($db->query('SELECT PlayerId FROM player')->fetchAll(PDO::FETCH_ASSOC));
+
+                        // Insertion des données dans la base de données en fonction du rôle
+                        $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerStatus, PlayerSetup, PlayerFavGame, PlayerPicture) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :statut, :setup, :favgame, :avatar)";
+                        $stmt = $db->prepare($sql);
+
+                        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+                        $stmt->bindParam(':nom', $pseudo, PDO::PARAM_STR);
+                        $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+                        $stmt->bindParam(':pseudo', $nom, PDO::PARAM_STR);
+                        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                        $stmt->bindParam(':mdp',  $mdp1, PDO::PARAM_STR);
+                        $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
+
+                        if ($role === "Participant") {
+                            $stmt->bindParam(':setup',  $selectedSetup, PDO::PARAM_STR);
+                            $stmt->bindParam(':favgame',  $jeuxCorrespondance[$favjeu], PDO::PARAM_INT);
+                        } else {
+                            $stmt->bindValue(':setup',  null, PDO::PARAM_NULL);
+                            $stmt->bindValue(':favgame', null, PDO::PARAM_NULL);
+                        }
+
+                        if ($stmt->execute()) {
+                            $_SESSION['PlayerId'] = $id;
+                            // Rediriger vers les leçons
+                            header('Status: 301 Moved Permanently', false, 301);
+                            header('Location:./connexion.php'); // Rediriger vers la bonne page ?
+                            exit(0);
+                        }
+                    } else {
+                        //Si le pseudo existe déjà dans la base
+                        $errorMessage = 'Ce pseudo est déjà pris.';
+                    }
                 } else {
-                    $stmt->bindValue(':setup',  null, PDO::PARAM_NULL);
-                    $stmt->bindValue(':favgame', null, PDO::PARAM_NULL);
-                }
-
-                if ($stmt->execute()) {
-                    $_SESSION['PlayerId'] = $id;
-                    // Rediriger vers les leçons
-                    header('Status: 301 Moved Permanently', false, 301);
-                    header('Location:./connexion.php'); // Rediriger vers la bonne page ?
-                    exit(0);
+                    //Si l'email existe déjà dans la base
+                    $errorMessage = 'Un compte a déjà été créé avec cette adresse électronique.';
                 }
             } catch (PDOException $e) {
                 $errorMessage = "Erreur lors de l'inscription : " . $e->getMessage();
