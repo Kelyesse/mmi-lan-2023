@@ -4,9 +4,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-//Initialisation des messages d'erreur
-$errorMessage = '';
-
 // Traitement du formulaire lorsque le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification si tous les champs requis sont présents
@@ -145,7 +142,7 @@ function generateId(array $excludeArray)
 <body>
     <header>
         <?php
-            include('navbar.php');
+        include('navbar.php');
         ?>
     </header>
     <main>
