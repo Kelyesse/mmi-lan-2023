@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <?php
+        include("navbar.php");
+    ?>
     <main>
         <!--texte en fond-->
         <p id="desole">désolé</p>
