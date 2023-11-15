@@ -1,14 +1,30 @@
 <?php
-require_once 'connexion.php';
+// Initialiser la session
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
-function getPlayersOptions($bdd) {
+require_once('connexionbdd.php');
+
+function getPlayersOptions($db, $excludePlayerId = null) {
     $options = '';
-    $result = $bdd->query("SELECT PlayerId, PlayerPseudo FROM player");
-    while ($row = $result->fetch_assoc()) {
+    $query = "SELECT PlayerId, PlayerPseudo FROM player";
+    if ($excludePlayerId !== null) {
+        $query .= " WHERE PlayerId != :excludePlayerId";
+    }
+    $stmt = $db->prepare($query);
+    if ($excludePlayerId !== null) {
+        $stmt->bindParam(':excludePlayerId', $excludePlayerId, PDO::PARAM_INT);
+    }
+    $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $options .= "<option value=\"{$row['PlayerId']}\">{$row['PlayerPseudo']}</option>";
     }
     return $options;
 }
+
+$creatorId = isset($_SESSION['PlayerId']) ? $_SESSION['PlayerId'] : null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $teamName = $_POST['nom'];
@@ -21,40 +37,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die('Le nom de l\'équipe est obligatoire.');
     }
 
+    $checkQuery = $db->prepare("SELECT TeamId FROM team WHERE TeamName = ?");
+    $checkQuery->bindParam(1, $teamName);
+    $checkQuery->execute();
+    if ($checkQuery->rowCount() > 0) {
+        die('Une équipe avec ce nom existe déjà.');
+    }
+
     $teamStatus = empty($playerTwoId) ? 'active' : 'full';
 
     if (isset($_FILES['img_equipe']) && $_FILES['img_equipe']['error'] == 0) {
-        $allowed = ['png', 'jpeg', 'jpg', 'gif'];
+        $allowed = ['png', 'jpeg', 'jpg'];
         $filename = $_FILES['img_equipe']['name'];
         $file_ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
         if (!in_array($file_ext, $allowed)) {
             die('Type de fichier non autorisé pour le logo.');
         }
 
-        $logoData = file_get_contents($_FILES['img_equipe']['tmp_name']);
-        $logoData = mysqli_real_escape_string($bdd, $logoData);
+        $uploadDirectory = "assets/img/";
+        $filenameToSave = uniqid() . "-" . basename($_FILES['img_equipe']['name']);
+        $fullPath = $uploadDirectory . $filenameToSave;
+
+        if (!move_uploaded_file($_FILES['img_equipe']['tmp_name'], $fullPath)) {
+            die('Erreur lors de la sauvegarde du fichier.');
+        }
     } else {
         die('Erreur lors du téléchargement du logo.');
     }
 
-    $query = $bdd->prepare("INSERT INTO team (TeamName, TeamLogo, TeamStatus, TeamDesc) VALUES (?, ?, ?, ?)");
-    $query->bind_param("ssss", $teamName, $logoData, $teamStatus, $teamDesc);
-    if ($query->execute()) {
-        $teamId = $query->insert_id;
+    $insertQuery = $db->prepare("INSERT INTO team (TeamName, TeamLogo, TeamStatus, TeamDesc) VALUES (?, ?, ?, ?)");
+    $insertQuery->bindParam(1, $teamName);
+    $insertQuery->bindParam(2, $filenameToSave);
+    $insertQuery->bindParam(3, $teamStatus);
+    $insertQuery->bindParam(4, $teamDesc);
+    if ($insertQuery->execute()) {
+        $teamId = $db->lastInsertId();
 
-        $belongQuery = $bdd->prepare("INSERT INTO belong (PlayerId, TeamId, BelongRole, BelongStatus) VALUES (?, ?, 'membre', 'actif')");
-        if (!empty($playerOneId)) {
-            $belongQuery->bind_param("ii", $playerOneId, $teamId);
+        // Ajouter le créateur de l'équipe
+        if ($creatorId) {
+            $belongQuery = $db->prepare("INSERT INTO belongteam (PlayerId, TeamId, BelongRole, BelongStatus) VALUES (?, ?, 'Créateur', 'validé')");
+            $belongQuery->bindParam(1, $creatorId, PDO::PARAM_INT);
+            $belongQuery->bindParam(2, $teamId, PDO::PARAM_INT);
             $belongQuery->execute();
         }
-        if (!empty($playerTwoId)) {
-            $belongQuery->bind_param("ii", $playerTwoId, $teamId);
+
+        // Ajouter les autres membres sélectionnés de l'équipe, si nécessaire
+        if (!empty($playerOneId) && $playerOneId != $creatorId) {
+            $belongQuery = $db->prepare("INSERT INTO belongteam (PlayerId, TeamId, BelongRole, BelongStatus) VALUES (?, ?, 'participant', 'validé')");
+            $belongQuery->bindParam(1, $playerOneId, PDO::PARAM_INT);
+            $belongQuery->bindParam(2, $teamId, PDO::PARAM_INT);
             $belongQuery->execute();
         }
 
-        echo "<p>Équipe créée avec succès ! ID de l'équipe : {$teamId}</p>";
+        if (!empty($playerTwoId) && $playerTwoId != $creatorId) {
+            $belongQuery = $db->prepare("INSERT INTO belongteam (PlayerId, TeamId, BelongRole, BelongStatus) VALUES (?, ?, 'participant', 'validé')");
+            $belongQuery->bindParam(1, $playerTwoId, PDO::PARAM_INT);
+            $belongQuery->bindParam(2, $teamId, PDO::PARAM_INT);
+            $belongQuery->execute();
+        }
+
+        echo "<p>Votre équipe a été créée avec succès !</p>";
     } else {
-        echo "<p>Erreur : " . $query->error . "</p>";
+        $errorInfo = $insertQuery->errorInfo();
+        echo "<p>Erreur lors de l’exécution de la requête : " . htmlspecialchars($errorInfo[2]) . "</p>";
     }
 }
 ?>
