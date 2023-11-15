@@ -283,7 +283,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <p>Etes-vous sûr de vouloir quitter votre équipe ?</p>
                 <form action="./quit_team.php" method="post">
                     <!-- Ajoutez un champ caché pour stocker l'ID de l'équipe -->
-                    <input type="hidden" name="teamId" value="<?php echo isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : ''; ?>">
+                    <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
                     <input type="submit" value="Oui, quitter mon équipe" class="confirmYes">
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
