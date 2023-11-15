@@ -65,22 +65,28 @@ body {
     text-transform: uppercase;
 }
 
-header .count-down-timer {
+.numbers {
+    font-weight: bold;
+}
+
+.letters {
+    text-transform: uppercase;
+}
+
+.header-container .count-down-timer {
     color: white;
     text-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
 }
 
-.count-down-timer .numbers {
-    font-weight: bold;
+.header-container .count-down-timer .numbers {
     font-size: 48px;
 }
 
-.count-down-timer .letters {
+.header-container .count-down-timer .letters {
     font-size: 48px;
-    text-transform: uppercase;
 }
 
-.count-down p {
+.header-container .count-down p {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -188,6 +194,17 @@ main {
     gap: 20px;
     display: inline-flex;
     height: 439px;
+}
+
+.twitch-link {
+    color: var(--accent-color-1);
+    text-decoration: underline;
+}
+.twitch-link:hover {
+    color: white;
+}
+.colored-words {
+    color: var(--accent-color-1);
 }
 
 .lan-explanation-text {
@@ -386,7 +403,7 @@ main {
 }
 
 .twitch-preview .count-down-timer {
-    font-size: 28px;
+    font-size: 42px;
     color: var(--secondary-color);
 }
 

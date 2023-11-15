@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <?php include 'navbar.php' ?>
     <header>
         <div class="header-container">
             <div class="count-down">
@@ -45,25 +46,29 @@
             <div class="about-content-container">
                 <div class="explanation-text-container">
                     <div class="lan-explanation-text">C'est quoi la MMI LAN ?</div>
-                    <div class="description-text">La MMI LAN est un événement centré sur le jeu vidéo, organisé par des
-                        MMI pour des MMI !
-                        <br>
-                        Elle se présente sous la forme d’un tournoi dans lequel des équipes de trois joueurs se
-                        réunissent et s'affrontent au travers de plusieurs jeux vidéo tout au long d’une journée. Que
-                        vous soyez un pro ou un débutant, cet événement est l’occasion de passer un moment de
-                        convivialité placé sous le signe de la compétition.
+                    <div class="description-text">La <span class="colored-words">MMI LAN</span> est un événement centré
+                        sur le jeu vidéo, organisé par des MMI pour des MMI !Elle se présente sous la forme d’un
+                        <span class="colored-words">tournoi</span> dans lequel des équipes de
+                        <span class="colored-words">trois joueurs </span> se réunissent et s'affrontent au travers de
+                        plusieurs jeux vidéo tout au long d’une <span class="colored-words">journée</span>.
+                        Que vous soyez un pro ou un débutant, cet événement est l’occasion de passer un moment de
+                        <span class="colored-words">convivialité</span> placé sous le signe de la
+                        <span class="colored-words">compétition</span>.
                         <br><br>
-                        Des récompenses seront à gagner à l’issue du tournoi pour récompenser les efforts des équipes
-                        gagnantes.
+                        Des <span class="colored-words">récompenses</span> seront à gagner à l’issue du tournoi pour
+                        récompenser les efforts des équipes gagnantes.
                         <br><br>
-                        Si la compétition n’est pas votre domaine, et que vous voulez simplement profiter d’une ambiance
-                        conviviale, vous êtes également au bon endroit ! Des activités et points de restauration seront
-                        à votre disposition sur le lieu de l’événement, afin que chacun puisse profiter de cette journée
-                        à leur façon.
+                        Si la compétition n’est pas votre domaine, et que vous voulez simplement
+                        <span class="colored-words">profiter d’une ambiance conviviale</span>, vous êtes également au
+                        bon endroit ! Des <span class="colored-words">activités</span> et
+                        <span class="colored-words">points de restauration</span>
+                        seront à votre disposition sur le lieu de l’événement, afin que chacun puisse profiter de cette
+                        journée à leur façon.
                         <br>
-                        La compétition sera retransmise en direct sur la chaîne Twitch de l’événement,
-                        vous pourrez donc suivre le déroulé de la LAN sans vous déplacer.
-
+                        La compétition sera retransmise <span class="colored-words">en direct sur
+                            <a href="https://www.twitch.tv/lanmmi" class="twitch-link">
+                                la chaîne Twitch</a>
+                        </span> de l’événement, vous pourrez donc suivre le déroulé de la LAN sans vous déplacer.
                     </div>
                 </div>
                 <div class="navigation-buttons-container">

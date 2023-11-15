@@ -10,23 +10,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
 
-        $(document).ready(function () {
-            $(".steak").click(function () {
-                // Inverser la visibilité du contenu burger
+        $(document).ready(() => {
+            $(".bouton_burger").click(() => {
+                $(".bouton_burger").hide();
                 $(".rubriques_burger").show();
+                $("#burger-close").show();
                 $("#croix_fermer").show();
-                $(".steak").hide();
             });
 
-            // Ajoutez cette fonction pour gérer le clic sur la croix
-            $("#croix_fermer").click(function () {
-                // Masquer le contenu burger en le faisant glisser vers le haut
+            $("#burger-close").click(() => {
+                $("#burger-close").hide();
                 $(".rubriques_burger").hide();
-                $("#croix_fermer").hide();
-                $(".steak").show();
+                $(".bouton_burger").show();
+
 
             });
         });
+
 
     </script>
 
@@ -47,29 +47,32 @@
             </div>
             <div class="contact"><a href="" id="bouton_contact">Contact</a></div>
             <div class="participer"><a href="" id="bouton_participer">Participer à la lan</a></div>
-            <div class="compte"><a href=""><img id="icon_compte" src="./assets/img/compte.png"
-                        alt="icone de compte"></a></div>
+            <div class="compte">
+                <a href="">
+                    <img id="icon_compte" src="./assets/img/compte.png" alt="icone de compte">
+                </a>
+            </div>
             <div id="burger">
-                <div id="bouton_burger">
+                <div class="bouton_burger">
                     <div class="steak"></div>
                     <div class="steak"></div>
-                    <div class="steak"></div>
-                    <div id="fermer"><img id="croix_fermer" src="./assets/img/fermer.png" alt=""></div>
-                    <div class="rubriques_burger">
-                        <div><a href="" class="content_burger">Équipes</a></div>
-                        <div><a href="" class="content_burger">Planning</a></div>
-                        <div><a href="" class="content_burger">Covoiturage</a></div>
-                        <div><a href="" class="content_burger" id="burger_contact">Contact</a></div>
-                        <div><a href="" class="content_burger" id="burger_play">Participer à la LAN</a></div>
-                        <div><a href="" class="content_burger">Contact</a></div>
-                    </div>
+                    <div class="steak" id="steak3"></div>
+                </div>
+                <div id="burger-close"><img id="croix_fermer" src="./assets/img/fermer.png" alt="">
+                </div>
+                <div class="rubriques_burger">
+                    <div><a href="" class="content_burger">Équipes</a></div>
+                    <div><a href="" class="content_burger">Planning</a></div>
+                    <div><a href="" class="content_burger">Covoiturage</a></div>
+                    <div><a href="" class="content_burger" id="burger_contact">Contact</a></div>
+                    <div><a href="" class="content_burger" id="burger_play">Participer à la LAN</a></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="count-down-timer"></div>
-    <script src="./assets/js/countDown.js"></script>
+    <div id="navbar-countdown" class="count-down-timer"></div>
+    <script src="./assets/js/navbarCountDown.js"></script>
 
 
 </body>
