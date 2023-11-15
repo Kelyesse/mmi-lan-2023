@@ -4,13 +4,13 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-//Initialisation des messages d'erreur 
+//Initialisation des messages d'erreur
 $errorMessage = '';
 
 // Traitement du formulaire lorsque le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification si tous les champs requis sont présents
-    $requiredFields = ['nom', 'prenom', 'pseudo', 'email', 'mdp1', 'mdp2', 'role', 'avatar'];
+    $requiredFields = ['nom', 'prenom', 'pseudo', 'email', 'mdp1', 'mdp2', 'role']; // ajouter 'avatar' quand on aura recu les images
     $missingFields = array_diff($requiredFields, array_keys($_POST));
 
     if (!empty($missingFields)) {
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mdp1 = hash('sha256', $_POST["mdp1"]);
         $mdp2 = hash('sha256', $_POST["mdp2"]);
         $role = $_POST["role"];
-        $avatar = $_POST["avatar"];
+        //$avatar = $_POST["avatar"];
         $favjeu = $_POST["favjeu"];
         $selectedSetup = $_POST["setup"];
 
@@ -44,11 +44,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = 'L\'adresse email n\'est pas valide.';
         }
 
-        if ($mdp1 != $mdp2 || !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$/', $mdp1)) {
+        if ($mdp1 != $mdp2) {
+            $errorMessage = 'Les mots de passes inscrit sont différents.';
+        }
+        if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s])[\w\d\S]{8,}$/', $mdp1)) {
             $errorMessage = 'Les mots de passe ne correspondent pas ou ne respectent pas les critères.';
         }
 
-        if ($selectedSetup !== 'PC portable' && $selectedSetup !== 'PV fixe') {
+        if ($selectedSetup !== 'PC portable' && $selectedSetup !== 'PC fixe') {
             $errorMessage = 'Le type de setup sélectionné n\'est pas valide.';
         }
 
@@ -61,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "Brawlhalla" => 4,
             "CS GO" => 5,
             "Rocket League" => 6,
-            "Mario Kart" => 7
         );
 
         if (!array_key_exists($favjeu, $jeuxCorrespondance)) {
@@ -72,15 +74,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($errorMessage)) {
             //Intégrer le code pour se connecter à la bdd
             try {
-                $db = new PDO($dsn, $username, $password); // changer les informations de connection
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $db->query('SET NAMES utf8');
+                //connection à la bdd
+                require_once('connexionbdd.php');
 
                 // Génération d'un ID unique
                 $id = generateId($db->query('SELECT PlayerId FROM player')->fetchAll(PDO::FETCH_COLUMN));
 
                 // Insertion des données dans la base de données en fonction du rôle
-                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerPicture, PlayerStatus, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :avatar, :statut, :setup, :favgame)";
+                $sql = "INSERT INTO player (PlayerId, PlayerLastName, PlayerFirstName, PlayerPseudo, PlayerEmail, PlayerPassword, PlayerStatus, PlayerSetup, PlayerFavGame) VALUES (:id, :nom, :prenom, :pseudo, :email, :mdp, :statut, :setup, :favgame)"; //Ajouter player picture et :avatar
                 $stmt = $db->prepare($sql);
 
                 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -89,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bindParam(':pseudo', $nom, PDO::PARAM_STR);
                 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                 $stmt->bindParam(':mdp',  $mdp1, PDO::PARAM_STR);
-                $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
+                // $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
 
                 if ($role === "Participant") {
                     $stmt->bindParam(':setup',  $selectedSetup, PDO::PARAM_STR);
@@ -103,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['PlayerId'] = $id;
                     // Rediriger vers les leçons
                     header('Status: 301 Moved Permanently', false, 301);
-                    header('Location:./############'); // Rediriger vers la bonne page
+                    header('Location:./connexion.php'); // Rediriger vers la bonne page ?
                     exit(0);
                 }
             } catch (PDOException $e) {
@@ -132,6 +133,7 @@ function generateId(array $excludeArray)
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,6 +141,7 @@ function generateId(array $excludeArray)
     <link rel="stylesheet" href="./assets/style/inscription.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
+
 <body>
     <header>
         <?php
@@ -155,7 +158,7 @@ function generateId(array $excludeArray)
 
                 <!--je me questionne sur quoi mettre en action du form-->
 
-                <form action="#" method="post">
+                <form action="" method="post">
                     <div>
                         <div>
                             <div class="double-inp">
@@ -196,16 +199,16 @@ function generateId(array $excludeArray)
                             </div>
                             <div class="radio setup">
                                 <div>
-                                    <input type="radio" name="setup" value="PC portable" id="portable" >
+                                    <input type="radio" name="setup" value="PC portable" id="portable">
                                     <label for="portable">PC portable</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" name="setup" value="PC fixe" id="fixe" >
+                                    <input type="radio" name="setup" value="PC fixe" id="fixe">
                                     <label for="fixe">PC fixe</label><br>
                                 </div>
                             </div>
                             <div class="simple-inp">
-                                <select name="favjeu" id="select_jeu" >
+                                <select name="favjeu" id="select_jeu">
                                     <option value="">Choississez votre jeu favoris</option>
                                     <option value="Track Mania: Nation Forever">Track Mania: Nation Forever</option>
                                     <option value="Geo Guesseur">Geo Guesseur</option>
@@ -213,7 +216,6 @@ function generateId(array $excludeArray)
                                     <option value="Brawlhalla">Brawlhalla</option>
                                     <option value="CS GO">CS GO</option>
                                     <option value="Rocket League">Rocket League</option>
-                                    <option value="Mario Kart">Mario Kart</option>
                                 </select>
                             </div>
                             <div id="end-form">
@@ -224,31 +226,31 @@ function generateId(array $excludeArray)
                                 <a href="#">Se connecter ?</a>
                             </div>
                         </div>
-                        <div id="choix_ava">
+                        <!-- <div id="choix_ava">
                             <div>
                                 <h3>Choisissez votre avatar</h3>
                                 <div id="liste_ava">
                                     <svg id="pre" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
-                                        <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2"/>
+                                        <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2" />
                                     </svg>
                                     <div class="avatar">
 
-                                        <!--toutes les img sont à changé par celles de la base de donnée-->
+                                        toutes les img sont à changé par celles de la base de donnée
 
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava2.gif" alt="" >
+                                            <img src="./assets/img/ava2.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option prem">
                                             <img src="./assets/img/ava1.gif" alt="">
@@ -257,12 +259,12 @@ function generateId(array $excludeArray)
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option sec">
-                                            <img src="./assets/img/ava1.gif" alt="" >
+                                            <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option sec">
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
-                                        <div class= "avatar-option sec">
+                                        <div class="avatar-option sec">
                                             <img src="./assets/img/ava1.gif" alt="">
                                         </div>
                                         <div class="avatar-option sec">
@@ -273,28 +275,36 @@ function generateId(array $excludeArray)
                                         </div>
                                     </div>
                                     <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
-                                        <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2"/>
+                                        <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2" />
                                     </svg>
                                 </div>
 
-                                <!--Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer-->
+                                Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer
 
                                 <input type="hidden" name="avatar" id="avatar" value="" required>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div id="accept-rules">
                         <input type="checkbox" name="rules" id="rules" required>
                         <label for="rules">En vous inscrivant vous acceptez le règlement de la MMI LAN ainsi que le traitement de vos données.</label>
                     </div>
                     <input type="submit" id="submit" value="Inscription">
+                    <div>
+                        <?php
+                        if ($errorMessage) {
+                            echo $errorMessage;
+                        }
+                        ?>
+                    </div>
                 </form>
             </div>
         </div>
     </main>
-<script src="./assets/js/countDown.js"></script>
-<script src="./assets/js/role_participant.js"></script>
-<script src="./assets/js/gallerie_avatar.js"></script>
-<script src="./assets/js/gestion_mdp.js"></script>
+    <script src="./assets/js/countDown.js"></script>
+    <script src="./assets/js/role_participant.js"></script>
+    <script src="./assets/js/gallerie_avatar.js"></script>
+    <script src="./assets/js/gestion_mdp.js"></script>
 </body>
+
 </html>
