@@ -36,7 +36,7 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
     // Envoyer le mail
     if ($email && $mess) {
         //A remplacer par php mailer
-        $destinataire = "adresse@email.com"; // #### A REMPLACER par l'adresse amil de l'hebergeur ou celui de l'association ###
+        $destinataire = "mmilan.com2023@gmail.com";
         $sujet = "Nouveau message de contact depuis votre site";
 
         $message = "Nom: $nom\n";
