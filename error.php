@@ -11,7 +11,7 @@
 
 <body>
     <?php
-        include("navbar.php");
+    include("./navbar.php");
     ?>
     <main>
         <!--texte en fond-->
@@ -27,6 +27,9 @@
             <a href="./" id="backAcc">Retour à l'accueil</a>
         </div>
     </main>
+    <?php
+    include("./footer.php");
+    ?>
 </body>
 
 </html>
