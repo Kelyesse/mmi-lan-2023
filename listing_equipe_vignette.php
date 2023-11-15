@@ -84,4 +84,7 @@ if (count($equipes) > 0) {
         }
     }
 }
+else{
+    echo'<div class="liste_vide">Il n\'y a pas encore d\'équipe crée en une ! </div>';
+}
 ?>
