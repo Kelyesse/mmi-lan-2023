@@ -6,11 +6,11 @@
     color: #fff;
     align-items: center;
     font-family: var(--body-font);
+    box-sizing: border-box;
 }
 
 html, body {
     margin: auto;
-    box-sizing: border-box;
     background-color: #151515;
 }
 
@@ -46,12 +46,6 @@ a{
     color: #CD0C75;
 }
 
-.count-down-timer{
-    display: flex;
-    padding: 10px;
-    justify-content: center;
-    background-color: #CD0C75;
-}
 
 main{
     display: flex;
@@ -83,41 +77,34 @@ form>div{
     justify-content: space-between;
 }
 
+.double-inp>input{
+    border-bottom: #fff 1px solid;
+    width: 100%;
+}
+
 .double-inp{
     display: flex;
     gap: 20px;
     justify-content: space-between;
+    width: 100%;
+}
+
+.double-inp div{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #fff;
 }
 
 .simple-inp{
     width: 100%;
-}
-
-#pseudo{
-    background: url(../img/profil.svg) no-repeat;
-    background-position: left center;
-}
-
-#email{
-    background: url(../img/mail.svg) no-repeat;
-    background-position: left center;
-}
-
-.mdp{
-    background: url(../img/cadena.svg) no-repeat;
-    background-position: left center;
-}
-
-.mdp::placeholder{
-    padding: 30px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #fff;
 }
 
 .simple-inp input{
     width: 100%;
-}
-
-.simple-inp input::placeholder{
-    padding:30px ;
 }
 
 #config-psw{
@@ -143,7 +130,6 @@ form>div{
     width: 100%;
     padding: 10px 0;
     background-color: #151515;
-    border: solid 1px #fff;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -161,10 +147,7 @@ form>div>div{
 input{
     background-color:#151515;
     padding: 10px 0px ;
-    border: solid 1px #fff;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
+    border: none;
     width: 20vw;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.25);
@@ -224,6 +207,7 @@ input[type="radio"], input[type="checkbox"] {
     border: solid 2px #CD0C75;
     width: 105px;
     height: 105px;
+    box-sizing: content-box;
 }
 
 #accept-rules{
@@ -246,18 +230,15 @@ input[type="radio"], input[type="checkbox"] {
 
     .double-inp {
         flex-direction: column;
-    }
-
-    .double-inp{
         gap: 0;
     }
 
-    .double-inp input{
+    .double-inp, .simple-inp{
         width: 88vw;
     }
 
-    .simple-inp input{
-        width: 88vw;
+    input{
+        width: 100%;
     }
 
     #end-form{
