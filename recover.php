@@ -37,28 +37,23 @@ $settings = array(
     'name' => 'mmi-lan-2023',
 );
 
-$email_not_sent = 'Mail non envoyé';
-$email_sent = 'Mail envoyé';
-
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $email = $_POST["email"];
 
-    $query = $db2->prepare("SELECT * 
-    FROM player
-    WHERE player.PlayerEmail = ? ");
+    $query = $db2->prepare("SELECT * FROM player WHERE PlayerEmail = :PlayerEmail ");
 
-
-    $query->bindValue(1, $email);
+    $query->bindParam(':PlayerEmail', $email, PDO::PARAM_STR);
     $query->execute();
+
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     // var_dump($result);
 
-    if (!isset($result[0])) {
+    if (isset($result[0])) {
+        $result = $result[0];
+    } else {
         echo ' votre compte est inexistant';
         // arrete le script
         die();
-    } else {
-        $result = $result[0];
     }
 
     $token = generateRandomString(30);
@@ -104,9 +99,9 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $query->bindValue(3, $result['PlayerId']);
         $query->execute(); // create token reintialisation
         $result2 = $query->fetchAll(PDO::FETCH_ASSOC);
-        echo $email_sent;
+        echo 'Mail envoyé';
     } catch (Exception $e) {
-        echo $email_not_sent . "<br>Merci de transmettre ces informations à l'administrateur : {$mail->ErrorInfo}";
+        echo "Mail non envoyé<br>Merci de transmettre ces informations à l'administrateur : {$mail->ErrorInfo}";
     }
 }
 
