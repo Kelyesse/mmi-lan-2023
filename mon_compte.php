@@ -1,8 +1,6 @@
 <?php
 // Initialiser la session
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+session_start();
 
 if (isset($_SESSION['PlayerId'])) {
     //Se connecter à la base de données et récupérer l'ensemble des comptes
@@ -18,12 +16,16 @@ if (isset($_SESSION['PlayerId'])) {
             } else {
                 //Si le compte est un participant
                 $player = true;
+
                 //Récupérer l'équipe du compte s'il fait partie d'une équipe
                 $teamDb = $db->query('SELECT * FROM belongteam WHERE PlayerId = ' . $_SESSION['PlayerId'] . ';')->fetch(PDO::FETCH_ASSOC);
                 // Vérifier que la personne est acceptée dans l'équipe
-                if (!is_null($teamDb) && $teamDb["BelongStatus"] == "IL est dedans ??") {
+                if (!is_null($teamDb) && $teamDb["BelongStatus"] == "validé") {
                     // si la personne est dans une équipe
                     $team = true;
+                    //récupérer les informations de l'équipe
+                    $infoTeamDb = $db->query('SELECT * FROM team WHERE TeamId = ' . $teamDb['TeamId'] . ';')->fetch(PDO::FETCH_ASSOC);
+                    $teamMembers = $db->query('SELECT PlayerId FROM belongteam WHERE TeamId = ' . $teamDb['TeamId'] . ';')->fetchall(PDO::FETCH_ASSOC);
                 } else {
                     // si la personne n'est pas dans une équipe
                     $team = false;
@@ -100,85 +102,66 @@ if (isset($_SESSION['PlayerId'])) {
                 </div>
             </div>
             <!--ne doit pas apparaitre si utilisateur est conducteur-->
-            <div id="player-desc">
-                <div id="jeu">
-                    <!--à ajouter en back-->
-                    <p>Jeu favoris</p>
-                </div>
-                <div id="desc">
-                    <!--à ajouter en back-->
-                    <p>Texte de presentation Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
+            <?php
+            if ($player) {
+                echo '<div id="player-desc">';
+                echo '    <div id="jeu">';
+                echo '        <p>Jeu favoris</p>';
+                echo '    </div>';
+                echo '    <div id="desc">';
+                echo '        <p>Texte de présentation Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>';
+                echo '    </div>';
+                echo '</div>';
+            }
+            ?>
         </section>
 
         <!--section qui apparait si participant avec équipe-->
-        <section id="team">
-            <div>
-                <div id="team-desc">
-                    <div>
-                        <!--à ajouter en back nom équipe-->
-                        <h2>NOM ÉQUIPE 1</h2>
+        <?php
+        if ($team) {
+            echo '<section id="team">';
+            echo '    <div>';
+            echo '        <div id="team-desc">';
+            echo '            <div>';
+            echo '                <h2>' . $infoTeamDb['TeamName'] . '</h2>';
+            echo '                <p>' . $infoTeamDb['TeamDesc'] . '</p>';
+            echo '                <button>Modifier</button>';
+            echo '            </div>';
+            echo '            <div id="li-mate">';
+            echo '                <h3>Membres de l’équipe</h3>';
+            echo '                <div>';
 
-                        <!--description à ajouter en back-->
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit
-                            amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                            Maecenas vitae mattis tellus.
-                        </p>
-                        <button>Modifier</button>
-                    </div>
-                    <div id="li-mate">
-                        <h3>Membres de l’équipe</h3>
-                        <div>
-                            <div>
-                                <!--nom du premier membre à ajouter en back-->
-                                <p class="mate">Lorem Pheta</p>
-                                <button class="remove-mate">supprimer
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">
-                                        <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div>
-                                <!--nom du deuxieme membre à ajouter en back-->
-                                <p class="mate">Lorem Pheta</p>
-                                <button class="remove-mate">supprimer
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">
-                                        <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div>
-                                <!--nom du troisieme membre à ajouter en back-->
-                                <p class="mate">Lorem Pheta</p>
-                                <button class="remove-mate">supprimer
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">
-                                        <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <img src="" alt="" style="width: 400px; height: 400px;">
-                </div>
-            </div>
-            <div id="buttons">
-                <button id="remove-team">Supprimer mon équipe</button>
-                <button id="leave-team">Changer le logo</button>
-            </div>
-        </section>
-
-        <!--Section qui apparait si participant sans équipe-->
-        <section id="no-team">
-            <div>
-                <button><a href="#">Creer une équipe</a></button>
-                <button><a href="#">Rejoindre une équipe</a></button>
-            </div>
-        </section>
+            foreach ($teamMembers as $teamMember) {
+                echo '                    <div>';
+                echo '                        <p class="mate">' . $teamMember['PlayerName'] . '</p>';
+                echo '                        <button class="remove-mate">supprimer';
+                echo '                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">';
+                echo '                                <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />';
+                echo '                            </svg>';
+                echo '                        </button>';
+                echo '                    </div>';
+            }
+            echo '                </div>';
+            echo '            </div>';
+            echo '        </div>';
+            echo '        <div>';
+            echo '            <img src="" alt="" style="width: 400px; height: 400px;">';
+            echo '        </div>';
+            echo '    </div>';
+            echo '    <div id="buttons">';
+            echo '        <button id="remove-team">Supprimer mon équipe</button>';
+            echo '        <button id="leave-team">Changer le logo</button>';
+            echo '    </div>';
+            echo '</section>';
+        } else {
+            echo '<section id="no-team">';
+            echo '    <div>';
+            echo '        <button><a href="#">Créer une équipe</a></button>';
+            echo '        <button><a href="#">Rejoindre une équipe</a></button>';
+            echo '    </div>';
+            echo '</section>';
+        }
+        ?>
 
 
         <section id="account">
