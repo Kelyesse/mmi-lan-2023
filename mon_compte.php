@@ -195,10 +195,12 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             echo '            <img src="' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
             echo '        </div>';
             echo '    </div>';
-            echo '    <div id="buttons">';
-            echo '        <button id="remove-team">Supprimer mon équipe</button>';
-            echo '        <button id="leave-team">Changer le logo</button>';
-            echo '    </div>';
+            if ($creator) {
+                echo '    <div id="buttons">';
+                echo '    <button id="remove-team">Supprimer mon équipe</button>';
+                echo '        <button id="change-logo">Changer le logo</button>';
+                echo '    </div>';
+            }
             echo '</section>';
         } else {
             echo '<section id="no-team">';
