@@ -36,7 +36,7 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
     // Envoyer le mail
     if ($email && $mess) {
         //A remplacer par php mailer
-        $destinataire = "mmilan.com2023@gmail.com";
+        $destinataire = "heliosmartin123@gmail.com";
         $sujet = "Nouveau message de contact depuis votre site";
 
         $message = "Nom: $nom\n";
@@ -47,15 +47,8 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
 
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
-        // Voir ce qu'on affiche quand le message a été envoyé ou s'il y a une erreur
-        try {
-            if (mail($destinataire, $sujet, $message, $headers)) {
-            } else {
-                throw new Exception("Une erreur s'est produite lors de l'envoi de votre message.");
-            }
-        } catch (Exception $e) {
-            $errorMessage = "Erreur : " . $e->getMessage();
-        }
+        mail($destinataire, $sujet, $message, $headers);
+
     }
 }
 ?>
@@ -120,15 +113,15 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
                             <input type="email" placeholder="Entrer votre email" name="email" id="email" required>
                         </div>
                         <div class="simple-inp">
-                            <img src="./assets/img/profil.svg" alt="">
-                            <input type="text" placeholder="Objet" name="objet" id="obj" required>
+                            <img src="./assets/img/chatquote.svg" alt="">
+                            <input type="text" placeholder="Objet" name="obj" id="obj" required>
                         </div>
                         <div class="simple-inp">
-                            <textarea name="" id="" cols="1000" rows="10" placeholder="Votre message..." name="mess"
+                            <textarea id="" cols="1000" rows="10" placeholder="Votre message..." name="mess"
                                 id="message"></textarea>
                         </div>
                         <div id="sub">
-                            <a class="rgpd-link" href="./reglement.php">En nous contactant, vous acceptez le RGPD.</a>
+                            <a class="rgpd-link" href="./RGPD.php">En nous contactant, vous acceptez le RGPD.</a>
                             <input type="submit" id="submit" value="Envoyer">
                         </div>
                     </div>
