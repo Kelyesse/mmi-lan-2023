@@ -67,13 +67,14 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="./assets/style/contact.css">
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
     <header>
         <?php
-            include('navbar.php');
+        include('navbar.php');
         ?>
     </header>
     <main>
@@ -81,15 +82,16 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
             <h1>CONTACTEZ NOUS !</h1>
         </div>
         <section>
-            <div id="info" >
-                <p>N'hésitez pas à nous contacter pour toute question, préoccupation ou collaboration potentielle. Nous sommes là pour vous aider !</p>
+            <div id="info">
+                <p>N'hésitez pas à nous contacter pour toute question, préoccupation ou collaboration potentielle. Nous
+                    sommes là pour vous aider !</p>
                 <div>
                     <img src="./assets/img/pin.svg" alt="">
                     <h4>70 Avenue Roger Devoucoux, 83000 Toulon</h4>
                 </div>
                 <div>
                     <img src="./assets/img/mail.svg" alt="">
-                    <h4>info@form.com</h4>
+                    <h4>mmilan.com2023@gmail.com</h4>
                 </div>
                 <div>
                     <a href="https://www.tiktok.com/@mmi.lan?is_from_webapp=1&sender_device=pc">
@@ -122,16 +124,21 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
                             <input type="text" placeholder="Objet" name="objet" id="obj" required>
                         </div>
                         <div class="simple-inp">
-                            <textarea name="" id="" cols="1000" rows="10" placeholder="Votre messages" name="mess" id="message"></textarea>
+                            <textarea name="" id="" cols="1000" rows="10" placeholder="Votre message..." name="mess"
+                                id="message"></textarea>
                         </div>
                         <div id="sub">
-                            <a href="./reglement.php">En nous contactant vous acceptez le RGPD</a>
-                            <input type="submit" id="submit" value="envoyer">
+                            <a class="rgpd-link" href="./reglement.php">En nous contactant, vous acceptez le RGPD.</a>
+                            <input type="submit" id="submit" value="Envoyer">
                         </div>
                     </div>
                 </form>
             </div>
         </section>
     </main>
+    <?php
+    include('./footer.php');
+    ?>
 </body>
+
 </html>

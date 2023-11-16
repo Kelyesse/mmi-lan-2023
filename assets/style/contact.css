@@ -9,12 +9,16 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: auto;
     background-color: #151515;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--accent-font);
     font-weight: 900;
     color: #fff;
@@ -41,116 +45,120 @@ p {
     font-family: var (--body-font);
 }
 
-
-a{
-    color: #CD0C75;
+a {
+    color: #cd0c75;
 }
 
-
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 50px 0;
-
 }
 
-main section{
+main section {
     max-width: 1240px;
     display: flex;
     justify-content: space-between;
 }
 
-main div{
+main div {
     width: 40%;
 }
 
-#title{
-    width: 1240px ;
+#title {
+    width: 1240px;
 }
 
-#info{
+#info {
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: baseline;
 }
 
-#info div{
+#info div {
     display: flex;
     gap: 20px;
 }
 
-#form{
+#form {
     width: 50%;
 }
 
-input, textarea{
-    background-color:#151515;
-    padding: 10px 0px ;
+input,
+textarea {
+    background-color: #151515;
+    padding: 10px 0px;
     border: none;
     width: 20vw;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.25);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     color: #fff;
 }
 
-.double-inp>input{
+.double-inp > input {
     border-bottom: #fff 1px solid;
     width: 100%;
 }
 
-.double-inp{
+.double-inp {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     width: 100%;
 }
 
-.double-inp div{
+.double-inp div {
     width: 100%;
     display: flex;
     gap: 10px;
     border-bottom: 1px solid #fff;
 }
 
-.simple-inp{
+.simple-inp {
     width: 100%;
     display: flex;
     gap: 10px;
     border-bottom: 1px solid #fff;
 }
 
-.simple-inp input, textarea{
+.simple-inp input,
+textarea {
     width: 100%;
 }
 
-form>div{
+form > div {
     display: flex;
     flex-direction: column;
     gap: 30px;
     width: 100%;
 }
 
-#sub{
+#sub {
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
-#sub a{
+#sub a {
     font-size: 14px;
 }
 
-#submit{
+#submit {
     padding: 10px;
-    background-color: #2F1D62;
+    background-color: #2f1d62;
     border: none;
     border-radius: 5px;
     color: #fff;
     width: auto;
+}
+
+.rgpd-link {
+    text-decoration: underline;
 }
