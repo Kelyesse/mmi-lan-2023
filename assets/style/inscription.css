@@ -9,12 +9,15 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: auto;
     background-color: #151515;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--accent-font);
     font-weight: 900;
     color: #fff;
@@ -41,25 +44,23 @@ p {
     font-family: var (--body-font);
 }
 
-
-a{
-    color: #CD0C75;
+a {
+    color: #cd0c75;
 }
 
-
-main{
+main {
     display: flex;
     justify-content: center;
     margin: 50px 0;
 }
 
-main>div{
+main > div {
     display: inline-flex;
     flex-direction: column;
     gap: 45px;
 }
 
-#title{
+#title {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -67,47 +68,47 @@ main>div{
     min-width: 86vw;
 }
 
-#form{
+#form-container {
     width: 86vw;
 }
 
-form>div{
+form > div {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
 }
 
-.double-inp>input{
+.double-inp > input {
     border-bottom: #fff 1px solid;
     width: 100%;
 }
 
-.double-inp{
+.double-inp {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     width: 100%;
 }
 
-.double-inp div{
+.double-inp div {
     width: 100%;
     display: flex;
     gap: 10px;
     border-bottom: 1px solid #fff;
 }
 
-.simple-inp{
+.simple-inp {
     width: 100%;
     display: flex;
     gap: 10px;
     border-bottom: 1px solid #fff;
 }
 
-.simple-inp input{
+.simple-inp input {
     width: 100%;
 }
 
-#config-psw{
+#config-psw {
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
@@ -116,17 +117,17 @@ form>div{
     margin-bottom: 15px;
 }
 
-.radio{
+.radio {
     display: flex;
     justify-content: center;
     gap: 14vw;
 }
 
-.radio div{
+.radio div {
     width: 110px;
 }
 
-#select_jeu{
+#select_jeu {
     width: 100%;
     padding: 10px 0;
     background-color: #151515;
@@ -134,23 +135,25 @@ form>div{
     border-left: none;
     border-right: none;
     font-size: 16px;
+    color: white;
+}
+#select_jeu::placeholder {
     color: rgba(255, 255, 255, 0.25);
-
 }
 
-form>div>div{
+form > div > div {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-input{
-    background-color:#151515;
-    padding: 10px 0px ;
+input {
+    background-color: #151515;
+    padding: 10px 0px;
     border: none;
     width: 20vw;
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.25);
+    color: white;
 }
 
 input:focus {
@@ -158,34 +161,75 @@ input:focus {
     color: #fff;
 }
 
-input[type="radio"], input[type="checkbox"] {
-    width:10px;
+input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
 }
 
-#end-form{
+input[type="radio"],
+input[type="checkbox"] {
+    width: 10px;
+}
+
+#end-form {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 30px;
 }
 
-#submit{
+.submit-form {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+.error-message {
+    padding: 6px;
+    color: var(--tertiary-color);
+    font-style: italic;
+}
+#submit {
     padding: 10px;
-    background-color: #2F1D62;
+    background-color: #2f1d62;
     border: none;
     border-radius: 5px;
     color: #fff;
     width: auto;
 }
 
-#choix_ava>div{
+#submit.animation-vibration {
+    animation: shake 0.4s ease-in-out infinite; /* Animation de vibration pendant 0.5s */
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    } /* Position de départ */
+    25% {
+        transform: translateX(-5px);
+    } /* Décalage vers la gauche */
+    50% {
+        transform: translateX(5px);
+    } /* Décalage vers la droite */
+    75% {
+        transform: translateX(-5px);
+    } /* Décalage vers la gauche */
+    100% {
+        transform: translateX(0);
+    } /* Retour à la position de départ */
+}
+.connection-link {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+#choix_ava > div {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: baseline;
 }
 
-.avatar{
+.avatar {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -194,23 +238,23 @@ input[type="radio"], input[type="checkbox"] {
     max-height: 239px;
 }
 
-.avatar img{
+.avatar img {
     height: 105px;
     width: 105px;
 }
 
-#liste_ava{
+#liste_ava {
     display: flex;
 }
 
 .active {
-    border: solid 2px #CD0C75;
+    border: solid 2px #cd0c75;
     width: 105px;
     height: 105px;
     box-sizing: content-box;
 }
 
-#accept-rules{
+#accept-rules {
     display: block;
     margin-bottom: 30px;
 }
@@ -220,62 +264,61 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 1240px) {
-    form>div {
+    form > div {
         align-items: center;
         flex-direction: column;
     }
 }
 
 @media only screen and (max-width: 700px) {
-
     .double-inp {
         flex-direction: column;
         gap: 0;
     }
 
-    .double-inp, .simple-inp{
+    .double-inp,
+    .simple-inp {
         width: 88vw;
     }
 
-    input{
+    input {
         width: 100%;
     }
 
-    #end-form{
+    #end-form {
         width: 88vw;
     }
 
-    .avatar img{
+    .avatar img {
         height: 70px;
         width: 70px;
     }
 
-    .avatar{
+    .avatar {
         width: 270px;
     }
-    
-    #select_jeu{
+
+    #select_jeu {
         width: 88vw;
     }
 }
 
 @media only screen and (max-width: 400px) {
-
-    h1{
+    h1 {
         font-size: 24px;
         font-weight: 800;
     }
 
-    h2{
+    h2 {
         font-size: 17px;
         font-weight: 600;
     }
 
-    #titre{
+    #titre {
         gap: 0;
     }
 
-    main>div{
+    main > div {
         gap: 0;
     }
 }
