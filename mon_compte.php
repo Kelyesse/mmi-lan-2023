@@ -115,7 +115,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <div>
                         <img src="./assets/img/profil.svg" alt="">
                         <p>Pseudo: <?php echo $account['PlayerPseudo'] ?></p>
-                        <button onclick="openModal('editPseudo')">
+                        <button id="editPseudo" onclick="openModal('editPseudo')">
                             <!-- Remplace le texte par un SVG -->
                             <img src="./assets/img/modif_icon.svg" alt="Modifier">
                         </button>
@@ -123,7 +123,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <div>
                         <img src="./assets/img/mail.svg" alt="">
                         <p>Adresse mail: <?php echo $account['PlayerEmail'] ?></p>
-                        <button onclick="openModal('editEmail')">
+                        <button id="editEmail" onclick="openModal('editEmail')">
                             <!-- Remplace le texte par un SVG -->
                             <img src="./assets/img/modif_icon.svg" alt="Modifier">
                         </button>
@@ -133,7 +133,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                         echo '<div>';
                         echo '  <img src="./assets/img/nom.svg" alt="">';
                         echo "  <p>Nom de l'équipe: " . $infoTeamAccount['TeamName'] . "</p>";
-                        echo '  <button onclick="openModal(\'editTeamName\')">';
+                        echo '  <button id="editTeamName" onclick="openModal(\'editTeamName\')">';
                         echo '      <!-- Remplace le texte par un SVG -->';
                         echo '      <img src="./assets/img/modif_icon.svg" alt="Modifier">';
                         echo '  </button>';
@@ -143,7 +143,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <div>
                         <img src="./assets/img/cadena.svg" alt="">
                         <p>Mot de passe</p>
-                        <button onclick="openModal('editPassword')">
+                        <button id="editPassword" onclick="openModal('editPassword')">
                             <!-- Remplace le texte par un SVG -->
                             <img src="./assets/img/modif_icon.svg" alt="Modifier">
                         </button>
@@ -176,7 +176,6 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             echo '            <div id="li-mate">';
             echo '                <h3>Membres de l’équipe</h3>';
             echo '                <div>';
-            // Si tu es le créateur de l'équipe, il faut afficher ça
             if ($creator) {
                 foreach ($teamMembers as $teamMember) {
                     echo '<div>';
