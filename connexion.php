@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("include/connexionbdd.php");
+include("navbar.php");
 
 // Vérifie si $_SESSION['PlayerId'] existe
 if (isset($_SESSION['PlayerId'])) {
@@ -158,6 +158,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
             </div>
         </div>
     </div>
+    <?php
+    include('./footer.php');
+    ?>
 </body>
 
 </html>
