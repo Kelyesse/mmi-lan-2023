@@ -299,6 +299,9 @@ function generateId(array $excludeArray)
             </div>
         </div>
     </main>
+    <?php
+        include('footer.php');
+    ?>
     <script src="./assets/js/countDown.js"></script>
     <script src="./assets/js/role_participant.js"></script>
     <script src="./assets/js/gallerie_avatar.js"></script>
