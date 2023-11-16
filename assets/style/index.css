@@ -10,7 +10,6 @@ body {
     height: 100%;
     margin: 0 auto;
     background-color: var(--background-color);
-    /* temporary before background img */
 }
 
 /* HEADER */
@@ -36,7 +35,6 @@ body {
 }
 
 .cta-button {
-    font-family: var(--accent-font);
     font-weight: 900;
     display: block;
     width: fit-content;
@@ -50,6 +48,7 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: 0.5s ease;
+    font-family: var(--accent-font);
 }
 .cta-button:hover {
     background: var(--primary-color-hover);
@@ -66,30 +65,55 @@ body {
     text-transform: uppercase;
 }
 
-header .count-down-timer {
+.numbers {
+    font-weight: bold;
+}
+
+.letters {
+    text-transform: uppercase;
+}
+
+.header-container .count-down-timer {
     color: white;
     text-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
 }
 
-.count-down-timer .numbers {
-    font-weight: bold;
+.header-container .count-down-timer .numbers {
     font-size: 48px;
 }
 
-.count-down-timer .letters {
+.header-container .count-down-timer .letters {
     font-size: 48px;
-    text-transform: uppercase;
 }
 
-.count-down p {
+.header-container .count-down p {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
+/* MAIN */
+
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+.background-pattern {
+    position: absolute;
+    z-index: -1;
+    width: 1250px;
+    left: 700px;
+    top: 75vh;
+    /* native color of img wasn't the exact same as on figma */
+    filter: brightness(4);
+    opacity: 0.25;
+}
+
 /* TEASER */
 
 .teaser-container {
+    margin: 60px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,8 +143,7 @@ header .count-down-timer {
 
 .sponsors {
     text-align: center;
-    padding: 20px 0;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .sponsors h2 {
@@ -155,10 +178,12 @@ header .count-down-timer {
 /* ABOUT */
 
 .about-content-container {
+    /* remove margin-top: 60px; when we have sponsors */
+    margin-top: 60px;
     width: 100%;
     height: 100%;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     display: inline-flex;
 }
 
@@ -169,6 +194,17 @@ header .count-down-timer {
     gap: 20px;
     display: inline-flex;
     height: 439px;
+}
+
+.twitch-link {
+    color: var(--accent-color-1);
+    text-decoration: underline;
+}
+.twitch-link:hover {
+    color: white;
+}
+.colored-words {
+    color: var(--accent-color-1);
 }
 
 .lan-explanation-text {
@@ -222,6 +258,16 @@ header .count-down-timer {
     background: #cd0c75;
 }
 
+.faq-button::before,
+.carpooling-button::before {
+    content: "";
+    position: absolute;
+    width: 439px;
+    height: 105px;
+    background-color: gray;
+    z-index: 0;
+}
+
 .faq-button {
     background: #febc11;
 }
@@ -237,21 +283,67 @@ header .count-down-timer {
 }
 
 .button-label h3 {
+    position: relative;
     transform-origin: center;
     padding: 20px;
+    word-wrap: break-word;
+    font-family: var(--accent-font);
     color: white;
     font-size: 24px;
     font-weight: 900;
-    word-wrap: break-word;
-    font-family: "Overused Grotesk";
+}
+
+/* ANIMATED BANNER */
+
+.animated-banner {
+    width: 100%;
+    height: 55px;
+    background-color: var(--accent-color-1);
+    margin-top: 120px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.space-invaders {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    animation: scrollBanner 9s linear infinite;
+    /* initially, hide groups before their animation starts */
+    right: -100%;
+}
+#group2 {
+    /* delay to create space between the groups */
+    animation-delay: 3s;
+}
+#group3 {
+    /* delay to create space between the groups */
+    animation-delay: 6s;
+}
+@keyframes scrollBanner {
+    /* on the beginning of the animation, space-invaders group is placed on the right, outside of window */
+    0% {
+        right: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-120%);
+    }
+}
+
+.space-invader {
+    width: 40px;
+    height: 40px;
 }
 
 /* SOCIAL */
 
 .social-media {
     margin: 60px 0;
-    background-color: var(--background-color);
-    /* temporary */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -297,10 +389,7 @@ header .count-down-timer {
 
 /* TWITCH */
 
-/* temporary before background img */
-
 .twitch-preview {
-    background-color: var(--background-color);
     font-family: var(--body-font);
     width: 85%;
     display: flex;
@@ -325,8 +414,8 @@ header .count-down-timer {
 }
 
 .twitch-preview .count-down-timer {
-    font-size: 28px;
-    color: var(--primary-color);
+    font-size: 42px;
+    color: var(--secondary-color);
 }
 
 .twitch-livestream {
@@ -346,86 +435,133 @@ header .count-down-timer {
 .twitch-embed {
     width: 1240px;
     height: 677px;
-    /* temporary before twitch preview with API*/
     outline: 1px solid white;
     border-radius: 5px;
 }
 
-/* FOOTER */
-
-.footer-container {
-    width: 100%;
-    padding: 50px 100px;
-    background: #212121;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+/* This class is used to hide content before we use it (ex: we don't have sponsors yet) */
+.hidden-content {
+    display: none;
 }
 
-.social-links p {
-    color: #eeeeee;
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    line-height: 23px;
+@media screen and (min-width: 700px) and (max-width: 1300px) {
+    .navigation-buttons-container {
+        transform: none;
+    }
+    .navigation-button {
+        max-width: 600px;
+        max-height: 150px;
+    }
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
+@media screen and (max-width: 1300px) {
+    .header-container .count-down {
+        width: 100%;
+    }
+    .header-container .title-mmilan {
+        font-size: 60px;
+    }
+    .header-container .count-down-timer .numbers {
+        font-size: 28px;
+    }
+    .header-container .count-down-timer .letters {
+        font-size: 28px;
+    }
+    .teaser-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60vw;
+        height: 30vw;
+        min-width: 280px;
+        min-height: 140px;
+    }
+    .teaser {
+        width: 100%;
+        height: 100%;
+    }
+    .about-section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60vw;
+        height: 1000px;
+        position: relative;
+    }
 
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .about-content-container {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 50px;
+        position: relative;
+    }
+    .explanation-text-container {
+        height: auto;
+        width: 60vw;
+        min-width: 280px;
+        position: relative;
+    }
+    .description-text {
+        width: 100%;
+    }
+    .navigation-button,
+    .navigation-button::before {
+        max-width: 439px;
+        max-height: 105px;
+        width: 55vw;
+        height: 15vw;
+    }
+    .button-label h3 {
+        font-size: clamp(10px, 4vw, 24px);
+    }
+    .icon-box {
+        padding-bottom: 2%;
+    }
+    .icon-box img {
+        width: 10%;
+        height: 10%;
+        min-width: 20px;
+        max-width: 80px;
+        min-height: 20px;
+        max-height: 80px;
+    }
+    .animated-banner {
+        position: relative;
+        margin-top: 70%;
+    }
+    .follow-us {
+        font-size: 18px;
+    }
+    .social-media {
+        height: auto;
+        word-wrap: break-word;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .countdown-title {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .twitch-preview .count-down-timer {
+        font-size: 30px;
+        color: var(--secondary-color);
+    }
+    .twitch-livestream {
+        width: 60vw;
+        height: 30vw;
+        min-width: 280px;
+        min-height: 140px;
+        align-items: baseline;
+    }
+    .twitch-title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .twitch-embed {
+        width: 80%;
+        height: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-links a {
-    color: #eeeeee;
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.footer-banner {
-    width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background: #cd0c75;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-
-.copyright-text {
-    color: #eeeeee;
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    text-align: center;
-    width: 100%;
-}
-
-/* maybe soon */
-/* #pacman-animation-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-} */
