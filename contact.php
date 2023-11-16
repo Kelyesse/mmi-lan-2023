@@ -82,8 +82,9 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
         </div>
         <section>
             <div id="info" >
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>N'hésitez pas à nous contacter pour toute question, préoccupation ou collaboration potentielle. Nous sommes là pour vous aider !</p>
                 <div>
+                    <img src="./assets/img/pin.svg" alt="">
                     <h4>70 Avenue Roger Devoucoux, 83000 Toulon</h4>
                 </div>
                 <div>
