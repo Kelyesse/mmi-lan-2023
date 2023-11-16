@@ -8,6 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $teamId = $_POST['teamId'];
         $newTeamName = $_POST['newTeamName'];
 
+        if (!preg_match('/^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/', $newTeamName)) {
+            $_SESSION['error_message'] = 'Le nom d\'équipe doit contenir uniquement des lettres minuscules et majuscules.';
+            header('Location: mon_compte.php');
+            exit();
+        }
+
         // Inclure le fichier de connexion à la base de données
         require_once('connexionbdd.php');
 

@@ -379,12 +379,19 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         <div class="popup-content">
             <p>Modifier le mot de passe</p>
             <form action="traitement_password.php" method="post">
+                <label for="oldPassword">Ancien mot de passe :</label>
+                <input type="password" id="oldPassword" name="oldPassword" required>
                 <label for="newPassword">Nouveau mot de passe :</label>
                 <input type="password" id="newPassword" name="newPassword" required>
                 <label for="confirmPassword">Confirmer le mot de passe :</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
                 <input type="submit" value="Enregistrer les modifications" class="confirmYes">
+                <input type="hidden" name="userId" value='<?php echo $_SESSION['PlayerId']; ?>'>
             </form>
+            <p id="config-psw">
+                Le mot de passe doit contenir : <br>
+                8 caractères, 1 caractère en minuscule, 1 caractère en majuscule, 1 chiffre
+            </p>
             <button class="confirmNo">Annuler</button>
         </div>
     </div>

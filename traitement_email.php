@@ -8,6 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userId = $_POST['userId'];
         $newEmail = $_POST['newEmail'];
 
+        // Vérifier si l'adresse e-mail est valide
+        if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
+            $_SESSION['error_message'] = 'L\'adresse email n\'est pas valide.';
+            header('Location: mon_compte.php');
+            exit();
+        }
+
         // Inclure le fichier de connexion à la base de données
         require_once('connexionbdd.php');
 
