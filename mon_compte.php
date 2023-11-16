@@ -103,7 +103,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <div id="div-title">
                 <div class="title">
                     <h1>Mon compte</h1>
-                    <h2>Bonjour <?php echo $account['PlayerName'] ?> !</h2>
+                    <h2>Bonjour <?php echo $account['PlayerPseudo']; ?> !</h2>
                 </div>
                 <img src="./assets/img/pattern.svg" alt="">
             </div>
@@ -129,7 +129,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                         </button>
                     </div>
                     <?php
-                    if ($creator) {
+                    if (isset($creator) && $creator) {
                         echo '<div>';
                         echo '  <img src="./assets/img/nom.svg" alt="">';
                         echo "  <p>Nom de l'équipe: " . $infoTeamAccount['TeamName'] . "</p>";
@@ -164,7 +164,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
 
         <!-- Section qui apparaît si participant avec équipe -->
         <?php
-        if ($team) {
+        if (isset($team) && $team) {
             echo '<section id="team">';
             echo '    <div>';
             echo '        <div id="team-desc">';
@@ -244,7 +244,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         </section>
 
         <!-- Messages de confirmation de modification -->
-        <div>
+        <div id='reponses_traitement'>
             <?php
             // Afficher les messages d'erreur ou de succès s'ils existent
             if (isset($_SESSION['error_message'])) {
