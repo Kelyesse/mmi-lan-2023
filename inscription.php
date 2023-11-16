@@ -15,6 +15,15 @@ try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $requiredFields = ['nom', 'prenom', 'pseudo', 'email', 'mdp1', 'mdp2', 'role', 'avatar'];
         $missingFields = array_diff($requiredFields, array_keys($_POST));
+        $jeuxCorrespondance = [
+            "Track Mania: Nation Forever",
+            "Geo Guesseur",
+            "Fortnite",
+            "Overwatch",
+            "Brawlhalla",
+            "Counter-Strike 2",
+            "Rocket League",
+        ];
         if (!empty($missingFields)) {
             $errorMessage = 'Veuillez remplir tous les champs obligatoires.';
         } else {
@@ -36,16 +45,6 @@ try {
                     $errorMessage = 'Veuillez remplir les champs setup et favjeu.';
                 } else {
                     // Vérification du jeu favori
-                    $jeuxCorrespondance = [
-                        "Track Mania: Nation Forever",
-                        "Geo Guesseur",
-                        "fortnite",
-                        "Overwatch",
-                        "Brawlhalla",
-                        "CS GO",
-                        "Rocket League",
-                    ];
-
                     if (!in_array($favjeu, $jeuxCorrespondance)) {
                         $errorMessage = 'Le jeu favori sélectionné n\'est pas valide.';
                     } elseif ($selectedSetup !== 'PC portable' && $selectedSetup !== 'PC fixe') {
@@ -107,16 +106,16 @@ try {
                         $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
                         $stmt->bindParam(':pseudo', $nom, PDO::PARAM_STR);
                         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-                        $stmt->bindParam(':mdp',  hash('sha256', $mdp1), PDO::PARAM_STR);
-                        $stmt->bindParam(':avatar',  $avatar, PDO::PARAM_STR);
-                        $stmt->bindParam(':role',  $role, PDO::PARAM_STR);
+                        $stmt->bindParam(':mdp', hash('sha256', $mdp1), PDO::PARAM_STR);
+                        $stmt->bindParam(':avatar', $avatar, PDO::PARAM_STR);
+                        $stmt->bindParam(':role', $role, PDO::PARAM_STR);
 
                         if ($role === "Participant") {
                             $stmt->bindParam(':favgame', $favjeu, PDO::PARAM_STR);
-                            $stmt->bindParam(':setup',  $selectedSetup, PDO::PARAM_STR);
+                            $stmt->bindParam(':setup', $selectedSetup, PDO::PARAM_STR);
                         } else {
                             $stmt->bindValue(':favgame', null, PDO::PARAM_NULL);
-                            $stmt->bindValue(':setup',  null, PDO::PARAM_NULL);
+                            $stmt->bindValue(':setup', null, PDO::PARAM_NULL);
                         }
 
                         if ($stmt->execute()) {
@@ -180,32 +179,64 @@ function generateId(array $excludeArray)
         <div>
             <div id="title">
                 <h1>Inscription</h1>
+                <span class="error-message">
+                    <?php
+                    if ($errorMessage) {
+                        echo $errorMessage;
+                    }
+                    ?>
+                </span>
                 <h2>Rejoignez-nous ici !</h2>
             </div>
-            <div id="form">
-                <form action="" method="post">
+            <div id="form-container">
+                <form action="" method="post" id="form">
                     <div>
                         <div>
                             <div class="double-inp">
-                                <input type="text" placeholder="Entrer votre nom" name="nom" required>
-                                <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
+                                <input type="text" placeholder="Entrer votre nom" name="nom" value="<?php
+                                if (isset($nom)) {
+                                    echo $nom;
+                                }
+                                ?>" required>
+                                <input type="text" placeholder="Entrer votre prénom" name="prenom" value="<?php
+                                if (isset($prenom)) {
+                                    echo $prenom;
+                                }
+                                ?>" required>
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/profil.svg" alt="">
-                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo" required>
+                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo" value="<?php
+                                if (isset($pseudo)) {
+                                    echo $pseudo;
+                                }
+                                ?>" required>
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/mail.svg" alt="">
-                                <input type="email" placeholder="Entrer votre email" name="email" id="email" required>
+                                <input type="email" placeholder="Entrer votre email" name="email" id="email" value="<?php
+                                if (isset($email)) {
+                                    echo $email;
+                                }
+                                ?>" required>
                             </div>
                             <div class="double-inp">
                                 <div>
                                     <img src="./assets/img/cadena.svg" alt="">
-                                    <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" class="mdp" required>
+                                    <input type="password" placeholder="Entrer votre mot de passe" name="mdp1"
+                                        class="mdp" value="<?php
+                                        if (isset($mdp1)) {
+                                            echo $mdp1;
+                                        }
+                                        ?>" required>
                                 </div>
                                 <div>
                                     <img src="./assets/img/cadena.svg" alt="">
-                                    <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" class="mdp" required>
+                                    <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" value="<?php
+                                    if (isset($mdp2)) {
+                                        echo $mdp2;
+                                    }
+                                    ?>" class="mdp" required>
                                 </div>
                             </div>
                             <p id="config-psw">
@@ -214,21 +245,38 @@ function generateId(array $excludeArray)
                             </p>
                             <div class="radio">
                                 <div>
-                                    <input type="radio" name="role" class="role" value="Participant" id="participant" required>
+                                    <input type="radio" name="role" class="role" value="Participant" id="participant"
+                                        <?php
+                                        if (isset($role) && $role == 'Participant') {
+                                            echo 'checked';
+                                        }
+                                        ?> required>
                                     <label for="participant">Participant</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" name="role" class="role" value="Conducteur" id="conducteur" required>
+                                    <input type="radio" name="role" class="role" value="Conducteur" id="conducteur" <?php
+                                    if (isset($role) && $role == 'Conducteur') {
+                                        echo 'checked';
+                                    }
+                                    ?> required>
                                     <label for="conducteur">Conducteur</label>
                                 </div>
                             </div>
                             <div class="radio setup">
                                 <div>
-                                    <input type="radio" name="setup" value="PC portable" id="portable">
+                                    <input type="radio" name="setup" value="PC portable" id="portable" <?php
+                                    if (isset($selectedSetup) && $selectedSetup == 'PC portable') {
+                                        echo 'checked';
+                                    }
+                                    ?>>
                                     <label for="portable">PC portable</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" name="setup" value="PC fixe" id="fixe">
+                                    <input type="radio" name="setup" value="PC fixe" id="fixe" <?php
+                                    if (isset($selectedSetup) && $selectedSetup == 'PC fixe') {
+                                        echo 'checked';
+                                    }
+                                    ?>>
                                     <label for="fixe">PC fixe</label><br>
                                 </div>
                             </div>
@@ -245,17 +293,22 @@ function generateId(array $excludeArray)
                             </div>
                             <div id="end-form">
                                 <div>
-                                    <input type="checkbox" name="remember_me" id="souvenir">
+                                    <input type="checkbox" name="remember_me" id="souvenir" <?php
+                                    if (isset($_POST['remember_me'])) {
+                                        echo 'checked';
+                                    }
+                                    ?>>
                                     <label for="souvenir">Se souvenir de moi</label>
                                 </div>
-                                <a href="./connexion.php">Se connecter ?</a>
+                                <a class="connection-link" href="./connexion.php">Se connecter ?</a>
                             </div>
                         </div>
                         <div id="choix_ava">
                             <div>
                                 <h3>Choisissez votre avatar</h3>
                                 <div id="liste_ava">
-                                    <svg id="pre" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
+                                    <svg id="pre" xmlns="http://www.w3.org/2000/svg" width="13" height="25"
+                                        viewBox="0 0 13 25" fill="none">
                                         <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2" />
                                     </svg>
                                     <div class="avatar">
@@ -265,16 +318,17 @@ function generateId(array $excludeArray)
                                         foreach ($categories as $category) {
                                             for ($i = 1; $i <= 6; $i++) {
                                                 $avatarNumber = ($category == 'prem') ? $i : $i + 6;
-                                        ?>
+                                                ?>
                                                 <div class="avatar-option <?= $category ?>">
                                                     <img src="./assets/img/avatar<?= $avatarNumber ?>.png" alt="">
                                                 </div>
-                                        <?php
+                                                <?php
                                             }
                                         }
                                         ?>
                                     </div>
-                                    <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
+                                    <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25"
+                                        viewBox="0 0 13 25" fill="none">
                                         <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2" />
                                     </svg>
                                 </div>
@@ -285,23 +339,26 @@ function generateId(array $excludeArray)
                     </div>
                     <div id="accept-rules">
                         <input type="checkbox" name="rules" id="rules" required>
-                        <label for="rules">En vous inscrivant vous acceptez le règlement de la MMI LAN ainsi que le traitement de vos données.</label>
+                        <label for="rules">En vous inscrivant vous acceptez le règlement de la MMI LAN ainsi que le
+                            traitement de vos données.</label>
                     </div>
-                    <input type="submit" id="submit" value="Inscription">
-                    <div>
-                        <?php
-                        if ($errorMessage) {
-                            echo $errorMessage;
-                        }
-                        ?>
+                    <div class="submit-form">
+                        <input type="submit" id="submit" value="Inscription">
                     </div>
                 </form>
             </div>
         </div>
     </main>
     <?php
-        include('footer.php');
+    include('footer.php');
+
     ?>
+    <script>
+        const errorMessageDiv = document.querySelector('.error-message')
+        const submitBtn = document.querySelector('#submit')
+
+
+    </script>
     <script src="./assets/js/countDown.js"></script>
     <script src="./assets/js/role_participant.js"></script>
     <script src="./assets/js/gallerie_avatar.js"></script>
