@@ -16,12 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
     $PlayerEmail = $_POST['email'];
     $PlayerPassword = $_POST['password'];
 
+    $PlayerPassword_hash = hash('sha256', $PlayerPassword);
+
     // Partie à modifier : Utiliser une requête préparée avec PDO pour éviter les injections SQL
-    $stmt = $db2->prepare("SELECT * FROM player WHERE PlayerEmail = :PlayerEmail AND PlayerPassword = :PlayerPassword");
+    $stmt = $db->prepare("SELECT * FROM player WHERE PlayerEmail = :PlayerEmail AND PlayerPassword = :PlayerPassword_hash");
 
     // Liaison des valeurs aux paramètres
     $stmt->bindParam(':PlayerEmail', $PlayerEmail, PDO::PARAM_STR);
-    $stmt->bindParam(':PlayerPassword', $PlayerPassword, PDO::PARAM_STR);
+    $stmt->bindParam(':PlayerPassword_hash', $PlayerPassword_hash, PDO::PARAM_STR);
 
     // Exécution de la requête préparée
     $stmt->execute();
@@ -114,8 +116,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
                 <p id="subtitle">Vous n’avez pas de compte ?<br><a href="inscription.php">Inscrivez vous ici !</a></p>
                 <form method="POST">
                     <div class="inputs">
-                        <input class="space1 style-input" type="email" name="email" placeholder="Entrer votre adresse mail" required />
-                        <div class="space2">
+                        <div class="flex-logo-input space1">
+                            <img class="logo-input" src="./assets/img/mail.svg">
+                            <input class="style-input" type="email" name="email" placeholder="Entrer votre adresse mail" required />
+                        </div>
+                        <div class="space2 flex-logo-input style-input">
+                            <img class="logo-input" src="./assets/img/cadena.svg">
                             <input type="password" name="password" class="style-input" id="password" placeholder="Entrer votre mot de passe" required />
                             <button type="button" id="toggle-password" onclick="togglePasswordVisibility()">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" id="eye-open">
