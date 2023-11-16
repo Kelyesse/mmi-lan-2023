@@ -67,7 +67,7 @@ main div {
 }
 
 #title {
-    width: 86vw;
+    width: 90%;
 }
 
 #info {
@@ -162,20 +162,38 @@ form > div {
 .rgpd-link {
     text-decoration: underline;
 }
-
-
+@media only screen and (max-width: 1270px) {
+    main section {
+        justify-content: center;
+        gap: 50px;
+    }
+}
 @media only screen and (max-width: 970px) {
-    main section{
+    main section {
         flex-direction: column;
         gap: 50px;
         margin-top: 50px;
     }
 
-    main section div{
+    main section div {
         width: 88vw;
     }
 
-    main section #form{
+    main section #form {
         width: 88vw;
+    }
+    #title {
+        text-align: center;
+    }
+    h1 {
+        font-size: clamp(28px, 2vw, 40px);
+    }
+    h4 {
+        font-size: clamp(16px, 2vw, 20px);
+        word-wrap: break-word;
+        width: 80%;
+    }
+    #info {
+        margin-left: 10%;
     }
 }
