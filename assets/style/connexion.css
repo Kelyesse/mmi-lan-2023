@@ -58,25 +58,14 @@ h1 {
 }
 
 .style-input {
-    background-color: #151515;
-    padding: 10px;
-    border: solid 1px #fff;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
     width: -webkit-fill-available;
     font-size: 16px;
     color: white;
+    background-color: #151515;
+    border: none;
 }
 .style-input:focus {
-    background-color: #151515;
-    padding: 10px;
-    border: solid 1px #fff;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
     outline: none; /* Ajout de cette ligne pour supprimer l'outline par défaut */
-    font-size: 16px;
 }
 
 .space1 {
@@ -225,12 +214,8 @@ h1 {
 }
 
 #toggle-password{
-    position: absolute;
-    margin-left: -30px;
-    margin-top: 5px;
     background-color: transparent;
     border: none;
-    padding: 8px;
 }
 
 #eye-open{
@@ -256,6 +241,23 @@ h1 {
     margin-top: 10px; /* Marge en haut du message d'erreur */
 }
 
+.logo-input{
+    width: 17px;
+    height: 17px;
+}
+
+.flex-logo-input{
+    display: flex;
+    align-items: center;
+    background-color: #151515;
+    gap: 10px;
+    border: solid 1px #fff;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    width: -webkit-fill-available;
+    padding: 10px;
+}
 
 @media screen and (max-width: 970px) {
     .container {
