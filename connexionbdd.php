@@ -1,7 +1,7 @@
 <?php
 function Connexion()
 {
-    $hostname = 'localhost';
+    $hostname = 'auth-db932.hstgr.io';
     $username = 'u886930443_Alexandre';
     $password = '$+DU#f8&N';
     $db = 'u886930443_mmilan';
