@@ -30,7 +30,7 @@
         <img src="./assets/img/homepage_pattern.svg" alt="" class="background-pattern">
         <section class="teaser-container">
             <div class="teaser">
-                <iframe src="https://www.youtube.com/embed/AuoUHzb4kRs"></iframe>
+                <iframe src="https://www.youtube.com/embed/O59B8-AmZLA?si=oAptY_z1HKfgUVEQ"></iframe>
             </div>
         </section>
 
