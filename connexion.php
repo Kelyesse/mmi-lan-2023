@@ -16,12 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
     $PlayerEmail = $_POST['email'];
     $PlayerPassword = $_POST['password'];
 
+    $PlayerPassword_hash = hash('sha256', $PlayerPassword);
+
     // Partie à modifier : Utiliser une requête préparée avec PDO pour éviter les injections SQL
-    $stmt = $db2->prepare("SELECT * FROM player WHERE PlayerEmail = :PlayerEmail AND PlayerPassword = :PlayerPassword");
+    $stmt = $db->prepare("SELECT * FROM player WHERE PlayerEmail = :PlayerEmail AND PlayerPassword = :PlayerPassword_hash");
 
     // Liaison des valeurs aux paramètres
     $stmt->bindParam(':PlayerEmail', $PlayerEmail, PDO::PARAM_STR);
-    $stmt->bindParam(':PlayerPassword', $PlayerPassword, PDO::PARAM_STR);
+    $stmt->bindParam(':PlayerPassword_hash', $PlayerPassword_hash, PDO::PARAM_STR);
 
     // Exécution de la requête préparée
     $stmt->execute();
@@ -103,6 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
                 eyeClosed.style.display = 'block'
             }
         }
+        
     </script>
 </head>
 

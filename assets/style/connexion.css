@@ -247,9 +247,6 @@ h1 {
     filter: invert();
 }
 
-
-/* ... Vos styles existants ... */
-
 .error-message {
     color: #ff0000; /* Couleur rouge pour le message d'erreur */
     font-family: var(--body-font);
@@ -259,4 +256,36 @@ h1 {
     margin-top: 10px; /* Marge en haut du message d'erreur */
 }
 
-/* ... Vos styles existants ... */
+
+@media screen and (max-width: 970px) {
+    .container {
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        box-sizing: border-box;
+    }    
+
+    #illustration{
+        display: none;
+    }
+    .text-section{
+        width: 100%;
+    }
+    .flex-space-between{
+        flex-direction: column;
+    }
+    #forgot-password{
+        margin-top: 20px;
+    }
+    #subtitle{
+        font-size: 24px;
+    }
+    #subtitle a{
+        font-size: 24px;
+    }
+    h1{
+        font-size: 35px;
+    }
+    .inputs{
+        margin: 45px 0 20px 0;
+    }
+}
