@@ -1,3 +1,7 @@
+<?php
+include_once("include/db.php");
+include_once("include/remember_user.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
