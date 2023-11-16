@@ -67,7 +67,7 @@ main div {
 }
 
 #title {
-    width: 1240px;
+    width: 86vw;
 }
 
 #info {
@@ -161,4 +161,21 @@ form > div {
 
 .rgpd-link {
     text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 970px) {
+    main section{
+        flex-direction: column;
+        gap: 50px;
+        margin-top: 50px;
+    }
+
+    main section div{
+        width: 88vw;
+    }
+
+    main section #form{
+        width: 88vw;
+    }
 }
