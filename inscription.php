@@ -3,6 +3,12 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
+if (isset($_SESSION['PlayerId'])) {
+    header('Status: 301 Moved Permanently', false, 301);
+    header('Location: ./mon_compte.php');
+    exit(0);
+}
+
 $errorMessage = '';
 
 try {
