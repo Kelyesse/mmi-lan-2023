@@ -1,3 +1,6 @@
+<?php
+include_once("connexionbdd.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
