@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Overused Grotesk";
-    src: url("assets/fonts/Overused\ Grotesk/");
+    src: url("../fonts/Overused\ Grotesk/");
 }
 
 /* Couleurs */
@@ -19,6 +19,8 @@
     --background-color: #151515;
     /* Primary color hovered */
     --primary-color-hover: #24154d;
+    /* Accent color hovered */
+    --accent-color-1-hover: #dca10c;
 }
 
 /* Polices */

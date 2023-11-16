@@ -1,0 +1,383 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Overused Grotesk", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto; 
+}
+.en-tete {
+  text-align: left;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.tri-btn {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative; 
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 5px 0;
+  z-index: 1;
+  margin-top: 10px;
+  margin-left: -20px;
+}
+
+.tri-btn svg {
+  margin-left: 5px;
+}
+
+.tri-btn:hover .dropdown-menu {
+  display: block;
+  background-color: black;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 5px 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.liste_equipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: flex-start;
+}
+
+.liste_vide{
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+ font-size: 30px;
+}
+
+/* Styles des vignettes d'équipes */
+
+.vignette {
+  max-width: 295px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: #fff;
+  list-style: none;
+}
+
+.vignette_pleine {
+  max-width: 295px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #fff;
+  list-style: none;
+}
+
+#img-logo- {
+  width: 190px;
+  height: 190px;
+  border-radius: 100px;
+  margin-top: 0px;
+}
+
+.vignette a.NomTeam {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.vignette_pleine a.NomTeam {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.vignette div.Joueur {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.vignette_pleine div.Joueur {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.vignette img {
+  width: 190px;
+  height: 190px;
+  border-radius: 100px;
+  margin-top: 20px;
+  padding: 40px;
+}
+
+.vignette_pleine img {
+  width: 190px;
+  height: 190px;
+  border-radius: 100px;
+  margin-top: 20px;
+  padding: 40px;
+}
+.vignette ul {
+  padding-left: 0;
+  list-style: none;
+}
+.vignette_pleine ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.vignette ul li {
+  margin: 5px;
+}
+
+.vignette_pleine ul li {
+  margin: 5px;
+}
+
+.vignette button {
+  width: 165px;
+  height: 43px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #2f1d62;
+  color: #fff;
+  margin-top: 10px;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+}
+.vignette_pleine button {
+  width: 165px;
+  height: 43px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  margin-top: 10px;
+  border: 1px solid white;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.vignette button:hover {
+  background-color: #211644;
+  transition: 0.5s;
+}
+
+/* Styles pour le pop up equipe */
+#alertRejoindreEquipe {
+  position: absolute;
+  top: 250px;
+  left: 350px;
+  display: none;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 5px;
+  background: var(--fond-pages, #151515);
+  box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 0.25),
+    -4px -4px 40px 0px rgba(0, 0, 0, 0.25);
+}
+#alertRejoindreEquipe h2 {
+  color: var(--text-contenu, #fff);
+  /* Desktop/h2-desktop */
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+#alertRejoindreEquipe form {
+  padding-top: 20px;
+}
+#alertRejoindreEquipe form textarea {
+  display: flex;
+  width: 715px;
+  height: 187px;
+  padding: 20px;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: var(--fond-pages, #151515);
+}
+#alertRejoindreEquipe form div {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+#alertRejoindreEquipe form div input {
+  display: flex;
+  border: none;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  color: var(--text-CAT, #fff);
+  /* Desktop/p-desktop */
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px; /* 143.75% */
+}
+#alertRejoindreEquipe form div input[type="button"] {
+  background: var(--fond-nav, #212121);
+}
+#alertRejoindreEquipe form div input[type="submit"] {
+  background: var(--primaire, #2f1d62);
+}
+
+/* Styles généraux pour les images */
+.LOGO {
+  width: 1549.27px;
+  height: 586.62px;
+  position: relative;
+}
+
+.LOGO img {
+  width: 295px;
+  height: 226px;
+  display: inline-block;
+  position: absolute;
+  transition: transform 0.3s ease; 
+}
+
+#img-logo-1 {
+  transform: rotate(0deg);
+  left: 846.2px;
+  top: 53.01px;
+}
+
+#img-logo-2 {
+  transform: rotate(8deg);
+  left: 639.4px;
+  top: 270.9px;
+}
+
+#img-logo-3 {
+  transform: rotate(2deg);
+  left: 918.2px;
+  top: 293px;
+}
+
+#img-logo-4 {
+  transform: rotate(3deg);
+  left: 526.3px;
+  top: 72.6px;
+}
+
+#img-logo-5 {
+  transform: rotate(-3deg);
+  left: 1132.9px;
+  top: 75.9px;
+}
+
+#img-logo-6 {
+  transform: rotate(-8deg);
+  left: 349.5px;
+  top: 302.6px;
+}
+
+#img-logo-7 {
+  transform: rotate(8deg);
+  left: 1189.1px;
+  top: 316px;
+}
+
+#img-logo-8 {
+  transform: rotate(-10.5deg);
+  left: 232.3px;
+  top: 99.4px;
+}
+
+#img-logo-9 {
+  transform: rotate(10.5deg);
+  left: 1390.3px;
+  top: 117.4px;
+}
+
+#img-logo-10 {
+  transform: rotate(-5.5deg);
+  left: 121.3px;
+  top: 357.4px;
+}
+
+#img-logo-11 {
+  transform: rotate(0deg);
+  left: 1416.3px;
+  top: 357.4px;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 140px;
+}
+
+.bottom {
+  text-align: center;
+}
+
+.bottom h2 {
+  font-size: 24px;
+}
+
+.bottom-bouton {
+  width: 165px;
+  height: 43px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #2f1d62;
+  color: #fff;
+  border: none;
+}
+
+.bottom-bouton:hover {
+  background-color: #211644;
+  transition: 0.5s;
+}
+
+@media (max-width: 1400px) {
+  .LOGO {
+    display: none;
+  }
+}
+
+
+/* Media Query pour les écrans de taille réduite */
+@media (max-width: 600px) {
+  .bottom-section {
+    flex-direction: column; 
+    align-items: center; 
+  }
+}
