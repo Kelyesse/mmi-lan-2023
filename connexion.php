@@ -1,7 +1,6 @@
 <?php
 session_start();
-include("include/db.php");
-include("include/remember_user.php");
+include("include/connexionbdd.php");
 
 // Vérifie si $_SESSION['PlayerId'] existe
 if (isset($_SESSION['PlayerId'])) {
