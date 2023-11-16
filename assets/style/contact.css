@@ -162,11 +162,15 @@ form > div {
 
 #submit {
     padding: 10px;
-    background-color: #2f1d62;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
     color: #fff;
     width: auto;
+    cursor: pointer;
+}
+#submit:hover {
+    background-color: var(--primary-color-hover);
 }
 
 .rgpd-link {

@@ -190,7 +190,7 @@ input[type="checkbox"] {
 }
 #submit {
     padding: 10px;
-    background-color: #2f1d62;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
     color: #fff;
