@@ -1,31 +1,29 @@
 $(document).ready(function () {
-  let prem_img = $(".prem");
-  let sec_img = $(".sec");
-  let avatarOptions = $(".avatar-option");
-  let avatarInput = $("#avatar");
+    let prem_img = $(".prem")
+    let sec_img = $(".sec")
+    let avatarOptions = $(".avatar-option")
+    let avatarInput = $("#avatar")
 
-  sec_img.hide();
+    sec_img.hide()
 
-  $("#next").click(function () {
-    prem_img.hide();
-    sec_img.show();
-  });
+    $("#next").click(function () {
+        prem_img.hide()
+        sec_img.show()
+    })
 
-  $("#pre").click(function () {
-    sec_img.hide();
-    prem_img.show();
-  });
+    $("#pre").click(function () {
+        sec_img.hide()
+        prem_img.show()
+    })
 
-  avatarOptions.on("click", function () {
-    avatarOptions.removeClass("active");
-    $(this).addClass("active");
+    avatarOptions.on("click", function () {
+        avatarOptions.removeClass("active")
+        $(this).addClass("active")
 
-    var selectedAvatarSrc = $(this).find("img").attr("src");
+        var selectedAvatarSrc = $(this).find("img").attr("src")
 
-    var fileName = selectedAvatarSrc.split("/").pop();
+        var fileName = selectedAvatarSrc.split("/").pop()
 
-    avatarInput.val(fileName);
-
-    console.log(avatarInput.val());
-  });
-});
+        avatarInput.val(fileName)
+    })
+})
