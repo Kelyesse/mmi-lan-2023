@@ -46,26 +46,26 @@
         while($nbMembres<3){
             echo '<div class="equipe_incomplete">';
             echo '<h2>Cette équipe est incomplète</h2>';
-            if(isset($_SESSION['PlayerId'])){
+            if(isset($_SESSION['playerId'])){
                 $req = $db->prepare("SELECT PlayerId FROM belongteam");
                 $req->execute();
                 $equipierId = $req->fetchAll();
                 $dansequipe = false;
                 foreach ($equipierId as $equipier) {
-                    if (in_array($_SESSION['PlayerId'], $equipier)) {
+                    if (in_array($_SESSION['playerId'], $equipier)) {
                         $dansequipe = true;
                         break;
                     }
                 }
                 $req = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
-                $req->execute([$_SESSION['PlayerId']]);
+                $req->execute([$_SESSION['playerId']]);
                 $userrole = $req->fetch()['PlayerStatus'];
-                if(!$dansequipe || $userrole == "Participant"){
+                if(!$dansequipe && $userrole == "Participant"){
                     $message = "Rejoindre l'équipe";
                     echo '<a href="details_equipes.php?teamId='.$teamId.'&rejoindreEquipe='.true.'">'.$message.'</a>';
                 }
-                echo '</div>';
             }
+            echo '</div>';
             $nbMembres++;
         }
     }
@@ -80,7 +80,7 @@
         else{
             echo '<a href="details_equipes.php?teamId='.$nbEquipe.'"><img src="./assets/imgfleche_gauche.svg" alt="flèche gauche"></a>';
         }
-        echo ' <a class="retour" href="listing_equipe.php">Retour au listing des équipes</a> ';
+        echo ' <a class="retour" href="listing_equipe.php">Retour au listing des équipes</a> '; //A MODIFIER
         if($teamId < $nbEquipe){
             echo '<a href="details_equipes.php?teamId='.($teamId+1).'"><img src="./assets/imgfleche_droite.svg" alt="flèche gauche"></a>';
         }
