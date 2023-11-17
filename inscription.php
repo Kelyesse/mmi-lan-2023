@@ -308,20 +308,26 @@ function generateId(array $excludeArray)
                                         <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2" />
                                     </svg>
                                     <div class="avatar">
-                                        <?php
-                                        $categories = ['prem', 'sec', 'trois', 'quatre'];
 
-                                        foreach ($categories as $index => $category) {
-                                            for ($i = 1; $i <= 6; $i++) {
-                                                $avatarNumber = $i + 6 * $index;
-                                                ?>
-                                                <div class="avatar-option <?= $category ?>">
-                                                    <img src="./assets/img/avatar<?= $avatarNumber ?>.png" alt="">
-                                                </div>
-                                                <?php
-                                            }
-                                        }
-                                        ?>
+                                        <div class="avatar-option">
+                                            <img class="avatar-img1" src="" alt="">
+                                        </div>
+                                        <div class="avatar-option">
+                                            <img class="avatar-img2" src="" alt="">
+                                        </div>
+                                        <div class="avatar-option">
+                                            <img class="avatar-img3" src="" alt="">
+                                        </div>
+                                        <div class="avatar-option">
+                                            <img class="avatar-img4" src="" alt="">
+                                        </div>
+                                        <div class="avatar-option">
+                                            <img class="avatar-img5" src="" alt="">
+                                        </div>
+                                        <div class="avatar-option">
+                                            <img class="avatar-img6" src="" alt="">
+                                        </div>
+
                                     </div>
                                     <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25"
                                         viewBox="0 0 13 25" fill="none">
