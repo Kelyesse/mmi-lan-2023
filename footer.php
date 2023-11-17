@@ -66,7 +66,7 @@
 
         </div>
         <div class="footer-banner">
-            <div class="footer-copyright-text">Copyrights © 2023</div>
+            <div class="footer-copyright-text">Copyrights © 2023 - IUT Toulon - BUT MMI</div>
         </div>
     </footer>
 

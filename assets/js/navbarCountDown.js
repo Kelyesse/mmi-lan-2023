@@ -1,12 +1,12 @@
 const navbarCountDownDate = new Date("Dec 14, 2023 08:00:00").getTime()
 const navbarCountdownElements = document.querySelectorAll(".count-down-timer")
-const HOMEPAGE = "mmi-lan-2023/"
+const HOMEPAGE = "https://mmilan-toulon.fr/"
 let currentUrl = window.location.href
 // If we're on homepage, no countdown
 if (
     currentUrl.endsWith(HOMEPAGE) ||
     currentUrl.endsWith(`${HOMEPAGE}#`) ||
-    currentUrl.endsWith(`${HOMEPAGE}/index.php`)
+    currentUrl.endsWith(`${HOMEPAGE}index.php`)
 ) {
     navbarCountdownElements.forEach((countDown) => countDown.remove())
 }
