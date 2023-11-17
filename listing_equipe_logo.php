@@ -18,7 +18,7 @@ function getTeamsData($db) {
             $no++;
             $image = $donnees['TeamLogo'];
             
-            echo '<img id="img-logo-'.$no.'" src="'.$image.'" alt="' . $donnees['TeamName'] . '" />';
+            echo '<img id="img-logo-'.$no.'" src="assets/img/'.$image.'" alt="' . $donnees['TeamName'] . '" />';
         }
 
         $stmt2->closeCursor();
