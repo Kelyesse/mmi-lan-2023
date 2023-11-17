@@ -4,15 +4,28 @@ let currentIndex = 0
 $(document).ready(function () {
     let avatarOptions = $(".avatar-option")
     let avatarInput = $("#avatar")
+    $("#pre").hide()
 
     $("#next").click(function () {
-        currentIndex += 1
-        displayAvatarPage(currentIndex)
+        $("#pre").show()
+        if (currentIndex < pageAvatars.length - 1) {
+            currentIndex += 1
+            displayAvatarPage(currentIndex)
+        }
+        if (currentIndex === pageAvatars.length - 1) {
+            $("#next").hide()
+        }
     })
 
     $("#pre").click(function () {
-        currentIndex -= 1
-        displayAvatarPage(currentIndex)
+        $("#next").show()
+        if (currentIndex > 0) {
+            currentIndex -= 1
+            displayAvatarPage(currentIndex)
+        }
+        if (currentIndex === 0) {
+            $("#pre").hide()
+        }
     })
 
     avatarOptions.on("click", function () {
