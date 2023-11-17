@@ -112,7 +112,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         </section>
         <section>
             <div id="player-info">
-                <img src="<?php echo $account['PlayerPicture'] ?>" alt="avatar du compte">
+                <img src="./assets/img/<?php echo $account['PlayerPicture'] ?>" alt="avatar du compte">
                 <div>
                     <div class="info">
                         <div id="ps">
