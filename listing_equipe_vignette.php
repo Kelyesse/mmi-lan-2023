@@ -79,9 +79,19 @@ if (count($equipes) > 0) {
             foreach ($joueurs as $pseudo) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div></a>';
             }
-            if (!isset($_SESSION['PlayerId'])) {
+            if (isset($_SESSION['PlayerId'])) {
+                $idj=$_SESSION['PlayerId'];
+                $valeur = $db->prepare("SELECT TeamId FROM belongteam WHERE PlayerId=? AND BelongStatus=?");
+                $valeur->execute([$idj, "validé"]);
+                $resultat = $valeur->fetch();
+                if (empty($resultat)){
+                    echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
+                }
+            }
+            else {
                 echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
             }
+
 
         }
     }
