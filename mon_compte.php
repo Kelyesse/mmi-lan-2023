@@ -211,7 +211,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             echo '            </div>';
             echo '        </div>';
             echo '        <div>';
-            echo '            <img src="' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
+            echo '            <img src="./images/' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
             echo '        </div>';
             echo '    </div>';
             if ($creator) {
@@ -388,7 +388,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <label for="confirmPassword">Confirmer le mot de passe :</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
                 <input type="submit" value="Enregistrer les modifications" class="confirmYes">
-                <input type="hidden" name="userId" value='<?/*php echo $_SESSION['PlayerId']; */?>'>
+                <input type="hidden" name="userId" value='<? /*php echo $_SESSION['PlayerId']; */?>'>
             </form>
             <p id="config-psw">
                 Le mot de passe doit contenir : <br>
