@@ -79,8 +79,23 @@ if (count($equipes) > 0) {
             foreach ($joueurs as $pseudo) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div></a>';
             }
+            if (isset($_SESSION['PlayerId'])) {
+                $idj=$_SESSION['PlayerId'];
+                $valeur = $db->prepare("SELECT TeamId FROM belongteam WHERE PlayerId=? AND BelongStatus=?");
+                $valeur->execute([$idj, "validé"]);
+                $resultat = $valeur->fetch();
+                $req3 = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
+                $req3->execute([$idj]);
+                $userrole = $req3->fetch()['PlayerStatus'];
+                if (empty($resultat && $userrole == "Participant")){
+                    echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
+                }
+            }
+            else {
+                echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
+            }
 
-            echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
+
         }
     }
 }
