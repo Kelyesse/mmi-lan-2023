@@ -198,14 +198,14 @@ function generateId(array $excludeArray)
                                     if (isset($nom)) {
                                         echo $nom;
                                     }
-                                    ?>" required>
+                                    ?>">
                                 </div>
                                 <div>
                                     <input type="text" placeholder="Entrer votre prénom" name="prenom" value="<?php
                                     if (isset($prenom)) {
                                         echo $prenom;
                                     }
-                                    ?>" required>
+                                    ?>">
                                 </div>
                             </div>
                             <div class="simple-inp">
@@ -214,7 +214,7 @@ function generateId(array $excludeArray)
                                 if (isset($pseudo)) {
                                     echo $pseudo;
                                 }
-                                ?>" required>
+                                ?>">
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/mail.svg" alt="">
@@ -222,7 +222,7 @@ function generateId(array $excludeArray)
                                 if (isset($email)) {
                                     echo $email;
                                 }
-                                ?>" required>
+                                ?>">
                             </div>
                             <div class="double-inp">
                                 <div>
@@ -232,7 +232,7 @@ function generateId(array $excludeArray)
                                         if (isset($mdp1)) {
                                             echo $mdp1;
                                         }
-                                        ?>" required>
+                                        ?>">
                                 </div>
                                 <div>
                                     <img src="./assets/img/cadena.svg" alt="">
@@ -240,7 +240,7 @@ function generateId(array $excludeArray)
                                     if (isset($mdp2)) {
                                         echo $mdp2;
                                     }
-                                    ?>" class="mdp" required>
+                                    ?>" class="mdp">
                                 </div>
                             </div>
                             <p id="config-psw">
@@ -254,7 +254,7 @@ function generateId(array $excludeArray)
                                         if (isset($role) && $role == 'Participant') {
                                             echo 'checked';
                                         }
-                                        ?> required>
+                                        ?>>
                                     <label for="participant">Participant</label><br>
                                 </div>
                                 <div>
@@ -262,7 +262,7 @@ function generateId(array $excludeArray)
                                     if (isset($role) && $role == 'Conducteur') {
                                         echo 'checked';
                                     }
-                                    ?> required>
+                                    ?>>
                                     <label for="conducteur">Conducteur</label>
                                 </div>
                             </div>
@@ -329,12 +329,12 @@ function generateId(array $excludeArray)
                                     </svg>
                                 </div>
                                 <!-- Input qui prend comme valeur la src de l'image sur laquelle l'utilisateur à cliquer -->
-                                <input type="hidden" name="avatar" id="avatar" value="" required>
+                                <input type="hidden" name="avatar" id="avatar" value="">
                             </div>
                         </div>
                     </div>
                     <div id="accept-rules">
-                        <input type="checkbox" name="rules" id="rules" required>
+                        <input type="checkbox" name="rules" id="rules">
                         <label for="rules">En vous inscrivant vous acceptez le règlement de la MMI LAN ainsi que le
                             traitement de vos données.</label>
                     </div>
