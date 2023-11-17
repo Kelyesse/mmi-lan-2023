@@ -1,5 +1,13 @@
 <?php
+session_start();
 include_once("connexionbdd.php");
+$playLink = './inscription.php';
+$accountLink = './connexion.php';
+if (isset($_SESSION['PlayerId'])) {
+    $playLink = './listing_equipe.php';
+    $accountLink = './mon_compte.php';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,14 +42,6 @@ include_once("connexionbdd.php");
 </head>
 
 <body>
-    <?php
-    $accountLink = './connexion.php';
-    $playLink = './inscription.php';
-    if (isset($_SESSION['PlayerId'])) {
-        $accountLink = './mon_compte.php';
-        $playLink = './listing_equipe.php';
-    }
-    ; ?>
     <div id="navbar-main">
         <div id="div_logo">
             <a href="./"><img src="./assets/img/logo.png" alt="logo mmilan" id="logo"></a>

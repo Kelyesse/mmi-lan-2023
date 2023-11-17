@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +16,10 @@
 
 <body>
     <header>
-        <?php include 'navbar.php'; ?>
+        <?php include 'navbar.php';
+        ?>
     </header>
+
     <main>
         <div class="en-tete">
             <h1>LES EQUIPES DE LA MMI LAN</h1>
@@ -74,7 +79,7 @@
         ?>
 
         <section class="bottom-section">
-            <?php if (isset($_SESSION['PlayerId'])) {
+            <?php if (!isset($_SESSION['PlayerId'])) {
                 echo "<div class='bottom'>
                 <h2>Vous n'avez pas d'équipe ?</h2>
                 <button class='bottom-bouton' onclick='window.location.href='inscription.php''>Inscrivez-vous</button>
