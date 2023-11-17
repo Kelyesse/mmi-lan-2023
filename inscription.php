@@ -187,8 +187,12 @@ function generateId(array $excludeArray)
                     <div>
                         <div>
                             <div class="double-inp">
-                                <input type="text" placeholder="Entrer votre nom" name="nom" required>
-                                <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
+                                <div>
+                                    <input type="text" placeholder="Entrer votre nom" name="nom" required>
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
+                                </div>
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/profil.svg" alt="">
