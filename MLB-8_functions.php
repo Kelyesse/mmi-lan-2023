@@ -41,24 +41,23 @@
             echo '</div>';
             $nbMembres++;
         }
-
         //--- Partie où on affiche des cases vides en cas d'équipe incomplète ---
         while($nbMembres<3){
             echo '<div class="equipe_incomplete">';
             echo '<h2>Cette équipe est incomplète</h2>';
-            if(isset($_SESSION['playerId'])){
+            if(isset($_SESSION['PlayerId'])){
                 $req = $db->prepare("SELECT PlayerId FROM belongteam");
                 $req->execute();
                 $equipierId = $req->fetchAll();
                 $dansequipe = false;
                 foreach ($equipierId as $equipier) {
-                    if (in_array($_SESSION['playerId'], $equipier)) {
+                    if (in_array($_SESSION['PlayerId'], $equipier)) {
                         $dansequipe = true;
                         break;
                     }
                 }
                 $req = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
-                $req->execute([$_SESSION['playerId']]);
+                $req->execute([$_SESSION['PlayerId']]);
                 $userrole = $req->fetch()['PlayerStatus'];
                 if(!$dansequipe && $userrole == "Participant"){
                     $message = "Rejoindre l'équipe";
