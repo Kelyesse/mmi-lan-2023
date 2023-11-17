@@ -18,13 +18,17 @@
     <main>
         <div class="en-tete">
             <h1>LES EQUIPES DE LA MMI LAN</h1>
-            <div class="tri-btn">
-                Trier
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-caret-down" viewBox="0 0 16 16">
-                    <path
-                        d="M8 10.828 1.354 4.182a1 1 0 0 1 1.414-1.414L8 8.586l5.232-5.232a1 1 0 1 1 1.414 1.414L8 10.828z" />
-                </svg>
+            <div class="tri-container">
+                <div class="tri-btn">
+                    <div class="tri-text">Trier</div>
+                    <div class="tri-svg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 10">
+                            <path
+                                d="M8 10.828 1.354 4.182a1 1 0 0 1 1.414-1.414L8 8.586l5.232-5.232a1 1 0 1 1 1.414 1.414L8 10.828z" />
+                        </svg>
+                    </div>
+                </div>
+
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="listing_equipe.php?order=recent">Plus Récent</a>
                     <a class="dropdown-item" href="listing_equipe.php?order=ancien">Plus Ancien</a>

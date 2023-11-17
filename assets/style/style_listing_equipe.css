@@ -20,7 +20,7 @@ h1 {
     font-weight: 900;
 }
 
-.tri-btn {
+.tri-container {
     border: 1px solid #fff;
     color: #fff;
     background-color: transparent;
@@ -29,6 +29,11 @@ h1 {
     display: inline-block;
     cursor: pointer;
     position: relative;
+}
+
+.tri-btn {
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-menu {
@@ -43,11 +48,11 @@ h1 {
     margin-left: -20px;
 }
 
-.tri-btn svg {
+.tri-container .tri-svg {
     margin-left: 5px;
 }
 
-.tri-btn:hover .dropdown-menu {
+.tri-container:hover .dropdown-menu {
     display: block;
     background-color: black;
 }
@@ -225,6 +230,11 @@ h1 {
     align-items: flex-start;
     gap: 10px;
     background-color: var(--fond-pages, #151515);
+    color: white;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    position: absolute;
 }
 #alertRejoindreEquipe form div {
     padding-top: 20px;

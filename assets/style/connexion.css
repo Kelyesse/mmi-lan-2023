@@ -11,6 +11,7 @@ body {
 .container {
     width: 1240px;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 h1 {
@@ -209,22 +210,22 @@ h1 {
     background-color: var(--primary-color);
 }
 
-.space2 input{
+.space2 input {
     position: relative;
 }
 
-#toggle-password{
+#toggle-password {
     background-color: transparent;
     border: none;
 }
 
-#eye-open{
+#eye-open {
     display: none;
     width: 14px;
     height: 14px;
     filter: invert();
 }
-#eye-closed{
+#eye-closed {
     display: block;
     width: 14px;
     height: 14px;
@@ -241,12 +242,12 @@ h1 {
     margin-top: 10px; /* Marge en haut du message d'erreur */
 }
 
-.logo-input{
+.logo-input {
     width: 17px;
     height: 17px;
 }
 
-.flex-logo-input{
+.flex-logo-input {
     display: flex;
     align-items: center;
     background-color: #151515;
@@ -264,30 +265,30 @@ h1 {
         width: calc(100% - 40px);
         margin: 0 20px;
         box-sizing: border-box;
-    }    
+    }
 
-    #illustration{
+    #illustration {
         display: none;
     }
-    .text-section{
+    .text-section {
         width: 100%;
     }
-    .flex-space-between{
+    .flex-space-between {
         flex-direction: column;
     }
-    #forgot-password{
+    #forgot-password {
         margin-top: 20px;
     }
-    #subtitle{
+    #subtitle {
         font-size: 24px;
     }
-    #subtitle a{
+    #subtitle a {
         font-size: 24px;
     }
-    h1{
+    h1 {
         font-size: 35px;
     }
-    .inputs{
+    .inputs {
         margin: 45px 0 20px 0;
     }
 }
