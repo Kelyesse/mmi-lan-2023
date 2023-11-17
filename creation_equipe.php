@@ -33,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $playerOneId = $_POST['player-one'];
     // $playerTwoId = $_POST['player-two'];
     // $creatorDesc = $_POST['desc_creator'];
-    if (strlen($teamDesc) <= 255) {
+    if (strlen($teamDesc) >= 255) {
         $errorMessage = 'Votre description est trop longue ! (max: 255 caractères)';
     }
-    if (strlen($teamName) <= 45) {
+    if (strlen($teamName) >= 45) {
         $errorMessage = 'Votre nom d"équipe est trop long ! (max: 45 caractères)';
     }
     if (empty($teamName)) {
