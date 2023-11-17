@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 include_once("connexionbdd.php");
 $playLink = './inscription.php';
 $accountLink = './connexion.php';
