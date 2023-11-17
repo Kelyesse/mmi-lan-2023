@@ -12,7 +12,7 @@
 html,
 body {
     margin: auto;
-    background-color: #151515;
+    background-color: var(--background-color);
 }
 
 h1,
@@ -265,12 +265,33 @@ input[type="checkbox"] {
         width: 88vw;
     }
 
+    .simple-inp,
+    .double-inp div {
+        margin: 10px;
+    }
+
+    .active {
+        width: 70px;
+        height: 70px;
+    }
+
+    .simple-inp,
+    .double-inp div {
+        margin: 10px;
+    }
+
+    .active {
+        width: 70px;
+        height: 70px;
+    }
+
     input {
         width: 100%;
     }
 
     #end-form {
         width: 88vw;
+        margin: 10px 0;
     }
 
     .avatar img {
@@ -284,6 +305,18 @@ input[type="checkbox"] {
 
     #select_jeu {
         width: 88vw;
+    }
+
+    form > div > div {
+        gap: 0;
+    }
+
+    #choix_ava {
+        margin: 10px 0;
+    }
+
+    .radio {
+        margin: 10px 0;
     }
 }
 

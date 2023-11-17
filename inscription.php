@@ -193,16 +193,20 @@ function generateId(array $excludeArray)
                     <div>
                         <div>
                             <div class="double-inp">
-                                <input type="text" placeholder="Entrer votre nom" name="nom" value="<?php
-                                if (isset($nom)) {
-                                    echo $nom;
-                                }
-                                ?>" required>
-                                <input type="text" placeholder="Entrer votre prénom" name="prenom" value="<?php
-                                if (isset($prenom)) {
-                                    echo $prenom;
-                                }
-                                ?>" required>
+                                <div>
+                                    <input type="text" placeholder="Entrer votre nom" name="nom" value="<?php
+                                    if (isset($nom)) {
+                                        echo $nom;
+                                    }
+                                    ?>" required>
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Entrer votre prénom" name="prenom" value="<?php
+                                    if (isset($prenom)) {
+                                        echo $prenom;
+                                    }
+                                    ?>" required>
+                                </div>
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/profil.svg" alt="">
