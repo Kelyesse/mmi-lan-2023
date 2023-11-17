@@ -59,7 +59,7 @@ if (count($equipes) > 0) {
         if ($nbr == 3) {
             $image = $equipe['TeamLogo'];
             echo '<li class="vignette_pleine" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
-            echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
+            echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
             echo $equipe['TeamName'];
             echo '<p>-</p>';
 
@@ -71,7 +71,7 @@ if (count($equipes) > 0) {
         } else {
             $image = $equipe['TeamLogo'];
             echo '<li class="vignette" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
-            echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
+            echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
             echo $equipe['TeamName'] ;
             echo '<p>-</p>';
 
