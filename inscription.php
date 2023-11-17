@@ -102,9 +102,9 @@ try {
                         $stmt = $db->prepare($sql);
 
                         $stmt->bindParam(':id', $PlayerId, PDO::PARAM_INT);
-                        $stmt->bindParam(':nom', $pseudo, PDO::PARAM_STR);
+                        $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
                         $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
-                        $stmt->bindParam(':pseudo', $nom, PDO::PARAM_STR);
+                        $stmt->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
                         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                         $stmt->bindParam(':mdp', hash('sha256', $mdp1), PDO::PARAM_STR);
                         $stmt->bindParam(':avatar', $avatar, PDO::PARAM_STR);

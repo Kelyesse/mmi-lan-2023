@@ -52,16 +52,11 @@
             </section>
 
             <div class="footer-links">
-                <a href="#">Règlement</a>
-                <span class="coming-soon">Bientôt disponible !</span>
-                <a href="#">FAQ</a>
-                <span class="coming-soon">Bientôt disponible !</span>
-                <a href="#">Contact</a>
-                <span class="coming-soon">Bientôt disponible !</span>
-                <a href="#">RGPD</a>
-                <span class="coming-soon">Bientôt disponible !</span>
-                <a href="#">Mention légales</a>
-                <span class="coming-soon">Bientôt disponible !</span>
+                <a href="./reglement.php">Règlement</a>
+                <a href="#faq-coming-soon" id="faq-coming-soon">FAQ</a>
+                <a href="./contact.php">Contact</a>
+                <a href="./RGPD.php">RGPD</a>
+                <a href="./Mentionslegales.php">Mention légales</a>
             </div>
 
         </div>
@@ -69,5 +64,5 @@
             <div class="footer-copyright-text">Copyrights © 2023 - IUT Toulon - BUT MMI</div>
         </div>
     </footer>
-
+    <script src=" assets/js/footerComingSoon.js"></script>
 </body>

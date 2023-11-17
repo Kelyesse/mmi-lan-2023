@@ -75,7 +75,7 @@ if (isset($_SESSION['PlayerId'])) {
                 <div id="burger-close"><img id="croix_fermer" src="./assets/img/fermer.png" alt="">
                 </div>
                 <div class="rubriques_burger">
-                    <div><a href="#" class="content_burger">Équipes</a></div>
+                    <div><a href="./listing_equipe.php" class="content_burger">Équipes</a></div>
                     <div><a href="#" class="content_burger" id="planning-button">Planning</a></div>
                     <div><a href="#" class="content_burger" id="covoit-button">Covoiturage</a></div>
                     <div><a href="./contact.php" class="content_burger" id="burger_contact">Contact</a></div>
