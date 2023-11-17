@@ -230,6 +230,11 @@ h1 {
     align-items: flex-start;
     gap: 10px;
     background-color: var(--fond-pages, #151515);
+    color: white;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    position: absolute;
 }
 #alertRejoindreEquipe form div {
     padding-top: 20px;
