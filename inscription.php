@@ -309,11 +309,11 @@ function generateId(array $excludeArray)
                                     </svg>
                                     <div class="avatar">
                                         <?php
-                                        $categories = ['prem', 'sec'];
+                                        $categories = ['prem', 'sec', 'trois', 'quatre'];
 
-                                        foreach ($categories as $category) {
+                                        foreach ($categories as $index => $category) {
                                             for ($i = 1; $i <= 6; $i++) {
-                                                $avatarNumber = ($category == 'prem') ? $i : $i + 6;
+                                                $avatarNumber = $i + 6 * $index;
                                                 ?>
                                                 <div class="avatar-option <?= $category ?>">
                                                     <img src="./assets/img/avatar<?= $avatarNumber ?>.png" alt="">
