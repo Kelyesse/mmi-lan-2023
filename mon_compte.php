@@ -112,17 +112,21 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <div id="player-info">
                 <img src="<?php echo $account['PlayerPicture'] ?>" alt="avatar du compte">
                 <div>
-                    <div>
-                        <img src="./assets/img/profil.svg" alt="">
-                        <p>Pseudo: <?php echo $account['PlayerPseudo'] ?></p>
+                    <div class="info">
+                        <div id="ps">
+                            <img src="./assets/img/profil.svg" alt="">
+                            <p>Pseudo: <?php echo $account['PlayerPseudo'] ?></p>
+                        </div>
                         <button id="editPseudo" onclick="openModal('editPseudo')">
                             <!-- Remplace le texte par un SVG -->
                             <img src="./assets/img/modif_icon.svg" alt="Modifier">
                         </button>
                     </div>
-                    <div>
-                        <img src="./assets/img/mail.svg" alt="">
-                        <p>Adresse mail: <?php echo $account['PlayerEmail'] ?></p>
+                    <div class="info">
+                        <div id="mail">
+                            <img src="./assets/img/mail.svg" alt="">
+                            <p>Adresse mail: <?php echo $account['PlayerEmail'] ?></p>
+                        </div>
                         <button id="editEmail" onclick="openModal('editEmail')">
                             <!-- Remplace le texte par un SVG -->
                             <img src="./assets/img/modif_icon.svg" alt="Modifier">
@@ -140,9 +144,11 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                         echo '</div>';
                     }
                     ?>
-                    <div>
-                        <img src="./assets/img/cadena.svg" alt="">
-                        <p>Mot de passe</p>
+                    <div class="info">
+                        <div id="psw">
+                            <img src="./assets/img/cadena.svg" alt="">
+                            <p>Mot de passe</p>
+                        </div>
                         <button id="editPassword" onclick="openModal('editPassword')">
                             <!-- Remplace le texte par un SVG -->
                             <img src="./assets/img/modif_icon.svg" alt="Modifier">
