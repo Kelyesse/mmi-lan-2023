@@ -42,7 +42,7 @@ try {
                 $favjeu = $_POST["favjeu"];
 
                 if (empty($favjeu) || empty($selectedSetup)) {
-                    $errorMessage = 'Veuillez remplir les champs setup et favjeu.';
+                    $errorMessage = 'Veuillez remplir sélectionner votre setup et votre jeu favoris.';
                 } else {
                     // Vérification du jeu favori
                     if (!in_array($favjeu, $jeuxCorrespondance)) {
@@ -264,19 +264,11 @@ function generateId(array $excludeArray)
                             </div>
                             <div class="radio setup">
                                 <div>
-                                    <input type="radio" name="setup" value="PC portable" id="portable" <?php
-                                    if (isset($selectedSetup) && $selectedSetup == 'PC portable') {
-                                        echo 'checked';
-                                    }
-                                    ?>>
+                                    <input type="radio" name="setup" value="PC portable" id="portable">
                                     <label for="portable">PC portable</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" name="setup" value="PC fixe" id="fixe" <?php
-                                    if (isset($selectedSetup) && $selectedSetup == 'PC fixe') {
-                                        echo 'checked';
-                                    }
-                                    ?>>
+                                    <input type="radio" name="setup" value="PC fixe" id="fixe">
                                     <label for="fixe">PC fixe</label><br>
                                 </div>
                             </div>

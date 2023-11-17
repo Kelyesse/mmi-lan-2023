@@ -190,34 +190,18 @@ input[type="checkbox"] {
 }
 #submit {
     padding: 10px;
-    background-color: #2f1d62;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
     color: #fff;
     width: auto;
+    cursor: pointer;
 }
 
-#submit.animation-vibration {
-    animation: shake 0.4s ease-in-out infinite; /* Animation de vibration pendant 0.5s */
+#submit:hover {
+    background-color: var(--primary-color-hover);
 }
 
-@keyframes shake {
-    0% {
-        transform: translateX(0);
-    } /* Position de départ */
-    25% {
-        transform: translateX(-5px);
-    } /* Décalage vers la gauche */
-    50% {
-        transform: translateX(5px);
-    } /* Décalage vers la droite */
-    75% {
-        transform: translateX(-5px);
-    } /* Décalage vers la gauche */
-    100% {
-        transform: translateX(0);
-    } /* Retour à la position de départ */
-}
 .connection-link {
     text-decoration: underline;
     color: var(--secondary-color);

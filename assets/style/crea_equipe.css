@@ -1,6 +1,5 @@
 @import url(./variables.css);
 
-
 * {
     padding: 0;
     margin: 0;
@@ -9,13 +8,16 @@
     align-items: center;
 }
 
-html, body {
+html,
+body {
     margin: auto;
     box-sizing: border-box;
     background-color: #151515;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: Overused Grotesk, sans-serif;
     font-weight: 900;
     color: #fff;
@@ -41,29 +43,28 @@ p {
     line-height: 23px;
 }
 
-
-a{
-    color: #CD0C75;
+a {
+    color: #cd0c75;
 }
 
-main{
+main {
     display: flex;
     justify-content: center;
     margin: 50px 0;
 }
 
-main>div{
+main > div {
     display: flex;
     align-items: baseline;
 }
 
-main>div{
+main > div {
     display: inline-flex;
     flex-direction: column;
     gap: 45px;
 }
 
-#title{
+#title {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -71,66 +72,120 @@ main>div{
     min-width: 86vw;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: baseline;
 }
 
-input, select, textarea{
-    background-color:#151515;
+input,
+select,
+textarea,
+.import-file {
+    background-color: #151515;
     border: solid 1px #fff;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.25);
     width: 100%;
     padding: 20px 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.import-file {
+    position: relative;
+}
+input[type="file"] {
+    position: absolute;
+    left: 75%;
+    top: 15px;
+}
+input[type="file"]::-webkit-file-upload-button {
+    background-color: transparent;
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 4px;
+    color: white;
 }
 
-input:focus, select:focus, textarea:focus {
+#img_equipe {
+    border: none;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    padding: 0px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
     color: #fff;
     outline: none; /* Ajout de cette ligne pour supprimer l'outline par défaut */
 }
 
-textarea{
-    border: solid #fff;
-    border-radius: 3px;
+input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
 }
 
-#submit{
+textarea {
+    border: solid #fff;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+#submit {
     padding: 10px;
-    background-color: #2F1D62;
+    background-color: #2f1d62;
     border: none;
     border-radius: 5px;
     color: #fff;
     width: auto;
+    cursor: pointer;
 }
-
-#form{
+#submit:hover {
+    background-color: var(--primary-color-hover);
+}
+#form {
     width: 50vw;
 }
 
-
+.error-message {
+    padding: 6px;
+    color: var(--tertiary-color);
+    font-style: italic;
+}
 @media only screen and (max-width: 700px) {
-
-    h1{
+    h1 {
         font-size: 24px;
         font-weight: 800;
     }
 
-    h2{
+    h2 {
         font-size: 17px;
         font-weight: 600;
     }
 
-    #titre{
+    #titre {
         gap: 0;
     }
 
-    main>div{
+    main > div {
         gap: 0;
         align-items: center;
+    }
+}
+@media screen and (max-width: 850px) {
+    .import-file {
+        margin-bottom: 50px;
+    }
+    input[type="file"]::-webkit-file-upload-button {
+        display: none;
+    }
+    input[type="file"] {
+        position: absolute;
+        left: 0;
+        margin-top: 75px;
     }
 }

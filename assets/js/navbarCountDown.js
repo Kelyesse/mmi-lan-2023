@@ -6,7 +6,7 @@ let currentUrl = window.location.href
 if (
     currentUrl.endsWith(HOMEPAGE) ||
     currentUrl.endsWith(`${HOMEPAGE}#`) ||
-    currentUrl.endsWith(`${HOMEPAGE}/index.php`)
+    currentUrl.endsWith(`${HOMEPAGE}index.php`)
 ) {
     navbarCountdownElements.forEach((countDown) => countDown.remove())
 }
