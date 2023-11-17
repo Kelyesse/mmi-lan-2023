@@ -243,11 +243,11 @@ main {
     align-items: center;
     align-self: stretch;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .navigation-button:hover {
-    cursor: pointer;
-    background: #7152c6;
+    opacity: 0.75;
 }
 
 .registration-button {
