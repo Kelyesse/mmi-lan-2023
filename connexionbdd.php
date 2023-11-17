@@ -1,10 +1,10 @@
 <?php
 function Connexion()
 {
-    $hostname = '127.0.0.1:3306';
-    $username = 'u886930443_Alexandre';
-    $password = '$+DU#f8&N';
-    $db = 'u886930443_mmilan';
+    $hostname = 'localhost';
+    $username = 'root';
+    $password = '';
+    $db = 'mmi-lan';
     // Data Source Name
     $dsn = "mysql:host=$hostname;dbname=$db;charset=utf8mb4";
     try {
@@ -27,7 +27,7 @@ if (!isset($_SESSION['PlayerId'])) {
         // Assurez-vous que l'identifiant unique est une chaîne non vide
         if (!empty($remember_user_id)) {
             // Utilisez l'identifiant unique pour récupérer les informations de connexion côté serveur
-            $stmt = $db2->prepare("SELECT * FROM player WHERE PlayerId = :remember_user_id");
+            $stmt = $db->prepare("SELECT * FROM player WHERE PlayerId = :remember_user_id");
             $stmt->bindParam(':remember_user_id', $remember_user_id, PDO::PARAM_INT);
             $stmt->execute();
             $player = $stmt->fetch(PDO::FETCH_ASSOC);
