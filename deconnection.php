@@ -4,8 +4,7 @@ session_start();
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer l'ID du joueur depuis la session
-    $playerId = isset($_SESSION['PlayerId']) ? $_SESSION['PlayerId'] : null;
+
 
     // Supprimer le cookie de connexion automatique s'il existe
     foreach ($_COOKIE as $key => $value) {

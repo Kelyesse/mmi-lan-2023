@@ -80,7 +80,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mon_compte</title>
+    <title>Mon compte</title>
     <link rel="stylesheet" href="./assets/style/mon_compte.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
@@ -103,7 +103,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <div id="div-title">
                 <div class="title">
                     <h1>Mon compte</h1>
-                    <h2>Bonjour <?php echo $account['PlayerPseudo']; ?> !</h2>
+                    <h2>Bonjour
+                        <?php echo $account['PlayerPseudo']; ?> !
+                    </h2>
                 </div>
                 <img src="./assets/img/pattern.svg" alt="">
             </div>
@@ -115,7 +117,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <div class="info">
                         <div id="ps">
                             <img src="./assets/img/profil.svg" alt="">
-                            <p>Pseudo: <?php echo $account['PlayerPseudo'] ?></p>
+                            <p>Pseudo:
+                                <?php echo $account['PlayerPseudo'] ?>
+                            </p>
                         </div>
                         <button id="editPseudo" onclick="openModal('editPseudo')">
                             <!-- Remplace le texte par un SVG -->
@@ -125,7 +129,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <div class="info">
                         <div id="mail">
                             <img src="./assets/img/mail.svg" alt="">
-                            <p>Adresse mail: <?php echo $account['PlayerEmail'] ?></p>
+                            <p>Adresse mail:
+                                <?php echo $account['PlayerEmail'] ?>
+                            </p>
                         </div>
                         <button id="editEmail" onclick="openModal('editEmail')">
                             <!-- Remplace le texte par un SVG -->
