@@ -124,7 +124,7 @@ try {
                             }
                             $_SESSION['PlayerId'] = $PlayerId;
                             header('Status: 301 Moved Permanently', false, 301);
-                            header('Location:./connexion.php');
+                            header('Location:./');
                             exit(0);
                         }
                         $db = null;
