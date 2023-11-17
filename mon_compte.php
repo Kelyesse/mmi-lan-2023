@@ -224,8 +224,8 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         } else {
             echo '<section id="no-team">';
             echo '    <div>';
-            echo '        <button><a href="#">Créer une équipe</a></button>';
-            echo '        <button><a href="#">Rejoindre une équipe</a></button>';
+            echo '        <button><a href="./creation_equipe.php">Créer une équipe</a></button>';
+            echo '        <button><a href="./listing_equipe.php">Rejoindre une équipe</a></button>';
             echo '    </div>';
             echo '</section>';
         }
