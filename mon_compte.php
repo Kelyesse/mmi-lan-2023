@@ -43,7 +43,7 @@ try {
                     $teamMembers = $db->query($sql)->fetchall(PDO::FETCH_ASSOC);
 
                     // Vérifier si le compte est le créateur de l'équipe
-                    if ($teamAccount["BelongStatus"] == 'créateur') {
+                    if ($teamAccount["BelongRole"] == 'Créateur') {
                         $creator = true;
                     } else {
                         $creator = false;
@@ -211,7 +211,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             echo '            </div>';
             echo '        </div>';
             echo '        <div>';
-            echo '            <img src="./images/' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
+            echo '            <img src="./assets/img/' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
             echo '        </div>';
             echo '    </div>';
             if ($creator) {
@@ -238,9 +238,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <input type="hidden" name="playerId" value="<?php echo $_SESSION['PlayerId']; ?>">
                     <input type="submit" value="Me déconnecter">
                 </form>
-                <form action="./deconnection.php" method="post">
-                    <input type="submit" value="Supprimer mon compte">
-                </form>
+                <button id="delete-account-button">Supprimer mon compte</button>
             </div>
         </section>
 
@@ -376,7 +374,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         </div>
     </div>
 
-    <!-- Modale pour éditer le mot de passe 
+    <!-- Modale pour éditer le mot de passe
     <div id="editPasswordPopup" class="popup">
         <div class="popup-content">
             <p>Modifier le mot de passe</p>
@@ -388,7 +386,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <label for="confirmPassword">Confirmer le mot de passe :</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
                 <input type="submit" value="Enregistrer les modifications" class="confirmYes">
-                <input type="hidden" name="userId" value='<? /*php echo $_SESSION['PlayerId']; */?>'>
+                <input type="hidden" name="userId" value='<? /*php echo $_SESSION['PlayerId']; */ ?>'>
             </form>
             <p id="config-psw">
                 Le mot de passe doit contenir : <br>
