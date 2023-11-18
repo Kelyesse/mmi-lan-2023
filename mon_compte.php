@@ -157,7 +157,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             if ($player) {
                 echo '<div id="player-desc">';
                 echo '    <div id="jeu">';
-                echo '        <p>' . $account['PlayerFavGame'] . '</p>';
+                echo '        <p>Votre jeu favori : ' . $account['PlayerFavGame'] . '</p>';
                 echo '    </div>';
                 echo '</div>';
             }
