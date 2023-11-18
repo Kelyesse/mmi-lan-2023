@@ -1,0 +1,204 @@
+@import url(./variables.css);
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--body-font);
+}
+#nav {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1050px) {
+    #nav {
+        font-size: 13px;
+    }
+}
+@media screen and (min-width: 970px) {
+    #navbar-main {
+        position: relative;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 75px;
+        background-color: #212121;
+    }
+
+    @font-face {
+        font-family: "Montseerrat";
+        src: url(‘/fonts/Montserrat-Medium’) format(‘Montserrat-Medium’);
+    }
+
+    #div_logo {
+        display: flex;
+        width: 10%;
+        padding: 10px 0 10px 100px;
+    }
+
+    #logo {
+        width: 60px;
+    }
+
+    #nav {
+        display: flex;
+        justify-content: right;
+        width: 90%;
+        padding-right: 100px;
+        align-items: center;
+    }
+
+    .rubriques {
+        display: flex;
+        justify-content: space-around;
+        margin: 0 20px 0 0;
+    }
+
+    .bouton_rubrique {
+        margin: 0 60px 0 0;
+        font-family: var(--body-font);
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    #bouton_contact {
+        border-radius: 5px;
+        background-color: var(--primary-color);
+        padding: 10px;
+        margin: 0 25px 0 0;
+    }
+
+    #bouton_participer {
+        border-radius: 5px;
+        background-color: var(--accent-color-1);
+        padding: 10px;
+        margin: 0 25px 0 0;
+    }
+    #bouton_contact:hover {
+        background-color: var(--primary-color-hover);
+    }
+    #bouton_participer:hover {
+        background-color: var(--accent-color-1-hover);
+    }
+
+    #icon_compte {
+        width: 25px;
+        filter: invert();
+    }
+    #burger {
+        display: none;
+    }
+    .rubriques_burger {
+        display: none;
+    }
+
+    #fermer {
+        display: none;
+    }
+
+    #navbar-countdown {
+        width: 100%;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--secondary-color);
+        color: #ffffff;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    #navbar-main {
+        position: relative;
+        z-index: 200;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: #212121;
+    }
+
+    #div_logo {
+        padding: 0 20% 0 30px;
+    }
+
+    #logo {
+        width: 60px;
+    }
+
+    .bouton_rubrique {
+        margin: 0 60px 0 0;
+        font-size: 16px;
+    }
+    #bouton_contact,
+    #bouton_participer,
+    #icon_compte,
+    .bouton_rubrique {
+        display: none;
+    }
+
+    .bouton_burger {
+        padding-right: 30px;
+    }
+    #burger-close {
+        display: none;
+        padding-right: 30px;
+    }
+    .steak {
+        position: relative;
+        width: 30px;
+        border-radius: 5px;
+        border: solid #ffffff 2px;
+        margin-bottom: 10px;
+    }
+    #steak3 {
+        margin-bottom: 0px;
+    }
+
+    .rubriques_burger {
+        display: grid;
+        justify-content: center;
+        width: 100%;
+        background-color: #212121;
+        position: absolute;
+        right: 0;
+        gap: 20px;
+        top: 100px;
+        padding: 25px 0px;
+        display: none;
+    }
+
+    #burger_play {
+        color: var(--accent-color-1);
+    }
+
+    .content_burger {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Montserrat";
+        padding: 15px 0;
+    }
+
+    #croix_fermer {
+        width: 30px;
+        filter: invert();
+        display: none;
+    }
+
+    #navbar-countdown {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background-color: var(--secondary-color);
+        color: #ffffff;
+    }
+}

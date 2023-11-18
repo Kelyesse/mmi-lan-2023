@@ -7,30 +7,34 @@
     <title>Accueil | MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/index.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
+    <?php
+    include 'navbar.php';
+
+    ?>
     <header>
         <div class="header-container">
             <div class="count-down">
-                <h1>MMI LAN</h1>
+                <h1 class="title-mmilan">MMI LAN</h1>
                 <div class="count-down-timer"></div>
 
-                <button class="cta-button">Inscrivez-vous</button>
+                <a href="./inscription.php" class="cta-button">Inscrivez-vous</a>
             </div>
         </div>
     </header>
 
     <main>
+        <img src="./assets/img/homepage_pattern.svg" alt="" class="background-pattern">
         <section class="teaser-container">
             <div class="teaser">
-                <iframe src="https://www.youtube.com/embed/AuoUHzb4kRs" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/O59B8-AmZLA?si=oAptY_z1HKfgUVEQ"></iframe>
             </div>
         </section>
 
-        <section class="sponsors">
+        <section class="sponsors hidden-content">
             <h2>Avec le soutien de</h2>
             <div class="logo-container">
                 <img src="assets/img/logo-univ-toulon.png" alt="Université de Toulon" class="sponsor-logo">
@@ -42,113 +46,138 @@
             </div>
         </section>
 
-        <section class="about">
+        <section class="about-section">
+            <div class="about-content-container">
+                <div class="explanation-text-container">
+                    <div class="lan-explanation-text">C'est quoi la MMI LAN ?</div>
+                    <div class="description-text">La <span class="colored-words">MMI LAN</span> est un événement centré
+                        sur le jeu vidéo, organisé par des MMI pour des MMI !Elle se présente sous la forme d’un
+                        <span class="colored-words">tournoi</span> dans lequel des équipes de
+                        <span class="colored-words">trois joueurs </span> se réunissent et s'affrontent au travers de
+                        plusieurs jeux vidéo tout au long d’une <span class="colored-words">journée</span>.
+                        Que vous soyez un pro ou un débutant, cet événement est l’occasion de passer un moment de
+                        <span class="colored-words">convivialité</span> placé sous le signe de la
+                        <span class="colored-words">compétition</span>.
+                        <br><br>
+                        Des <span class="colored-words">récompenses</span> seront à gagner à l’issue du tournoi pour
+                        gratifier les efforts des équipes gagnantes.
+                        <br><br>
+                        Si la compétition n’est pas votre domaine, et que vous voulez simplement
+                        <span class="colored-words">profiter d’une ambiance conviviale</span>, vous êtes également au
+                        bon endroit ! Des <span class="colored-words">activités</span> et
+                        <span class="colored-words">points de restauration</span>
+                        seront à votre disposition sur le lieu de l’événement, afin que chacun puisse profiter de cette
+                        journée à leur façon.
+                        <br>
+                        La compétition sera retransmise <span class="colored-words">en direct sur
+                            <a href="https://www.twitch.tv/lanmmi" class="twitch-link" target="_blank">
+                                la chaîne Twitch</a>
+                        </span> de l’événement, vous pourrez donc suivre le déroulé de la LAN sans vous déplacer.
+                    </div>
+                </div>
+                <div class="navigation-buttons-container">
+                    <a href="./inscription.php" class="navigation-button registration-button">
+                        <div class="button-label">
+                            <h3>Inscription</h3>
+                        </div>
+                        <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
+                    </a>
 
-            <div class="text-content">
-                <h2>Texte d’explication de la LAN</h2> <br>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet.
+                    <a href="#" class="navigation-button carpooling-button">
+                        <div class="button-label">
+                            <!-- <h3>Co-voiturage</h3> -->
+                            <h3>Bientôt disponible...</h3>
+                        </div>
+                        <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
+                    </a>
 
-                    <br><br>
-
-                    Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.
-
-                    <br><br>
-
-                    Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.
-                </p>
+                    <a href="#" class="navigation-button faq-button">
+                        <div class="button-label">
+                            <h3>Bientôt disponible...</h3>
+                            <!-- <h3>FAQ</h3> -->
+                        </div>
+                        <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
+                    </a>
+                </div>
             </div>
-
-            <div class="box-container">
-
-                <div class="box" id="inscription">
-                    <div class="arrow">
-                        <i class='bx bx-right-arrow-circle'></i>
-                    </div>
-                    <h3>Inscription</h3>
-                </div>
-
-                <div class="box" id="co-voiturage">
-                    <div class="arrow">
-                        <i class='bx bx-right-arrow-circle'></i>
-                    </div>
-                    <h3>Co-voiturage</h3>
-                </div>
-
-                <div class="box" id="faq">
-                    <div class="arrow">
-                        <i class='bx bx-right-arrow-circle'>
-                        </i>
-                    </div>
-                    <h3>FAQ</h3>
-                </div>
-
-            </div>
-
         </section>
 
-
-
-
+        <div class="animated-banner">
+            <div class="space-invaders" id="group1">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+            </div>
+            <div class="space-invaders" id="group2">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+            </div>
+            <div class="space-invaders" id="group3">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+                <img src="./assets/img/space-invaders.png" alt="space invader" class="space-invader">
+            </div>
+        </div>
         <section class="social-media">
             <div class="follow-us">
                 Pour rester informé, suivez-nous sur nos réseaux sociaux !
             </div>
             <ul class="social-medias-listing">
-
-
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="Logo TikTok" class="social-img" />
+                    <a href="https://www.tiktok.com/@mmi.lan" class="social-link" target="_blank">
+                        <img src="./assets/img/tiktok-logo.svg" alt="Logo TikTok" class="social-img" />
                     </a>
                 </li>
 
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="instagram-logo" class="social-img" />
+                    <a href="https://www.instagram.com/mmi_lan2023/" class="social-link" target="_blank">
+                        <img src="./assets/img/insta-logo.svg" alt="instagram-logo" class="social-img" />
                     </a>
                 </li>
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="youtube-logo" class="social-img" />
+                    <a href="https://www.youtube.com/@MMILAN_2023" class="social-link" target="_blank">
+                        <img src=" ./assets/img/yt-logo.svg" alt="youtube-logo" class="social-img" />
                     </a>
                 </li>
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="twitter-logo" class="social-img" />
+                    <a href="https://twitter.com/MMI_LAN_2023" class="social-link" target="_blank">
+                        <img src="./assets/img/twitter-logo.svg" alt="twitter-logo" class="social-img" />
                     </a>
                 </li>
                 <li class="social-wrapper">
-                    <a href="" class="social-link">
-                        <img src="" alt="discord-logo" class="social-img" />
+                    <a href="https://discord.gg/uPFq4y96vy" class="social-link" target="_blank">
+                        <img src="./assets/img/discord-logo.svg" alt="discord-logo" class="social-img" />
                     </a>
                 </li>
-
             </ul>
         </section>
 
+
+
         <section class="twitch-preview">
             <div class="countdown" id="twitch-section">
-                <div class="countdown-display">
-                    <div class="count-down-timer"></div>
-                </div>
+                <div class="count-down-timer"></div>
                 <div class="countdown-title">Avant le grand jour !</div>
             </div>
             <div class="twitch-livestream">
                 <div class="twitch-title">
                     Retrouvez ici la retranscription live Twitch de la MMI LAN
                 </div>
-                <div class="twitch-media"></div>
+                <div class="twitch-embed" loading="lazy"></div>
             </div>
         </section>
     </main>
 
-    <footer>
-
-    </footer>
+    <?php include 'footer.php' ?>
 
     <!-- JS files -->
     <script src="assets/js/countDown.js"></script>
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <script src=" assets/js/twitchPlayer.js"></script>
+    <!-- Inclure p5.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>-->
+
 </body>
 
 </html>

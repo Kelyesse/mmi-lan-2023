@@ -6,11 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./assets/style/details_equipes.css">
+<<<<<<< HEAD
   <title>Details équipe 
     <?php
       session_start();
       require_once("MLB-8_functions.php"); //A MODIFIER
       require_once("connexionbdd.php"); //A MODIFIER
+=======
+  <link rel="stylesheet" href="./assets/style/footer.css">
+  <link rel="stylesheet" href="./assets/style/header.css">
+  <title>Details équipe 
+    <?php
+      session_start();
+      require_once("MLB-8_functions.php");
+      require_once("connexionbdd.php");
+>>>>>>> origin
       $teamId = $_GET['teamId'];
       echo getTeamName($teamId, $db);
     ?>
@@ -56,9 +66,7 @@
   </div>
   <?php showAlertForm(); ?>
 
-  <footer>
-    <?php include('footer.php'); ?>
-  </footer>
+  <?php include('footer.php'); ?>
 </body>
 
 </html>
