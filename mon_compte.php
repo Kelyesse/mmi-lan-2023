@@ -140,9 +140,11 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     </div>
                     <?php
                     if (isset($creator) && $creator) {
-                        echo '<div>';
-                        echo '  <img src="./assets/img/nom.svg" alt="">';
-                        echo "  <p>Nom de l'équipe: " . $infoTeamAccount['TeamName'] . "</p>";
+                        echo '<div class="info">';
+                        echo '  <div>';
+                        echo '      <img src="./assets/img/nom.svg" alt="">';
+                        echo "      <p>Nom de l'équipe: " . $infoTeamAccount['TeamName'] . "</p>";
+                        echo '  <div>';
                         echo '  <button id="editTeamName" onclick="openModal(\'editTeamName\')">';
                         echo '      <!-- Remplace le texte par un SVG -->';
                         echo '      <img src="./assets/img/modif_icon.svg" alt="Modifier">';
