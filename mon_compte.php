@@ -1,4 +1,4 @@
-<?php
+<?php/*
 // Initialiser la session
 session_start();
 try {
@@ -72,7 +72,7 @@ try {
     // Gestion des autres erreurs
     echo 'Une erreur inattendue s\'est produite : ' . $e->getMessage();
 }
-$teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
+$teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';*/
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -165,8 +165,8 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         </section>
 
         <!-- Section qui apparaît si participant avec équipe -->
-        <?php
-        if (isset($team) && $team) {
+        <?php/*
+        if (isset($team) && $team) {*/
             echo '<section id="team">';
             echo '    <div>';
             echo '        <div id="team-desc">';
