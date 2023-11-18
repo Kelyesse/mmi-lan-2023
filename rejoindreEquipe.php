@@ -2,7 +2,7 @@
     session_start();
     require_once("connexionbdd.php");
     $req = $db->prepare("INSERT INTO belongteam(PlayerId, TeamId, BelongRole, BelongStatus) VALUES(?,?,?,?)");
-    $req->execute([$_SESSION['PlayerId'], $_GET['teamId'], "participant", "en attente"]);
+    $req->execute([$_SESSION['PlayerId'], $_GET['teamId'], "Participant", "en attente"]);
     $req = $db->prepare("SELECT PlayerId FROM belongteam WHERE TeamId=? AND BelongRole=?");
     $req->execute([$_GET['teamId'], "Créateur"]);
     $createurId = $req->fetch()['PlayerId'];
