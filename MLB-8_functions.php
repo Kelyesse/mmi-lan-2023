@@ -34,14 +34,13 @@
             $pseudomembre = $membre[2];
             $imagemembre = $membre[3];
             $jeufavmembre = $membre[4];
-            echo '<img src="./assets/img'.$imagemembre.'"/>';
+            echo '<img src="./assets/img/'.$imagemembre.'"/>';
             echo '<h2>'.$pseudomembre.'</h2>';
             echo '<p class="jeu">'.$jeufavmembre.'</p>';
             echo '<p class="texte_presentation">'.$prénommembre." ".$nommembre." alias ".$pseudomembre.'</p>';
             echo '</div>';
             $nbMembres++;
         }
-
         //--- Partie où on affiche des cases vides en cas d'équipe incomplète ---
         while($nbMembres<3){
             echo '<div class="equipe_incomplete">';
@@ -60,12 +59,12 @@
                 $req = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
                 $req->execute([$_SESSION['PlayerId']]);
                 $userrole = $req->fetch()['PlayerStatus'];
-                if(!$dansequipe || $userrole == "Participant"){
+                if(!$dansequipe && $userrole == "Participant"){
                     $message = "Rejoindre l'équipe";
                     echo '<a href="details_equipes.php?teamId='.$teamId.'&rejoindreEquipe='.true.'">'.$message.'</a>';
                 }
-                echo '</div>';
             }
+            echo '</div>';
             $nbMembres++;
         }
     }
@@ -75,17 +74,17 @@
         $nbEquipe->execute();
         $nbEquipe = $nbEquipe->fetch()[0];
         if($teamId > 1){
-            echo '<a href="details_equipes.php?teamId='.($teamId-1).'"><img src="./assets/imgfleche_gauche.svg" alt="flèche gauche"></a>';
+            echo '<a href="details_equipes.php?teamId='.($teamId-1).'"><img src="./assets/img/fleche_gauche.svg" alt="flèche gauche"></a>';
         }
         else{
-            echo '<a href="details_equipes.php?teamId='.$nbEquipe.'"><img src="./assets/imgfleche_gauche.svg" alt="flèche gauche"></a>';
+            echo '<a href="details_equipes.php?teamId='.$nbEquipe.'"><img src="./assets/img/fleche_gauche.svg" alt="flèche gauche"></a>';
         }
-        echo ' <a class="retour" href="listing_equipe.php">Retour au listing des équipes</a> ';
+        echo ' <a class="retour" href="listing_equipe.php">Retour au listing des équipes</a> '; //A MODIFIER
         if($teamId < $nbEquipe){
-            echo '<a href="details_equipes.php?teamId='.($teamId+1).'"><img src="./assets/imgfleche_droite.svg" alt="flèche gauche"></a>';
+            echo '<a href="details_equipes.php?teamId='.($teamId+1).'"><img src="./assets/img/fleche_droite.svg" alt="flèche gauche"></a>';
         }
         else{
-            echo '<a href="details_equipes.php?teamId=1"><img src="./assets/imgfleche_droite.svg" alt="flèche gauche"></a>';
+            echo '<a href="details_equipes.php?teamId=1"><img src="./assets/img/fleche_droite.svg" alt="flèche gauche"></a>';
         }
     }
 

@@ -1,0 +1,301 @@
+@import url(./variables.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    align-items: center;
+}
+
+html, body {
+    margin: auto;
+    box-sizing: border-box;
+    background-color: #151515;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: var(--accent-font);
+    font-weight: 900;
+    color: #fff;
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 32px;
+    font-family: var(--body-font);
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+p {
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+a{
+    text-decoration: none;
+    font-family: var(--body-font);
+}
+
+button{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    border: none;
+    font-size: 16px;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 0;
+    gap: 60px;
+}
+
+.title{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+}
+
+section{
+    width: 86vw;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+#div-title{
+    display: flex;
+}
+
+#player-info div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#player-info div div {
+    display: flex;
+    width: 42vw;
+    padding: 10px;
+    border-bottom:solid 1px #fff;
+    gap: 10px;
+    flex-direction: row;
+}
+
+#player-info div div div{
+    border: none;
+}
+
+#player-info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#player-info>img{
+    width: 400px;
+    height: 400px;
+}
+
+#player-desc{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#player-desc div{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#jeu{
+    width: 400px;
+}
+
+#team>div{
+    width: 100%;
+    display: flex ;
+    justify-content: space-between;
+}
+
+#team-desc{
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    align-items: baseline;
+    width: 60%;
+}
+
+#team-desc div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+#li-mate{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+}
+
+#li-mate div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+#li-mate>div{
+    flex-direction: column;
+}
+
+.mate{
+    border: solid 1px #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.remove-mate{
+    border: 1px solid var(--secondary-color);
+    background-color: #ffffff00;
+    color: #CD0C75;
+}
+
+#team div img{
+    width: 400px;
+    height: 400px;
+}
+
+#no-team div{
+    display: flex;
+    gap: 20px;
+}
+
+#account{
+    align-items: end;
+}
+
+#account div{
+    display: flex;
+    gap: 20px;
+}
+
+/* Style de la boîte de dialogue de confirmation */
+.popup {
+    display: none;
+    background-color: #151515db;
+    position: fixed;
+    top: 0%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.confirmYes, #deco{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+
+
+.confirmNo{
+    background-color: #212121;
+}
+
+.popup-content {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 4px 4px 30px 0px rgba(255, 255, 255, 0.15), -4px -4px 30px 0px rgba(255, 255, 255, 0.15);
+    width: 45vw;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    border: none;
+    font-size: 16px;
+}
+
+.info p{
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+    #player-info>img {
+        width: 200px;
+        height: 200px;
+    }
+
+    #team div img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #player-info>img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #player-info{
+        flex-direction: column;
+    }
+
+    #player-info div div{
+        width: 88vw;
+    }
+
+    #team div img{
+        width: 120px;
+        height: 120px;
+    }
+
+    h1{
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+    h2{
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .popup-content form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

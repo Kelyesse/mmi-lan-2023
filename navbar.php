@@ -1,3 +1,16 @@
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+include_once("connexionbdd.php");
+$playLink = './inscription.php';
+$accountLink = './connexion.php';
+if (isset($_SESSION['PlayerId'])) {
+    $playLink = './listing_equipe.php';
+    $accountLink = './mon_compte.php';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,7 +18,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style/header.css">
-    <title>Header</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
 
@@ -32,14 +44,6 @@
 </head>
 
 <body>
-    <?php
-    $accountLink = './connexion.php';
-    $playLink = './inscription.php';
-    if (isset($_SESSION['PlayerId'])) {
-        $accountLink = './mon_compte.php';
-        $playLink = './listing_equipe.php';
-    }
-    ; ?>
     <div id="navbar-main">
         <div id="div_logo">
             <a href="./"><img src="./assets/img/logo.png" alt="logo mmilan" id="logo"></a>
@@ -71,7 +75,7 @@
                 <div id="burger-close"><img id="croix_fermer" src="./assets/img/fermer.png" alt="">
                 </div>
                 <div class="rubriques_burger">
-                    <div><a href="#" class="content_burger">Équipes</a></div>
+                    <div><a href="./listing_equipe.php" class="content_burger">Équipes</a></div>
                     <div><a href="#" class="content_burger" id="planning-button">Planning</a></div>
                     <div><a href="#" class="content_burger" id="covoit-button">Covoiturage</a></div>
                     <div><a href="./contact.php" class="content_burger" id="burger_contact">Contact</a></div>
