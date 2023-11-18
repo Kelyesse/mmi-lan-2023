@@ -211,7 +211,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';*/
             echo '            </div>';
             echo '        </div>';
             echo '        <div>';
-            echo '            <img src="./images/' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
+            echo '            <img src="./assets/img/' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
             echo '        </div>';
             echo '    </div>';
             if ($creator) {
