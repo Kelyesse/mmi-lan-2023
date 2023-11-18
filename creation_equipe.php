@@ -105,6 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // }
 
             echo "<p>Votre équipe a été créée avec succès !</p>";
+            header('Location: listing_equipe.php');
         } else {
             $errorInfo = $insertQuery->errorInfo();
             echo "<p>Erreur lors de l’exécution de la requête : " . htmlspecialchars($errorInfo[2]) . "</p>";
