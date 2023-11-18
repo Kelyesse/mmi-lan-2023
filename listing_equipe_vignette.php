@@ -59,7 +59,7 @@ if (count($equipes) > 0) {
         if ($nbr == 3) {
             $image = $equipe['TeamLogo'];
             echo '<li class="vignette_pleine" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
-            echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
+            echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
             echo $equipe['TeamName'];
             echo '<p>-</p>';
 
@@ -71,7 +71,7 @@ if (count($equipes) > 0) {
         } else {
             $image = $equipe['TeamLogo'];
             echo '<li class="vignette" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
-            echo '<img src="' . $image . '" alt="Logo de l\'équipe" />';
+            echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
             echo $equipe['TeamName'] ;
             echo '<p>-</p>';
 
@@ -79,8 +79,19 @@ if (count($equipes) > 0) {
             foreach ($joueurs as $pseudo) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div></a>';
             }
+            if (isset($_SESSION['PlayerId'])) {
+                $idj=$_SESSION['PlayerId'];
+                $valeur = $db->prepare("SELECT TeamId FROM belongteam WHERE PlayerId=? AND BelongStatus=?");
+                $valeur->execute([$idj, "validé"]);
+                $resultat = $valeur->fetch();
+                $req3 = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
+                $req3->execute([$idj]);
+                $userrole = $req3->fetch()['PlayerStatus'];
+                if (empty($resultat && $userrole == "Participant")){
+                    echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
+                }
+            }
 
-            echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
         }
     }
 }
