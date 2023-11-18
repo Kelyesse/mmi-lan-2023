@@ -9,6 +9,7 @@ body {
 main {
     max-width: 1440px;
     margin: 0 auto;
+    position: relative;
 }
 .en-tete {
     text-align: left;
