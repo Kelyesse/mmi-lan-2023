@@ -1,10 +1,10 @@
 <?php
 function Connexion()
 {
-    $hostname = '127.0.0.1:3306';
-    $username = 'u886930443_Alexandre';
-    $password = '$+DU#f8&N';
-    $db = 'u886930443_mmilan';
+    $hostname = 'localhost';
+    $username = 'root';
+    $password = '';
+    $db = 'mmi_lan';
     // Data Source Name
     $dsn = "mysql:host=$hostname;dbname=$db;charset=utf8mb4";
     try {

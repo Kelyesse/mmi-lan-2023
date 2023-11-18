@@ -87,14 +87,10 @@ if (count($equipes) > 0) {
                 $req3 = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
                 $req3->execute([$idj]);
                 $userrole = $req3->fetch()['PlayerStatus'];
-                if (empty($resultat && $userrole == "Participant")){
+                if (empty($resultat) && $userrole == "Participant"){
                     echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
                 }
             }
-            else {
-                echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
-            }
-
 
         }
     }

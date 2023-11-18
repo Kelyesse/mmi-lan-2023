@@ -157,7 +157,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             if ($player) {
                 echo '<div id="player-desc">';
                 echo '    <div id="jeu">';
-                echo '        <p>' . $account['PlayerFavGame'] . '</p>';
+                echo '        <p>Votre jeu favori : ' . $account['PlayerFavGame'] . '</p>';
                 echo '    </div>';
                 echo '</div>';
             }
@@ -211,7 +211,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             echo '            </div>';
             echo '        </div>';
             echo '        <div>';
+
             echo '            <img src="./assets/img/' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
+
             echo '        </div>';
             echo '    </div>';
             if ($creator) {
@@ -238,7 +240,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <input type="hidden" name="playerId" value="<?php echo $_SESSION['PlayerId']; ?>">
                     <input type="submit" value="Me déconnecter">
                 </form>
+
                 <button id="delete-account-button">Supprimer mon compte</button>
+
             </div>
         </section>
 
@@ -267,7 +271,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <form action="./delete_member.php" method="post">
                     <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
                     <input type="hidden" id="userIdToDelete" name="userId" value="">
-                    <input type="submit" value="Oui, supprimer cette personne" class="confirmYes" name='delete_member'>
+                    <input id="submit" type="submit" value="Oui, supprimer cette personne" class="confirmYes" name='delete_member'>
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
             </div>
@@ -279,7 +283,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <p>Etes-vous sûr de vouloir supprimer votre équipe ?</p>
                 <form action="./delete_team.php" method="post">
                     <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
-                    <input type="submit" value="Oui, supprimer mon équipe" class="confirmYes">
+                    <input id="submit" type="submit" value="Oui, supprimer mon équipe" class="confirmYes">
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
             </div>
@@ -290,7 +294,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <div class="popup-content">
                 <p>Etes-vous sûr de vouloir supprimer votre compte ?</p>
                 <form action="./delete_account.php" method="post">
-                    <input type="submit" value="Oui, supprimer mon compte" class="confirmYes">
+                    <input id="submit" type="submit" value="Oui, supprimer mon compte" class="confirmYes">
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
             </div>
@@ -303,20 +307,22 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <form action="./quit_team.php" method="post">
                     <!-- Ajoutez un champ caché pour stocker l'ID de l'équipe -->
                     <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
-                    <input type="submit" value="Oui, quitter mon équipe" class="confirmYes">
+                    <input id="submit" type="submit" value="Oui, quitter mon équipe" class="confirmYes">
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
             </div>
         </div>
     </main>
-
+    <?php
+        include('footer.php');
+    ?>
     <!-- Accepter membre de l'équipe -->
     <div id="acceptMemberPopup" class="popup">
         <div class="popup-content">
             <p>Voulez-vous accepter cette personne dans l'équipe ?</p>
             <form action="./accept_member.php" method="post">
                 <input type="hidden" id="userIdToAccept" name="userId" value="">
-                <input type="submit" value="Oui, accepter" class="confirmYes" name='accept_member'>
+                <input id="submit" type="submit" value="Oui, accepter" class="confirmYes" name='accept_member'>
             </form>
             <button class="confirmNo">Non, j’ai changé d’avis</button>
         </div>
@@ -328,7 +334,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <p>Voulez-vous refuser cette personne dans l'équipe ?</p>
             <form action="./reject_member.php" method="post">
                 <input type="hidden" id="userIdToReject" name="userId" value="">
-                <input type="submit" value="Oui, refuser" class="confirmYes" name='reject_member'>
+                <input id="submit" type="submit" value="Oui, refuser" class="confirmYes" name='reject_member'>
             </form>
             <button class="confirmNo">Non, j’ai changé d’avis</button>
         </div>
@@ -342,7 +348,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <label for="logoFile">Sélectionner un fichier logo (png, jpg, jpeg)</label>
                 <input type="file" name="logoFile" id="logoFile" accept=".png, .jpg, .jpeg" required>
                 <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
-                <input type="submit" value="Changer le logo" class="confirmYes">
+                <input id="submit" type="submit" value="Changer le logo" class="confirmYes">
             </form>
             <button class="confirmNo">Annuler</button>
         </div>
@@ -355,7 +361,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <form action="traitement_pseudo.php" method="post">
                 <label for="newPseudo">Nouveau pseudo :</label>
                 <input type="text" id="newPseudo" name="newPseudo" required>
-                <input type="submit" value="Enregistrer les modifications" class="confirmYes">
+                <input id="submit" type="submit" value="Enregistrer les modifications" class="confirmYes">
             </form>
             <button class="confirmNo">Annuler</button>
         </div>
@@ -368,7 +374,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <form action="traitement_email.php" method="post">
                 <label for="newEmail">Nouvel email :</label>
                 <input type="email" id="newEmail" name="newEmail" required>
-                <input type="submit" value="Enregistrer les modifications" class="confirmYes">
+                <input id="submit" type="submit" value="Enregistrer les modifications" class="confirmYes">
             </form>
             <button class="confirmNo">Annuler</button>
         </div>
@@ -403,7 +409,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <form action="traitement_teamname.php" method="post">
                 <label for="newTeamName">Nouveau nom d'équipe :</label>
                 <input type="text" id="newTeamName" name="newTeamName" required>
-                <input type="submit" value="Enregistrer les modifications" class="confirmYes">
+                <label for="newDescTeam">Nouvel description de l'équipe :</label>
+                <input type="textarea" id="newDescTeam" name="newDescName" required>
+                <input id="submit" type="submit" value="Enregistrer les modifications" class="confirmYes">
             </form>
             <button class="confirmNo">Annuler</button>
         </div>
