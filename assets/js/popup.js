@@ -23,7 +23,7 @@ $(document).ready(function () {
     $("#popUpTeam").css("display", "flex");
   });
 
-  $("#delete-account-button").on("click", function () {
+  $("#remove-account").on("click", function () {
     $("#popUpAccount").css("display", "flex");
   });
 
