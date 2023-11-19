@@ -50,7 +50,7 @@
       <?php echo showReturnButtons($teamId, $db); ?>
     </div>
   </main>
-  <div id="alertRejoindreEquipe" hidden>
+  <div id="alertRejoindreEquipe hidden" hidden>
     <h2>Vous allez rejoindre l'équipe
       <?php echo getTeamName($teamId, $db); ?>
     </h2>

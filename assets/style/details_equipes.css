@@ -79,12 +79,15 @@ main #membres .membre {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    max-width: 250px;
 }
 main #membres .membre img {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    max-width: 250px;
+    max-height: 250px;
 }
 main #membres .membre h2 {
     color: var(--text-contenu, #fff);
@@ -97,6 +100,7 @@ main #membres .membre h2 {
     line-height: normal;
 }
 main #membres .membre .jeu {
+    max-width: 100%;
     margin-top: 10px;
     display: flex;
     padding: 10px;
@@ -114,6 +118,7 @@ main #membres .membre .jeu {
     line-height: 23px; /* 143.75% */
 }
 main #membres .membre p {
+    max-width: 100%;
     width: 295px;
     color: var(--text-contenu, #fff);
     text-align: center;
@@ -273,6 +278,10 @@ main #retour .retour {
     background: var(--primaire, #2f1d62);
 }
 
+.hidden {
+    display: none;
+}
+
 @media screen and (min-width: 912px) {
     * {
         box-sizing: border-box;
@@ -283,6 +292,7 @@ main #retour .retour {
         background: var(--fond-pages, #151515);
     }
     main {
+        width: 90%;
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
@@ -343,6 +353,7 @@ main #retour .retour {
         line-height: 23px; /* 143.75% */
     }
     main #membres {
+        max-width: 800px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -401,6 +412,7 @@ main #retour .retour {
         line-height: 23px; /* 143.75% */
     }
     main #membres .equipe_incomplete {
+        max-width: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -411,7 +423,6 @@ main #retour .retour {
         border: 1px solid var(--text-contenu, #fff);
     }
     main #membres .equipe_incomplete h2 {
-        width: 399px;
         color: var(--text-contenu, #fff);
         text-align: center;
         /* Desktop/h2-desktop */
