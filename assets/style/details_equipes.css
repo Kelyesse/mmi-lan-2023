@@ -81,7 +81,7 @@ main #membres .membre {
     gap: 20px;
     max-width: 250px;
 }
-main #membres .membre img {
+main #membres #membre img {
     display: flex;
     flex-direction: column;
     align-items: center;

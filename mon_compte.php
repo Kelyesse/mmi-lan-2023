@@ -43,7 +43,7 @@ try {
                     $teamMembers = $db->query($sql)->fetchall(PDO::FETCH_ASSOC);
 
                     // Vérifier si le compte est le créateur de l'équipe
-                    if ($teamAccount["BelongStatus"] == 'créateur') {
+                    if ($teamAccount["BelongRole"] == 'Créateur') {
                         $creator = true;
                     } else {
                         $creator = false;
@@ -238,7 +238,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     <input type="hidden" name="playerId" value="<?php echo $_SESSION['PlayerId']; ?>">
                     <input type="submit" value="Me déconnecter">
                 </form>
-                <button id="deleteAccount">Supprimer mon compte</button>
+
+                <button id="delete-account-button">Supprimer mon compte</button>
+
             </div>
         </section>
 
@@ -377,7 +379,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         </div>
     </div>
 
-    <!-- Modale pour éditer le mot de passe 
+    <!-- Modale pour éditer le mot de passe
     <div id="editPasswordPopup" class="popup">
         <div class="popup-content">
             <p>Modifier le mot de passe</p>

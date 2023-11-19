@@ -22,7 +22,6 @@ function getTeamDesc($teamId, $db)
     $descequipe = $equipe->fetch()['TeamDesc'];
     return $descequipe;
 }
-
 function getTeamMembers($teamId, $db)
 {
     $membres = $db->prepare("SELECT PlayerId FROM belongteam WHERE TeamId=? AND BelongStatus=?");
@@ -72,7 +71,6 @@ function getTeamMembers($teamId, $db)
         $nbMembres++;
     }
 }
-
 function showReturnButtons($teamId, $db)
 {
     $nbEquipe = $db->prepare("SELECT MAX(TeamId) FROM team");
