@@ -387,6 +387,47 @@ main {
     height: 100%;
 }
 
+.discord-link,
+.instagram-link,
+.twitter-link,
+.tiktok-link,
+.ytb-link {
+    position: relative;
+}
+#discord-logo-hover,
+#ytb-logo-hover,
+#instagram-logo-hover,
+#tiktok-logo-hover,
+#twitter-logo-hover {
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+}
+#discord-logo-hover:hover,
+#instagram-logo-hover:hover,
+#twitter-logo-hover:hover,
+#ytb-logo-hover:hover,
+#tiktok-logo-hover:hover {
+    opacity: 1;
+}
+#discord-logo:hover,
+#tiktok-logo:hover,
+#instagram-logo:hover,
+#ytb-logo:hover,
+#twitter-logo:hover {
+    opacity: 0;
+}
+#discord-logo:hover + #discord-logo-hover,
+#instagram-logo:hover + #instagram-logo-hover,
+#tiktok-logo:hover + #tiktok-logo-hover,
+#ytb-logo:hover + #ytb-logo-hover,
+#twitter-logo:hover + #twitter-logo-hover {
+    transition: 0.5s;
+    opacity: 1;
+}
+
 /* TWITCH */
 
 .twitch-preview {

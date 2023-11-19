@@ -44,7 +44,7 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
         $message .= "Message:<br/>$mess";
         $headers = 'From: MMI LAN 2023 <noreply@mmilan-toulon.fr>' . "\r<br/>" .
             'X-Mailer: PHP/' . phpversion();
-    
+
         mail($to, $subject, $message, $headers);
 
     }
@@ -96,6 +96,9 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
                     </a>
                     <a href="https://x.com/MMI_LAN_2023?s=20">
                         <img src="./assets/img/twitter-logo.svg" alt="">
+                    </a>
+                    <a href="https://discord.gg/uPFq4y96vy" class="social-link" target="_blank">
+                        <img src="./assets/img/discord-logo.svg" alt="discord-logo" class="social-img" />
                     </a>
                 </div>
             </div>

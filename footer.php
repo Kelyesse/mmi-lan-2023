@@ -13,8 +13,10 @@
     <footer>
         <div class="footer-container">
             <div class="logo-area">
-                <img id="full-logo" src="assets/img/logo.svg" alt="">
-                <img id="responsive-logo" src="assets/img/logo-responsive.png" alt="">
+                <a href="./index.php">
+                    <img id="full-logo" src="assets/img/logo.svg" alt="">
+                    <img id="responsive-logo" src="assets/img/logo-responsive.png" alt="">
+                </a>
             </div>
 
             <section class="footer-social-media">
