@@ -171,9 +171,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             echo '    <div>';
             echo '        <div id="team-desc">';
             echo '            <div>';
-            echo '                <h2>' . $infoTeamAccount['TeamName'] . '</h2>';
-            echo '                <p>' . $infoTeamAccount['TeamDesc'] . '</p>';
-            echo '                <button>Modifier</button>';
+            echo '                <h2>Equipe : ' . $infoTeamAccount['TeamName'] . '</h2>';
+            echo '                <p>Description : ' . $infoTeamAccount['TeamDesc'] . '</p>';
+            // echo '                <button>Modifier la description</button>';
             echo '            </div>';
             echo '            <div id="li-mate">';
             echo '                <h3>Membres de l’équipe</h3>';
@@ -184,8 +184,8 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                     echo '    <p class="mate">' . $teamMember['PlayerPseudo'] . '</p>';
 
                     // Si le membre est déjà accepté dans l'équipe
-                    if ($teamMember['BelongStatus'] == 'validé') {
-                        echo '    <button class="remove-mate" data-userid="' . $teamMember['PlayerId'] . '">Supprimer';
+                    if ($teamMember['BelongStatus'] == 'validé' && $teamMember['BelongRole'] !== 'Créateur') {
+                        echo '    <button class="remove-mate" data-userid="' . $teamMember['PlayerId'] . '"><span class="remove-mate-text">Supprimer</span>';
                         echo '        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">';
                         echo '            <path d="M1 0.5L9 8.5M9 0.5L1 8.5" stroke="#CD0C75" />';
                         echo '        </svg>';
@@ -210,16 +210,14 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             echo '                </div>';
             echo '            </div>';
             echo '        </div>';
-            echo '        <div>';
-
-            echo '            <img src="./assets/img/' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe" style="width: 400px; height: 400px;">';
-
+            echo '        <div class="team-logo">';
+            echo '            <img src="./assets/img/' . $infoTeamAccount['TeamLogo'] . '" alt="logo de l\'équipe">';
+            echo '        <button id="change-logo">Changer le logo</button>';
             echo '        </div>';
             echo '    </div>';
             if ($creator) {
                 echo '    <div id="buttons">';
                 echo '    <button id="remove-team">Supprimer mon équipe</button>';
-                echo '        <button id="change-logo">Changer le logo</button>';
                 echo '    </div>';
             }
             echo '</section>';
@@ -271,7 +269,8 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <form action="./delete_member.php" method="post">
                     <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
                     <input type="hidden" id="userIdToDelete" name="userId" value="">
-                    <input id="submit" type="submit" value="Oui, supprimer cette personne" class="confirmYes" name='delete_member'>
+                    <input id="submit" type="submit" value="Oui, supprimer cette personne" class="confirmYes"
+                        name='delete_member'>
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
             </div>
@@ -314,7 +313,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         </div>
     </main>
     <?php
-        include('footer.php');
+    include('footer.php');
     ?>
     <!-- Accepter membre de l'équipe -->
     <div id="acceptMemberPopup" class="popup">
@@ -392,7 +391,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <label for="confirmPassword">Confirmer le mot de passe :</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
                 <input type="submit" value="Enregistrer les modifications" class="confirmYes">
-                <input type="hidden" name="userId" value='<? /*php echo $_SESSION['PlayerId']; */ ?>'>
+                <input type="hidden" name="userId" value='<? /*php echo $_SESSION['PlayerId']; */?>'>
             </form>
             <p id="config-psw">
                 Le mot de passe doit contenir : <br>
