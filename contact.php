@@ -35,19 +35,17 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
 
     // Envoyer le mail
     if ($email && $mess) {
-        //A remplacer par php mailer
-        $destinataire = "heliosmartin123@gmail.com";
-        $sujet = "Nouveau message de contact depuis votre site";
-
-        $message = "Nom: $nom\n";
-        $message .= "Prénom: $prenom\n";
-        $message .= "Adresse e-mail: $email\n";
-        $message .= "Objet: $obj\n";
-        $message .= "Message:\n$mess";
-
-        $headers = "From: $email\r\n";
-        $headers .= "Reply-To: $email\r\n";
-        mail($destinataire, $sujet, $message, $headers);
+        $to = "matthieu.biville@hotmail.fr";
+        $subject = "Nouveau message de contact depuis votre site";
+        $message = "Nom: $nom<br/>";
+        $message .= "Prénom: $prenom<br/>";
+        $message .= "Adresse e-mail: $email<br/>";
+        $message .= "Objet: $obj<br/>";
+        $message .= "Message:<br/>$mess";
+        $headers = 'From: MMI LAN 2023 <noreply@mmilan-toulon.fr>' . "\r<br/>" .
+            'X-Mailer: PHP/' . phpversion();
+    
+        mail($to, $subject, $message, $headers);
 
     }
 }
@@ -102,7 +100,7 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
                 </div>
             </div>
             <div id="form">
-                <form action="" method="post">
+                <form action="contact.php" method="post">
                     <div>
                         <div class="double-inp">
                             <input type="text" placeholder="Entrer votre nom" name="nom" required>
