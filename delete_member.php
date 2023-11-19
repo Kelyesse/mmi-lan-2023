@@ -5,15 +5,15 @@ session_start();
 // Vérifie si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_member'])) {
     // Assurez-vous que les champs nécessaires sont présents
-    if (isset($_POST['teamId']) && isset($_POST['userId'])) {
+    if (isset($_GET['teamId']) && isset($_POST['userId'])) {
         // Récupérer les valeurs du formulaire
-        $teamId = $_POST['teamId'];
+        $teamId = $_GET['teamId'];
         $userId = $_POST['userId'];
 
         // Traitement pour supprimer un membre de l'équipe
         require_once('connexionbdd.php');
-        $db->query('DELETE FROM belongteam WHERE TeamId = ' . $teamId . ' AND PlayerId = ' . $userId);
-
+        $req = $db->prepare('DELETE FROM belongteam WHERE TeamId = ' . $teamId . ' AND PlayerId = ' . $userId);
+        $req->execute();
         // Redirection vers la page d'origine avec un message de succès
         $_SESSION['success_message'] = 'Le membre a été supprimé avec succès de l\'équipe.';
         header('Location: mon_compte.php');
@@ -29,3 +29,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_member'])) {
     header('Location: mon_compte.php');
     exit();
 }
+?>
