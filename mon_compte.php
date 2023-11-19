@@ -34,6 +34,7 @@ try {
                 if (!is_null($teamAccount) && $teamAccount["BelongStatus"] == "validé") {
                     // Si la personne est dans une équipe
                     $team = true;
+                    $teamId = $teamAccount['TeamId'];
 
                     // Récupérer les informations de l'équipe
                     $infoTeamAccount = $db->query('SELECT * FROM team WHERE TeamId = ' . $teamAccount['TeamId'] . ';')->fetch(PDO::FETCH_ASSOC);
@@ -266,8 +267,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         <div id="confirmationPopup" class="popup">
             <div class="popup-content">
                 <p>Etes-vous sûr de vouloir supprimer cette personne de l'équipe ?</p>
-                <form action="./delete_member.php" method="post">
-                    <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
+                <form action="./delete_member.php?teamId=<?php echo $teamId?>" method="post">
                     <input type="hidden" id="userIdToDelete" name="userId" value="">
                     <input id="submit" type="submit" value="Oui, supprimer cette personne" class="confirmYes"
                         name='delete_member'>
@@ -280,8 +280,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         <div id="popUpTeam" class="popup">
             <div class="popup-content">
                 <p>Etes-vous sûr de vouloir supprimer votre équipe ?</p>
-                <form action="./delete_team.php" method="post">
-                    <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
+                <form action="delete_team.php?teamId=<?php echo $teamId?>" method="post">
                     <input id="submit" type="submit" value="Oui, supprimer mon équipe" class="confirmYes">
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
@@ -319,7 +318,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
     <div id="acceptMemberPopup" class="popup">
         <div class="popup-content">
             <p>Voulez-vous accepter cette personne dans l'équipe ?</p>
-            <form action="./accept_member.php" method="post">
+            <form action="accept_member.php?teamId=<?php echo $teamId?>" method="post">
                 <input type="hidden" id="userIdToAccept" name="userId" value="">
                 <input id="submit" type="submit" value="Oui, accepter" class="confirmYes" name='accept_member'>
             </form>
@@ -331,7 +330,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
     <div id="rejectMemberPopup" class="popup">
         <div class="popup-content">
             <p>Voulez-vous refuser cette personne dans l'équipe ?</p>
-            <form action="./reject_member.php" method="post">
+            <form action="reject_member.php?teamId=<?php echo $teamId?>" method="post">
                 <input type="hidden" id="userIdToReject" name="userId" value="">
                 <input id="submit" type="submit" value="Oui, refuser" class="confirmYes" name='reject_member'>
             </form>
@@ -405,7 +404,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
     <div id="editTeamNamePopup" class="popup">
         <div class="popup-content">
             <p>Modifier le nom de l'équipe</p>
-            <form action="traitement_teamname.php" method="post">
+            <form action="traitement_teamname.php?teamId=<?php echo $teamId?>" method="post">
                 <label for="newTeamName">Nouveau nom d'équipe :</label>
                 <input type="text" id="newTeamName" name="newTeamName" required>
                 <label for="newDescTeam">Nouvel description de l'équipe :</label>

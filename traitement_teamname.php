@@ -4,9 +4,10 @@ session_start();
 // Vérifier si la requête provient d'une méthode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifier si les données du formulaire sont présentes
-    if (isset($_POST['teamId']) && isset($_POST['newTeamName'])) {
-        $teamId = $_POST['teamId'];
+    if (isset($_GET['teamId']) && isset($_POST['newTeamName']) && isset($_POST['newDescName'])) {
+        $teamId = $_GET['teamId'];
         $newTeamName = $_POST['newTeamName'];
+        $newDescName = $_POST['newDescName'];
 
         if (!preg_match('/^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/', $newTeamName)) {
             $_SESSION['error_message'] = 'Le nom d\'équipe doit contenir uniquement des lettres minuscules et majuscules.';
@@ -19,9 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             // Mettre à jour le nom de l'équipe dans la table team
-            $updateQuery = 'UPDATE team SET TeamName = :newTeamName WHERE TeamId = :teamId';
-            $stmt = $pdo->prepare($updateQuery);
+            $updateQuery = 'UPDATE team SET TeamName = :newTeamName, TeamDesc = :newTeamDesc WHERE TeamId = :teamId';
+            $stmt = $db->prepare($updateQuery);
             $stmt->bindParam(':newTeamName', $newTeamName, PDO::PARAM_STR);
+            $stmt->bindParam(':newTeamDesc', $newDescName, PDO::PARAM_STR);
             $stmt->bindParam(':teamId', $teamId, PDO::PARAM_INT);
 
             // Exécuter la requête
@@ -51,3 +53,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: mon_compte.php');
     exit();
 }
+
+?>
