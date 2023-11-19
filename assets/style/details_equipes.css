@@ -69,9 +69,10 @@ main #equipe p {
     text-align: center;
 }
 main #membres {
+    width: 1139px;
+    height: 596px;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    justify-content: center;
     gap: 75px;
 }
 main #membres .membre {
@@ -79,15 +80,15 @@ main #membres .membre {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 250px;
+    width: 295px;
 }
-main #membres #membre img {
+main #membres .membre img {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 295px;
+    max-height: 295px;
 }
 main #membres .membre h2 {
     color: var(--text-contenu, #fff);
@@ -140,6 +141,7 @@ main #membres .equipe_incomplete {
     border: 1px solid var(--text-contenu, #fff);
     padding: 20px 10px;
     margin: 20px 10px;
+    width: 295px;
 }
 main #membres .equipe_incomplete h2 {
     width: 225px;
