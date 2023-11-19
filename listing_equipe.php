@@ -22,7 +22,7 @@ session_start();
 
     <main>
         <div class="en-tete">
-            <h1>LES EQUIPES DE LA MMI LAN</h1>
+            <h1>LES ÉQUIPES DE LA MMI LAN</h1>
             <div class="tri-container">
                 <div class="tri-btn">
                     <div class="tri-text">Trier</div>
@@ -83,15 +83,14 @@ session_start();
         ?>
 
         <section class="bottom-section">
-            <?php 
+            <?php
             if (!isset($_SESSION['PlayerId'])) {
                 echo '<div class="bottom">';
                 echo "<h2>Vous n'avez pas d'équipe ?</h2>";
                 $onclickInscription = 'window.location.href="inscription.php"';
-                echo '<button class="bottom-bouton" onclick='.$onclickInscription.'>Inscrivez-vous</button>';
+                echo '<button class="bottom-bouton" onclick=' . $onclickInscription . '>Inscrivez-vous</button>';
                 echo '</div>';
-            }
-            else{
+            } else {
                 require_once('connexionbdd.php');
                 $req = $db->prepare('SELECT PlayerStatus FROM player WHERE PlayerId=?');
                 $req->execute([$_SESSION['PlayerId']]);
@@ -106,11 +105,11 @@ session_start();
                         break;
                     }
                 }
-                if($status == "Participant" && !$dansequipe){
+                if ($status == "Participant" && !$dansequipe) {
                     echo '<div class="bottom">';
                     echo '<h2>Vous voulez créer votre équipe ?</h2>';
                     $onclickEquipe = 'window.location.href="creation_equipe.php"';
-                    echo '<button class="bottom-bouton" onclick='.$onclickEquipe.'>Créer une équipe</button>';
+                    echo '<button class="bottom-bouton" onclick=' . $onclickEquipe . '>Créer une équipe</button>';
                     echo '</div>';
                 }
             }
