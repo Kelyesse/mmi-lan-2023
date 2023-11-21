@@ -278,7 +278,7 @@ function generateId(array $excludeArray)
                             </div>
                             <div class="simple-inp">
                                 <select name="favjeu" id="select_jeu">
-                                    <option value="">Choississez votre jeu favoris</option>
+                                    <option value="">Choisissez votre jeu favori</option>
                                     <option value="Track Mania: Nation Forever">Track Mania: Nation Forever</option>
                                     <option value="Geo Guesseur">Geo Guesseur</option>
                                     <option value="Overwatch">Overwatch</option>
