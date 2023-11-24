@@ -74,7 +74,6 @@ main #membres {
     max-width: 90%;
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 75px;
 }
 main #membres .membre {
@@ -144,7 +143,6 @@ main #membres .equipe_incomplete {
     border: 1px solid var(--text-contenu, #fff);
     padding: 20px 10px;
     margin: 20px 10px;
-    width: 295px;
 }
 main #membres .equipe_incomplete h2 {
     width: 225px;
@@ -291,6 +289,7 @@ main #retour .retour {
     main #membres {
         flex-direction: column;
         margin-bottom: 100px;
+        align-items: center;
     }
     main #membres .membre {
         max-width: 100%;
@@ -440,6 +439,7 @@ main #retour .retour {
         color: var(--text-contenu, #fff);
         text-align: center;
         /* Desktop/h2-desktop */
+        width: 225px;
         font-family: Montserrat;
         font-size: 32px;
         font-style: normal;
