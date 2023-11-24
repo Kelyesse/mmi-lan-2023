@@ -425,7 +425,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <label for="newTeamName">Nouveau nom d'équipe :</label>
                 <input type="text" id="newTeamName" name="newTeamName" required>
                 <label for="newDescTeam">Nouvel description de l'équipe :</label>
-                <input type="textarea" id="newDescTeam" name="newDescName" required>
+                <input type="textarea" id="newDescTeam" name="newTeamDesc" required>
                 <input id="submit" type="submit" value="Enregistrer les modifications" class="confirmYes">
             </form>
             <button class="confirmNo">Annuler</button>
