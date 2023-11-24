@@ -146,7 +146,6 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                         echo '  <img src="./assets/img/nom.svg" alt="">';
                         echo "  <p>Nom de l'équipe: " . $infoTeamAccount['TeamName'] . "</p>";
                         echo '  <button id="editTeamName" onclick="openModal(\'editTeamName\')">';
-                        echo '      <!-- Remplace le texte par un SVG -->';
                         echo '      <img src="./assets/img/modif_icon.svg" alt="Modifier">';
                         echo '  </button>';
                         echo '</div>';
@@ -284,8 +283,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <p>Etes-vous sûr de vouloir supprimer cette personne de l'équipe ?</p>
                 <form action="./delete_member.php?teamId=<?php echo $teamId ?>" method="post">
                     <input type="hidden" id="userIdToDelete" name="userId" value="">
-                    <input id="submit" type="submit" value="Oui, supprimer cette personne" class="confirmYes"
-                        name='delete_member'>
+                    <input id="submit" type="submit" value="Oui, supprimer cette personne" class="confirmYes" name='delete_member'>
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
             </div>
@@ -363,6 +361,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <label for="logoFile">Sélectionner un fichier logo (png, jpg, jpeg)</label>
                 <input type="file" name="logoFile" id="logoFile" accept=".png, .jpg, .jpeg" required>
                 <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
+                <input type="hidden" name="teamName" value="<?php echo $infoTeamAccount['TeamName']; ?>">
                 <input id="submit" type="submit" value="Changer le logo" class="confirmYes">
             </form>
             <button class="confirmNo">Annuler</button>
@@ -407,7 +406,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 <label for="confirmPassword">Confirmer le mot de passe :</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
                 <input type="submit" value="Enregistrer les modifications" class="confirmYes">
-                <input type="hidden" name="userId" value='<? /*php echo $_SESSION['PlayerId']; */?>'>
+                <input type="hidden" name="userId" value='<? /*php echo $_SESSION['PlayerId']; */ ?>'>
             </form>
             <p id="config-psw">
                 Le mot de passe doit contenir : <br>

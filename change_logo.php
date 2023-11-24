@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['logoFile']) && isset($_POST['teamId'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['logoFile']) && isset($_POST['teamId']) && isset($_POST['teamName'])) {
     // Se connecter à la base de données
     require_once('connexionbdd.php');
 
@@ -26,11 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['logoFile']) && isset
         $fileExtension = pathinfo($_FILES['logoFile']['name'], PATHINFO_EXTENSION);
 
         // Générer un nom de fichier unique avec le nom de l'équipe
-        $teamName = $teamData['TeamName'];
-        $newFileName = strtolower(str_replace(' ', '_', $teamName)) . '_logo.' . $fileExtension;
+        $newFileName = strtolower(str_replace(' ', '_', $_POST['teamName'])) . '_logo.' . $fileExtension;
 
         // Déplacer le fichier téléchargé vers le dossier
-        $targetPath = $uploadDirectory.$newFileName;
+        $targetPath = $uploadDirectory . $newFileName;
         move_uploaded_file($_FILES['logoFile']['tmp_name'], $targetPath);
 
         // Mettre à jour le chemin du logo dans la base de données
@@ -53,4 +52,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['logoFile']) && isset
     header('Location: ./mon_compte.php');
     exit();
 }
-?>
