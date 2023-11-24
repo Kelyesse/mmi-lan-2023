@@ -258,7 +258,6 @@ main {
     background: #cd0c75;
 }
 
-.faq-button::before,
 .carpooling-button::before {
     content: "";
     position: absolute;
