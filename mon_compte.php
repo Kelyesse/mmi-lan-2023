@@ -81,7 +81,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon compte</title>
+    <title>Mon compte - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/mon_compte.css">
     <link rel="stylesheet" href="./assets/style/footer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -217,7 +217,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             $req = $db->prepare('SELECT BelongRole FROM belongteam WHERE PlayerId=?');
             $req->execute([$_SESSION['PlayerId']]);
             $role = $req->fetch()['BelongRole'];
-            if($role == "Créateur"){
+            if ($role == "Créateur") {
                 echo '        <button id="change-logo">Changer le logo</button>';
             }
             echo '        </div>';
@@ -226,8 +226,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
                 echo '    <div id="buttons">';
                 echo '    <button id="remove-team">Supprimer mon équipe</button>';
                 echo '    </div>';
-            }
-            else{
+            } else {
                 echo '    <div id="buttons">';
                 echo '    <button id="leave-team">Quitter mon équipe</button>';
                 echo '    </div>';
@@ -237,7 +236,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             $req = $db->prepare('SELECT PlayerStatus FROM player WHERE PlayerId=?');
             $req->execute([$_SESSION['PlayerId']]);
             $status = $req->fetch()['PlayerStatus'];
-            if($status == 'Participant'){
+            if ($status == 'Participant') {
                 echo '<section id="no-team">';
                 echo '    <div>';
                 echo '        <button><a href="./creation_equipe.php">Créer une équipe</a></button>';
@@ -283,7 +282,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         <div id="confirmationPopup" class="popup">
             <div class="popup-content">
                 <p>Etes-vous sûr de vouloir supprimer cette personne de l'équipe ?</p>
-                <form action="./delete_member.php?teamId=<?php echo $teamId?>" method="post">
+                <form action="./delete_member.php?teamId=<?php echo $teamId ?>" method="post">
                     <input type="hidden" id="userIdToDelete" name="userId" value="">
                     <input id="submit" type="submit" value="Oui, supprimer cette personne" class="confirmYes"
                         name='delete_member'>
@@ -296,8 +295,9 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         <div id="popUpTeam" class="popup">
             <div class="popup-content">
                 <p>Etes-vous sûr de vouloir supprimer votre équipe ?</p>
-                <span><i style="color: red">Supprimer votre équipe revient à priver votre équipiers d'une équipe</i></span>
-                <form action="delete_team.php?teamId=<?php echo $teamId?>" method="post">
+                <span><i style="color: red">Supprimer votre équipe revient à priver votre équipiers d'une
+                        équipe</i></span>
+                <form action="delete_team.php?teamId=<?php echo $teamId ?>" method="post">
                     <input id="submit" type="submit" value="Oui, supprimer mon équipe" class="confirmYes">
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
@@ -308,7 +308,8 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         <div id="popUpAccount" class="popup">
             <div class="popup-content">
                 <p>Etes-vous sûr de vouloir supprimer votre compte ?</p>
-                <span><i style="color: red">Supprimer votre compte revient à priver votre équipiers d'une équipe et vos passagers d'un covoiturage</i></span>
+                <span><i style="color: red">Supprimer votre compte revient à priver votre équipiers d'une équipe et vos
+                        passagers d'un covoiturage</i></span>
                 <form action="./delete_account.php" method="post">
                     <input id="submit" type="submit" value="Oui, supprimer mon compte" class="confirmYes">
                 </form>
@@ -320,7 +321,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
         <div id="popUpLeave" class="popup">
             <div class="popup-content">
                 <p>Etes-vous sûr de vouloir quitter votre équipe ?</p>
-                <form action="./quit_team.php?teamId=<?php echo $teamId?>" method="post">
+                <form action="./quit_team.php?teamId=<?php echo $teamId ?>" method="post">
                     <input id="submit" type="submit" value="Oui, quitter mon équipe" class="confirmYes">
                 </form>
                 <button class="confirmNo">Non, j’ai changé d’avis</button>
@@ -334,7 +335,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
     <div id="acceptMemberPopup" class="popup">
         <div class="popup-content">
             <p>Voulez-vous accepter cette personne dans l'équipe ?</p>
-            <form action="accept_member.php?teamId=<?php echo $teamId?>" method="post">
+            <form action="accept_member.php?teamId=<?php echo $teamId ?>" method="post">
                 <input type="hidden" id="userIdToAccept" name="userId" value="">
                 <input id="submit" type="submit" value="Oui, accepter" class="confirmYes" name='accept_member'>
             </form>
@@ -346,7 +347,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
     <div id="rejectMemberPopup" class="popup">
         <div class="popup-content">
             <p>Voulez-vous refuser cette personne dans l'équipe ?</p>
-            <form action="reject_member.php?teamId=<?php echo $teamId?>" method="post">
+            <form action="reject_member.php?teamId=<?php echo $teamId ?>" method="post">
                 <input type="hidden" id="userIdToReject" name="userId" value="">
                 <input id="submit" type="submit" value="Oui, refuser" class="confirmYes" name='reject_member'>
             </form>
@@ -420,7 +421,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
     <div id="editTeamNamePopup" class="popup">
         <div class="popup-content">
             <p>Modifier le nom de l'équipe</p>
-            <form action="traitement_teamname.php?teamId=<?php echo $teamId?>" method="post">
+            <form action="traitement_teamname.php?teamId=<?php echo $teamId ?>" method="post">
                 <label for="newTeamName">Nouveau nom d'équipe :</label>
                 <input type="text" id="newTeamName" name="newTeamName" required>
                 <label for="newDescTeam">Nouvel description de l'équipe :</label>

@@ -15,7 +15,7 @@
     require_once("connexionbdd.php");
     $teamId = $_GET['teamId'];
     echo getTeamName($teamId, $db);
-    ?>
+    ?> - MMI LAN
   </title>
 </head>
 

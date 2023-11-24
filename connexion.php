@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil | Connexion</title>
+    <title>Accueil - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/connexion.css" />
     <script>
         document.addEventListener('DOMContentLoaded', function () {
