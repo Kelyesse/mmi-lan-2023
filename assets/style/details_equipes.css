@@ -10,6 +10,7 @@ body {
 }
 
 main {
+    width: 90%;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -69,10 +70,10 @@ main #equipe p {
     text-align: center;
 }
 main #membres {
-    width: 1139px;
-    height: 596px;
+    max-width: 90%;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 75px;
 }
 main #membres .membre {
@@ -80,6 +81,7 @@ main #membres .membre {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    max-width: 30%;
     width: 295px;
 }
 main #membres .membre img {
@@ -87,7 +89,7 @@ main #membres .membre img {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 295px;
+    max-width: 100%;
     max-height: 295px;
 }
 main #membres .membre h2 {
@@ -219,10 +221,10 @@ main #retour .retour {
     position: absolute;
     top: 250px;
     left: 20px;
-    display: inline-flex;
+    display: none;
     padding: 10px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     border-radius: 5px;
     background: var(--fond-pages, #151515);
     box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 0.25),
@@ -284,6 +286,15 @@ main #retour .retour {
     display: none;
 }
 
+@media screen and (max-width: 700px) {
+    main #membres {
+        flex-direction: column;
+        margin-bottom: 100px;
+    }
+    main #membres .membre {
+        max-width: 100%;
+    }
+}
 @media screen and (min-width: 912px) {
     * {
         box-sizing: border-box;
@@ -358,7 +369,7 @@ main #retour .retour {
         max-width: 800px;
         display: flex;
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
         gap: 30px;
         margin: 20px 20px;
     }
