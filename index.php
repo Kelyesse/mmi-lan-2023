@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil | MMI LAN</title>
+    <title>Accueil - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/index.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
@@ -91,10 +91,9 @@
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
 
-                    <a href="#" class="navigation-button faq-button">
+                    <a href="./faq.php" class="navigation-button faq-button">
                         <div class="button-label">
-                            <h3>Bientôt disponible...</h3>
-                            <!-- <h3>FAQ</h3> -->
+                            <h3>FAQ</h3>
                         </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>

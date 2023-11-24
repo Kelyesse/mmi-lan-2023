@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions légales</title>
+    <title>Mentions légales - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/Mentionslegales.css">
     <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
