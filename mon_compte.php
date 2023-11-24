@@ -423,9 +423,11 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <p>Modifier le nom de l'équipe</p>
             <form action="traitement_teamname.php?teamId=<?php echo $teamId ?>" method="post">
                 <label for="newTeamName">Nouveau nom d'équipe :</label>
-                <input type="text" id="newTeamName" name="newTeamName" required>
+                <input type="text" id="newTeamName" name="newTeamName"
+                    value="<?php echo htmlspecialchars($infoTeamAccount['TeamName']); ?>" required>
                 <label for="newDescTeam">Nouvel description de l'équipe :</label>
-                <input type="textarea" id="newDescTeam" name="newTeamDesc" required>
+                <input type="textarea" id="newDescTeam" name="newTeamDesc"
+                    value="<?php echo htmlspecialchars($infoTeamAccount['TeamDesc']); ?>" required>
                 <input id="submit" type="submit" value="Enregistrer les modifications" class="confirmYes">
             </form>
             <button class="confirmNo">Annuler</button>
