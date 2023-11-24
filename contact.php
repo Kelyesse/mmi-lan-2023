@@ -56,7 +56,7 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/contact.css">
     <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
