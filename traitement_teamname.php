@@ -4,10 +4,10 @@ session_start();
 // Vérifier si la requête provient d'une méthode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifier si les données du formulaire sont présentes
-    if (isset($_GET['teamId']) && isset($_POST['newTeamName']) && isset($_POST['newDescName'])) {
+    if (isset($_GET['teamId']) && isset($_POST['newTeamName']) && isset($_POST['newTeamDesc'])) {
         $teamId = $_GET['teamId'];
         $newTeamName = $_POST['newTeamName'];
-        $newDescName = $_POST['newDescName'];
+        $newDescName = $_POST['newTeamDesc'];
 
         if (!preg_match('/^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/', $newTeamName)) {
             $_SESSION['error_message'] = 'Le nom d\'équipe doit contenir uniquement des lettres minuscules et majuscules.';
