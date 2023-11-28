@@ -1,0 +1,215 @@
+@import url(./variables.css);
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: var(--background-color);
+}
+body #main {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+}
+body #main .titre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+body #main .titre h1 {
+    color: var(--text-contenu, #fff);
+    background: none;
+    /* Desktop/h1-desktop */
+    font-family: var(--accent-font);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 0;
+}
+body #main #trajets {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+body #main #trajets .trajet {
+    display: flex;
+    width: 270px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 5px;
+}
+body #main #trajets .trajet a {
+    text-align: center;
+    text-decoration: none;
+    /* Desktop/p-desktop */
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 143.75% */
+}
+body #main #trajets .trajet a button {
+    display: flex;
+    width: 180px;
+    height: 60px;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 5px;
+    color: var(--text-CAT, #fff);
+}
+body #main #trajets .trajet h3 {
+    color: var(--text-contenu, #fff);
+    text-align: center;
+    /* Desktop/h3-desktop */
+    font-family: var(--accent-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+body #main #trajets .trajet h4 {
+    color: var(--text-contenu, #fff);
+    text-align: center;
+    /* Desktop/h4-desktop */
+    font-family: var(--accent-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+body #main #trajets .trajet p {
+    color: var(--text-contenu, #fff);
+    /* Desktop/p-desktop */
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 143.75% */
+}
+body #main #trajets .trajet-pris {
+    border: 2px solid var(--tertiary-color);
+}
+body #main #trajets .trajet-pris button {
+    background: var(--tertiary-color);
+}
+body #main #trajets .trajet-a-prendre {
+    border: 2px solid var(--text-contenu, #fff);
+}
+body #main #trajets .trajet-a-prendre button {
+    background: var(--primary-color);
+}
+body #main #trajets .trajet-complet {
+    background: var(--text-contenu--10, rgba(255, 255, 255, 0.1));
+}
+body #main #trajets .trajet-complet button {
+    background: var(--background-color);
+}
+body #alertQuitterTrajet {
+    position: absolute;
+    z-index: 99999;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    display: inline-flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: var(--background-color);
+    box-shadow: 4px 4px 30px 0px rgba(255, 255, 255, 0.15),
+        -4px -4px 30px 0px rgba(255, 255, 255, 0.15);
+}
+body #alertQuitterTrajet p {
+    color: var(--text-contenu, #fff);
+    /* Desktop/p-desktop */
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 143.75% */
+}
+body #alertQuitterTrajet a {
+    /* Desktop/p-desktop */
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 143.75% */
+    text-decoration: none;
+}
+body #alertQuitterTrajet a button {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    color: var(--text-CAT, #fff);
+    border: none;
+}
+body #alertQuitterTrajet a .quitter-trajet {
+    background: var(--primary-color);
+}
+body #alertQuitterTrajet a .changer-avis {
+    background: var(--fond-nav, #212121);
+}
+
+@media screen and (min-width: 1024px) {
+    body #main {
+        align-items: flex-start;
+        gap: 60px;
+        padding: 50px;
+    }
+    body #main .titre {
+        align-items: flex-start;
+        gap: 40px;
+        text-align: left;
+    }
+    body #main .titre h1 {
+        background: none;
+        font-size: 40px;
+    }
+    body #main #trajets {
+        width: 1240px;
+        row-gap: 40px;
+    }
+    body #main #trajets .trajet {
+        width: 500px;
+        padding: 20px;
+        gap: 20px;
+    }
+    body #alertQuitterTrajet {
+        left: 30%;
+        right: 30%;
+        padding: 20px;
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+  body #main #trajets .trajet {
+    gap: 0;
+  }
+}
