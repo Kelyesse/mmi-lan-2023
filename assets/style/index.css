@@ -258,15 +258,6 @@ main {
     background: #cd0c75;
 }
 
-.carpooling-button::before {
-    content: "";
-    position: absolute;
-    width: 439px;
-    height: 105px;
-    background-color: gray;
-    z-index: 0;
-}
-
 .faq-button {
     background: #febc11;
 }

@@ -83,10 +83,9 @@
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
 
-                    <a href="#" class="navigation-button carpooling-button">
+                    <a href="./covoiturage.php" class="navigation-button carpooling-button">
                         <div class="button-label">
-                            <!-- <h3>Co-voiturage</h3> -->
-                            <h3>Bientôt disponible...</h3>
+                            <h3>Co-voiturage</h3>
                         </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
