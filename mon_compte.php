@@ -362,7 +362,7 @@ $teamIdValue = isset($teamAccount['TeamId']) ? $teamAccount['TeamId'] : '';
             <form action="./change_logo.php" method="post" enctype="multipart/form-data">
                 <label for="logoFile">Sélectionner un fichier logo (png, jpg, jpeg)</label>
                 <input type="file" name="logoFile" id="logoFile" accept=".png, .jpg, .jpeg" required>
-                <input type="hidden" name="teamId" value="<?php echo $teamAccount['TeamId']; ?>">
+                <input type="hidden" name="teamId" value="<?php echo $teamId; ?>">
                 <input id="submit" type="submit" value="Changer le logo" class="confirmYes">
             </form>
             <button class="confirmNo">Annuler</button>
