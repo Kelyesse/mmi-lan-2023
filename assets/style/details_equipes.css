@@ -46,6 +46,7 @@ main #equipe .photo_equipe .illu_1 {
     top: -30px;
     width: 50px;
     flex-shrink: 0;
+
 }
 main #equipe .photo_equipe img {
     width: 100px;
