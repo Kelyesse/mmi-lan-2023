@@ -29,7 +29,7 @@ $mail = new PHPMailer(true);
 
 $settings = array(
     'instance_email_host' => 'smtp.hostinger.com',
-    'instance_url' => 'http://localhost:8888/mmi-lan-2023/',
+    'instance_url' => 'https://mmilan-toulon.fr/',
     'instance_email_port' => 465,
     'instance_email_username' => 'noreply@mmilan-toulon.fr',
     'instance_email_password' => '4v9n)@:}:Y1@@*]WUNae',
