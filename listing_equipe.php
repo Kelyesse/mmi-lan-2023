@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Equipes</title>
+    <title>Liste des Equipes - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/style_listing_equipe.css">
     <link rel="stylesheet" href="./assets/style/variables.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -22,7 +22,7 @@ session_start();
 
     <main>
         <div class="en-tete">
-            <h1>LES EQUIPES DE LA MMI LAN</h1>
+            <h1>LES ÉQUIPES DE LA MMI LAN</h1>
             <div class="tri-container">
                 <div class="tri-btn">
                     <div class="tri-text">Trier</div>
@@ -83,18 +83,37 @@ session_start();
         ?>
 
         <section class="bottom-section">
-            <?php if (!isset($_SESSION['PlayerId'])) {
-                echo "<div class='bottom'>
-                <h2>Vous n'avez pas d'équipe ?</h2>
-                <button class='bottom-bouton' onclick='window.location.href='inscription.php''>Inscrivez-vous</button>
-            </div>";
+            <?php
+            if (!isset($_SESSION['PlayerId'])) {
+                echo '<div class="bottom">';
+                echo "<h2>Vous n'avez pas d'équipe ?</h2>";
+                $onclickInscription = 'window.location.href="inscription.php"';
+                echo '<button class="bottom-bouton" onclick=' . $onclickInscription . '>Inscrivez-vous</button>';
+                echo '</div>';
+            } else {
+                require_once('connexionbdd.php');
+                $req = $db->prepare('SELECT PlayerStatus FROM player WHERE PlayerId=?');
+                $req->execute([$_SESSION['PlayerId']]);
+                $status = $req->fetch()['PlayerStatus'];
+                $req = $db->prepare("SELECT PlayerId FROM belongteam");
+                $req->execute();
+                $equipierId = $req->fetchAll();
+                $dansequipe = false;
+                foreach ($equipierId as $equipier) {
+                    if (in_array($_SESSION['PlayerId'], $equipier)) {
+                        $dansequipe = true;
+                        break;
+                    }
+                }
+                if ($status == "Participant" && !$dansequipe) {
+                    echo '<div class="bottom">';
+                    echo '<h2>Vous voulez créer votre équipe ?</h2>';
+                    $onclickEquipe = 'window.location.href="creation_equipe.php"';
+                    echo '<button class="bottom-bouton" onclick=' . $onclickEquipe . '>Créer une équipe</button>';
+                    echo '</div>';
+                }
             }
             ?>
-            <div class="bottom">
-                <h2>Vous voulez créer votre équipe ?</h2>
-                <button class="bottom-bouton" onclick='window.location.href="creation_equipe.php"'>Créer une
-                    équipe</button>
-            </div>
         </section>
 
         <!--JQUERY pour survol de la galerie-->

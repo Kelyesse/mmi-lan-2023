@@ -79,20 +79,20 @@ function showReturnButtons($teamId, $db)
     if ($teamId > 1) {
         echo '<a href="details_equipes.php?teamId=' . ($teamId - 1) . '"><img src="./assets/img/fleche_gauche.svg" alt="flèche gauche"></a>';
     } else {
-        echo '<a href="details_equipes.php?teamId=' . $nbEquipe . '"><img src="./assets/img/fleche_gauche.svg" alt="flèche gauche"></a>';
+        echo '<a href="details_equipes.php?teamId=' . ($nbEquipe + 1) . '"><img src="./assets/img/fleche_gauche.svg" alt="flèche gauche"></a>';
     }
     echo ' <a class="retour" href="listing_equipe.php">Retour au listing des équipes</a> '; //A MODIFIER
     if ($teamId < $nbEquipe) {
         echo '<a href="details_equipes.php?teamId=' . ($teamId + 1) . '"><img src="./assets/img/fleche_droite.svg" alt="flèche gauche"></a>';
     } else {
-        echo '<a href="details_equipes.php?teamId=1"><img src="./assets/img/fleche_droite.svg" alt="flèche gauche"></a>';
+        echo '<a href="details_equipes.php?teamId=2"><img src="./assets/img/fleche_droite.svg" alt="flèche gauche"></a>';
     }
 }
 
 function showAlertForm()
 {
     if (isset($_GET['rejoindreEquipe'])) {
-        echo '<script>blocAlert = document.getElementById("alertRejoindreEquipe"); blocAlert.style.display = "block";</script>';
+        echo '<script>blocAlert = document.getElementById("alertRejoindreEquipe"); blocAlert.style.display = "flex";</script>';
     }
 }
 ?>

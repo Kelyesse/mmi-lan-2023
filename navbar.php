@@ -55,7 +55,7 @@ if (isset($_SESSION['PlayerId'])) {
                 <div class="rubrique_content"><a href="#" class="bouton_rubrique" id="planning-button">Planning</a>
                 </div>
                 <div class="rubrique_content">
-                    <a href="#" class="bouton_rubrique" id="covoit-button">Covoiturage</a>
+                    <a href="covoiturage.php" class="bouton_rubrique" id="covoit-button">Covoiturage</a>
                 </div>
             </div>
             <div class="contact"><a href="./contact.php" id="bouton_contact">Contact</a></div>

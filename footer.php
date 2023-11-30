@@ -13,8 +13,10 @@
     <footer>
         <div class="footer-container">
             <div class="logo-area">
-                <img id="full-logo" src="assets/img/logo.svg" alt="">
-                <img id="responsive-logo" src="assets/img/logo-responsive.png" alt="">
+                <a href="./index.php">
+                    <img id="full-logo" src="assets/img/logo.svg" alt="">
+                    <img id="responsive-logo" src="assets/img/logo-responsive.png" alt="">
+                </a>
             </div>
 
             <section class="footer-social-media">
@@ -53,7 +55,7 @@
 
             <div class="footer-links">
                 <a href="./reglement.php">Règlement</a>
-                <a href="#faq-coming-soon" id="faq-coming-soon">FAQ</a>
+                <a href="./faq.php">FAQ</a>
                 <a href="./contact.php">Contact</a>
                 <a href="./RGPD.php">RGPD</a>
                 <a href="./Mentionslegales.php">Mention légales</a>
@@ -64,5 +66,4 @@
             <div class="footer-copyright-text">Copyrights © 2023 - IUT Toulon - BUT MMI</div>
         </div>
     </footer>
-    <script src=" assets/js/footerComingSoon.js"></script>
 </body>

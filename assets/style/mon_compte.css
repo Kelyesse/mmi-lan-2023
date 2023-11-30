@@ -141,6 +141,7 @@ section {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 #team-desc {
@@ -189,11 +190,16 @@ section {
 }
 
 #team div img {
-    width: 400px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
     object-fit: contain;
 }
-
+.team-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
 #no-team div {
     display: flex;
     gap: 20px;
@@ -294,7 +300,7 @@ input[type="submit"] {
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     #player-info > img {
         width: 120px;
         height: 120px;
@@ -308,9 +314,17 @@ input[type="submit"] {
         width: 88vw;
     }
 
+    #team > div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
     #team div img {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
     }
 
     h1 {
@@ -326,5 +340,18 @@ input[type="submit"] {
     #no-team,
     #account {
         align-items: center;
+    }
+    .remove-mate-text {
+        display: none;
+    }
+    .team-logo {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .popup-content {
+        width: 65vw;
     }
 }

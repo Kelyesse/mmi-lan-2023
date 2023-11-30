@@ -4,61 +4,80 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require('assets/libs/PHPMailer-master/src/PHPMailer.php');
+require('assets/libs/PHPMailer-master/src/SMTP.php');
+require('assets/libs/PHPMailer-master/src/Exception.php');
+
+$errorMessage = '';
+$messageSent = false;
+
 if (isset($_POST["email"]) && isset($_POST["mess"])) {
     $email = $_POST["email"];
     $mess = $_POST["mess"];
+    $nom = $_POST["nom"] ?? '';
+    $prenom = $_POST["prenom"] ?? '';
+    $obj = $_POST["obj"] ?? '';
 
-    if (isset($_POST["nom"])) {
-        $nom = $_POST["nom"];
-        if (!preg_match("/^[a-zA-Z]+$/", $nom)) {
-            $nom = false;
+    if (empty($nom) || !preg_match("/^[\p{L} \-'’]+$/u", $nom)) {
+    $errorMessage .= 'Nom invalide.<br>';
+}
+if (empty($prenom) || !preg_match("/^[\p{L} \-'’]+$/u", $prenom)) {
+    $errorMessage .= 'Prénom invalide.<br>';
+}
+if (empty($obj) || !preg_match("/^[\p{L} \-'’0-9]+$/u", $obj)) {
+    $errorMessage .= 'Objet invalide.<br>';
+}
+if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errorMessage .= 'Adresse e-mail invalide.<br>';
+}
+if (empty($mess)) {
+    $errorMessage .= 'Message vide.<br>';
+}
+
+
+    if (empty($errorMessage)) {
+        $mail = new PHPMailer(true);
+        try {
+            // Paramètres de PHPMailer
+            $mail->isSMTP();
+            $mail->Host       = 'mail63.lwspanel.com'; // notre adresse de serveur smtp à mettre ici
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'mmi-lan@kourdourli.pro'; // notre adresse e-mail smtp
+            $mail->Password   = 'eV8*gWBwyP-!n9x'; // notre mdp smtp
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = 465;
+
+            $mail->setFrom('mmi-lan@kourdourli.pro', 'mmi-lan-2023');
+            $mail->addAddress('mmi.lan.dev2023@gmail.com'); // adresse de réception des messages peut être à changer
+            $mail->addReplyTo($email, $nom);
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Nouveau message de contact depuis votre site';
+            $mail->Body    = "Nom: $nom<br/>Prénom: $prenom<br/>Email: $email<br/>Objet: $obj<br/>Message:<br/>$mess";
+            $mail->AltBody = strip_tags("Nom: $nom\nPrénom: $prenom\nEmail: $email\nObjet: $obj\nMessage:\n$mess");
+
+            $mail->send();
+            $messageSent = true;
+        } catch (Exception $e) {
+            $errorMessage = "Message non envoyé. Erreur : {$mail->ErrorInfo}";
         }
-    }
-    if (isset($_POST["prenom"])) {
-        $prenom = $_POST["prenom"];
-        if (!preg_match("/^[a-zA-Z]+$/", $prenom)) {
-            $prenom = false;
-        }
-    }
-    if (isset($_POST["obj"])) {
-        $obj = $_POST["obj"];
-        if (!preg_match("/^[a-zA-Z]+$/", $obj)) {
-            $obj = false;
-        }
-    }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $email = false;
-    }
-    if (!preg_match("/^[a-zA-Z]+$/", $mess)) {
-        $mess = false;
-    }
-
-    // Envoyer le mail
-    if ($email && $mess) {
-        //A remplacer par php mailer
-        $destinataire = "heliosmartin123@gmail.com";
-        $sujet = "Nouveau message de contact depuis votre site";
-
-        $message = "Nom: $nom\n";
-        $message .= "Prénom: $prenom\n";
-        $message .= "Adresse e-mail: $email\n";
-        $message .= "Objet: $obj\n";
-        $message .= "Message:\n$mess";
-
-        $headers = "From: $email\r\n";
-        $headers .= "Reply-To: $email\r\n";
-        mail($destinataire, $sujet, $message, $headers);
-
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/contact.css">
     <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -66,9 +85,7 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
 
 <body>
     <header>
-        <?php
-        include('navbar.php');
-        ?>
+        <?php include('navbar.php'); ?>
     </header>
     <main>
         <div id="title">
@@ -99,10 +116,19 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
                     <a href="https://x.com/MMI_LAN_2023?s=20">
                         <img src="./assets/img/twitter-logo.svg" alt="">
                     </a>
+                    <a href="https://discord.gg/uPFq4y96vy" class="social-link" target="_blank">
+                        <img src="./assets/img/discord-logo.svg" alt="discord-logo" class="social-img" />
+                    </a>
                 </div>
             </div>
             <div id="form">
-                <form action="" method="post">
+                <?php if ($messageSent): ?>
+                <p>Votre message a été envoyé avec succès.</p>
+                <?php else: ?>
+                <?php if (!empty($errorMessage)): ?>
+                <p><?php echo $errorMessage; ?></p>
+                <?php endif; ?>
+                <form action="contact.php" method="post">
                     <div>
                         <div class="double-inp">
                             <input type="text" placeholder="Entrer votre nom" name="nom" required>
@@ -118,7 +144,7 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
                         </div>
                         <div class="simple-inp">
                             <textarea id="" cols="1000" rows="10" placeholder="Votre message..." name="mess"
-                                id="message"></textarea>
+                                id="message" required></textarea>
                         </div>
                         <div id="sub">
                             <a class="rgpd-link" href="./RGPD.php">En nous contactant, vous acceptez le RGPD.</a>
@@ -126,12 +152,11 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
                         </div>
                     </div>
                 </form>
+                <?php endif; ?>
             </div>
         </section>
     </main>
-    <?php
-    include('./footer.php');
-    ?>
+    <?php include('./footer.php'); ?>
 </body>
 
 </html>

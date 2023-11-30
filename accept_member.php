@@ -1,43 +1,36 @@
 <?php
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Vérifier si les données du formulaire sont présentes
-    if (isset($_POST['userId']) && isset($_POST['teamId'])) {
-        $userId = $_POST['userId'];
-        $teamId = $_POST['teamId'];
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['PlayerId'])) {
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    header('Location: connection.php');
+    exit();
+}
 
-        // Connectez-vous à la base de données et effectuez les mises à jour nécessaires
-        require_once('connexionbdd.php');
+// Inclure la configuration de la base de données
+include_once('config.php');
 
-        try {
-            // Mettre à jour le statut d'appartenance de l'utilisateur dans la table belongteam
-            $updateQuery = 'UPDATE belongteam SET BelongStatus = "validé" WHERE PlayerId = :userId AND TeamId = :teamId';
-            $stmt = $db->prepare($updateQuery);
-            $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-            $stmt->bindParam(':teamId', $teamId, PDO::PARAM_INT);
+// Récupérer l'ID du joueur connecté
+$loggedInPlayerId = $_SESSION['PlayerId'];
 
-            if ($stmt->execute()) {
-                // Mise à jour réussie
-                $_SESSION['success_message'] = 'Le membre a été accepté dans l\'équipe.';
-            } else {
-                // Échec de la mise à jour
-                $_SESSION['error_message'] = 'Erreur lors de l\'acceptation du membre dans l\'équipe.';
-            }
-        } catch (Exception $e) {
-            $_SESSION['error_message'] = 'Une erreur est survenue lors de la mise à jour de la base de données.';
-        }
+// Récupérer l'ID du joueur à rejeter à partir du formulaire
+$userIdToAccept = isset($_POST['userId']) ? $_POST['userId'] : null;
 
-        // Rediriger vers la page mon_compte.php
-        header('Location: mon_compte.php');
-        exit();
-    } else {
-        $_SESSION['error_message'] = 'Données du formulaire manquantes.';
-        header('Location: mon_compte.php');
-        exit();
-    }
-} else {
-    $_SESSION['error_message'] = 'Accès non autorisé.';
+// Vérifier si l'ID du joueur à rejeter est défini
+if (!$userIdToAccept) {
+    // Rediriger vers une page d'erreur si l'ID du joueur n'est pas défini
+    $_SESSION['error_message'] = 'Une erreur s\'est produite lors du rejet du membre de l\'équipe.';
     header('Location: mon_compte.php');
     exit();
 }
+
+require_once('connexionbdd.php');
+// Supprimer le membre de l'équipe en mettant à jour la table belongteam
+$deleteMemberQuery = $db->prepare('UPDATE belongteam SET BelongStatus=? WHERE TeamId=? AND PlayerId=?');
+$deleteMemberQuery->execute(['validé', $_GET['teamId'], $userIdToAccept ]);
+
+// Rediriger vers la page de compte (ou une autre page appropriée)
+header('Location: mon_compte.php');
+exit();
+?>

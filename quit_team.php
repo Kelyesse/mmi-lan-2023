@@ -15,7 +15,7 @@ include_once('config.php');
 $playerId = $_SESSION['PlayerId'];
 
 // Récupérer l'ID de l'équipe à partir du formulaire
-$teamId = isset($_POST['teamId']) ? $_POST['teamId'] : null;
+$teamId = isset($_GET['teamId']) ? $_GET['teamId'] : null;
 
 // Vérifier si l'ID de l'équipe est défini
 if (!$teamId) {
@@ -25,6 +25,7 @@ if (!$teamId) {
     exit();
 }
 
+require_once('connexionbdd.php');
 // Vérifier si le joueur appartient à l'équipe
 $checkBelongTeam = $db->prepare('SELECT * FROM belongteam WHERE TeamId = :teamId AND PlayerId = :playerId');
 $checkBelongTeam->bindParam(':teamId', $teamId, PDO::PARAM_INT);

@@ -4,8 +4,8 @@ session_start();
 // Vérifier si la requête provient d'une méthode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifier si les données du formulaire sont présentes
-    if (isset($_POST['userId']) && isset($_POST['newEmail'])) {
-        $userId = $_POST['userId'];
+    if (isset($_POST['newEmail'])) {
+        $userId = $_SESSION['PlayerId'];
         $newEmail = $_POST['newEmail'];
 
         // Vérifier si l'adresse e-mail est valide
@@ -20,13 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             // Mettre à jour l'adresse e-mail de l'utilisateur dans la table player
-            $updateQuery = 'UPDATE player SET PlayerEmail = :newEmail WHERE PlayerId = :userId';
-            $stmt = $pdo->prepare($updateQuery);
-            $stmt->bindParam(':newEmail', $newEmail, PDO::PARAM_STR);
-            $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+            $updateQuery = 'UPDATE player SET PlayerEmail =? WHERE PlayerId =?';
+            $stmt = $db->prepare($updateQuery);
 
             // Exécuter la requête
-            if ($stmt->execute()) {
+            if ($stmt->execute([$newEmail, $userId])) {
                 // Mise à jour réussie
                 $_SESSION['success_message'] = 'L\'adresse e-mail a été mise à jour avec succès.';
             } else {
@@ -43,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Données du formulaire manquantes
         $_SESSION['error_message'] = 'Données du formulaire manquantes.';
-        header('Location: mon_compte.php');
+        header('Location: mon_compte.php?playerId='.$userId);
         exit();
     }
 } else {
@@ -52,3 +50,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: mon_compte.php');
     exit();
 }
+?>
