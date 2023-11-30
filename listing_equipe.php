@@ -77,6 +77,8 @@ session_start();
         {
             if (isset($_GET['rejoindreEquipe'])) {
                 echo '<script>blocAlert = document.getElementById("alertRejoindreEquipe"); blocAlert.style.display = "block";</script>';
+                echo '<script> document.getElementById("alertRejoindreEquipe").scrollIntoView({ behavior: "smooth", block: "start" });</script>';
+
             }
         }
         showAlertForm();

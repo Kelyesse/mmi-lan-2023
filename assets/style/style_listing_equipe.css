@@ -1,7 +1,8 @@
+@import url(./variables.css);
 body {
     background-color: #000;
     color: #fff;
-    font-family: "Overused Grotesk", sans-serif;
+    font-family: var(--accent-font);
     margin: 0;
     padding: 0;
 }
@@ -67,10 +68,11 @@ h1 {
 
 .liste_equipe {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    row-gap: 60px;
+    padding: 20px 0px;
     justify-content: flex-start;
+    place-items: center;
 }
 
 .liste_vide {
@@ -83,25 +85,30 @@ h1 {
 /* Styles des vignettes d'équipes */
 
 .vignette {
-    max-width: 295px;
-    border: 1px solid #fff;
+    max-width: 325px;
+    width: 100%;
     border-radius: 5px;
-    padding: 20px 0;
     background: rgba(0, 0, 0, 0.6);
     text-align: center;
     color: #fff;
     list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.vignette:hover {
+    box-shadow: 0px 0px 31.04px 0.96px var(--primary-color);
+}
+.team-infos {
+    max-width: 270px;
+}
+.team-full {
+    background-color: rgb(44, 44, 44);
 }
 
-.vignette_pleine {
-    max-width: 295px;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 20px 0;
-    background: rgba(255, 255, 255, 0.1);
-    text-align: center;
-    color: #fff;
-    list-style: none;
+.team-incomplete {
+    border: 1px solid rgb(44, 44, 44);
 }
 
 #img-logo- {
@@ -111,41 +118,64 @@ h1 {
     margin-top: 0px;
 }
 
-.vignette a.team-link,
-.vignette_pleine a.team-link {
+.vignette a.team-link {
+    position: absolute;
+    top: 0;
+    left: 0;
     text-decoration: none;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 900;
     display: block;
     width: 100%;
     height: 100%;
-    padding: 20px 0px;
 }
 
 .vignette div.Joueur {
+    color: #ffffff;
     font-weight: 900;
     font-size: 16px;
 }
 
-.vignette_pleine div.Joueur {
-    font-weight: 900;
-    font-size: 16px;
-}
-
-.vignette img,
-.vignette_pleine img {
+.vignette img {
     width: 190px;
     height: 190px;
     border-radius: 100%;
-    padding: 40px;
+    margin: 40px 40px 0px;
+}
+
+.team-name {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+}
+.vignette .team-separator {
+    display: block;
+    background-color: var(--primary-color);
+    height: 2px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.team-full .team-separator {
+    background-color: var(--accent-color-1);
+}
+
+.joueurs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90px;
+    margin-top: 10px;
 }
 
 .vignette ul {
     padding-left: 0;
     list-style: none;
 }
-.vignette_pleine ul {
+.vignette ul {
     padding-left: 0;
     list-style: none;
 }
@@ -154,7 +184,7 @@ h1 {
     margin: 5px;
 }
 
-.vignette_pleine ul li {
+.vignette ul li {
     margin: 5px;
 }
 
@@ -166,26 +196,23 @@ h1 {
     background-color: #2f1d62;
     color: #fff;
     margin-top: 10px;
+    margin-bottom: 20px;
     border: none;
     font-weight: 400;
     font-size: 16px;
     cursor: pointer;
 }
-.vignette_pleine button {
-    width: 165px;
-    height: 43px;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #000000;
-    color: #fff;
-    margin-top: 10px;
-    border: 1px solid white;
-    font-weight: 400;
-    font-size: 16px;
-    cursor: pointer;
+.team-incomplete button {
+    position: relative;
+    z-index: 100;
 }
 
-.vignette button:hover {
+.team-full button {
+    background-color: #000000;
+    border: 1px solid white;
+}
+
+.team-incomplete button:hover {
     background-color: #211644;
     transition: 0.5s;
 }
@@ -193,8 +220,9 @@ h1 {
 /* Styles pour le pop up equipe */
 #alertRejoindreEquipe {
     position: absolute;
+    z-index: 500;
+    left: 25%;
     top: 50%;
-    left: 50%;
     display: none;
     padding: 20px;
     flex-direction: column;
@@ -207,7 +235,7 @@ h1 {
 #alertRejoindreEquipe h2 {
     color: var(--text-contenu, #fff);
     /* Desktop/h2-desktop */
-    font-family: Montserrat;
+    font-family: var(--body-font);
     font-size: 32px;
     font-style: normal;
     font-weight: 900;
@@ -223,7 +251,7 @@ h1 {
     padding: 20px;
     align-items: flex-start;
     gap: 10px;
-    background-color: var(--fond-pages, #151515);
+    background-color: var(--background-color);
     color: white;
     margin: auto;
 }
@@ -236,6 +264,7 @@ h1 {
 }
 #alertRejoindreEquipe form div input {
     display: flex;
+    cursor: pointer;
     border: none;
     padding: 10px;
     justify-content: center;
@@ -244,7 +273,7 @@ h1 {
     border-radius: 5px;
     color: var(--text-CAT, #fff);
     /* Desktop/p-desktop */
-    font-family: Montserrat;
+    font-family: var(--body-font);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -252,9 +281,18 @@ h1 {
 }
 #alertRejoindreEquipe form div input[type="button"] {
     background: var(--fond-nav, #212121);
+    transition: 0.25s;
 }
+#alertRejoindreEquipe form div input[type="button"]:hover {
+    background-color: #323232;
+}
+
 #alertRejoindreEquipe form div input[type="submit"] {
     background: var(--primaire, #2f1d62);
+    transition: 0.25s;
+}
+#alertRejoindreEquipe form div input[type="submit"]:hover {
+    opacity: 0.75;
 }
 
 /* Styles généraux pour les images */
