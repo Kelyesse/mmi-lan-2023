@@ -107,22 +107,20 @@ h1 {
 #img-logo- {
     width: 190px;
     height: 190px;
-    border-radius: 100%;
+    border-radius: 100px;
     margin-top: 0px;
 }
 
-.vignette a.NomTeam {
+.vignette a.team-link,
+.vignette_pleine a.team-link {
     text-decoration: none;
     color: #fff;
     font-size: 24px;
     font-weight: 900;
-}
-
-.vignette_pleine a.NomTeam {
-    text-decoration: none;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 900;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
 }
 
 .vignette div.Joueur {
@@ -135,21 +133,14 @@ h1 {
     font-size: 16px;
 }
 
-.vignette img {
-    width: 190px;
-    height: 190px;
-    border-radius: 100px;
-    margin-top: 20px;
-    padding: 40px;
-}
-
+.vignette img,
 .vignette_pleine img {
     width: 190px;
     height: 190px;
-    border-radius: 100px;
-    margin-top: 20px;
+    border-radius: 100%;
     padding: 40px;
 }
+
 .vignette ul {
     padding-left: 0;
     list-style: none;
@@ -178,6 +169,7 @@ h1 {
     border: none;
     font-weight: 400;
     font-size: 16px;
+    cursor: pointer;
 }
 .vignette_pleine button {
     width: 165px;
@@ -190,6 +182,7 @@ h1 {
     border: 1px solid white;
     font-weight: 400;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .vignette button:hover {
