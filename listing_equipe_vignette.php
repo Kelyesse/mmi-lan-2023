@@ -57,32 +57,38 @@ if (count($equipes) > 0) {
 
         if ($nbr == 3) {
             $image = $equipe['TeamLogo'];
-            echo '<li class="vignette_pleine" id="' . $equipe['TeamId'] . '">';
-            echo '<a class="team-link" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
+            echo '<li class="vignette team-full" id="' . $equipe['TeamId'] . '">';
+            echo '<a class="team-link" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '"></a>';
 
             echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
             echo '<div class="team-infos">';
 
-            echo $equipe['TeamName'];
-            echo '<p>-</p>';
-
+            echo '<div class="team-name">' . $equipe['TeamName'] . "</div>";
+            echo '<span class="team-separator"></span>';
+            echo '<div class="joueurs">';
             foreach ($joueurs as $pseudo) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
             }
             echo '</div>';
+            echo '</div>';
 
-            echo '<button class="button_full">Equipe complète</button></a></li>';
+            echo '<button class="button_full">Equipe complète</button></li>';
         } else {
             $image = $equipe['TeamLogo'];
-            echo '<li class="vignette" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
+            echo '<li class="vignette team-incomplete" id="' . $equipe['TeamId'] . '">';
+            echo '<a class="team-link" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '"></a>';
+
             echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
-            echo $equipe['TeamName'];
-            echo '<p>-</p>';
+            echo '<div class="team-infos">';
 
-
+            echo '<div class="team-name">' . $equipe['TeamName'] . "</div>";
+            echo '<span class="team-separator"></span>';
+            echo '<div class="joueurs">';
             foreach ($joueurs as $pseudo) {
-                echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div></a>';
+                echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
             }
+            echo '</div>';
+            echo '</div>';
             if (isset($_SESSION['PlayerId'])) {
                 $idj = $_SESSION['PlayerId'];
                 $valeur = $db->prepare("SELECT TeamId FROM belongteam WHERE PlayerId=? AND BelongStatus=?");
@@ -94,6 +100,8 @@ if (count($equipes) > 0) {
                 if (empty($resultat && $userrole == "Participant")) {
                     echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId=' . $equipe['TeamId'] . '&rejoindreEquipe=true&teamName=' . $equipe['TeamName'] . '"\'>Rejoindre l\'équipe</button></li>';
                 }
+            } else {
+                echo '</li>';
             }
 
         }
