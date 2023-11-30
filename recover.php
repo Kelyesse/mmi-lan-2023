@@ -28,12 +28,12 @@ function generateRandomString($length = 30)
 $mail = new PHPMailer(true);
 
 $settings = array(
-    'instance_email_host' => 'mail63.lwspanel.com',
+    'instance_email_host' => 'smtp.hostinger.com',
     'instance_url' => 'http://localhost:8888/mmi-lan-2023/',
     'instance_email_port' => 465,
-    'instance_email_username' => 'mmi-lan@kourdourli.pro',
-    'instance_email_password' => 'eV8*gWBwyP-!n9x',
-    'instance_email_support' => 'ekourdourli@gmail.com',
+    'instance_email_username' => 'noreply@mmilan-toulon.fr',
+    'instance_email_password' => '4v9n)@:}:Y1@@*]WUNae',
+    'instance_email_support' => 'elyessekourdourli@gmail.com',
     'name' => 'mmi-lan-2023',
 );
 
