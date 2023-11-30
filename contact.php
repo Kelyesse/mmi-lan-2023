@@ -46,15 +46,15 @@ if (empty($mess)) {
         try {
             // Paramètres de PHPMailer
             $mail->isSMTP();
-            $mail->Host       = 'mail63.lwspanel.com'; // notre adresse de serveur smtp à mettre ici
+            $mail->Host       = 'smtp.hostinger.com'; // notre adresse de serveur smtp à mettre ici
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'mmi-lan@kourdourli.pro'; // notre adresse e-mail smtp
-            $mail->Password   = 'eV8*gWBwyP-!n9x'; // notre mdp smtp
+            $mail->Username   = 'noreply@mmilan-toulon.fr'; // notre adresse e-mail smtp
+            $mail->Password   = '4v9n)@:}:Y1@@*]WUNae'; // notre mdp smtp
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;
 
-            $mail->setFrom('mmi-lan@kourdourli.pro', 'mmi-lan-2023');
-            $mail->addAddress('mmi.lan.dev2023@gmail.com'); // adresse de réception des messages peut être à changer
+            $mail->setFrom('noreply@mmilan-toulon.fr', 'mmi-lan-2023');
+            $mail->addAddress('mmilan.com2023@gmail.com'); // adresse de réception des messages peut être à changer
             $mail->addReplyTo($email, $nom);
 
             $mail->isHTML(true);
