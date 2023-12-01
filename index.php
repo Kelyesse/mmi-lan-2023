@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil | MMI LAN</title>
+    <title>Accueil - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/index.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
@@ -83,18 +83,16 @@
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
 
-                    <a href="#" class="navigation-button carpooling-button">
+                    <a href="./covoiturage.php" class="navigation-button carpooling-button">
                         <div class="button-label">
-                            <!-- <h3>Co-voiturage</h3> -->
-                            <h3>Bientôt disponible...</h3>
+                            <h3>Co-voiturage</h3>
                         </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
 
-                    <a href="#" class="navigation-button faq-button">
+                    <a href="./faq.php" class="navigation-button faq-button">
                         <div class="button-label">
-                            <h3>Bientôt disponible...</h3>
-                            <!-- <h3>FAQ</h3> -->
+                            <h3>FAQ</h3>
                         </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
@@ -125,29 +123,42 @@
             </div>
             <ul class="social-medias-listing">
                 <li class="social-wrapper">
-                    <a href="https://www.tiktok.com/@mmi.lan" class="social-link" target="_blank">
-                        <img src="./assets/img/tiktok-logo.svg" alt="Logo TikTok" class="social-img" />
+                    <a href="https://www.tiktok.com/@mmi.lan" class="social-link tiktok-link" target="_blank">
+                        <img id="tiktok-logo" src="./assets/img/tiktok-logo.svg" alt="Logo TikTok" class="social-img" />
+                        <img id="tiktok-logo-hover" src="./assets/img/tiktok-logo-hover.svg" alt="tiktok-logo-hover"
+                            class="social-img" />
                     </a>
                 </li>
 
                 <li class="social-wrapper">
-                    <a href="https://www.instagram.com/mmi_lan2023/" class="social-link" target="_blank">
-                        <img src="./assets/img/insta-logo.svg" alt="instagram-logo" class="social-img" />
+                    <a href="https://www.instagram.com/mmi_lan2023/" class="social-link instagram-link" target="_blank">
+                        <img id="instagram-logo" src="./assets/img/insta-logo.svg" alt="instagram-logo"
+                            class="social-img" />
+                        <img id="instagram-logo-hover" src="./assets/img/insta-logo-hover.svg"
+                            alt="instagram-logo-hover" class="social-img" />
                     </a>
                 </li>
                 <li class="social-wrapper">
-                    <a href="https://www.youtube.com/@MMILAN_2023" class="social-link" target="_blank">
-                        <img src=" ./assets/img/yt-logo.svg" alt="youtube-logo" class="social-img" />
+                    <a href="https://www.youtube.com/@MMILAN_2023" class="social-link ytb-link" target="_blank">
+                        <img id="ytb-logo" src=" ./assets/img/yt-logo.svg" alt="youtube-logo" class="social-img" />
+                        <img id="ytb-logo-hover" src="./assets/img/ytb-logo-hover.svg" alt="ytb-logo-hover"
+                            class="social-img" />
                     </a>
                 </li>
                 <li class="social-wrapper">
-                    <a href="https://twitter.com/MMI_LAN_2023" class="social-link" target="_blank">
-                        <img src="./assets/img/twitter-logo.svg" alt="twitter-logo" class="social-img" />
+                    <a href="https://twitter.com/MMI_LAN_2023" class="social-link twitter-link" target="_blank">
+                        <img id="twitter-logo" src="./assets/img/twitter-logo.svg" alt="twitter-logo"
+                            class="social-img" />
+                        <img id="twitter-logo-hover" src="./assets/img/twitter-logo-hover.svg" alt="twitter-logo-hover"
+                            class="social-img" />
                     </a>
                 </li>
                 <li class="social-wrapper">
-                    <a href="https://discord.gg/uPFq4y96vy" class="social-link" target="_blank">
-                        <img src="./assets/img/discord-logo.svg" alt="discord-logo" class="social-img" />
+                    <a href="https://discord.gg/uPFq4y96vy" class="social-link discord-link" target="_blank">
+                        <img id="discord-logo" src="./assets/img/discord-logo.svg" alt="discord-logo"
+                            class="social-img" />
+                        <img id="discord-logo-hover" src="./assets/img/discord-logo-hover.svg" alt="discord-logo-hover"
+                            class="social-img" />
                     </a>
                 </li>
             </ul>

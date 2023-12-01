@@ -23,6 +23,7 @@ try {
             "Brawlhalla",
             "Counter-Strike 2",
             "Rocket League",
+            "Fortnite"
         ];
         if (!empty($missingFields)) {
             $errorMessage = 'Veuillez remplir tous les champs obligatoires.';
@@ -51,6 +52,8 @@ try {
                         $errorMessage = 'Le type de setup sélectionné n\'est pas valide.';
                     }
                 }
+            } else {
+                $errorMessage = 'Veuillez sélectionner votre setup et votre jeu favoris.';
             }
 
             // Validation des autres champs
@@ -163,7 +166,7 @@ function generateId(array $excludeArray)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <title>Inscription - MMI LAN</title>
     <link rel="stylesheet" href="./assets/style/inscription.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
@@ -210,25 +213,28 @@ function generateId(array $excludeArray)
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/profil.svg" alt="">
-                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo" value="<?php
-                                if (isset($pseudo)) {
-                                    echo $pseudo;
-                                }
-                                ?>">
+                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo"
+                                    value="<?php
+                                    if (isset($pseudo)) {
+                                        echo $pseudo;
+                                    }
+                                    ?>">
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/mail.svg" alt="">
-                                <input type="email" placeholder="Entrer votre email" name="email" id="email" value="<?php
-                                if (isset($email)) {
-                                    echo $email;
-                                }
-                                ?>">
+                                <input type="email" placeholder="Entrer votre email" name="email" id="email"
+                                    value="<?php
+                                    if (isset($email)) {
+                                        echo $email;
+                                    }
+                                    ?>">
                             </div>
                             <div class="double-inp">
                                 <div>
                                     <img src="./assets/img/cadena.svg" alt="">
                                     <input type="password" placeholder="Entrer votre mot de passe" name="mdp1"
-                                        class="mdp" value="<?php
+                                        class="mdp"
+                                        value="<?php
                                         if (isset($mdp1)) {
                                             echo $mdp1;
                                         }
@@ -236,11 +242,12 @@ function generateId(array $excludeArray)
                                 </div>
                                 <div>
                                     <img src="./assets/img/cadena.svg" alt="">
-                                    <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" value="<?php
-                                    if (isset($mdp2)) {
-                                        echo $mdp2;
-                                    }
-                                    ?>" class="mdp">
+                                    <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2"
+                                        value="<?php
+                                        if (isset($mdp2)) {
+                                            echo $mdp2;
+                                        }
+                                        ?>" class="mdp">
                                 </div>
                             </div>
                             <p id="config-psw">
@@ -249,12 +256,11 @@ function generateId(array $excludeArray)
                             </p>
                             <div class="radio">
                                 <div>
-                                    <input type="radio" name="role" class="role" value="Participant" id="participant"
-                                        <?php
-                                        if (isset($role) && $role == 'Participant') {
-                                            echo 'checked';
-                                        }
-                                        ?>>
+                                    <input type="radio" name="role" class="role" value="Participant" id="participant" <?php
+                                    if (isset($role) && $role == 'Participant') {
+                                        echo 'checked';
+                                    }
+                                    ?>>
                                     <label for="participant">Participant</label><br>
                                 </div>
                                 <div>
@@ -278,13 +284,14 @@ function generateId(array $excludeArray)
                             </div>
                             <div class="simple-inp">
                                 <select name="favjeu" id="select_jeu">
-                                    <option value="">Choississez votre jeu favoris</option>
+                                    <option value="">Choisissez votre jeu favori</option>
                                     <option value="Track Mania: Nation Forever">Track Mania: Nation Forever</option>
                                     <option value="Geo Guesseur">Geo Guesseur</option>
                                     <option value="Overwatch">Overwatch</option>
                                     <option value="Brawlhalla">Brawlhalla</option>
                                     <option value="CS GO">CS GO</option>
                                     <option value="Rocket League">Rocket League</option>
+                                    <option value="Fortnite">Fortnite</option>
                                 </select>
                             </div>
                             <div id="end-form">
@@ -358,8 +365,6 @@ function generateId(array $excludeArray)
     <script>
         const errorMessageDiv = document.querySelector('.error-message')
         const submitBtn = document.querySelector('#submit')
-
-
     </script>
     <script src="./assets/js/countDown.js"></script>
     <script src="./assets/js/role_participant.js"></script>

@@ -30,12 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['logoFile']) && isset
         $newFileName = strtolower(str_replace(' ', '_', $teamName)) . '_logo.' . $fileExtension;
 
         // Déplacer le fichier téléchargé vers le dossier
-        $targetPath = $uploadDirectory . $newFileName;
+        $targetPath = $uploadDirectory.$newFileName;
         move_uploaded_file($_FILES['logoFile']['tmp_name'], $targetPath);
 
         // Mettre à jour le chemin du logo dans la base de données
         $updateQuery = $db->prepare('UPDATE team SET TeamLogo = ? WHERE TeamId = ?');
-        $updateQuery->execute([$targetPath, $teamId]);
+        $updateQuery->execute([$newFileName, $teamId]);
 
         // Rediriger avec un message de succès
         $_SESSION['success_message'] = 'Logo changé avec succès !';
@@ -53,3 +53,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['logoFile']) && isset
     header('Location: ./mon_compte.php');
     exit();
 }
+?>

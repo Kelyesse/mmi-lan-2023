@@ -64,6 +64,7 @@ h1 {
     color: white;
     background-color: #151515;
     border: none;
+    font-family: var(--body-font);
 }
 .style-input:focus {
     outline: none; /* Ajout de cette ligne pour supprimer l'outline par défaut */
