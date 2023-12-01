@@ -1,4 +1,5 @@
 @import url(./variables.css);
+
 body {
     background-color: #000;
     color: #fff;
@@ -12,6 +13,7 @@ main {
     margin: 0 auto;
     position: relative;
 }
+
 .en-tete {
     text-align: left;
     padding: 20px;
@@ -77,8 +79,10 @@ h1 {
 
 .liste_vide {
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+    justify-content: center;
+    /* Centre horizontalement */
+    align-items: center;
+    /* Centre verticalement */
     font-size: 30px;
 }
 
@@ -96,13 +100,17 @@ h1 {
     display: flex;
     align-items: center;
     flex-direction: column;
+    transition: 0.3s ease-in-out;
 }
+
 .vignette:hover {
-    box-shadow: 0px 0px 31.04px 0.96px var(--primary-color);
+    box-shadow: 0px 0px 31.04px 5px var(--primary-color);
 }
+
 .team-infos {
     max-width: 270px;
 }
+
 .team-full {
     background-color: rgb(44, 44, 44);
 }
@@ -151,6 +159,7 @@ h1 {
     align-items: center;
     padding: 0px 20px;
 }
+
 .vignette .team-separator {
     display: block;
     background-color: var(--primary-color);
@@ -159,6 +168,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 }
+
 .team-full .team-separator {
     background-color: var(--accent-color-1);
 }
@@ -175,6 +185,7 @@ h1 {
     padding-left: 0;
     list-style: none;
 }
+
 .vignette ul {
     padding-left: 0;
     list-style: none;
@@ -202,6 +213,7 @@ h1 {
     font-size: 16px;
     cursor: pointer;
 }
+
 .team-incomplete button {
     position: relative;
     z-index: 100;
@@ -232,6 +244,7 @@ h1 {
     box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 0.25),
         -4px -4px 40px 0px rgba(0, 0, 0, 0.25);
 }
+
 #alertRejoindreEquipe h2 {
     color: var(--text-contenu, #fff);
     /* Desktop/h2-desktop */
@@ -241,9 +254,11 @@ h1 {
     font-weight: 900;
     line-height: normal;
 }
+
 #alertRejoindreEquipe form {
     padding-top: 20px;
 }
+
 #alertRejoindreEquipe form textarea {
     display: flex;
     width: 715px;
@@ -255,6 +270,7 @@ h1 {
     color: white;
     margin: auto;
 }
+
 #alertRejoindreEquipe form div {
     padding-top: 20px;
     display: flex;
@@ -262,6 +278,7 @@ h1 {
     align-items: center;
     align-self: stretch;
 }
+
 #alertRejoindreEquipe form div input {
     display: flex;
     cursor: pointer;
@@ -277,12 +294,15 @@ h1 {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 23px; /* 143.75% */
+    line-height: 23px;
+    /* 143.75% */
 }
+
 #alertRejoindreEquipe form div input[type="button"] {
     background: var(--fond-nav, #212121);
     transition: 0.25s;
 }
+
 #alertRejoindreEquipe form div input[type="button"]:hover {
     background-color: #323232;
 }
@@ -291,6 +311,7 @@ h1 {
     background: var(--primaire, #2f1d62);
     transition: 0.25s;
 }
+
 #alertRejoindreEquipe form div input[type="submit"]:hover {
     opacity: 0.75;
 }
