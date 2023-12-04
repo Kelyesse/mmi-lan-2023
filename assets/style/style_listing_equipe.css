@@ -102,6 +102,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     transition: 0.3s ease-in-out;
+    border: 1px solid rgb(44, 44, 44);
 }
 
 .vignette:hover {
@@ -110,10 +111,6 @@ h1 {
 
 .team-infos {
     max-width: 270px;
-}
-
-.team-full {
-    background-color: rgb(44, 44, 44);
 }
 
 .team-incomplete {
@@ -164,14 +161,14 @@ h1 {
 .vignette .team-separator {
     display: block;
     background-color: var(--primary-color);
-    height: 2px;
-    width: 150px;
+    height: 5px;
+    width: 100px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .team-full .team-separator {
-    background-color: var(--accent-color-1);
+    background-color: var(--secondary-color);
 }
 
 .joueurs {
