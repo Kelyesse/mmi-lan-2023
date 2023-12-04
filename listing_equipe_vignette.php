@@ -99,6 +99,7 @@ if (count($equipes) > 0) {
                 $userrole = $req3->fetch()['PlayerStatus'];
                 if (empty($resultat && $userrole == "Participant")) {
                     echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId=' . $equipe['TeamId'] . '&rejoindreEquipe=true&teamName=' . $equipe['TeamName'] . '"\'>Rejoindre l\'équipe</button></li>';
+
                 }
             } else {
                 echo '</li>';

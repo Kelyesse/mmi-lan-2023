@@ -7,14 +7,17 @@
     align-items: center;
 }
 
-html, body {
+html,
+body {
     margin: auto;
     box-sizing: border-box;
     background-color: #151515;
 }
 
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--accent-font);
     font-weight: 900;
     color: #fff;
@@ -46,12 +49,12 @@ p {
     line-height: 23px;
 }
 
-a{
+a {
     text-decoration: none;
     font-family: var(--body-font);
 }
 
-button{
+button {
     padding: 10px;
     border-radius: 5px;
     background-color: var(--primary-color);
@@ -59,8 +62,7 @@ button{
     font-size: 16px;
 }
 
-
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,14 +70,14 @@ main{
     gap: 60px;
 }
 
-.title{
+.title {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 45px;
 }
 
-section{
+section {
     width: 86vw;
     display: flex;
     gap: 60px;
@@ -83,11 +85,11 @@ section{
     align-items: baseline;
 }
 
-#div-title{
+#div-title {
     display: flex;
 }
 
-#player-info div{
+#player-info div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -98,50 +100,51 @@ section{
     display: flex;
     width: 42vw;
     padding: 10px;
-    border-bottom:solid 1px #fff;
+    border-bottom: solid 1px #fff;
     gap: 10px;
     flex-direction: row;
 }
 
-#player-info div div div{
+#player-info div div div {
     border: none;
 }
 
-#player-info{
+#player-info {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-#player-info>img{
+#player-info > img {
     width: 400px;
     height: 400px;
 }
 
-#player-desc{
+#player-desc {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-#player-desc div{
+#player-desc div {
     display: flex;
     padding: 10px;
     justify-content: center;
     align-items: center;
 }
 
-#jeu{
+#jeu {
     width: 400px;
 }
 
-#team>div{
+#team > div {
     width: 100%;
-    display: flex ;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-#team-desc{
+#team-desc {
     display: flex;
     gap: 40px;
     flex-direction: column;
@@ -149,58 +152,64 @@ section{
     width: 60%;
 }
 
-#team-desc div{
+#team-desc div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
 }
 
-#li-mate{
+#li-mate {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 70%;
 }
 
-#li-mate div{
+#li-mate div {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
 }
 
-#li-mate>div{
+#li-mate > div {
     flex-direction: column;
 }
 
-.mate{
+.mate {
     border: solid 1px #fff;
     padding: 10px;
     border-radius: 5px;
 }
 
-.remove-mate{
+.remove-mate {
     border: 1px solid var(--secondary-color);
     background-color: #ffffff00;
-    color: #CD0C75;
+    color: #cd0c75;
 }
 
-#team div img{
-    width: 400px;
-    height: 400px;
+#team div img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
 }
-
-#no-team div{
+.team-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#no-team div {
     display: flex;
     gap: 20px;
 }
 
-#account{
+#account {
     align-items: end;
 }
 
-#account div{
+#account div {
     display: flex;
     gap: 20px;
 }
@@ -217,14 +226,40 @@ section{
     height: 100%;
 }
 
-.confirmYes, #deco{
+.popup-content form input {
+    background-color: #151515;
+    padding: 10px 0px;
+    border: none;
+    width: 20vw;
+    font-size: 16px;
+    color: white;
+    border-bottom: #fff solid 1px;
+}
+
+.popup-content form #submit {
+    padding: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    width: auto;
+    cursor: pointer;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.confirmYes,
+#deco {
     padding: 10px;
     border-radius: 5px;
     background-color: var(--primary-color);
 }
 
-
-.confirmNo{
+.confirmNo {
     background-color: #212121;
 }
 
@@ -236,7 +271,8 @@ section{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    box-shadow: 4px 4px 30px 0px rgba(255, 255, 255, 0.15), -4px -4px 30px 0px rgba(255, 255, 255, 0.15);
+    box-shadow: 4px 4px 30px 0px rgba(255, 255, 255, 0.15),
+        -4px -4px 30px 0px rgba(255, 255, 255, 0.15);
     width: 45vw;
 }
 
@@ -248,54 +284,74 @@ input[type="submit"] {
     font-size: 16px;
 }
 
-.info p{
+.info p {
     max-width: 100%;
 }
 
 @media only screen and (max-width: 1200px) {
-    #player-info>img {
+    #player-info > img {
         width: 200px;
         height: 200px;
     }
 
-    #team div img{
+    #team div img {
         width: 200px;
         height: 200px;
     }
 }
 
-@media only screen and (max-width: 700px) {
-    #player-info>img {
+@media screen and (max-width: 700px) {
+    #player-info > img {
         width: 120px;
         height: 120px;
     }
 
-    #player-info{
+    #player-info {
         flex-direction: column;
     }
 
-    #player-info div div{
+    #player-info div div {
         width: 88vw;
     }
 
-    #team div img{
-        width: 120px;
-        height: 120px;
+    #team > div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
     }
 
-    h1{
+    #team div img {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
         font-size: 24px;
         font-weight: 800;
     }
 
-    h2{
+    h2 {
         font-size: 17px;
         font-weight: 600;
     }
 
-    .popup-content form{
+    #no-team,
+    #account {
+        align-items: center;
+    }
+    .remove-mate-text {
+        display: none;
+    }
+    .team-logo {
         display: flex;
+        align-items: center;
         flex-direction: column;
-        gap: 20px;
+        justify-content: center;
+    }
+
+    .popup-content {
+        width: 65vw;
     }
 }

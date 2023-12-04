@@ -69,12 +69,12 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     try {
         $mail->isSMTP();
-        $mail->Host       = $settings['instance_email_host'];
-        $mail->SMTPAuth   = true;
-        $mail->Username   = $settings['instance_email_username'];
-        $mail->Password   = $settings['instance_email_password'];
+        $mail->Host = $settings['instance_email_host'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $settings['instance_email_username'];
+        $mail->Password = $settings['instance_email_password'];
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port       = $settings['instance_email_port'];
+        $mail->Port = $settings['instance_email_port'];
 
         $mail->Encoding = 'base64';
         $mail->CharSet = 'UTF-8';
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
         $mail->isHTML(true);
         $mail->Subject = 'Réinitialisation du mot de passe - ' . $settings['name'];
-        $mail->Body    = $mail_template_recover;
+        $mail->Body = $mail_template_recover;
         $mail->AltBody = 'Bonjour, Une demande de réinitialisation de mot de passe a été déclenchée le : ' . date('Y-m-d H:i:s') . '  
 					Utilisez le lien suivant pour réinitialiser votre mot de passe :  ' . $recover_link;
         $mail->send();
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recover</title>
+    <title>Recover - MMI LAN</title>
 </head>
 
 <body>

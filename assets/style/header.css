@@ -7,7 +7,10 @@ body {
 #nav {
     font-size: 16px;
 }
-
+.letters {
+    text-transform: uppercase;
+    margin-right: 5px;
+}
 @media screen and (max-width: 1050px) {
     #nav {
         font-size: 13px;
