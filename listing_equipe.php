@@ -65,7 +65,7 @@ session_start();
             </h2>
             <form action="rejoindreEquipe.php?teamId=<?php echo $teamId ?>" method="post">
                 <textarea name="playerDesc" id="" cols="30" rows="10"
-                    placeholder="Ecrire une description de vous"></textarea>
+                    placeholder="Écrivez une description de vous..."></textarea>
                 <div>
                     <input type="button" onclick='window.location.href="listing_equipe.php"' value="J'ai changé d'avis">
                     <input type="submit" value="Rejoindre">
@@ -76,7 +76,9 @@ session_start();
         function showAlertForm()
         {
             if (isset($_GET['rejoindreEquipe'])) {
-                echo '<script>blocAlert = document.getElementById("alertRejoindreEquipe"); blocAlert.style.display = "block";</script>';
+                echo '<script>blocAlert = document.getElementById("alertRejoindreEquipe"); blocAlert.style.display = "flex";</script>';
+                echo '<script> document.getElementById("alertRejoindreEquipe").scrollIntoView({ behavior: "smooth", block: "start" });</script>';
+
             }
         }
         showAlertForm();
