@@ -21,7 +21,7 @@ try {
             "Fortnite",
             "Overwatch",
             "Brawlhalla",
-            "Counter-Strike 2",
+            "CS2",
             "Rocket League",
             "Fortnite"
         ];
@@ -198,56 +198,51 @@ function generateId(array $excludeArray)
                             <div class="double-inp">
                                 <div>
                                     <input type="text" placeholder="Entrer votre nom" name="nom" value="<?php
-                                    if (isset($nom)) {
-                                        echo $nom;
-                                    }
-                                    ?>">
+                                                                                                        if (isset($nom)) {
+                                                                                                            echo $nom;
+                                                                                                        }
+                                                                                                        ?>">
                                 </div>
                                 <div>
                                     <input type="text" placeholder="Entrer votre prénom" name="prenom" value="<?php
-                                    if (isset($prenom)) {
-                                        echo $prenom;
-                                    }
-                                    ?>">
+                                                                                                                if (isset($prenom)) {
+                                                                                                                    echo $prenom;
+                                                                                                                }
+                                                                                                                ?>">
                                 </div>
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/profil.svg" alt="">
-                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo"
-                                    value="<?php
-                                    if (isset($pseudo)) {
-                                        echo $pseudo;
-                                    }
-                                    ?>">
+                                <input type="text" placeholder="Entrer votre pseudo" name="pseudo" id="pseudo" value="<?php
+                                                                                                                        if (isset($pseudo)) {
+                                                                                                                            echo $pseudo;
+                                                                                                                        }
+                                                                                                                        ?>">
                             </div>
                             <div class="simple-inp">
                                 <img src="./assets/img/mail.svg" alt="">
-                                <input type="email" placeholder="Entrer votre email" name="email" id="email"
-                                    value="<?php
-                                    if (isset($email)) {
-                                        echo $email;
-                                    }
-                                    ?>">
+                                <input type="email" placeholder="Entrer votre email" name="email" id="email" value="<?php
+                                                                                                                    if (isset($email)) {
+                                                                                                                        echo $email;
+                                                                                                                    }
+                                                                                                                    ?>">
                             </div>
                             <div class="double-inp">
                                 <div>
                                     <img src="./assets/img/cadena.svg" alt="">
-                                    <input type="password" placeholder="Entrer votre mot de passe" name="mdp1"
-                                        class="mdp"
-                                        value="<?php
-                                        if (isset($mdp1)) {
-                                            echo $mdp1;
-                                        }
-                                        ?>">
+                                    <input type="password" placeholder="Entrer votre mot de passe" name="mdp1" class="mdp" value="<?php
+                                                                                                                                    if (isset($mdp1)) {
+                                                                                                                                        echo $mdp1;
+                                                                                                                                    }
+                                                                                                                                    ?>">
                                 </div>
                                 <div>
                                     <img src="./assets/img/cadena.svg" alt="">
-                                    <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2"
-                                        value="<?php
-                                        if (isset($mdp2)) {
-                                            echo $mdp2;
-                                        }
-                                        ?>" class="mdp">
+                                    <input type="password" placeholder="Confirmer votre mot de passe" name="mdp2" value="<?php
+                                                                                                                            if (isset($mdp2)) {
+                                                                                                                                echo $mdp2;
+                                                                                                                            }
+                                                                                                                            ?>" class="mdp">
                                 </div>
                             </div>
                             <p id="config-psw">
@@ -257,18 +252,18 @@ function generateId(array $excludeArray)
                             <div class="radio">
                                 <div>
                                     <input type="radio" name="role" class="role" value="Participant" id="participant" <?php
-                                    if (isset($role) && $role == 'Participant') {
-                                        echo 'checked';
-                                    }
-                                    ?>>
+                                                                                                                        if (isset($role) && $role == 'Participant') {
+                                                                                                                            echo 'checked';
+                                                                                                                        }
+                                                                                                                        ?>>
                                     <label for="participant">Participant</label><br>
                                 </div>
                                 <div>
                                     <input type="radio" name="role" class="role" value="Conducteur" id="conducteur" <?php
-                                    if (isset($role) && $role == 'Conducteur') {
-                                        echo 'checked';
-                                    }
-                                    ?>>
+                                                                                                                    if (isset($role) && $role == 'Conducteur') {
+                                                                                                                        echo 'checked';
+                                                                                                                    }
+                                                                                                                    ?>>
                                     <label for="conducteur">Conducteur</label>
                                 </div>
                             </div>
@@ -289,7 +284,7 @@ function generateId(array $excludeArray)
                                     <option value="Geo Guesseur">Geo Guesseur</option>
                                     <option value="Overwatch">Overwatch</option>
                                     <option value="Brawlhalla">Brawlhalla</option>
-                                    <option value="CS GO">CS GO</option>
+                                    <option value="CS2">CS2</option>
                                     <option value="Rocket League">Rocket League</option>
                                     <option value="Fortnite">Fortnite</option>
                                 </select>
@@ -297,10 +292,10 @@ function generateId(array $excludeArray)
                             <div id="end-form">
                                 <div>
                                     <input type="checkbox" name="remember_me" id="souvenir" <?php
-                                    if (isset($_POST['remember_me'])) {
-                                        echo 'checked';
-                                    }
-                                    ?>>
+                                                                                            if (isset($_POST['remember_me'])) {
+                                                                                                echo 'checked';
+                                                                                            }
+                                                                                            ?>>
                                     <label for="souvenir">Se souvenir de moi</label>
                                 </div>
                                 <a class="connection-link" href="./connexion.php">Se connecter ?</a>
@@ -310,8 +305,7 @@ function generateId(array $excludeArray)
                             <div>
                                 <h3>Choisissez votre avatar</h3>
                                 <div id="liste_ava">
-                                    <svg id="pre" xmlns="http://www.w3.org/2000/svg" width="13" height="25"
-                                        viewBox="0 0 13 25" fill="none">
+                                    <svg id="pre" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
                                         <path d="M11.5 1L0 12.5L11.5 24" stroke="white" stroke-width="2" />
                                     </svg>
                                     <div class="avatar">
@@ -336,8 +330,7 @@ function generateId(array $excludeArray)
                                         </div>
 
                                     </div>
-                                    <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25"
-                                        viewBox="0 0 13 25" fill="none">
+                                    <svg id="next" xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="0 0 13 25" fill="none">
                                         <path d="M1 24L12.5 12.5L1 1" stroke="white" stroke-width="2" />
                                     </svg>
                                 </div>
