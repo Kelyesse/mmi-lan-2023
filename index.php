@@ -21,7 +21,7 @@
                 <h1 class="title-mmilan">MMI LAN</h1>
                 <div class="count-down-timer"></div>
 
-                <a href="./inscription.php" class="cta-button">Inscrivez-vous</a>
+                <!-- <a href="./inscription.php" class="cta-button">Inscrivez-vous</a> -->
             </div>
         </div>
     </header>
@@ -76,9 +76,9 @@
                     </div>
                 </div>
                 <div class="navigation-buttons-container">
-                    <a href="./inscription.php" class="navigation-button registration-button">
+                    <a href="#" class="navigation-button registration-button">
                         <div class="button-label">
-                            <h3>Inscription</h3>
+                            <h3 id="play_button">Jouer à Shard'Venture</h3>
                         </div>
                         <div class="icon-box"><img src="assets/img/Vector.svg" alt=""></div>
                     </a>
@@ -124,44 +124,48 @@
             <ul class="social-medias-listing">
                 <li class="social-wrapper">
                     <a href="https://www.tiktok.com/@mmi.lan" class="social-link tiktok-link" target="_blank">
-                        <img id="tiktok-logo" src="./assets/img/tiktok-logo.svg" alt="Logo TikTok" class="social-img" />
+                        <img id="tiktok-logo" src="./assets/img/tiktok-logo.svg" alt="Logo TikTok"
+                            class="social-logo" />
                         <img id="tiktok-logo-hover" src="./assets/img/tiktok-logo-hover.svg" alt="tiktok-logo-hover"
-                            class="social-img" />
+                            class="social-logo" />
                     </a>
                 </li>
 
                 <li class="social-wrapper">
                     <a href="https://www.instagram.com/mmi_lan2023/" class="social-link instagram-link" target="_blank">
                         <img id="instagram-logo" src="./assets/img/insta-logo.svg" alt="instagram-logo"
-                            class="social-img" />
+                            class="social-logo" />
                         <img id="instagram-logo-hover" src="./assets/img/insta-logo-hover.svg"
-                            alt="instagram-logo-hover" class="social-img" />
+                            alt="instagram-logo-hover" class="social-logo" />
                     </a>
                 </li>
                 <li class="social-wrapper">
                     <a href="https://www.youtube.com/@MMILAN_2023" class="social-link ytb-link" target="_blank">
-                        <img id="ytb-logo" src=" ./assets/img/yt-logo.svg" alt="youtube-logo" class="social-img" />
+                        <img id="ytb-logo" src=" ./assets/img/yt-logo.svg" alt="youtube-logo" class="social-logo" />
                         <img id="ytb-logo-hover" src="./assets/img/ytb-logo-hover.svg" alt="ytb-logo-hover"
-                            class="social-img" />
+                            class="social-logo" />
                     </a>
                 </li>
                 <li class="social-wrapper">
                     <a href="https://twitter.com/MMI_LAN_2023" class="social-link twitter-link" target="_blank">
                         <img id="twitter-logo" src="./assets/img/twitter-logo.svg" alt="twitter-logo"
-                            class="social-img" />
+                            class="social-logo" />
                         <img id="twitter-logo-hover" src="./assets/img/twitter-logo-hover.svg" alt="twitter-logo-hover"
-                            class="social-img" />
+                            class="social-logo" />
                     </a>
                 </li>
                 <li class="social-wrapper">
                     <a href="https://discord.gg/uPFq4y96vy" class="social-link discord-link" target="_blank">
                         <img id="discord-logo" src="./assets/img/discord-logo.svg" alt="discord-logo"
-                            class="social-img" />
+                            class="social-logo" />
                         <img id="discord-logo-hover" src="./assets/img/discord-logo-hover.svg" alt="discord-logo-hover"
-                            class="social-img" />
+                            class="social-logo" />
                     </a>
                 </li>
             </ul>
+            <div class="help-text">Vous recherchez une équipe, un covoiturage ou simplement des informations
+                supplémentaires ? Rejoignez notre Discord où vous trouverez tout ce dont vous avez besoin. Nous sommes
+                là pour faciliter votre expérience et répondre à toutes vos questions.</div>
         </section>
 
 

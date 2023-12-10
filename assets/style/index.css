@@ -333,8 +333,9 @@ main {
 /* SOCIAL */
 
 .social-media {
-    margin: 60px 0;
+    margin: 60px auto;
     width: 100%;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -372,7 +373,7 @@ main {
     color: white;
 }
 
-.social-img {
+.social-logo {
     width: 100%;
     height: 100%;
 }
@@ -416,6 +417,14 @@ main {
 #twitter-logo:hover + #twitter-logo-hover {
     transition: 0.5s;
     opacity: 1;
+}
+
+.help-text {
+    text-align: center;
+    font-family: var(--body-font);
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 /* TWITCH */
