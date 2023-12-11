@@ -41,6 +41,7 @@
   <div id="pseudo-zone">
     <div id="pseudo-zone-title">Enregistrer le score</div>
     <div id="pseudo-zone-input-container">
+      <div id="pseudo-zone-warning">Veuillez vous connecter pour utiliser ce pseudo</div>
       <input type="text" id="pseudo-zone-input" placeholder="Entrer votre pseudo">
     </div>
     <div id="pseudo-zone-submit">Valider</div>
@@ -76,8 +77,7 @@
         warningBanner.appendChild(div);
         div.style = 'background: red; padding: 10px;';
 
-      }
-      else {
+      } else {
         if (type == 'warning') {
           var div = document.createElement('div');
           div.innerHTML = msg;
@@ -85,7 +85,7 @@
           div.style = 'background: transparent; padding: 5px';
 
           div.innerHTML = 'Chargement...'
-          setTimeout(function () {
+          setTimeout(function() {
             warningBanner.removeChild(div);
             updateBannerVisibility();
           }, 3000);

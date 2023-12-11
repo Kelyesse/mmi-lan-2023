@@ -237,7 +237,7 @@ footer {
 }
 
 .board-pseudo {
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
 }
 
@@ -320,6 +320,15 @@ footer {
     font-family: var(--body-font);
     font-size: 16px;
     user-select: none;
+}
+
+#pseudo-zone-warning {
+    display: none;
+    padding: 0 10px;
+    position: absolute;
+    top: -23px;
+    font-size: 12px;
+    color: #FFF;
 }
 
 #pseudo-zone-input-container {
