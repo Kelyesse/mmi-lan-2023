@@ -15,7 +15,7 @@
 <body>
   <?php include './navbar.php'; ?>
 
-  <h1 id="main-title">JEU MMI LAN</h1>
+  <h1 id="main-title">Découvrez notre mini-jeu !</h1>
 
   <h1 id="sub-title">Tentez l'aventure</h1>
   <div id="unity-container" class="unity-desktop">
@@ -69,16 +69,27 @@
       function updateBannerVisibility() {
         warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
       }
-      var div = document.createElement('div');
-      div.innerHTML = msg;
-      warningBanner.appendChild(div);
-      if (type == 'error') div.style = 'background: red; padding: 10px;';
+
+      if (type == 'error') {
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        div.style = 'background: red; padding: 10px;';
+
+      }
       else {
-        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-        setTimeout(function() {
-          warningBanner.removeChild(div);
-          updateBannerVisibility();
-        }, 5000);
+        if (type == 'warning') {
+          var div = document.createElement('div');
+          div.innerHTML = msg;
+          warningBanner.appendChild(div);
+          div.style = 'background: transparent; padding: 5px';
+
+          div.innerHTML = 'Chargement...'
+          setTimeout(function () {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 3000);
+        }
       }
       updateBannerVisibility();
     }
