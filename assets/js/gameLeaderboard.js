@@ -12,7 +12,17 @@ async function printLeaderboard(){
     buildLeaderboard(json);
 }
 
-document.addEventListener('keydown', function(event) {
+var listPseudos;
+
+getPseudos();
+
+async function getPseudos(){
+    const url = 'gameGetPseudoList.php';
+    const rep = await fetch(url);
+    listPseudos = await rep.json();
+}
+
+document.addEventListener('keydown', async function(event) {
     if (document.activeElement === inputPseudo) {
         if (/^[a-zA-Z0-9À-ÿ\u0300-\u036f!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~\s]$/.test(event.key)) {
             inputPseudo.value += event.key;
@@ -23,27 +33,23 @@ document.addEventListener('keydown', function(event) {
         else if (event.key === ' ') {
             inputElement.value += ' ';
         }
+
+        let pseudo = inputPseudo.value;
+        if(listPseudos.includes(pseudo.trim())) inputPseudoWarning.style.display = "block";
+        else inputPseudoWarning.style.display = "none";
+
         event.preventDefault();
         event.stopPropagation();
     }
 });
 
-submitPseudo.addEventListener("click", async () => {
+submitPseudo.addEventListener("click", () => {
     let pseudo = inputPseudo.value;
-    let listPseudos = await getPseudos();
-    if(listPseudos.includes(pseudo)) ;
-    if(pseudo !== "" && !listPseudos.includes(pseudo)) pseudoLeaderboard(pseudo);
+    if(pseudo !== "" && !listPseudos.includes(pseudo.trim())) pseudoLeaderboard(pseudo);
 })
 
-async function getPseudos(){
-    const url = 'GameGetPseudoList.php';
-    const rep = await fetch(url);
-    const json = await rep.json();
-    return json;
-}
-
 async function pseudoLeaderboard(pseudo){
-    const url = 'GameSavePseudoInJSON.php';
+    const url = 'gameSavePseudoInJSON.php';
 
     const options = {
         method: 'POST',
