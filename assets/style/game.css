@@ -328,7 +328,7 @@ footer {
     position: absolute;
     top: -23px;
     font-size: 12px;
-    color: #FFF;
+    color: var(--accent-color-1);
 }
 
 #pseudo-zone-input-container {
