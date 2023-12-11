@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="navigation-buttons-container">
-                    <a href="#" class="navigation-button registration-button">
+                    <a href="./game.php" class="navigation-button registration-button">
                         <div class="button-label">
                             <h3 id="play_button">Jouer à Shard'Venture</h3>
                         </div>

@@ -59,7 +59,7 @@ if (isset($_SESSION['PlayerId'])) {
                 </div>
             </div>
             <div class="contact"><a href="./contact.php" id="bouton_contact">Contact</a></div>
-            <div class="participer"><a href="#" id="play_button">Jouer à Shard'Venture</a>
+            <div class="participer"><a href="./game.php" id="play_button">Jouer à Shard'Venture</a>
             </div>
             <div class="compte">
                 <a href="<?php echo $accountLink; ?>">
@@ -79,7 +79,7 @@ if (isset($_SESSION['PlayerId'])) {
                     <div><a href="#" class="content_burger" id="planning-button">Planning</a></div>
                     <div><a href="#" class="content_burger" id="covoit-button">Covoiturage</a></div>
                     <div><a href="./contact.php" class="content_burger" id="burger_contact">Contact</a></div>
-                    <div><a href="#" class="content_burger" id="play_button">
+                    <div><a href="./game.php" class="content_burger" id="play_button">
                             Jouer à Shard'Venture
                         </a>
                     </div>
