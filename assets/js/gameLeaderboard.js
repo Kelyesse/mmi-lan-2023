@@ -36,14 +36,14 @@ submitPseudo.addEventListener("click", async () => {
 })
 
 async function getPseudos(){
-    const url = 'GameGetPseudoList.php';
+    const url = 'gameGetPseudoList.php';
     const rep = await fetch(url);
     const json = await rep.json();
     return json;
 }
 
 async function pseudoLeaderboard(pseudo){
-    const url = 'GameSavePseudoInJSON.php';
+    const url = 'gameSavePseudoInJSON.php';
 
     const options = {
         method: 'POST',
