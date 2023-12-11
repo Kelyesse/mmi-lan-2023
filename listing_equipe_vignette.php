@@ -1,32 +1,31 @@
 <?php
 
-function getEquipes($db) {
+function getEquipes($db)
+{
     $equipes = array();
-    
+
     if (isset($_GET['order']) && $_GET['order'] == 'desc') {
         $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamName DESC";
-    } 
-    elseif(isset($_GET['order']) && $_GET['order'] == 'ancien'){
+    } elseif (isset($_GET['order']) && $_GET['order'] == 'ancien') {
         $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamId ASC";
-    }
-    elseif(isset($_GET['order']) && $_GET['order'] == 'recent'){
+    } elseif (isset($_GET['order']) && $_GET['order'] == 'recent') {
         $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamId DESC";
-    }
-    else {
+    } else {
         $prep = "SELECT TeamId, TeamName, TeamLogo FROM team ORDER BY TeamName ASC";
     }
-    
+
     $stmt2 = $db->prepare($prep);
     $stmt2->execute();
     $equipes = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     $stmt2->closeCursor();
-    
+
     return $equipes;
 }
 
-function getJoueursByEquipe($db, $equipeId) {
+function getJoueursByEquipe($db, $equipeId)
+{
     $joueurs = array();
-    
+
     $sqlp = "SELECT p.PlayerPseudo
         FROM player p
         INNER JOIN belongteam b ON p.PlayerId = b.PlayerId
@@ -36,7 +35,7 @@ function getJoueursByEquipe($db, $equipeId) {
     $stmt->execute([$equipeId]);
     $joueurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
-    
+
     return $joueurs;
 }
 
@@ -58,44 +57,57 @@ if (count($equipes) > 0) {
 
         if ($nbr == 3) {
             $image = $equipe['TeamLogo'];
-            echo '<li class="vignette_pleine" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
-            echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
-            echo $equipe['TeamName'];
-            echo '<p>-</p>';
+            echo '<li class="vignette team-full" id="' . $equipe['TeamId'] . '">';
+            echo '<a class="team-link" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '"></a>';
 
+            echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
+            echo '<div class="team-infos">';
+
+            echo '<div class="team-name">' . $equipe['TeamName'] . "</div>";
+            echo '<span class="team-separator"></span>';
+            echo '<div class="joueurs">';
             foreach ($joueurs as $pseudo) {
                 echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
             }
+            echo '</div>';
+            echo '</div>';
 
-            echo '<button class="button_full">Equipe complète</button></a></li>';
+            echo '<button class="button_full">Equipe complète</button></li>';
         } else {
             $image = $equipe['TeamLogo'];
-            echo '<li class="vignette" id="' . $equipe['TeamId'] . '"> <a class="NomTeam" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '">';
+            echo '<li class="vignette team-incomplete" id="' . $equipe['TeamId'] . '">';
+            echo '<a class="team-link" href="details_equipes.php?teamId=' . $equipe['TeamId'] . '"></a>';
+
             echo '<img src="assets/img/' . $image . '" alt="Logo de l\'équipe" />';
-            echo $equipe['TeamName'] ;
-            echo '<p>-</p>';
+            echo '<div class="team-infos">';
 
-
+            echo '<div class="team-name">' . $equipe['TeamName'] . "</div>";
+            echo '<span class="team-separator"></span>';
+            echo '<div class="joueurs">';
             foreach ($joueurs as $pseudo) {
-                echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div></a>';
+                echo '<div class="Joueur">' . $pseudo['PlayerPseudo'] . '</div>';
             }
+            echo '</div>';
+            echo '</div>';
             if (isset($_SESSION['PlayerId'])) {
-                $idj=$_SESSION['PlayerId'];
+                $idj = $_SESSION['PlayerId'];
                 $valeur = $db->prepare("SELECT TeamId FROM belongteam WHERE PlayerId=? AND BelongStatus=?");
                 $valeur->execute([$idj, "validé"]);
                 $resultat = $valeur->fetch();
                 $req3 = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
                 $req3->execute([$idj]);
                 $userrole = $req3->fetch()['PlayerStatus'];
-                if (empty($resultat) && $userrole == "Participant"){
-                    echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId='.$equipe['TeamId'].'&rejoindreEquipe=true&teamName='.$equipe['TeamName'].'"\'>Rejoindre l\'équipe</button></li>';
+                if (empty($resultat && $userrole == "Participant")) {
+                    echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId=' . $equipe['TeamId'] . '&rejoindreEquipe=true&teamName=' . $equipe['TeamName'] . '"\'>Rejoindre l\'équipe</button></li>';
+
                 }
+            } else {
+                echo '</li>';
             }
 
         }
     }
-}
-else{
-    echo'<div class="liste_vide">Il n\'y a pas encore d\'équipe ! </div>';
+} else {
+    echo '<div class="liste_vide">Il n\'y a pas encore d\'équipe ! </div>';
 }
 ?>
