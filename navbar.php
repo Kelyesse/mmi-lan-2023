@@ -32,7 +32,7 @@ if (isset($_SESSION['PlayerId'])) {
             $("#burger-close").click(() => {
                 $("#burger-close").hide();
                 $(".rubriques_burger").hide();
-                $(".bouton_burger").show();
+                $(".bouton_burger").show();,
 
 
             });
