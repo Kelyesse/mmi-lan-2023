@@ -4,6 +4,18 @@ if (!isset($_SESSION['PlayerId'])) {
     exit;
 }
 
+$PlayerId = $_SESSION['PlayerId'];
+
+include_once('./connexionbdd.php');
+$sql = "SELECT PlayerStatus FROM player WHERE PlayerId = $PlayerId";
+$stmt = $db->query($sql);
+$status = $stmt->fetch(PDO::FETCH_COLUMN)[0];
+
+if ($status != "AdminJeu") {
+    header('Location: index.php');
+    exit;
+}
+
 $jsonFilePath = 'assets/json/gameLeaderboard.json';
 $content = json_decode(file_get_contents($jsonFilePath), true);
 
