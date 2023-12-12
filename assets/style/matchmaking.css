@@ -24,7 +24,7 @@ h1 {
   text-transform: uppercase;
 }
 
-section {
+#tabMM {
   padding: 50px 0;
   height: 125vh;
 }
@@ -35,12 +35,20 @@ section {
   width: 150px;
   align-items: center;
   background: var(--fond-cg, #1a012d);
+  z-index: 1000;
 }
 
 .rectangle {
   width: 35px;
   height: 75px;
   flex-shrink: 0;
+  background: var(--primaire, #2f1d62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangle form > input[type="submit"] {
   background: var(--primaire, #2f1d62);
 }
 
@@ -68,304 +76,191 @@ section {
   position: absolute;
 }
 
-@media screen and (min-width: 1280px) {
-  .equipe1 {
-    top: 280px;
-    left: 75px;
-  }
-
-  .equipe2 {
-    top: 420px;
-    left: 75px;
-  }
-
-  .equipe3 {
-    top: 600px;
-    left: 75px;
-  }
-
-  .equipe4 {
-    top: 740px;
-    left: 75px;
-  }
-
-  .equipe5 {
-    top: 350px;
-    left: 290px;
-  }
-
-  .equipe6 {
-    top: 670px;
-    left: 290px;
-  }
-
-  .equipe7 {
-    top: 500px;
-    left: 470px;
-    z-index: 1000;
-  }
-
-  .equipe8 {
-    top: 500px;
-    left: 670px;
-    z-index: 1000;
-  }
-
-  .equipe9 {
-    top: 350px;
-    left: 840px;
-  }
-
-  .equipe10 {
-    top: 670px;
-    left: 840px;
-  }
-
-  .equipe11 {
-    top: 280px;
-    left: 1040px;
-  }
-
-  .equipe12 {
-    top: 420px;
-    left: 1040px;
-  }
-
-  .equipe13 {
-    top: 600px;
-    left: 1040px;
-  }
-
-  .equipe14 {
-    top: 740px;
-    left: 1040px;
-  }
-
-  .lien1 {
-    height: 65px;
-    width: 5px;
-    top: 355px;
-    left: 150px;
-  }
-
-  .lien2 {
-    height: 65px;
-    width: 5px;
-    top: 675px;
-    left: 150px;
-  }
-
-  .lien3 {
-    height: 5px;
-    width: 140px;
-    top: 387px;
-    left: 150px;
-  }
-
-  .lien4 {
-    height: 5px;
-    width: 140px;
-    top: 707px;
-    left: 150px;
-  }
-
-  .lien5 {
-    height: 245px;
-    width: 5px;
-    top: 425px;
-    left: 365px;
-  }
-
-  .lien6 {
-    height: 5px;
-    width: 550px;
-    top: 537px;
-    left: 365px;
-  }
-
-  .lien7 {
-    height: 245px;
-    width: 5px;
-    top: 425px;
-    left: 915px;
-  }
-
-  .lien8 {
-    height: 5px;
-    width: 125px;
-    top: 387px;
-    left: 990px;
-  }
-
-  .lien9 {
-    height: 5px;
-    width: 125px;
-    top: 707px;
-    left: 990px;
-  }
-
-  .lien10 {
-    height: 65px;
-    width: 5px;
-    top: 355px;
-    left: 1115px;
-  }
-
-  .lien11 {
-    height: 65px;
-    width: 5px;
-    top: 675px;
-    left: 1115px;
-  }
+#btnAdmin {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1270px) {
+#btnAdmin form > input[type="submit"] {
+  width: 165px;
+  height: 43px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #2f1d62;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#logoVainqueur {
+  position: absolute;
+  width: 150px;
+  top: 30%;
+  left: 44%;
+}
+
+@media screen and (min-width: 1280px) {
   .equipe1 {
-    top: 280px;
-    left: 25px;
+    top: 50%;
+    left: 7%;
   }
 
   .equipe2 {
-    top: 420px;
-    left: 25px;
+    top: 70%;
+    left: 7%;
   }
 
   .equipe3 {
-    top: 600px;
-    left: 25px;
+    top: 90%;
+    left: 7%;
   }
 
   .equipe4 {
-    top: 740px;
-    left: 25px;
+    top: 110%;
+    left: 7%;
   }
 
   .equipe5 {
-    top: 350px;
-    left: 195px;
+    top: 60%;
+    left: 22%;
   }
 
   .equipe6 {
-    top: 670px;
-    left: 195px;
+    top: 100%;
+    left: 22%;
   }
 
   .equipe7 {
-    top: 500px;
-    left: 320px;
-    z-index: 1000;
+    top: 80%;
+    left: 32%;
   }
 
   .equipe8 {
-    top: 500px;
-    left: 520px;
-    z-index: 1000;
+    top: 80%;
+    right: 32%;
   }
 
   .equipe9 {
-    top: 350px;
-    left: 690px;
+    top: 60%;
+    right: 22%;
   }
 
   .equipe10 {
-    top: 670px;
-    left: 690px;
+    top: 100%;
+    right: 22%;
   }
 
   .equipe11 {
-    top: 280px;
-    left: 860px;
+    top: 50%;
+    right: 7%;
   }
 
   .equipe12 {
-    top: 420px;
-    left: 860px;
+    top: 70%;
+    right: 7%;
   }
 
   .equipe13 {
-    top: 600px;
-    left: 860px;
+    top: 90%;
+    right: 7%;
   }
 
   .equipe14 {
-    top: 740px;
-    left: 860px;
+    top: 110%;
+    right: 7%;
+  }
+
+  .equipe15 {
+    top: 60%;
+    left: 44%;
   }
 
   .lien1 {
-    height: 65px;
+    height: 10%;
     width: 5px;
-    top: 355px;
-    left: 100px;
+    top: 60%;
+    left: 12%;
   }
 
   .lien2 {
-    height: 65px;
+    height: 10%;
     width: 5px;
-    top: 675px;
-    left: 100px;
+    top: 100%;
+    left: 12%;
   }
 
   .lien3 {
     height: 5px;
-    width: 95px;
-    top: 387px;
-    left: 101px;
+    width: 15%;
+    top: 65%;
+    left: 12%;
   }
 
   .lien4 {
     height: 5px;
-    width: 95px;
-    top: 707px;
-    left: 101px;
+    width: 15%;
+    top: 105%;
+    left: 12%;
   }
 
   .lien5 {
     height: 245px;
     width: 5px;
-    top: 425px;
-    left: 270px;
+    top: 70%;
+    left: 27%;
   }
 
   .lien6 {
     height: 5px;
-    width: 495px;
-    top: 537px;
-    left: 271px;
+    width: 46%;
+    top: 85%;
+    left: 27%;
   }
 
   .lien7 {
     height: 245px;
     width: 5px;
-    top: 425px;
-    left: 765px;
+    top: 70%;
+    right: 27%;
   }
 
   .lien8 {
     height: 5px;
-    width: 95px;
-    top: 387px;
-    left: 841px;
+    width: 10%;
+    top: 65%;
+    right: 12%;
   }
 
   .lien9 {
     height: 5px;
-    width: 95px;
-    top: 707px;
-    left: 841px;
+    width: 10%;
+    top: 105%;
+    right: 12%;
   }
 
   .lien10 {
-    height: 65px;
+    height: 10%;
     width: 5px;
-    top: 355px;
-    left: 935px;
+    top: 60%;
+    right: 12%;
   }
 
   .lien11 {
-    height: 65px;
+    height: 10%;
     width: 5px;
-    top: 675px;
-    left: 935px;
+    top: 100%;
+    right: 12%;
+  }
+
+  .lien12 {
+    height: 16%;
+    width: 5px;
+    top: 69%;
+    left: 50%;
   }
 }
