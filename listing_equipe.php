@@ -16,11 +16,17 @@ session_start();
 
 <body>
     <header>
-        <?php include 'navbar.php';
-        ?>
+        <?php include 'navbar.php';?>
     </header>
 
     <main>
+        <?php
+            require_once("connexionbdd.php");
+            if(isset($_POST['Tscore'])){
+                $req = $db->prepare('UPDATE team SET TeamScore=? WHERE TeamId=?');
+                $req->execute([$_POST['Tscore'], $_POST['Tid']]);
+            }
+        ?>
         <div class="en-tete">
             <h1>LES ÉQUIPES DE LA MMI LAN</h1>
             <div class="tri-container">

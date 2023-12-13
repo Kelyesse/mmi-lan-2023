@@ -1,0 +1,363 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: var(--fond-pages, #151515);
+}
+
+main {
+  padding: 25px;
+}
+
+.fond {
+  position: absolute;
+  right: 0;
+  width: 46%;
+}
+
+h1 {
+  color: var(--text-contenu, #fff);
+
+  /* Desktop/h1-desktop */
+  font-family: Overused Grotesk;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+#tabMM {
+  padding: 50px 0;
+  height: 125vh;
+}
+
+.equipe {
+  position: absolute;
+  display: flex;
+  width: 150px;
+  align-items: center;
+  background: var(--fond-cg, #1a012d);
+  z-index: 1000;
+}
+
+.rectangle {
+  width: 35px;
+  height: 75px;
+  flex-shrink: 0;
+  background: var(--primaire, #2f1d62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangle form > input[type="submit"] {
+  background: var(--primaire, #2f1d62);
+}
+
+.nom {
+  display: flex;
+  height: 75px;
+  padding: 10px 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+}
+
+.nom p {
+  color: var(--text-contenu, #fff);
+  font-family: Overused Grotesk;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.lien {
+  background-color: var(--text-contenu, #fff);
+  position: absolute;
+}
+
+#btnAdmin {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+#btnAdmin form > input[type="submit"] {
+  width: 165px;
+  height: 43px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #2f1d62;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#logoVainqueur {
+  position: absolute;
+  width: 150px;
+  top: 30%;
+  left: 44%;
+}
+
+.equipedemie {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--fond-cg, #1a012d);
+  z-index: 1000;
+  height: 75px;
+  width: 150px;
+  gap: 10px;
+  padding: 5px;
+  transform: 0.2s;
+}
+
+.equipedemie:hover {
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.img_tableau {
+  width: 35px;
+  height: 31px;
+  flex-shrink: 0;
+}
+
+.demie {
+  border-radius: 100px;
+  background: var(--accent-2, #f15722);
+  display: flex;
+  padding: 5px 4px;
+  align-items: center;
+}
+
+.demie p {
+  color: var(--text-contenu, #fff);
+  font-family: Overused Grotesk;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.finale {
+  border-radius: 100px;
+  background: var(--accent, #febc11);
+  display: flex;
+  padding: 5px 4px;
+  align-items: center;
+}
+
+.finale p {
+  color: var(--text-contenu, #fff);
+  font-family: Overused Grotesk;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1024px) {
+  .equipe1 {
+    top: 50%;
+    left: 7%;
+  }
+
+  .equipe2 {
+    top: 70%;
+    left: 7%;
+  }
+
+  .equipe3 {
+    top: 90%;
+    left: 7%;
+  }
+
+  .equipe4 {
+    top: 110%;
+    left: 7%;
+  }
+
+  .equipe5 {
+    top: 60%;
+    left: 22%;
+  }
+
+  .equipe6 {
+    top: 100%;
+    left: 22%;
+  }
+
+  .equipe7 {
+    top: 80%;
+    left: 32%;
+  }
+
+  .equipe8 {
+    top: 80%;
+    right: 32%;
+  }
+
+  .equipe9 {
+    top: 60%;
+    right: 22%;
+  }
+
+  .equipe10 {
+    top: 100%;
+    right: 22%;
+  }
+
+  .equipe11 {
+    top: 50%;
+    right: 7%;
+  }
+
+  .equipe12 {
+    top: 70%;
+    right: 7%;
+  }
+
+  .equipe13 {
+    top: 90%;
+    right: 7%;
+  }
+
+  .equipe14 {
+    top: 110%;
+    right: 7%;
+  }
+
+  .equipe15 {
+    top: 60%;
+    left: 44%;
+  }
+
+  .equipedemie1 {
+    top: 60%;
+    left: 22%;
+  }
+
+  .equipedemie2 {
+    top: 100%;
+    left: 22%;
+  }
+
+  .equipedemie3 {
+    top: 60%;
+    right: 22%;
+  }
+
+  .equipedemie4 {
+    top: 100%;
+    right: 22%;
+  }
+
+  .equipefinale1 {
+    top: 80%;
+    left: 32%;
+  }
+
+  .equipefinale2 {
+    top: 80%;
+    right: 32%;
+  }
+
+  .lien1 {
+    height: 10%;
+    width: 5px;
+    top: 60%;
+    left: 12%;
+  }
+
+  .lien2 {
+    height: 10%;
+    width: 5px;
+    top: 100%;
+    left: 12%;
+  }
+
+  .lien3 {
+    height: 5px;
+    width: 15%;
+    top: 65%;
+    left: 12%;
+  }
+
+  .lien4 {
+    height: 5px;
+    width: 15%;
+    top: 105%;
+    left: 12%;
+  }
+
+  .lien5 {
+    height: 245px;
+    width: 5px;
+    top: 70%;
+    left: 27%;
+  }
+
+  .lien6 {
+    height: 5px;
+    width: 46%;
+    top: 85%;
+    left: 27%;
+  }
+
+  .lien7 {
+    height: 245px;
+    width: 5px;
+    top: 70%;
+    right: 27%;
+  }
+
+  .lien8 {
+    height: 5px;
+    width: 10%;
+    top: 65%;
+    right: 12%;
+  }
+
+  .lien9 {
+    height: 5px;
+    width: 10%;
+    top: 105%;
+    right: 12%;
+  }
+
+  .lien10 {
+    height: 10%;
+    width: 5px;
+    top: 60%;
+    right: 12%;
+  }
+
+  .lien11 {
+    height: 10%;
+    width: 5px;
+    top: 100%;
+    right: 12%;
+  }
+
+  .lien12 {
+    height: 16%;
+    width: 5px;
+    top: 69%;
+    left: 50%;
+  }
+}
