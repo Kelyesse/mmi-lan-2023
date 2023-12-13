@@ -51,7 +51,7 @@
                 <div class="explanation-text-container">
                     <div class="lan-explanation-text">C'est quoi la MMI LAN ?</div>
                     <div class="description-text">La <span class="colored-words">MMI LAN</span> est un événement centré
-                        sur le jeu vidéo, organisé par des MMI pour des MMI !Elle se présente sous la forme d’un
+                        sur le jeu vidéo, organisé par des MMI pour des MMI ! Elle se présente sous la forme d’un
                         <span class="colored-words">tournoi</span> dans lequel des équipes de
                         <span class="colored-words">trois joueurs </span> se réunissent et s'affrontent au travers de
                         plusieurs jeux vidéo tout au long d’une <span class="colored-words">journée</span>.
@@ -67,7 +67,7 @@
                         bon endroit ! Des <span class="colored-words">activités</span> et
                         <span class="colored-words">points de restauration</span>
                         seront à votre disposition sur le lieu de l’événement, afin que chacun puisse profiter de cette
-                        journée à leur façon.
+                        journée à sa façon.
                         <br>
                         La compétition sera retransmise <span class="colored-words">en direct sur
                             <a href="https://www.twitch.tv/lanmmi" class="twitch-link" target="_blank">

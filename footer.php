@@ -58,7 +58,7 @@
                 <a href="./faq.php">FAQ</a>
                 <a href="./contact.php">Contact</a>
                 <a href="./RGPD.php">RGPD</a>
-                <a href="./Mentionslegales.php">Mention légales</a>
+                <a href="./Mentionslegales.php">Mentions légales</a>
             </div>
 
         </div>

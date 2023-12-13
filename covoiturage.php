@@ -49,8 +49,8 @@
     </div>
 
     <p class="message">
-      Ensemble, rendons nos trajets vers la MMI LAN aussi pratique et
-      écologique que possible !
+      Ensemble, rendons nos trajets vers la MMI LAN aussi pratiques et
+      écologiques que possible !
     </p>
   </div>
 </body>
