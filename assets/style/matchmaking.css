@@ -12,6 +12,12 @@ main {
   padding: 25px;
 }
 
+.fond {
+  position: absolute;
+  right: 0;
+  width: 46%;
+}
+
 h1 {
   color: var(--text-contenu, #fff);
 
@@ -104,7 +110,62 @@ h1 {
   left: 44%;
 }
 
-@media screen and (min-width: 1280px) {
+.equipedemie {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--fond-cg, #1a012d);
+  z-index: 1000;
+  height: 75px;
+  width: 150px;
+  gap: 10px;
+  padding: 5px;
+}
+
+.img_tableau {
+  width: 35px;
+  height: 31px;
+  flex-shrink: 0;
+}
+
+.demie {
+  border-radius: 100px;
+  background: var(--accent-2, #f15722);
+  display: flex;
+  padding: 5px 4px;
+  align-items: center;
+}
+
+.demie p {
+  color: var(--text-contenu, #fff);
+  font-family: Overused Grotesk;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.finale {
+  border-radius: 100px;
+  background: var(--accent, #febc11);
+  display: flex;
+  padding: 5px 4px;
+  align-items: center;
+}
+
+.finale p {
+  color: var(--text-contenu, #fff);
+  font-family: Overused Grotesk;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1024px) {
   .equipe1 {
     top: 50%;
     left: 7%;
@@ -178,6 +239,36 @@ h1 {
   .equipe15 {
     top: 60%;
     left: 44%;
+  }
+
+  .equipedemie1 {
+    top: 60%;
+    left: 22%;
+  }
+
+  .equipedemie2 {
+    top: 100%;
+    left: 22%;
+  }
+
+  .equipedemie3 {
+    top: 60%;
+    right: 22%;
+  }
+
+  .equipedemie4 {
+    top: 100%;
+    right: 22%;
+  }
+
+  .equipefinale1 {
+    top: 80%;
+    left: 32%;
+  }
+
+  .equipefinale2 {
+    top: 80%;
+    right: 32%;
   }
 
   .lien1 {
