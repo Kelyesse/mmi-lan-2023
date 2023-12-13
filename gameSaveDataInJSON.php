@@ -91,5 +91,5 @@ $contentJSON = json_encode($bestPseudo, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICO
 file_put_contents($jsonFilePath, $contentJSON);
 
 // Envoie du nouveau classement à la page
-$arrayJSON = json_encode(array("json" => $content, "scoreState" => $state));
+$arrayJSON = json_encode(array("json" => $content, "state" => $state));
 echo $arrayJSON;
