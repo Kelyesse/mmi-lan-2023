@@ -1,0 +1,94 @@
+.team-block .team-info {
+    display: flex;
+    width: 610px;
+    height: 280px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 70px;
+    padding: 0px 60px;
+}
+
+.second-place,
+.third-place {
+    display: flex;
+    /* Utilisez flex pour afficher sur la même ligne */
+    align-items: center;
+    gap: 70px;
+    /* Ajustez la marge entre les éléments si nécessaire */
+}
+
+.first-place {
+    background-color: #FEBC11 !important;
+    border-radius: 5px !important;
+    background: var(--accent, #FEBC11) !important;
+    box-shadow: 4px 4px 40px 30px rgba(205, 12, 117, 0.25), -4px -4px 40px 30px rgba(205, 12, 117, 0.25) !important;
+    border: none !important;
+}
+
+.second-place {
+    background-color: #F15722 !important;
+    border: none !important;
+}
+
+.third-place {
+    background-color: #CD0C75 !important;
+    border: none !important;
+}
+
+.team-details {
+    flex: 1;
+    /* Fait en sorte que la partie texte occupe tout l'espace disponible */
+    text-align: center;
+    /* Ajustez l'alignement du texte selon vos préférences */
+    padding: 20px;
+    /* Ajustez la marge intérieure selon vos préférences */
+}
+
+.team-details h3 {
+    font-family: Overused Grotesk;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-bottom: 10px;
+    /* Ajoute une marge en bas pour l'espacement */
+}
+
+.team-details p {
+    font-family: Overused Grotesk;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0;
+    /* Supprime la marge par défaut pour un meilleur alignement */
+}
+
+.team-logo {
+    width: 200px;
+    height: 200px;
+}
+
+.team-block {
+    background-color: #151515;
+    border-radius: 5px;
+    border: 1px solid var(--text-contenu, #FFF);
+    background: var(--fond-pages, #151515);
+}
+
+.titre-en-tete h1 {
+    font-family: var(--accent-font);
+    text-align: left;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: 900;
+    color: white;
+}
+
+.en-tete {
+    color: var(--text-contenu, #FFF);
+}
+
+.board-title {
+    font-size: 32px !important;
+}
