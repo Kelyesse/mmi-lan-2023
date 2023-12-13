@@ -31,7 +31,7 @@ if (isset($_SESSION['PlayerId'])) {
         $("#burger-close").click(() => {
             $("#burger-close").hide();
             $(".rubriques_burger").hide();
-            $(".bouton_burger").show();,
+            $(".bouton_burger").show();
 
 
         });
@@ -74,7 +74,7 @@ if (isset($_SESSION['PlayerId'])) {
                 <div class="rubriques_burger">
                     <div><a href="./listing_equipe.php" class="content_burger">Équipes</a></div>
                     <div><a href="#" class="content_burger" id="planning-button">Planning</a></div>
-                    <div><a href="#" class="content_burger" id="covoit-button">Covoiturage</a></div>
+                    <div><a href="classement.php" class="content_burger" id="covoit-button">Classement</a></div>
                     <div><a href="./contact.php" class="content_burger" id="burger_contact">Contact</a></div>
                     <div><a href="./game.php" class="content_burger" id="play_button">
                             Jouer à Shard'Venture
