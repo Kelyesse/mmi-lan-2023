@@ -67,7 +67,7 @@
                         bon endroit ! Des <span class="colored-words">activités</span> et
                         <span class="colored-words">points de restauration</span>
                         seront à votre disposition sur le lieu de l’événement, afin que chacun puisse profiter de cette
-                        journée à leur façon.
+                        journée à sa façon.
                         <br>
                         La compétition sera retransmise <span class="colored-words">en direct sur
                             <a href="https://www.twitch.tv/lanmmi" class="twitch-link" target="_blank">

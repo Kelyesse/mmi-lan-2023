@@ -25,20 +25,20 @@ if (isset($_POST["email"]) && isset($_POST["mess"])) {
     $obj = $_POST["obj"] ?? '';
 
     if (empty($nom) || !preg_match("/^[\p{L} \-'’]+$/u", $nom)) {
-    $errorMessage .= 'Nom invalide.<br>';
-}
-if (empty($prenom) || !preg_match("/^[\p{L} \-'’]+$/u", $prenom)) {
-    $errorMessage .= 'Prénom invalide.<br>';
-}
-if (empty($obj) || !preg_match("/^[\p{L} \-'’0-9]+$/u", $obj)) {
-    $errorMessage .= 'Objet invalide.<br>';
-}
-if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errorMessage .= 'Adresse e-mail invalide.<br>';
-}
-if (empty($mess)) {
-    $errorMessage .= 'Message vide.<br>';
-}
+        $errorMessage .= 'Nom invalide.<br>';
+    }
+    if (empty($prenom) || !preg_match("/^[\p{L} \-'’]+$/u", $prenom)) {
+        $errorMessage .= 'Prénom invalide.<br>';
+    }
+    if (empty($obj) || !preg_match("/^[\p{L} \-'’0-9]+$/u", $obj)) {
+        $errorMessage .= 'Objet invalide.<br>';
+    }
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorMessage .= 'Adresse e-mail invalide.<br>';
+    }
+    if (empty($mess)) {
+        $errorMessage .= 'Message vide.<br>';
+    }
 
 
     if (empty($errorMessage)) {
@@ -46,12 +46,12 @@ if (empty($mess)) {
         try {
             // Paramètres de PHPMailer
             $mail->isSMTP();
-            $mail->Host       = 'smtp.hostinger.com'; // notre adresse de serveur smtp à mettre ici
-            $mail->SMTPAuth   = true;
-            $mail->Username   = 'noreply@mmilan-toulon.fr'; // notre adresse e-mail smtp
-            $mail->Password   = '4v9n)@:}:Y1@@*]WUNae'; // notre mdp smtp
+            $mail->Host = 'smtp.hostinger.com'; // notre adresse de serveur smtp à mettre ici
+            $mail->SMTPAuth = true;
+            $mail->Username = 'noreply@mmilan-toulon.fr'; // notre adresse e-mail smtp
+            $mail->Password = '4v9n)@:}:Y1@@*]WUNae'; // notre mdp smtp
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port       = 465;
+            $mail->Port = 465;
 
             $mail->setFrom('noreply@mmilan-toulon.fr', 'mmi-lan-2023');
             $mail->addAddress('mmilan.com2023@gmail.com'); // adresse de réception des messages peut être à changer
@@ -59,7 +59,7 @@ if (empty($mess)) {
 
             $mail->isHTML(true);
             $mail->Subject = 'Nouveau message de contact depuis votre site';
-            $mail->Body    = "Nom: $nom<br/>Prénom: $prenom<br/>Email: $email<br/>Objet: $obj<br/>Message:<br/>$mess";
+            $mail->Body = "Nom: $nom<br/>Prénom: $prenom<br/>Email: $email<br/>Objet: $obj<br/>Message:<br/>$mess";
             $mail->AltBody = strip_tags("Nom: $nom\nPrénom: $prenom\nEmail: $email\nObjet: $obj\nMessage:\n$mess");
 
             $mail->send();
@@ -123,35 +123,37 @@ if (empty($mess)) {
             </div>
             <div id="form">
                 <?php if ($messageSent): ?>
-                <p>Votre message a été envoyé avec succès.</p>
+                    <p>Votre message a été envoyé avec succès.</p>
                 <?php else: ?>
-                <?php if (!empty($errorMessage)): ?>
-                <p><?php echo $errorMessage; ?></p>
-                <?php endif; ?>
-                <form action="contact.php" method="post">
-                    <div>
-                        <div class="double-inp">
-                            <input type="text" placeholder="Entrer votre nom" name="nom" required>
-                            <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
+                    <?php if (!empty($errorMessage)): ?>
+                        <p>
+                            <?php echo $errorMessage; ?>
+                        </p>
+                    <?php endif; ?>
+                    <form action="contact.php" method="post">
+                        <div>
+                            <div class="double-inp">
+                                <input type="text" placeholder="Entrez votre nom" name="nom" required>
+                                <input type="text" placeholder="Entrez votre prénom" name="prenom" required>
+                            </div>
+                            <div class="simple-inp">
+                                <img src="./assets/img/mail.svg" alt="">
+                                <input type="email" placeholder="Entrez votre email" name="email" id="email" required>
+                            </div>
+                            <div class="simple-inp">
+                                <img src="./assets/img/chatquote.svg" alt="">
+                                <input type="text" placeholder="Objet" name="obj" id="obj" required>
+                            </div>
+                            <div class="simple-inp">
+                                <textarea id="" cols="1000" rows="10" placeholder="Votre message..." name="mess"
+                                    id="message" required></textarea>
+                            </div>
+                            <div id="sub">
+                                <a class="rgpd-link" href="./RGPD.php">En nous contactant, vous acceptez le RGPD.</a>
+                                <input type="submit" id="submit" value="Envoyer">
+                            </div>
                         </div>
-                        <div class="simple-inp">
-                            <img src="./assets/img/mail.svg" alt="">
-                            <input type="email" placeholder="Entrer votre email" name="email" id="email" required>
-                        </div>
-                        <div class="simple-inp">
-                            <img src="./assets/img/chatquote.svg" alt="">
-                            <input type="text" placeholder="Objet" name="obj" id="obj" required>
-                        </div>
-                        <div class="simple-inp">
-                            <textarea id="" cols="1000" rows="10" placeholder="Votre message..." name="mess"
-                                id="message" required></textarea>
-                        </div>
-                        <div id="sub">
-                            <a class="rgpd-link" href="./RGPD.php">En nous contactant, vous acceptez le RGPD.</a>
-                            <input type="submit" id="submit" value="Envoyer">
-                        </div>
-                    </div>
-                </form>
+                    </form>
                 <?php endif; ?>
             </div>
         </section>

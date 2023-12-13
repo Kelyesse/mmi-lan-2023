@@ -116,13 +116,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
                     <div class="inputs">
                         <div class="flex-logo-input space1">
                             <img class="logo-input" src="./assets/img/mail.svg">
-                            <input class="style-input" type="email" name="email" placeholder="Entrer votre adresse mail"
+                            <input class="style-input" type="email" name="email" placeholder="Entrez votre adresse mail"
                                 required />
                         </div>
                         <div class="space2 flex-logo-input style-input">
                             <img class="logo-input" src="./assets/img/cadena.svg">
                             <input type="password" name="password" class="style-input" id="password"
-                                placeholder="Entrer votre mot de passe" required />
+                                placeholder="Entrez votre mot de passe" required />
                             <button type="button" id="toggle-password" onclick="togglePasswordVisibility()">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"
                                     id="eye-open">
@@ -159,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recover'])) {
                 <span id="close-popup" class="close-popup">&times;</span>
                 <form method="post" class="flex-popup">
                     <p id="title-change-password">Changer de mot de passe</p>
-                    <input type="email" class="style-input" name="recover" placeholder="Entrer votre adresse mail">
+                    <input type="email" class="style-input" name="recover" placeholder="Entrez votre adresse mail">
                     <button type="submit">Recevoir le code</button>
                 </form>
             </div>

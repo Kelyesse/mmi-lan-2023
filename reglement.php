@@ -24,7 +24,7 @@
                 <p>Au sein de son département MMI, l'Université de Toulon située au 70 Avenue Roger Devoucoux, 83000
                     Toulon, et portée par la promotion MMI 2, 2023, organise le tournoi baptisé 'MMI LAN 2023', qui aura
                     lieu à Toulon le 14 décembre 2023. <br> En prenant part à ce tournoi, équipes, joueurs et joueuses,
-                    coachs, ainsi que spectateur s'engagent formellement à respecter sans réserve l'ensemble des
+                    coachs, ainsi que spectateurs s'engagent formellement à respecter sans réserve l'ensemble des
                     dispositions du règlement.</p>
             </div>
         </div>
@@ -35,8 +35,9 @@
             </div>
             <div>
                 <div>
-                    <h3>2.1 Inscriptions Obligatoire Généralités</h3>
-                    <p>Toute personne désirant participer à la LAN doit s'inscrire sur le site : nomsite. De plus, pour
+                    <h3>2.1 Inscriptions Obligatoires Généralités</h3>
+                    <p>Toute personne désirant participer à la LAN doit s'inscrire sur le site : MMILAN Toulon. De
+                        plus, pour
                         pouvoir profiter des facilités de covoiturages présents sur le site, vous devrez obligatoirement
                         faire partie des inscrits.</p>
                 </div>

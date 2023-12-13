@@ -24,7 +24,7 @@
       <h1 class="faq-title">F.A.Q.</h1>
       <p class="faq-description">
         Bienvenue dans notre section FAQ où nous répondons aux questions fréquemment posées concernant la MMI LAN.
-        Découvrez tout ce que vous devez sur cet événement passionnant créé par les MMI pour les MMI.
+        Découvrez tout ce que vous devez savoir sur cet événement passionnant créé par les MMI pour les MMI.
       </p>
     </div>
 
@@ -80,7 +80,7 @@
         <div class="faq-item">
           <button class="faq-question-btn">Puis-je jouer en solo ?<i class="faq-arrow fas fa-chevron-down"></i></button>
           <div class="faq-answer">
-            <p>Oui, la participation en solo n'est pas autorisée, car la formation d'une équipe de trois personnes est
+            <p>Non, la participation en solo n'est pas autorisée, car la formation d'une équipe de trois personnes est
               obligatoire pour prendre part à la compétition. Nous comprenons que constituer une équipe peut être un
               défi.
               Cependant, nous sommes là pour vous soutenir dans cette démarche. Si vous rencontrez des difficultés à
@@ -96,7 +96,7 @@
           <button class="faq-question-btn">Jusqu'à quand puis-je m'inscrire ?<i
               class="faq-arrow fas fa-chevron-down"></i></button>
           <div class="faq-answer">
-            <p>Les inscriptions débuteront le mercredi 15 novembre à xx:xx et prendront fin le mercredi 29 novembre à
+            <p>Les inscriptions débuteront le mercredi 15 novembre à 8:00 et prendront fin le mercredi 29 novembre à
               23:59.</p>
           </div>
         </div>
@@ -158,7 +158,7 @@
               class="faq-arrow fas fa-chevron-down"></i></button>
           <div class="faq-answer">
             <p>Oui, des animations sont prévues tout au long de la journée. Pour en savoir plus, restez attentifs et
-              suivez nous sur notre compte Instagram : xxx</p>
+              suivez nous sur notre compte Instagram : @mmi_lan2023</p>
           </div>
         </div>
 
