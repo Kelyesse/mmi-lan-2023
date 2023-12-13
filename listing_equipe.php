@@ -16,11 +16,17 @@ session_start();
 
 <body>
     <header>
-        <?php include 'navbar.php';
-        ?>
+        <?php include 'navbar.php';?>
     </header>
 
     <main>
+        <?php
+            require_once("connexionbdd.php");
+            if(isset($_POST['Tscore'])){
+                $req = $db->prepare('UPDATE team SET TeamScore=? WHERE TeamId=?');
+                $req->execute([$_POST['Tscore'], $_POST['Tid']]);
+            }
+        ?>
         <div class="en-tete">
             <h1>LES ÉQUIPES DE LA MMI LAN</h1>
             <div class="tri-container">
@@ -65,7 +71,7 @@ session_start();
             </h2>
             <form action="rejoindreEquipe.php?teamId=<?php echo $teamId ?>" method="post">
                 <textarea name="playerDesc" id="" cols="30" rows="10"
-                    placeholder="Ecrire une description de vous"></textarea>
+                    placeholder="Écrivez une description de vous..."></textarea>
                 <div>
                     <input type="button" onclick='window.location.href="listing_equipe.php"' value="J'ai changé d'avis">
                     <input type="submit" value="Rejoindre">
@@ -76,7 +82,9 @@ session_start();
         function showAlertForm()
         {
             if (isset($_GET['rejoindreEquipe'])) {
-                echo '<script>blocAlert = document.getElementById("alertRejoindreEquipe"); blocAlert.style.display = "block";</script>';
+                echo '<script>blocAlert = document.getElementById("alertRejoindreEquipe"); blocAlert.style.display = "flex";</script>';
+                echo '<script> document.getElementById("alertRejoindreEquipe").scrollIntoView({ behavior: "smooth", block: "start" });</script>';
+
             }
         }
         showAlertForm();
