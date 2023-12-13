@@ -39,7 +39,7 @@ main #equipe h1 {
 main #equipe .photo_equipe {
     position: relative;
     margin: 20px;
-    width: 70%;
+    width: 400px;
 }
 main #equipe .photo_equipe .illu_1 {
     position: absolute;
@@ -47,6 +47,7 @@ main #equipe .photo_equipe .illu_1 {
     top: -30px;
     width: 50px;
     flex-shrink: 0;
+
 }
 main #equipe .photo_equipe img {
     width: 100%;
@@ -81,8 +82,8 @@ main #membres .membre {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 30%;
-    width: 295px;
+    max-width: 40%;
+
 }
 main #membres .membre img {
     display: flex;

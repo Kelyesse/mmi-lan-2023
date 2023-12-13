@@ -73,16 +73,19 @@ body {
         margin: 0 25px 0 0;
     }
 
-    #bouton_participer {
+    .participer #play_button {
+        display: block;
         border-radius: 5px;
         background-color: var(--accent-color-1);
         padding: 10px;
         margin: 0 25px 0 0;
+        width: 197px;
+        text-align: center;
     }
     #bouton_contact:hover {
         background-color: var(--primary-color-hover);
     }
-    #bouton_participer:hover {
+    .participer #play_button:hover {
         background-color: var(--accent-color-1-hover);
     }
 
@@ -137,7 +140,7 @@ body {
         font-size: 16px;
     }
     #bouton_contact,
-    #bouton_participer,
+    .participer #play_button,
     #icon_compte,
     .bouton_rubrique {
         display: none;
@@ -174,7 +177,7 @@ body {
         display: none;
     }
 
-    #burger_play {
+    .rubriques_burger #play_button {
         color: var(--accent-color-1);
     }
 

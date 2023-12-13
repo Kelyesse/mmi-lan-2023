@@ -55,11 +55,11 @@ if (isset($_SESSION['PlayerId'])) {
                 <div class="rubrique_content"><a href="#" class="bouton_rubrique" id="planning-button">Planning</a>
                 </div>
                 <div class="rubrique_content">
-                    <a href="#" class="bouton_rubrique" id="covoit-button">Covoiturage</a>
+                    <a href="covoiturage.php" class="bouton_rubrique" id="covoit-button">Covoiturage</a>
                 </div>
             </div>
             <div class="contact"><a href="./contact.php" id="bouton_contact">Contact</a></div>
-            <div class="participer"><a href="<?php echo $playLink; ?>" id="bouton_participer">Participer à la lan</a>
+            <div class="participer"><a href="./game.php" id="play_button">Jouer à Shard'Venture</a>
             </div>
             <div class="compte">
                 <a href="<?php echo $accountLink; ?>">
@@ -79,8 +79,8 @@ if (isset($_SESSION['PlayerId'])) {
                     <div><a href="#" class="content_burger" id="planning-button">Planning</a></div>
                     <div><a href="#" class="content_burger" id="covoit-button">Covoiturage</a></div>
                     <div><a href="./contact.php" class="content_burger" id="burger_contact">Contact</a></div>
-                    <div><a href="<?php echo $playLink; ?>" class="content_burger" id="burger_play">
-                            Participer à la LAN
+                    <div><a href="./game.php" class="content_burger" id="play_button">
+                            Jouer à Shard'Venture
                         </a>
                     </div>
                     <div><a href="<?php echo $accountLink; ?>" class="content_burger" id="burger_contact">Compte</a>

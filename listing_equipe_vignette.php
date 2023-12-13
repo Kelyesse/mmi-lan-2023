@@ -97,6 +97,7 @@ if (count($equipes) > 0) {
                 $req3 = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
                 $req3->execute([$idj]);
                 $userrole = $req3->fetch()['PlayerStatus'];
+
                 
                 $req= $db->prepare('SELECT PlayerStatus FROM player WHERE PlayerId=?');
                 $req->execute([$_SESSION['PlayerId']]);
