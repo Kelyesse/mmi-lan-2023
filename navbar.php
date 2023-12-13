@@ -20,25 +20,22 @@ if (isset($_SESSION['PlayerId'])) {
     <link rel="stylesheet" href="./assets/style/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-
-        $(document).ready(() => {
-            $(".bouton_burger").click(() => {
-                $(".bouton_burger").hide();
-                $(".rubriques_burger").show();
-                $("#burger-close").show();
-                $("#croix_fermer").show();
-            });
-
-            $("#burger-close").click(() => {
-                $("#burger-close").hide();
-                $(".rubriques_burger").hide();
-                $(".bouton_burger").show();,
-
-
-            });
+    $(document).ready(() => {
+        $(".bouton_burger").click(() => {
+            $(".bouton_burger").hide();
+            $(".rubriques_burger").show();
+            $("#burger-close").show();
+            $("#croix_fermer").show();
         });
 
+        $("#burger-close").click(() => {
+            $("#burger-close").hide();
+            $(".rubriques_burger").hide();
+            $(".bouton_burger").show();,
 
+
+        });
+    });
     </script>
 
 </head>
@@ -55,7 +52,7 @@ if (isset($_SESSION['PlayerId'])) {
                 <div class="rubrique_content"><a href="#" class="bouton_rubrique" id="planning-button">Planning</a>
                 </div>
                 <div class="rubrique_content">
-                    <a href="covoiturage.php" class="bouton_rubrique" id="covoit-button">Covoiturage</a>
+                    <a href="classement.php" class="bouton_rubrique" id="covoit-button">Classement</a>
                 </div>
             </div>
             <div class="contact"><a href="./contact.php" id="bouton_contact">Contact</a></div>
