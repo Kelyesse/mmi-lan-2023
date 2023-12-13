@@ -17,6 +17,9 @@ if (isset($_SESSION['PlayerId'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="La MMI LAN est un événement centré sur le jeu vidéo, organisé par des MMI pour des MMI ! Elle se présente sous la forme d’un tournoi dans lequel des équipes de trois joueurs se réunissent et s'affrontent au travers de plusieurs jeux vidéo tout au long d’une journée. Que vous soyez un pro ou un débutant, cet événement est l’occasion de passer un moment de convivialité placé sous le signe de la compétition">
+    <meta name="keywords" content="MMILAN, mmilan, mmilan toulon, esport toulon, compétition toulon, mmi lan toulon">
     <link rel="stylesheet" href="./assets/style/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
