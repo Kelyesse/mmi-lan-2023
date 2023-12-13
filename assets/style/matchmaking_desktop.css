@@ -121,6 +121,12 @@ h1 {
   width: 150px;
   gap: 10px;
   padding: 5px;
+  transform: 0.2s;
+}
+
+.equipedemie:hover {
+  opacity: 0;
+  transition: 0.2s;
 }
 
 .img_tableau {
