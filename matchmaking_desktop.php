@@ -133,15 +133,15 @@
         <?php
         if ($UserStatus ==  "Admin") {
             echo '<div id="btnAdmin">';
-            echo '<form action="matchmaking.php" method="post">';
+            echo '<form action="matchmaking_desktop.php" method="post">';
             echo '<input type="submit" name="submitQuart" value="Définir les quarts">';
             echo '</form>';
 
-            echo '<form action="matchmaking.php" method="post">';
+            echo '<form action="matchmaking_desktop.php" method="post">';
             echo '<input type="submit" name="submitDemi" value="Définir les demis">';
             echo '</form>';
 
-            echo '<form action="matchmaking.php" method="post">';
+            echo '<form action="matchmaking_desktop.php" method="post">';
             echo '<input type="submit" name="submitFinale" value="Définir la finale">';
             echo '</form>';
 
