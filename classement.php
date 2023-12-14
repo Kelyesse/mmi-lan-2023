@@ -36,13 +36,13 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     echo "<div class='team-block " . ($position > 3 ? "" : $class) . "'>";
                     echo "<div class='team-info'>";
-                    echo "<img src='" . htmlspecialchars($row["TeamLogo"]) . "' alt='Team Logo' class='team-logo'>";
+                    echo "<img src='./assets/img/" . htmlspecialchars($row["TeamLogo"]) . "' alt='Team Logo' class='team-logo'>";
                     echo "<div class='team-details'>";
                     echo "<h3>" . htmlspecialchars($row["TeamName"]) . "</h3>";
                     echo "<p>" . htmlspecialchars($row["TeamScore"]) . " Points</p>";
-                    echo "</div>"; 
-                    echo "</div>"; 
-                    echo "</div>"; 
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
                     $position++;
                 }
             } else {
