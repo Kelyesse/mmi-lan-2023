@@ -23,22 +23,22 @@ if (isset($_SESSION['PlayerId'])) {
     <link rel="stylesheet" href="./assets/style/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-    $(document).ready(() => {
-        $(".bouton_burger").click(() => {
-            $(".bouton_burger").hide();
-            $(".rubriques_burger").show();
-            $("#burger-close").show();
-            $("#croix_fermer").show();
+        $(document).ready(() => {
+            $(".bouton_burger").click(() => {
+                $(".bouton_burger").hide();
+                $(".rubriques_burger").show();
+                $("#burger-close").show();
+                $("#croix_fermer").show();
+            });
+
+            $("#burger-close").click(() => {
+                $("#burger-close").hide();
+                $(".rubriques_burger").hide();
+                $(".bouton_burger").show();
+
+
+            });
         });
-
-        $("#burger-close").click(() => {
-            $("#burger-close").hide();
-            $(".rubriques_burger").hide();
-            $(".bouton_burger").show();
-
-
-        });
-    });
     </script>
 
 </head>
@@ -52,7 +52,8 @@ if (isset($_SESSION['PlayerId'])) {
         <div id="nav">
             <div class="rubriques">
                 <div class="rubrique_content"><a href="./listing_equipe.php" class="bouton_rubrique">Équipes</a></div>
-                <div class="rubrique_content"><a href="#" class="bouton_rubrique" id="planning-button">Planning</a>
+                <div class="rubrique_content"><a href="./planning.php" class="bouton_rubrique"
+                        id="planning-button">Planning</a>
                 </div>
                 <div class="rubrique_content">
                     <a href="classement.php" class="bouton_rubrique" id="covoit-button">Classement</a>
@@ -76,7 +77,7 @@ if (isset($_SESSION['PlayerId'])) {
                 </div>
                 <div class="rubriques_burger">
                     <div><a href="./listing_equipe.php" class="content_burger">Équipes</a></div>
-                    <div><a href="#" class="content_burger" id="planning-button">Planning</a></div>
+                    <div><a href="./planning.php" class="content_burger" id="planning-button">Planning</a></div>
                     <div><a href="classement.php" class="content_burger" id="covoit-button">Classement</a></div>
                     <div><a href="./contact.php" class="content_burger" id="burger_contact">Contact</a></div>
                     <div><a href="./game.php" class="content_burger" id="play_button">
