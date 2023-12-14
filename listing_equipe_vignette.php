@@ -72,7 +72,23 @@ if (count($equipes) > 0) {
             echo '</div>';
             echo '</div>';
 
-            echo '<button class="button_full">Equipe complète</button></li>';
+            echo '<button class="button_full">Equipe complète</button>';
+            $req= $db->prepare('SELECT PlayerStatus FROM player WHERE PlayerId=?');
+            $req->execute([$_SESSION['PlayerId']]);
+            $roleadmin = $req->fetch()['PlayerStatus'];
+            
+            if($roleadmin == 'Admin'){
+                $req= $db->prepare('SELECT TeamScore FROM team WHERE TeamId=?');
+                $req->execute([$equipe['TeamId']]);
+                $teamscore = $req->fetch()['TeamScore'];
+                echo '<form id="teamScore" action="listing_equipe.php" method="post">';
+                echo '<p>Score :</p>';
+                echo '<input type="number" name="Tid" value="'.$equipe['TeamId'].'" hidden>';
+                echo '<input type="number" name="Tscore" value="'.$teamscore.'">';
+                echo '<input type="submit" value="Modifier score">';
+                echo '</form>';
+            }
+            echo '</li>';
         } else {
             $image = $equipe['TeamLogo'];
             echo '<li class="vignette team-incomplete" id="' . $equipe['TeamId'] . '">';
@@ -97,8 +113,27 @@ if (count($equipes) > 0) {
                 $req3 = $db->prepare("SELECT PlayerStatus FROM player WHERE PlayerId=?");
                 $req3->execute([$idj]);
                 $userrole = $req3->fetch()['PlayerStatus'];
+                if (empty($resultat && $userrole == "Participant")) {
+                    echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId=' . $equipe['TeamId'] . '&rejoindreEquipe=true&teamName=' . $equipe['TeamName'] . '"\'>Rejoindre l\'équipe</button>';
+                    $req= $db->prepare('SELECT PlayerStatus FROM player WHERE PlayerId=?');
+                    $req->execute([$_SESSION['PlayerId']]);
+                    $roleadmin = $req->fetch()['PlayerStatus'];
+                    
+                    if($roleadmin == 'Admin'){
+                        $req= $db->prepare('SELECT TeamScore FROM team WHERE TeamId=?');
+                        $req->execute([$equipe['TeamId']]);
+                        $teamscore = $req->fetch()['TeamScore'];
+                        echo '<form id="teamScore" action="listing_equipe.php" method="post">';
+                        echo '<p>Score :</p>';
+                        echo '<input type="number" name="Tid" value="'.$equipe['TeamId'].'" hidden>';
+                        echo '<input type="number" name="Tscore" value="'.$teamscore.'">';
+                        echo '<input type="submit" value="Modifier score">';
+                        echo '</form>';
+                    }
+                    echo '</li>';
 
-                
+                }
+            } else {
                 $req= $db->prepare('SELECT PlayerStatus FROM player WHERE PlayerId=?');
                 $req->execute([$_SESSION['PlayerId']]);
                 $roleadmin = $req->fetch()['PlayerStatus'];
@@ -114,12 +149,6 @@ if (count($equipes) > 0) {
                     echo '<input type="submit" value="Modifier score">';
                     echo '</form>';
                 }
-                
-                else if (empty($resultat && $userrole == "Participant")) {
-                    echo '<button class="button_full" onclick=\'window.location.href="listing_equipe.php?teamId=' . $equipe['TeamId'] . '&rejoindreEquipe=true&teamName=' . $equipe['TeamName'] . '"\'>Rejoindre l\'équipe</button></li>';
-
-                }
-            } else {
                 echo '</li>';
             }
 

@@ -154,7 +154,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerQuart" value="' . getTeamForQuart(0, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -169,7 +169,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerQuart" value="' . getTeamForQuart(7, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -184,7 +184,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerQuart" value="' . getTeamForQuart(1, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -199,7 +199,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerQuart" value="' . getTeamForQuart(6, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -214,7 +214,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerDemi" value="' . getTeamForDemi(1, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -229,7 +229,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerDemi" value="' . getTeamForDemi(2, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -244,7 +244,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerFinale" value="' . getTeamForFinale(1, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -259,7 +259,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerFinale" value="' . getTeamForFinale(2, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -274,7 +274,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerDemi" value="' . getTeamForDemi(3, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -289,7 +289,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerDemi" value="' . getTeamForDemi(4, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -304,7 +304,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerQuart" value="' . getTeamForQuart(2, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -319,7 +319,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerQuart" value="' . getTeamForQuart(5, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -334,7 +334,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerQuart" value="' . getTeamForQuart(3, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
@@ -349,7 +349,7 @@
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
-                        echo '<form action="matchmaking.php" method="post">';
+                        echo '<form action="matchmaking_desktop.php" method="post">';
                         echo '<input type="number" name="winnerQuart" value="' . getTeamForQuart(4, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
