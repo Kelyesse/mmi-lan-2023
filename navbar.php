@@ -91,7 +91,7 @@ if (isset($_SESSION['PlayerId'])) {
         </div>
     </div>
 
-    <div id="navbar-countdown" class="count-down-timer"></div>
+    <!-- <div id="navbar-countdown" class="count-down-timer"></div> -->
     <script src="./assets/js/navbarCountDown.js"></script>
     <script src="./assets/js/navbarComingSoon.js"></script>
 </body>
