@@ -19,7 +19,7 @@
         <div class="header-container">
             <div class="count-down">
                 <h1 class="title-mmilan">MMI LAN</h1>
-                <div class="count-down-timer"></div>
+                <!-- <div class="count-down-timer"></div> -->
 
                 <!-- <a href="./inscription.php" class="cta-button">Inscrivez-vous</a> -->
             </div>
