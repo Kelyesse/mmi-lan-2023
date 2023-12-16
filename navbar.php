@@ -56,7 +56,7 @@ if (isset($_SESSION['PlayerId'])) {
                         id="planning-button">Planning</a>
                 </div>
                 <div class="rubrique_content">
-                    <a href="classement.php" class="bouton_rubrique" id="covoit-button">Classement</a>
+                    <a href="classement.php" class="bouton_rubrique" id="covoit-button">Résultats de la LAN</a>
                 </div>
             </div>
             <div class="contact"><a href="./contact.php" id="bouton_contact">Contact</a></div>
