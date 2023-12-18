@@ -24,9 +24,9 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <?php include './navbar.php'; ?>
-    <h1 class="en-tete">LES ÉQUIPES DE LA MMI LAN</h1>
     <div id="board-container">
-        <div id="board-title" class="board-title">L’équipe vainqueur est: </div>
+        <div id="board-title" class="board-title">Classement des pools : </div>
+        <button id="voirMM">Voir le résultat des phases finales</button>
         <div id="board" class="leaderboard">
             <?php
             if (count($result) > 0) {
@@ -52,6 +52,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     <?php include './footer.php'; ?>
+    <script src="assets/js/chooseMatchmaking.js"></script>
 </body>
 
 </html>

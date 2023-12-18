@@ -42,9 +42,14 @@
     <div id="membres">
       <?php echo getTeamMembers($teamId, $db); ?>
     </div>
-
-    <!--A COMPLETER UNE FOIS LE SHOOTING FAIT ! -->
-    <div id="photo" hidden></div>
+    
+    <div id="photo">
+      <?php
+        for($i=1; $i<5; $i++){
+            echo '<img class="img'.$i.'" src="./assets/img/photos_equipes/'.$teamId.'_'.$i.'.jpeg" alt="images prise de l’équipe" />';
+        }
+      ?>
+    </div>
 
     <div id="retour">
       <?php echo showReturnButtons($teamId, $db); ?>

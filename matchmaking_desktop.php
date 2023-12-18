@@ -129,7 +129,8 @@
             return $teamName;
         }
         ?>
-        <h1>MATCHMAKING</h1>
+        <h1>Matchs des phases Finales</h1>
+        <button id="voirPools" onclick='window.location.href="classement.php"'>Voir le résultat des pools</button>
         <?php
         if ($UserStatus ==  "Admin") {
             echo '<div id="btnAdmin">';
@@ -150,7 +151,7 @@
         ?>
 
         <section id="tabMM">
-            <div class=" equipe equipe1">
+            <div class=" equipe equipe1 perdant">
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
@@ -195,7 +196,7 @@
                     <p><?php echo getTeamForQuart(1, $db)[0] ?></p>
                 </div>
             </div>
-            <div class=" equipe equipe4">
+            <div class=" equipe equipe4 perdant">
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
@@ -210,7 +211,7 @@
                     <p><?php echo getTeamForQuart(6, $db)[0] ?></p>
                 </div>
             </div>
-            <div class=" equipe equipe5">
+            <div class=" equipe equipe5 troisieme">
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
@@ -218,6 +219,9 @@
                         echo '<input type="number" name="winnerDemi" value="' . getTeamForDemi(1, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
+                    }
+                    else{
+                        echo '<p>3e</p>';
                     }
                     ?>
                 </div>
@@ -255,7 +259,7 @@
                     <p><?php echo getTeamForFinale(1, $db)[0] ?></p>
                 </div>
             </div>
-            <div class=" equipe equipe8">
+            <div class=" equipe equipe8 deuxieme">
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
@@ -263,6 +267,9 @@
                         echo '<input type="number" name="winnerFinale" value="' . getTeamForFinale(2, $db)[1] . '" hidden>';
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
+                    }
+                    else{
+                        echo '<p>2e</p>';
                     }
                     ?>
                 </div>
@@ -294,9 +301,12 @@
                         echo '<input type="submit" value="✅">';
                         echo '</form>';
                     }
+                    else{
+                        echo '<p>4e</p>';
+                    }
                     ?>
                 </div>
-                <div class="nom">
+                <div class="nom perdant">
                     <p><?php echo getTeamForDemi(4, $db)[0] ?></p>
                 </div>
             </div>
@@ -315,7 +325,7 @@
                     <p><?php echo getTeamForQuart(2, $db)[0] ?></p>
                 </div>
             </div>
-            <div class=" equipe equipe12">
+            <div class=" equipe equipe12 perdant">
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
@@ -345,7 +355,7 @@
                     <p><?php echo getTeamForQuart(3, $db)[0] ?></p>
                 </div>
             </div>
-            <div class=" equipe equipe14">
+            <div class=" equipe equipe14 perdant">
                 <div class="rectangle">
                     <?php
                     if ($UserStatus ==  "Admin") {
@@ -360,8 +370,12 @@
                     <p><?php echo getTeamForQuart(4, $db)[0] ?></p>
                 </div>
             </div>
-            <div class=" equipe equipe15">
-                <div class="rectangle"></div>
+            <div class=" equipe equipe15 premier">
+                <div class="rectangle">
+                    <?php
+                    echo '<p>1e</p>';
+                    ?>
+                </div>
                 <div class="nom">
                     <p><?php echo getLANWinner($db) ?></p>
                 </div>

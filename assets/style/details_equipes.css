@@ -468,8 +468,8 @@ main #retour .retour {
         margin: 120px 0;
     }
     main #photo img {
-        width: 250px;
-        height: 206px;
+        width: 295px;
+        height: 226px;
         flex-shrink: 0;
         border-radius: 10px;
     }
